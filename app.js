@@ -43,33 +43,169 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function processData() {
-        // Hindi to English thaat name mapping
-        const thaatMap = {
-            'बिलावल': 'Bilaval',
-            'कल्याण': 'Kalyan',
-            'काफी': 'Kafi',
-            'खमाज': 'Khamaj',
-            'भैरव': 'Bhairav',
-            'भैरवी': 'Bhairavi',
-            'आसावरी': 'Asavari',
-            'तोड़ी': 'Todi',
-            'पूर्वी': 'Poorvi',
-            'मारवा': 'Marva'
-        };
-
         // Thaat swaras (notes) for each thaat
         const thaatSwaras = {
             'Bilaval': 'Sa Re Ga Ma Pa Dha Ni',
-            'Kalyan': 'Sa Re Ga Ma\u0301 Pa Dha Ni',
+            'Kalyan': 'Sa Re Ga Mā Pa Dha Ni',
             'Kafi': 'Sa Re ga Ma Pa Dha ni',
             'Khamaj': 'Sa Re Ga Ma Pa Dha ni',
             'Bhairav': 'Sa re Ga Ma Pa dha Ni',
             'Bhairavi': 'Sa re ga Ma Pa dha ni',
             'Asavari': 'Sa Re ga Ma Pa dha ni',
-            'Todi': 'Sa re ga Ma\u0301 Pa dha Ni',
-            'Poorvi': 'Sa re Ga Ma\u0301 Pa dha Ni',
-            'Marva': 'Sa re Ga Ma\u0301 Pa Dha Ni'
+            'Todi': 'Sa re ga Mā Pa dha Ni',
+            'Poorvi': 'Sa re Ga Mā Pa dha Ni',
+            'Marva': 'Sa re Ga Mā Pa Dha Ni'
         };
+
+        // Authoritative list: 120 raags under 10 thaats (from user's Excel data)
+        const raagDirectory = [
+            // Bilaval Thaat (16)
+            { name: 'बिलावल', thaat: 'Bilaval' },
+            { name: 'अल्हैया बिलावल', thaat: 'Bilaval' },
+            { name: 'बिहाग', thaat: 'Bilaval' },
+            { name: 'दुर्गा', thaat: 'Bilaval' },
+            { name: 'शंकरा', thaat: 'Bilaval' },
+            { name: 'Deshkar', thaat: 'Bilaval' },
+            { name: 'Maluha Kedar', thaat: 'Bilaval' },
+            { name: 'हंसध्वनि', thaat: 'Bilaval' },
+            { name: 'Jaldhar Kedar', thaat: 'Bilaval' },
+            { name: 'Sarparada', thaat: 'Bilaval' },
+            { name: 'Gopika Basant', thaat: 'Bilaval' },
+            { name: 'Devgiri Bilawal', thaat: 'Bilaval' },
+            { name: 'Bhatiyar', thaat: 'Bilaval' },
+            { name: 'Nat Bihag', thaat: 'Bilaval' },
+            { name: 'Sukla Bilawal', thaat: 'Bilaval' },
+            { name: 'Bihagara', thaat: 'Bilaval' },
+            // Kalyan Thaat (18)
+            { name: 'कल्याण', thaat: 'Kalyan' },
+            { name: 'यमन', thaat: 'Kalyan' },
+            { name: 'भूपाली', thaat: 'Kalyan' },
+            { name: 'हमीर', thaat: 'Kalyan' },
+            { name: 'केदार', thaat: 'Kalyan' },
+            { name: 'Kamod', thaat: 'Kalyan' },
+            { name: 'Hindol', thaat: 'Kalyan' },
+            { name: 'Gaur Sarang', thaat: 'Kalyan' },
+            { name: 'Chayanaut', thaat: 'Kalyan' },
+            { name: 'Sudh Kalyan', thaat: 'Kalyan' },
+            { name: 'मारु बिहाग', thaat: 'Kalyan' },
+            { name: 'Nand', thaat: 'Kalyan' },
+            { name: 'शुद्ध सारंग', thaat: 'Kalyan' },
+            { name: 'Yamani Bilawal', thaat: 'Kalyan' },
+            { name: 'Shyam Kalyan', thaat: 'Kalyan' },
+            { name: 'Hemant', thaat: 'Kalyan' },
+            { name: 'Jogkaunsh', thaat: 'Kalyan' },
+            { name: 'Jaut Kalyan', thaat: 'Kalyan' },
+            // Khamaj Thaat (16)
+            { name: 'खमाज', thaat: 'Khamaj' },
+            { name: 'देश', thaat: 'Khamaj' },
+            { name: 'तिलंग', thaat: 'Khamaj' },
+            { name: 'तिलक कामोद', thaat: 'Khamaj' },
+            { name: 'Jaijaiwanti', thaat: 'Khamaj' },
+            { name: 'Gur Malhar', thaat: 'Khamaj' },
+            { name: 'रागेश्री/Rageswari', thaat: 'Khamaj' },
+            { name: 'चंपकली', thaat: 'Khamaj' },
+            { name: 'जोग', thaat: 'Khamaj' },
+            { name: 'Narayani', thaat: 'Khamaj' },
+            { name: 'Madhumad Sarang', thaat: 'Khamaj' },
+            { name: 'Gara', thaat: 'Khamaj' },
+            { name: 'गोरख कल्याण', thaat: 'Khamaj' },
+            { name: 'Jinjhoti', thaat: 'Khamaj' },
+            { name: 'Khambawati', thaat: 'Khamaj' },
+            { name: 'सरस्वती', thaat: 'Khamaj' },
+            // Kafi Thaat (28)
+            { name: 'काफी', thaat: 'Kafi' },
+            { name: 'वृंदावनी सारंग', thaat: 'Kafi' },
+            { name: 'भीमपलासी', thaat: 'Kafi' },
+            { name: 'बागेश्री', thaat: 'Kafi' },
+            { name: 'Pilu', thaat: 'Kafi' },
+            { name: 'पटदीप', thaat: 'Kafi' },
+            { name: 'बहार', thaat: 'Kafi' },
+            { name: 'Miya Malhar', thaat: 'Kafi' },
+            { name: 'Malgunji', thaat: 'Kafi' },
+            { name: 'चंद्रकौंस', thaat: 'Kafi' },
+            { name: 'Abhogi Kanhra', thaat: 'Kafi' },
+            { name: 'Sur Malhar', thaat: 'Kafi' },
+            { name: 'Hanskinkani', thaat: 'Kafi' },
+            { name: 'Dhanashree', thaat: 'Kafi' },
+            { name: 'Bhim', thaat: 'Kafi' },
+            { name: 'Dhani', thaat: 'Kafi' },
+            { name: 'Sahana', thaat: 'Kafi' },
+            { name: 'Jayant Malhar', thaat: 'Kafi' },
+            { name: 'Megh Malhar', thaat: 'Kafi' },
+            { name: 'Miya Ki Sarang', thaat: 'Kafi' },
+            { name: 'Suha', thaat: 'Kafi' },
+            { name: 'Nayaki Kanhara', thaat: 'Kafi' },
+            { name: 'Ramdasi Malhar', thaat: 'Kafi' },
+            { name: 'Sugharai', thaat: 'Kafi' },
+            { name: 'Gauri', thaat: 'Kafi' },
+            { name: 'Barwa', thaat: 'Kafi' },
+            { name: 'Kafi Kanhra', thaat: 'Kafi' },
+            { name: 'शिवरंजनी', thaat: 'Kafi' },
+            // Asavari Thaat (7)
+            { name: 'आसावरी', thaat: 'Asavari' },
+            { name: 'जौनपुरी', thaat: 'Asavari' },
+            { name: 'अड़ाना', thaat: 'Asavari' },
+            { name: 'Darbari Kanhra', thaat: 'Asavari' },
+            { name: 'Deshi', thaat: 'Asavari' },
+            { name: 'Kaushi Kanhra', thaat: 'Asavari' },
+            { name: 'दरबारी', thaat: 'Asavari' },
+            // Bhairav Thaat (9)
+            { name: 'भैरव', thaat: 'Bhairav' },
+            { name: 'Kalingara', thaat: 'Bhairav' },
+            { name: 'Vibhas', thaat: 'Bhairav' },
+            { name: 'Ramkali', thaat: 'Bhairav' },
+            { name: 'Ahir Bhairav', thaat: 'Bhairav' },
+            { name: 'Bangal Bhairav', thaat: 'Bhairav' },
+            { name: 'Anand Bhairav', thaat: 'Bhairav' },
+            { name: 'Gunkali', thaat: 'Bhairav' },
+            { name: 'Shivmat Bhairav', thaat: 'Bhairav' },
+            // Bhairavi Thaat (6)
+            { name: 'भैरवी', thaat: 'Bhairavi' },
+            { name: 'मालकौश', thaat: 'Bhairavi' },
+            { name: 'Chandrakaush', thaat: 'Bhairavi' },
+            { name: 'Bhupal Todi', thaat: 'Bhairavi' },
+            { name: 'कोमल ऋषभ आसावरी', thaat: 'Bhairavi' },
+            { name: 'Bilaskhani Todi', thaat: 'Bhairavi' },
+            // Poorvi Thaat (8)
+            { name: 'पूर्वी', thaat: 'Poorvi' },
+            { name: 'श्री', thaat: 'Poorvi' },
+            { name: 'पूरिया धनाश्री', thaat: 'Poorvi' },
+            { name: 'Basant', thaat: 'Poorvi' },
+            { name: 'Paraj', thaat: 'Poorvi' },
+            { name: 'ललित', thaat: 'Poorvi' },
+            { name: 'Rewa', thaat: 'Poorvi' },
+            { name: 'Jotashree', thaat: 'Poorvi' },
+            // Marva Thaat (8)
+            { name: 'मारवा', thaat: 'Marva' },
+            { name: 'सोहनी', thaat: 'Marva' },
+            { name: 'पूरिया', thaat: 'Marva' },
+            { name: 'पूरिया कल्याण', thaat: 'Marva' },
+            { name: 'Jaut', thaat: 'Marva' },
+            { name: 'Bhankhar', thaat: 'Marva' },
+            { name: 'Lalita Gauri', thaat: 'Marva' },
+            { name: 'भाटिया', thaat: 'Marva' },
+            // Todi Thaat (4)
+            { name: 'तोड़ी', thaat: 'Todi' },
+            { name: 'मुल्तानी', thaat: 'Todi' },
+            { name: 'गुजरी तोड़ी', thaat: 'Todi' },
+            { name: 'मधुवंती', thaat: 'Todi' }
+        ];
+
+        // Build lookup from bandish sheet for bandish compositions
+        const bandishLookup = {};
+        if (appData.bandish && appData.bandish.data) {
+            appData.bandish.data.forEach(row => {
+                const raagName = cleanString(row['राग']);
+                if (raagName) {
+                    const vilambit = cleanString(row['विलंबित लय (धीमा टेम्पो) - आम बंदिश']);
+                    const drut = cleanString(row['द्रुत लय (तेज टेम्पो) - आम बंदिश']);
+                    let bandishInfo = '';
+                    if (vilambit) bandishInfo += `Vilambit: ${vilambit}`;
+                    if (drut) bandishInfo += `${bandishInfo ? ' | ' : ''}Drut: ${drut}`;
+                    if (bandishInfo) bandishLookup[raagName] = bandishInfo;
+                }
+            });
+        }
 
         // Build lookup from Raag sheet for extra details (time, jati, notes)
         const raagDetailsLookup = {};
@@ -83,77 +219,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     raagDetailsLookup[raagName.toLowerCase()] = {
                         time: cleanString(row['Time (Gayan/Badan Samay)']),
                         details: cleanString(row[' [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]']),
-                        swaras: cleanString(row['Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa']),
-                        thaat: currentThaat
+                        swaras: cleanString(row['Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa'])
                     };
                 }
             });
         }
 
-        // Use bandish sheet as PRIMARY source (contains all 112+ raags under 10 thaats)
-        if (appData.bandish && appData.bandish.data) {
-            const seen = new Set(); // avoid duplicates
-            appData.bandish.data.forEach(row => {
-                const thaatHindi = cleanString(row['थाट']);
-                const raagName = cleanString(row['राग']);
-                
-                // Skip non-raag entries
-                if (!raagName || raagName === 'Thaat' || raagName.includes('Reasearch') || raagName.includes('Note:')) return;
-                
-                // Get English thaat name
-                const thaatEng = thaatMap[thaatHindi] || thaatHindi || 'Uncategorized';
-                
-                // Dedup key
-                const dedupKey = raagName.toLowerCase() + '|' + thaatEng.toLowerCase();
-                if (seen.has(dedupKey)) return;
-                seen.add(dedupKey);
+        // Build raagsData from the authoritative directory
+        raagDirectory.forEach(entry => {
+            const lookup = raagDetailsLookup[entry.name.toLowerCase()] || {};
+            const bandish = bandishLookup[entry.name] || '';
 
-                // Get bandish info
-                const vilambit = cleanString(row['विलंबित लय (धीमा टेम्पो) - आम बंदिश']);
-                const drut = cleanString(row['द्रुत लय (तेज टेम्पो) - आम बंदिश']);
-                
-                // Look up additional info from Raag sheet
-                const lookup = raagDetailsLookup[raagName.toLowerCase()] || {};
-                
-                let details = lookup.details || '';
-                let bandishInfo = '';
-                if (vilambit) bandishInfo += `Vilambit: ${vilambit}`;
-                if (drut) bandishInfo += `${bandishInfo ? ' | ' : ''}Drut: ${drut}`;
-                
-                raagsData.push({
-                    name: raagName,
-                    thaat: thaatEng,
-                    thaatSwaras: thaatSwaras[thaatEng] || '',
-                    time: lookup.time || '',
-                    details: details,
-                    bandish: bandishInfo,
-                    swaras: lookup.swaras || ''
-                });
+            raagsData.push({
+                name: entry.name,
+                thaat: entry.thaat,
+                thaatSwaras: thaatSwaras[entry.thaat] || '',
+                time: lookup.time || '',
+                details: lookup.details || '',
+                bandish: bandish,
+                swaras: lookup.swaras || ''
             });
-        }
-
-        // Also add any raags from the Raag sheet that weren't in bandish
-        if (appData.Raag && appData.Raag.data) {
-            const existingNames = new Set(raagsData.map(r => r.name.toLowerCase()));
-            let currentThaat = '';
-            appData.Raag.data.forEach(row => {
-                const thaat = cleanString(row['Thaat (T)']);
-                if (thaat) currentThaat = thaat;
-                const raagName = cleanString(row['Raag (R) (13)']);
-                if (raagName && !raagName.includes('blue =') && !existingNames.has(raagName.toLowerCase())) {
-                    existingNames.add(raagName.toLowerCase());
-                    raagsData.push({
-                        name: raagName,
-                        thaat: currentThaat,
-                        thaatSwaras: thaatSwaras[currentThaat] || '',
-                        time: cleanString(row['Time (Gayan/Badan Samay)']),
-                        details: cleanString(row[' [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]']),
-                        bandish: '',
-                        swaras: cleanString(row['Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa'])
-                    });
-                }
-            });
-        }
+        });
     }
 
     // Thaat order and grouping
