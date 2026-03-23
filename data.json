@@ -4049,8 +4049,8 @@
       {
         "No.": "2",
         "Swara": "Re",
-        "Hindustani Swara-sthana": "Ekasruti Rishabha",
-        "Shruti Name (Carnatic)": "",
+        "Hindustani Swara-sthana": "",
+        "Shruti Name (Carnatic)": "Ekasruti Rishabha",
         "Frequency Ratio": "256/243",
         "Shruti Frequency (Hz) : Natural": "292.05",
         "Western Note : Standardization": "D4 (293.66 Hz)"
@@ -4067,8 +4067,8 @@
       {
         "No.": "4",
         "Swara": "Re",
-        "Hindustani Swara-sthana": "Trisruti Rishabha",
-        "Shruti Name (Carnatic)": "",
+        "Hindustani Swara-sthana": "",
+        "Shruti Name (Carnatic)": "Trisruti Rishabha",
         "Frequency Ratio": "10/9",
         "Shruti Frequency (Hz) : Natural": "307.98",
         "Western Note : Standardization": "D#4/Eb4 (311.13 Hz)"
@@ -4085,8 +4085,8 @@
       {
         "No.": "6",
         "Swara": "Ga",
-        "Hindustani Swara-sthana": "Sudha Gandhara",
-        "Shruti Name (Carnatic)": "",
+        "Hindustani Swara-sthana": "",
+        "Shruti Name (Carnatic)": "Sudha Gandhara",
         "Frequency Ratio": "32/27",
         "Shruti Frequency (Hz) : Natural": "328.09",
         "Western Note : Standardization": "E4 (329.63 Hz)"
@@ -4112,8 +4112,8 @@
       {
         "No.": "9",
         "Swara": "Ga",
-        "Hindustani Swara-sthana": "Chyuta Madhyama Gandhara",
-        "Shruti Name (Carnatic)": "",
+        "Hindustani Swara-sthana": "",
+        "Shruti Name (Carnatic)": "Chyuta Madhyama Gandhara",
         "Frequency Ratio": "81/64",
         "Shruti Frequency (Hz) : Natural": "350.33",
         "Western Note : Standardization": "F4 (349.23 Hz)"
@@ -4130,8 +4130,8 @@
       {
         "No.": "11",
         "Swara": "Ma",
-        "Hindustani Swara-sthana": "Tivra Sudha Madhyama",
-        "Shruti Name (Carnatic)": "",
+        "Hindustani Swara-sthana": "Tivra Ma (m)",
+        "Shruti Name (Carnatic)": "Tivra Sudha Madhyama",
         "Frequency Ratio": "27/20",
         "Shruti Frequency (Hz) : Natural": "374.2",
         "Western Note : Standardization": "F#4/Gb4 (369.99 Hz)"
@@ -4139,7 +4139,7 @@
       {
         "No.": "12",
         "Swara": "Ma",
-        "Hindustani Swara-sthana": "Tivra Ma (m)",
+        "Hindustani Swara-sthana": "",
         "Shruti Name (Carnatic)": "Prati Madhyama",
         "Frequency Ratio": "45/32",
         "Shruti Frequency (Hz) : Natural": "389.79",
@@ -4148,8 +4148,8 @@
       {
         "No.": "13",
         "Swara": "Ma",
-        "Hindustani Swara-sthana": "Chyuta Panchama Madhyama",
-        "Shruti Name (Carnatic)": "",
+        "Hindustani Swara-sthana": "",
+        "Shruti Name (Carnatic)": "Chyuta Panchama Madhyama",
         "Frequency Ratio": "729/512",
         "Shruti Frequency (Hz) : Natural": "394.06",
         "Western Note : Standardization": "G4 (392.00 Hz)"
@@ -4157,7 +4157,7 @@
       {
         "No.": "14",
         "Swara": "Pa",
-        "Hindustani Swara-sthana": "Pancham (P)",
+        "Hindustani Swara-sthana": "Shuddha Pa (P)",
         "Shruti Name (Carnatic)": "Panchama (Pa)",
         "Frequency Ratio": "3/2",
         "Shruti Frequency (Hz) : Natural": "415.77",
@@ -4166,8 +4166,8 @@
       {
         "No.": "15",
         "Swara": "Dha",
-        "Hindustani Swara-sthana": "Ekasruti Dhaivata",
-        "Shruti Name (Carnatic)": "",
+        "Hindustani Swara-sthana": "",
+        "Shruti Name (Carnatic)": "Ekasruti Dhaivata",
         "Frequency Ratio": "128/81",
         "Shruti Frequency (Hz) : Natural": "438.12",
         "Western Note : Standardization": "A4 (440.00 Hz)"
@@ -4184,8 +4184,8 @@
       {
         "No.": "17",
         "Swara": "Dha",
-        "Hindustani Swara-sthana": "Trisruti Dhaivata",
-        "Shruti Name (Carnatic)": "",
+        "Hindustani Swara-sthana": "",
+        "Shruti Name (Carnatic)": "Trisruti Dhaivata",
         "Frequency Ratio": "5/3",
         "Shruti Frequency (Hz) : Natural": "461.97",
         "Western Note : Standardization": "A#4/Bb4 (466.16 Hz)"
@@ -4202,8 +4202,8 @@
       {
         "No.": "19",
         "Swara": "Ni",
-        "Hindustani Swara-sthana": "Sudha Nishada",
-        "Shruti Name (Carnatic)": "",
+        "Hindustani Swara-sthana": "",
+        "Shruti Name (Carnatic)": "Sudha Nishada",
         "Frequency Ratio": "16/9",
         "Shruti Frequency (Hz) : Natural": "492.77",
         "Western Note : Standardization": "B4 (493.88 Hz)"
@@ -4229,8 +4229,8 @@
       {
         "No.": "22",
         "Swara": "Ni",
-        "Hindustani Swara-sthana": "Chyuta Shadja Nishada",
-        "Shruti Name (Carnatic)": "",
+        "Hindustani Swara-sthana": "",
+        "Shruti Name (Carnatic)": "Chyuta Shadja Nishada",
         "Frequency Ratio": "243/128",
         "Shruti Frequency (Hz) : Natural": "523.63",
         "Western Note : Standardization": "C5 (523.25 Hz)"
