@@ -1,0 +1,862 @@
+{
+  "sheets": [
+    "Raag",
+    "bandish",
+    "22 shrutis",
+    "recognizing shrutis",
+    "SMJI notations",
+    "Taal",
+    "Diff - style",
+    "Diff - bodies",
+    "sarang family"
+  ],
+  "Raag": {
+    "columns": [
+      "S.No. - T",
+      "Thaat (T)",
+      "Column1",
+      "S.No. - R",
+      "Raag (R) (13)",
+      "Time (Gayan/Badan Samay)",
+      "Year",
+      " [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]",
+      "Season",
+      "Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa"
+    ],
+    "data": [
+      {
+        "S.No. - T": "1",
+        "Thaat (T)": "Bilaval",
+        "Column1": "Sa Re Ga Ma Pa Dha Ni Ṡa",
+        "S.No. - R": "1",
+        "Raag (R) (13)": "Durga",
+        "Time (Gayan/Badan Samay)": "Madhya Ratri [9-12 pm]",
+        "Year": null,
+        " [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]": "[A|Ab: Ga Ni] [5 - 5] [B: Ma - Sb: Sa]",
+        "Season": null,
+        "Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa": null
+      },
+      {
+        "S.No. - T": null,
+        "Thaat (T)": null,
+        "Column1": null,
+        "S.No. - R": "2",
+        "Raag (R) (13)": "Sankara",
+        "Time (Gayan/Badan Samay)": "Madhya Ratri [9-12 pm]",
+        "Year": null,
+        " [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]": "[A: Re, Ma | Ab: Ma] [5 - 6] [B: Pa - Sb: Sa]",
+        "Season": null,
+        "Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa": "Ģąﹷ"
+      },
+      {
+        "S.No. - T": null,
+        "Thaat (T)": null,
+        "Column1": null,
+        "S.No. - R": "1",
+        "Raag (R) (13)": "Alhaiya Bilawal",
+        "Time (Gayan/Badan Samay)": "Morning",
+        "Year": null,
+        " [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]": null,
+        "Season": null,
+        "Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa": null
+      },
+      {
+        "S.No. - T": null,
+        "Thaat (T)": null,
+        "Column1": "blue = these are from internet",
+        "S.No. - R": "4",
+        "Raag (R) (13)": "Bilawal",
+        "Time (Gayan/Badan Samay)": "Morning",
+        "Year": null,
+        " [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]": null,
+        "Season": null,
+        "Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa": null
+      },
+      {
+        "S.No. - T": null,
+        "Thaat (T)": null,
+        "Column1": null,
+        "S.No. - R": "1",
+        "Raag (R) (13)": "Bihag",
+        "Time (Gayan/Badan Samay)": "Night",
+        "Year": null,
+        " [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]": null,
+        "Season": null,
+        "Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa": null
+      },
+      {
+        "S.No. - T": null,
+        "Thaat (T)": null,
+        "Column1": null,
+        "S.No. - R": "6",
+        "Raag (R) (13)": "Hamsadhwani",
+        "Time (Gayan/Badan Samay)": "Night",
+        "Year": null,
+        " [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]": null,
+        "Season": null,
+        "Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa": null
+      },
+      {
+        "S.No. - T": "2",
+        "Thaat (T)": "Kalyan",
+        "Column1": "Sa Re Ga Ḿa Pa Dha Ni Ṡa",
+        "S.No. - R": "1",
+        "Raag (R) (13)": "Yaman",
+        "Time (Gayan/Badan Samay)": "Ratri ka Pratham Prahar [7 - 9 pm]",
+        "Year": "1.0",
+        " [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]": "[A|Ab: ] [7 - 7] [B: Ga - Sb: Ni]",
+        "Season": null,
+        "Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa": null
+      },
+      {
+        "S.No. - T": null,
+        "Thaat (T)": null,
+        "Column1": null,
+        "S.No. - R": "1",
+        "Raag (R) (13)": "Bhupali",
+        "Time (Gayan/Badan Samay)": "Ratri ka Pratham Prahar [7 - 9 pm]",
+        "Year": "1.0",
+        " [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]": "[A|Ab: Ḿa, Ni] [5 - 5] [B: Ga - Sb: Dha]",
+        "Season": null,
+        "Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa": "Gạ"
+      },
+      {
+        "S.No. - T": null,
+        "Thaat (T)": null,
+        "Column1": null,
+        "S.No. - R": null,
+        "Raag (R) (13)": "Maru Bihag",
+        "Time (Gayan/Badan Samay)": "Evening",
+        "Year": null,
+        " [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]": null,
+        "Season": null,
+        "Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa": null
+      },
+      {
+        "S.No. - T": null,
+        "Thaat (T)": null,
+        "Column1": null,
+        "S.No. - R": null,
+        "Raag (R) (13)": "Shudh Sarang",
+        "Time (Gayan/Badan Samay)": "Afternoon",
+        "Year": null,
+        " [A|Ab: Varjit] - [Jati] - [B: Badi -Sb: Sambadi] [Similarity with raag]": null,
+        "Season": null,
+        "Sa Ṟe Re Ga Ma Ḿa Pa Dẖa Dha Ṉi Ni Ṡa": null
+      }
+    ]
+  },
+  "bandish": {
+    "columns": [
+      "S No Raag",
+      "S No Thaat",
+      "थाट",
+      "राग",
+      "विलंबित लय (धीमा टेम्पो) - आम बंदिश",
+      "द्रुत लय (तेज टेम्पो) - आम बंदिश",
+      "1st",
+      "2nd",
+      "3rd",
+      "4th ",
+      "5th",
+      "6th",
+      "7th",
+      "8th",
+      "Unnamed: 14",
+      "Unnamed: 15"
+    ],
+    "data": [
+      {
+        "S No Raag": "1.0",
+        "S No Thaat": "1",
+        "थाट": "बिलावल",
+        "राग": "बिलावल",
+        "विलंबित लय (धीमा टेम्पो) - आम बंदिश": "\"दरस बिन\"",
+        "द्रुत लय (तेज टेम्पो) - आम बंदिश": "\"रब सो नेह लगा\"",
+        "1st": null,
+        "2nd": null,
+        "3rd": null,
+        "4th ": null,
+        "5th": null,
+        "6th": null,
+        "7th": null,
+        "8th": null,
+        "Unnamed: 14": null,
+        "Unnamed: 15": "Sa Re Ga Ma Pa Dha Ni Ṡa"
+      },
+      {
+        "S No Raag": "2.0",
+        "S No Thaat": "2",
+        "थाट": "बिलावल",
+        "राग": "अल्हैया बिलावल",
+        "विलंबित लय (धीमा टेम्पो) - आम बंदिश": "\"कहाँ गयो\"",
+        "द्रुत लय (तेज टेम्पो) - आम बंदिश": "\"जा रे जा रे जा\"",
+        "1st": "1.0",
+        "2nd": null,
+        "3rd": null,
+        "4th ": null,
+        "5th": null,
+        "6th": null,
+        "7th": null,
+        "8th": null,
+        "Unnamed: 14": null,
+        "Unnamed: 15": null
+      },
+      {
+        "S No Raag": "3.0",
+        "S No Thaat": "3",
+        "थाट": "बिलावल",
+        "राग": "बिहाग",
+        "विलंबित लय (धीमा टेम्पो) - आम बंदिश": "\"रैन अंधेरी डर पावे\"",
+        "द्रुत लय (तेज टेम्पो) - आम बंदिश": "\"अब तो रट लगी\"",
+        "1st": "2.0",
+        "2nd": null,
+        "3rd": null,
+        "4th ": null,
+        "5th": null,
+        "6th": null,
+        "7th": null,
+        "8th": null,
+        "Unnamed: 14": null,
+        "Unnamed: 15": null
+      },
+      {
+        "S No Raag": "4.0",
+        "S No Thaat": "4",
+        "थाट": "बिलावल",
+        "राग": "दुर्गा",
+        "विलंबित लय (धीमा टेम्पो) - आम बंदिश": "\"बिता सारी रैन\"",
+        "द्रुत लय (तेज टेम्पो) - आम बंदिश": "\"सौदा-मनी कड़ा-कड़ा के दमके\"",
+        "1st": null,
+        "2nd": "1.0",
+        "3rd": null,
+        "4th ": null,
+        "5th": null,
+        "6th": null,
+        "7th": null,
+        "8th": null,
+        "Unnamed: 14": null,
+        "Unnamed: 15": null
+      },
+      {
+        "S No Raag": "5.0",
+        "S No Thaat": "5",
+        "थाट": "बिलावल",
+        "राग": "शंकरा",
+        "विलंबित लय (धीमा टेम्पो) - आम बंदिश": "\"आयो री शुभ दिन आज\"",
+        "द्रुत लय (तेज टेम्पो) - आम बंदिश": "\"कंगनवा तोरे\"",
+        "1st": null,
+        "2nd": null,
+        "3rd": null,
+        "4th ": "1.0",
+        "5th": null,
+        "6th": null,
+        "7th": null,
+        "8th": null,
+        "Unnamed: 14": null,
+        "Unnamed: 15": null
+      },
+      {
+        "S No Raag": "6.0",
+        "S No Thaat": "6",
+        "थाट": "बिलावल",
+        "राग": "Deshkar",
+        "विलंबित लय (धीमा टेम्पो) - आम बंदिश": null,
+        "द्रुत लय (तेज टेम्पो) - आम बंदिश": null,
+        "1st": null,
+        "2nd": null,
+        "3rd": null,
+        "4th ": "2.0",
+        "5th": null,
+        "6th": null,
+        "7th": null,
+        "8th": null,
+        "Unnamed: 14": null,
+        "Unnamed: 15": null
+      },
+      {
+        "S No Raag": "7.0",
+        "S No Thaat": "7",
+        "थाट": "बिलावल",
+        "राग": "Maluha Kedar",
+        "विलंबित लय (धीमा टेम्पो) - आम बंदिश": null,
+        "द्रुत लय (तेज टेम्पो) - आम बंदिश": null,
+        "1st": null,
+        "2nd": null,
+        "3rd": null,
+        "4th ": null,
+        "5th": null,
+        "6th": null,
+        "7th": "1.0",
+        "8th": null,
+        "Unnamed: 14": null,
+        "Unnamed: 15": null
+      },
+      {
+        "S No Raag": "8.0",
+        "S No Thaat": "8",
+        "थाट": "बिलावल",
+        "राग": "हंसध्वनि",
+        "विलंबित लय (धीमा टेम्पो) - आम बंदिश": "\"जाने दे रसिया\"",
+        "द्रुत लय (तेज टेम्पो) - आम बंदिश": "\"लागी लगन प्रभु के दरस\"",
+        "1st": null,
+        "2nd": null,
+        "3rd": null,
+        "4th ": null,
+        "5th": null,
+        "6th": null,
+        "7th": "2.0",
+        "8th": null,
+        "Unnamed: 14": null,
+        "Unnamed: 15": null
+      },
+      {
+        "S No Raag": "9.0",
+        "S No Thaat": "9",
+        "थाट": "बिलावल",
+        "राग": "Jaldhar Kedar",
+        "विलंबित लय (धीमा टेम्पो) - आम बंदिश": null,
+        "द्रुत लय (तेज टेम्पो) - आम बंदिश": null,
+        "1st": null,
+        "2nd": null,
+        "3rd": null,
+        "4th ": null,
+        "5th": null,
+        "6th": null,
+        "7th": "3.0",
+        "8th": null,
+        "Unnamed: 14": null,
+        "Unnamed: 15": null
+      },
+      {
+        "S No Raag": "10.0",
+        "S No Thaat": "10",
+        "थाट": "बिलावल",
+        "राग": "Sarparada",
+        "विलंबित लय (धीमा टेम्पो) - आम बंदिश": null,
+        "द्रुत लय (तेज टेम्पो) - आम बंदिश": null,
+        "1st": null,
+        "2nd": null,
+        "3rd": null,
+        "4th ": null,
+        "5th": null,
+        "6th": null,
+        "7th": "4.0",
+        "8th": null,
+        "Unnamed: 14": null,
+        "Unnamed: 15": null
+      }
+    ]
+  },
+  "22 shrutis": {
+    "columns": [
+      "No.",
+      "Swara",
+      "Hindustani Swara-sthana",
+      "Shruti Name (Carnatic)",
+      "Frequency Ratio",
+      "Shruti Frequency (Hz) : Natural",
+      "Western Note : Standardization"
+    ],
+    "data": [
+      {
+        "No.": "1",
+        "Swara": "Sa",
+        "Hindustani Swara-sthana": "Shuddha Sa (S)",
+        "Shruti Name (Carnatic)": "Shadja (Sa)",
+        "Frequency Ratio": "2025-01-01 00:00:00",
+        "Shruti Frequency (Hz) : Natural": "277.18",
+        "Western Note : Standardization": "C#4 (277.18 Hz)"
+      },
+      {
+        "No.": "2",
+        "Swara": "Re",
+        "Hindustani Swara-sthana": null,
+        "Shruti Name (Carnatic)": "Ekasruti Rishabha",
+        "Frequency Ratio": "256/243",
+        "Shruti Frequency (Hz) : Natural": "292.05",
+        "Western Note : Standardization": "D4 (293.66 Hz)"
+      },
+      {
+        "No.": "3",
+        "Swara": "Re",
+        "Hindustani Swara-sthana": "Komal Re (r)",
+        "Shruti Name (Carnatic)": "Dvisruti Rishabha",
+        "Frequency Ratio": "16/15",
+        "Shruti Frequency (Hz) : Natural": "295.66",
+        "Western Note : Standardization": "D4 (293.66 Hz)"
+      },
+      {
+        "No.": "4",
+        "Swara": "Re",
+        "Hindustani Swara-sthana": null,
+        "Shruti Name (Carnatic)": "Trisruti Rishabha",
+        "Frequency Ratio": "2025-09-10 00:00:00",
+        "Shruti Frequency (Hz) : Natural": "307.98",
+        "Western Note : Standardization": "D#4/Eb4 (311.13 Hz)"
+      },
+      {
+        "No.": "5",
+        "Swara": "Re",
+        "Hindustani Swara-sthana": "Shuddha Re (R)",
+        "Shruti Name (Carnatic)": "Chatusruti Rishabha",
+        "Frequency Ratio": "2025-08-09 00:00:00",
+        "Shruti Frequency (Hz) : Natural": "311.83",
+        "Western Note : Standardization": "D#4/Eb4 (311.13 Hz)"
+      },
+      {
+        "No.": "6",
+        "Swara": "Ga",
+        "Hindustani Swara-sthana": null,
+        "Shruti Name (Carnatic)": "Sudha Gandhara",
+        "Frequency Ratio": "32/27",
+        "Shruti Frequency (Hz) : Natural": "328.09",
+        "Western Note : Standardization": "E4 (329.63 Hz)"
+      },
+      {
+        "No.": "7",
+        "Swara": "Ga",
+        "Hindustani Swara-sthana": "Komal Ga (g)",
+        "Shruti Name (Carnatic)": "Sadharana Gandhara",
+        "Frequency Ratio": "2025-05-06 00:00:00",
+        "Shruti Frequency (Hz) : Natural": "332.62",
+        "Western Note : Standardization": "E4 (329.63 Hz)"
+      },
+      {
+        "No.": "8",
+        "Swara": "Ga",
+        "Hindustani Swara-sthana": "Shuddha Ga (G)",
+        "Shruti Name (Carnatic)": "Antara Gandhara",
+        "Frequency Ratio": "2025-04-05 00:00:00",
+        "Shruti Frequency (Hz) : Natural": "346.48",
+        "Western Note : Standardization": "F4 (349.23 Hz)"
+      },
+      {
+        "No.": "9",
+        "Swara": "Ga",
+        "Hindustani Swara-sthana": null,
+        "Shruti Name (Carnatic)": "Chyuta Madhyama Gandhara",
+        "Frequency Ratio": "81/64",
+        "Shruti Frequency (Hz) : Natural": "350.33",
+        "Western Note : Standardization": "F4 (349.23 Hz)"
+      },
+      {
+        "No.": "10",
+        "Swara": "Ma",
+        "Hindustani Swara-sthana": "Shuddha Ma (M)",
+        "Shruti Name (Carnatic)": "Sudha Madhyama",
+        "Frequency Ratio": "2025-03-04 00:00:00",
+        "Shruti Frequency (Hz) : Natural": "369.57",
+        "Western Note : Standardization": "F#4/Gb4 (369.99 Hz)"
+      }
+    ]
+  },
+  "recognizing shrutis": {
+    "columns": [
+      "S No",
+      "Hindustani Swara-sthana",
+      "Swara",
+      "Ratio",
+      "Emotional Quality",
+      "How It Locks With Tanpura",
+      "Raga Usage"
+    ],
+    "data": [
+      {
+        "S No": "1. SA (1 shruti)",
+        "Hindustani Swara-sthana": "Shuddha Sa (S)",
+        "Swara": "Sa",
+        "Ratio": "2025-01-01 00:00:00",
+        "Emotional Quality": "Center, grounding, stillness",
+        "How It Locks With Tanpura": "The ONLY perfect lock; tanpura becomes completely calm and full",
+        "Raga Usage": "All ragas (root reference)"
+      },
+      {
+        "S No": "2. RE (4 shrutis)",
+        "Hindustani Swara-sthana": null,
+        "Swara": "Eka-shruti Re",
+        "Ratio": "256/243",
+        "Emotional Quality": "Austere, serious, “prarthana”",
+        "How It Locks With Tanpura": "First low anchor; very small step from Sa",
+        "Raga Usage": "Bhairav, Poorvi"
+      },
+      {
+        "S No": null,
+        "Hindustani Swara-sthana": "Komal Re (r)",
+        "Swara": "Dvi-shruti Re (Komal Re)",
+        "Ratio": "16/15",
+        "Emotional Quality": "Soft, sorrowful, inward",
+        "How It Locks With Tanpura": "Second lock, warm stop of beats",
+        "Raga Usage": "Bhairavi, Asavari, Kaafi"
+      },
+      {
+        "S No": null,
+        "Hindustani Swara-sthana": null,
+        "Swara": "Tri-shruti Re",
+        "Ratio": "2025-09-10 00:00:00",
+        "Emotional Quality": "Neutral, calm",
+        "How It Locks With Tanpura": "Third lock, light brightness",
+        "Raga Usage": "Carnatic, folk"
+      },
+      {
+        "S No": null,
+        "Hindustani Swara-sthana": "Shuddha Re (R)",
+        "Swara": "Chatur-shruti Re (Shuddha Re)",
+        "Ratio": "2025-08-09 00:00:00",
+        "Emotional Quality": "Confident, bright",
+        "How It Locks With Tanpura": "Strongest, open ringing",
+        "Raga Usage": "Yaman, Bilawal, Kalyan"
+      },
+      {
+        "S No": "3. GA (4 shrutis)",
+        "Hindustani Swara-sthana": null,
+        "Swara": "Sudha Ga",
+        "Ratio": "32/27",
+        "Emotional Quality": "Earthy, ancient, rustic",
+        "How It Locks With Tanpura": "Very low Ga; beats stop gently",
+        "Raga Usage": "Desi ragas, old dhrupad styles"
+      },
+      {
+        "S No": null,
+        "Hindustani Swara-sthana": "Komal Ga (g)",
+        "Swara": "Sadharana Ga (Komal Ga)",
+        "Ratio": "2025-05-06 00:00:00",
+        "Emotional Quality": "Melting, emotional, longing",
+        "How It Locks With Tanpura": "Strong warm lock; “pulls heart inward”",
+        "Raga Usage": "Kaafi, Asavari, Darbari, Bhairavi"
+      },
+      {
+        "S No": null,
+        "Hindustani Swara-sthana": "Shuddha Ga (G)",
+        "Swara": "Antara Ga (Shuddha Ga)",
+        "Ratio": "2025-04-05 00:00:00",
+        "Emotional Quality": "Pure, bright, devotional",
+        "How It Locks With Tanpura": "Very clear, bell-like lock; tanpura becomes open",
+        "Raga Usage": "Yaman, Bilawal, Khamaj, Kalyan"
+      },
+      {
+        "S No": null,
+        "Hindustani Swara-sthana": null,
+        "Swara": "Chyuta Madhyam Ga",
+        "Ratio": "81/64",
+        "Emotional Quality": "Tense, sharpened tension",
+        "How It Locks With Tanpura": "Slightly sharper than Shuddha Ga; fast beating near 5/4",
+        "Raga Usage": "Special Carnatic phrases"
+      },
+      {
+        "S No": "4. MA (4 shrutis)",
+        "Hindustani Swara-sthana": "Shuddha Ma (M)",
+        "Swara": "Shuddha Ma",
+        "Ratio": "2025-03-04 00:00:00",
+        "Emotional Quality": "Peaceful, stabilizing",
+        "How It Locks With Tanpura": "Strong natural overtone (3rd harmonic)",
+        "Raga Usage": "Almost all ragas"
+      }
+    ]
+  },
+  "SMJI notations": {
+    "columns": [],
+    "data": []
+  },
+  "Taal": {
+    "columns": [
+      "Unnamed: 0",
+      "Unnamed: 1",
+      "Unnamed: 2"
+    ],
+    "data": [
+      {
+        "Unnamed: 0": null,
+        "Unnamed: 1": null,
+        "Unnamed: 2": null
+      },
+      {
+        "Unnamed: 0": null,
+        "Unnamed: 1": null,
+        "Unnamed: 2": null
+      },
+      {
+        "Unnamed: 0": null,
+        "Unnamed: 1": null,
+        "Unnamed: 2": null
+      },
+      {
+        "Unnamed: 0": null,
+        "Unnamed: 1": null,
+        "Unnamed: 2": null
+      },
+      {
+        "Unnamed: 0": null,
+        "Unnamed: 1": null,
+        "Unnamed: 2": null
+      },
+      {
+        "Unnamed: 0": null,
+        "Unnamed: 1": null,
+        "Unnamed: 2": null
+      },
+      {
+        "Unnamed: 0": null,
+        "Unnamed: 1": null,
+        "Unnamed: 2": null
+      },
+      {
+        "Unnamed: 0": null,
+        "Unnamed: 1": null,
+        "Unnamed: 2": null
+      },
+      {
+        "Unnamed: 0": null,
+        "Unnamed: 1": null,
+        "Unnamed: 2": null
+      },
+      {
+        "Unnamed: 0": null,
+        "Unnamed: 1": null,
+        "Unnamed: 2": null
+      }
+    ]
+  },
+  "Diff - style": {
+    "columns": [
+      "Feature",
+      "Hindustani Music (North India)",
+      "Carnatic Music (South India)",
+      "Western Music"
+    ],
+    "data": [
+      {
+        "Feature": "Core Principle",
+        "Hindustani Music (North India)": "Melody (monophony), with an emphasis on expressive exploration of ragas.",
+        "Carnatic Music (South India)": "Melody (monophony), more composition-based within a strict raga framework.",
+        "Western Music": "Harmony and counterpoint (polyphony), focusing on chords and vertical alignment of notes."
+      },
+      {
+        "Feature": "Notes/Pitch",
+        "Hindustani Music (North India)": "Uses 12 semi-tones, but also incorporates subtle microtones (shruti) and fluid note transitions (meend).",
+        "Carnatic Music (South India)": "Recognizes 22 microtones (shruti) per octave, used with highly codified ornamentation (gamaka).",
+        "Western Music": "Uses 12 fixed, equally tempered semitones per octave (e.g., in a piano)."
+      },
+      {
+        "Feature": "Structure",
+        "Hindustani Music (North India)": "Emphasizes extended, free-flowing improvisation (alap, jod, jhala) that gradually builds in tempo and intensity.",
+        "Carnatic Music (South India)": "Built around pre-composed pieces called kritis, where improvisation occurs within specific sections of the composition.",
+        "Western Music": "Primarily based on written compositions following a fixed form (e.g., sonatas, symphonies, concertos). Strict adherence to the score is expected."
+      },
+      {
+        "Feature": "Rhythm (Tala)",
+        "Hindustani Music (North India)": "Features a variety of talas (rhythmic cycles) with scope for intricate improvisation.",
+        "Carnatic Music (South India)": "Known for highly complex and mathematically precise rhythmic patterns and calculations.",
+        "Western Music": "Typically uses simpler, repetitive meters (e.g., 4/4, 3/4 time signatures)."
+      },
+      {
+        "Feature": "Origins/Influence",
+        "Hindustani Music (North India)": "Evolved from ancient Vedic traditions with significant Persian and Mughal influences.",
+        "Carnatic Music (South India)": "Retained a more indigenous, ancient Hindu musical tradition with less external influence.",
+        "Western Music": "Roots in European classical traditions, with secular origins and a focus on structure and precision."
+      },
+      {
+        "Feature": "Key Instruments",
+        "Hindustani Music (North India)": "Sitar, sarod, tabla, harmonium, bansuri (flute), sarangi.",
+        "Carnatic Music (South India)": "Veena, mridangam, violin (played seated), flute.",
+        "Western Music": "Piano, violin, cello, trumpet, guitar, drums, orchestra."
+      },
+      {
+        "Feature": null,
+        "Hindustani Music (North India)": null,
+        "Carnatic Music (South India)": null,
+        "Western Music": null
+      },
+      {
+        "Feature": "Note: The primary differences between Carnatic, Hindustani, and Western music lie in their approach to melody, harmony, rhythm, improvisation, and cultural influences.",
+        "Hindustani Music (North India)": null,
+        "Carnatic Music (South India)": null,
+        "Western Music": null
+      }
+    ]
+  },
+  "Diff - bodies": {
+    "columns": [
+      "Tier",
+      "Main Purpose",
+      "Feature",
+      "Description"
+    ],
+    "data": [
+      {
+        "Tier": "Tier 1: UGC-Accredited Universities",
+        "Main Purpose": "To provide formal academic education combining theory and practice, grant officially recognized degrees, and prepare students for academic, research, and government cultural careers.",
+        "Feature": "Accreditation",
+        "Description": "These are full-fledged universities recognized by the University Grants Commission (UGC), a statutory body of the Indian government. Their degrees (B.A., M.A., B.P.A., M.P.A., Ph.D.) are officially sanctioned for employment in government and education sectors across India."
+      },
+      {
+        "Tier": null,
+        "Main Purpose": null,
+        "Feature": "Education Style",
+        "Description": "They offer comprehensive, formal academic programs that combine practical training with theoretical knowledge, research, history, aesthetics, and pedagogy. The curriculum is structured and often interdisciplinary."
+      },
+      {
+        "Tier": null,
+        "Main Purpose": null,
+        "Feature": "Career Path",
+        "Description": "A degree from a Tier 1 institution provides the highest level of official qualification for academic careers, such as university professors, researchers, and government cultural officers. It also opens doors to general employment opportunities requiring a formal university degree."
+      },
+      {
+        "Tier": null,
+        "Main Purpose": null,
+        "Feature": "Campus Life",
+        "Description": "These are traditional university campuses with infrastructure, libraries, research facilities, and a diverse student body engaging in various academic and extracurricular activities."
+      },
+      {
+        "Tier": "Tier 2: Prominent Examination Boards",
+        "Main Purpose": "To offer performance-focused, practical training in music and arts through diplomas/certificates that enable teaching, professional performance, and local recognition within the arts community.",
+        "Feature": "Accreditation",
+        "Description": "These are private, non-profit organizations or cultural bodies. They do not grant university degrees directly but offer diplomas and certificates that are widely recognized and valued within the music and arts community. In many cases, their senior diplomas (like Sangeet Prabhakar) are considered equivalent to a B.A. or M.A. degree for the purpose of teaching in affiliated schools or certain government jobs."
+      },
+      {
+        "Tier": null,
+        "Main Purpose": null,
+        "Feature": "Education Style",
+        "Description": "The primary focus is often practical, performance-based training and a rigorous examination system with a vast network of affiliated local teaching centers. The learning experience is typically more practical and less theoretical than a university degree program."
+      },
+      {
+        "Tier": null,
+        "Main Purpose": null,
+        "Feature": "Career Path",
+        "Description": "Graduates often become music or dance teachers at private institutions, open their own local classes, or pursue professional performance careers. The \"equivalency\" of their diplomas to formal degrees can vary depending on the specific employer or state education board's rules."
+      },
+      {
+        "Tier": null,
+        "Main Purpose": null,
+        "Feature": "Structure",
+        "Description": "They operate through a decentralized network of many smaller, affiliated centers, rather than a single, large university campus."
+      },
+      {
+        "Tier": "Tier 3: Specialized & International Academies/Boards",
+        "Main Purpose": "To develop highly specialized skills in specific instruments, genres, or contemporary arts through internationally recognized graded examinations, mainly for professional performers and global opportunities.",
+        "Feature": "Accreditation",
+        "Description": "These include international bodies (like Trinity or ABRSM) or local specialized academies. Their primary focus is on standardized graded examinations that are globally recognized within the music industry and sometimes for higher education applications abroad (e.g., UCAS points for UK universities)."
+      },
+      {
+        "Tier": null,
+        "Main Purpose": null,
+        "Feature": "Education Style",
+        "Description": "They provide a structured grading system focused purely on musical or artistic skill development and performance repertoire within specific genres (often Western music, pop, or contemporary styles). The focus is highly practical and skill-based."
+      }
+    ]
+  },
+  "sarang family": {
+    "columns": [
+      "Raga Name",
+      "Aaroh (Ascending)",
+      "Avaroh (Descending)",
+      "Vadi",
+      "Samvadi",
+      "Pakad (Signature Phrase)",
+      "Time of Performance",
+      "Mood (Rasa)"
+    ],
+    "data": [
+      {
+        "Raga Name": "Sarang",
+        "Aaroh (Ascending)": "Sa Re Ma Pa Ni Sa’",
+        "Avaroh (Descending)": "Sa’ Ni Pa Ma Re Sa",
+        "Vadi": "Ma",
+        "Samvadi": "Sa",
+        "Pakad (Signature Phrase)": "Re Ma Pa, Pa Ni Sa’",
+        "Time of Performance": "Midday (12–3 PM)",
+        "Mood (Rasa)": "Calm, devotional"
+      },
+      {
+        "Raga Name": "Gaur Sarang",
+        "Aaroh (Ascending)": "Sa Re Ma Pa Ni Sa’",
+        "Avaroh (Descending)": "Sa’ Ni Pa Ma Re Sa",
+        "Vadi": "Ma",
+        "Samvadi": "Sa",
+        "Pakad (Signature Phrase)": "Re Ma Pa, Ma Pa Ni, Pa Ma Re Sa",
+        "Time of Performance": "Noon / early afternoon",
+        "Mood (Rasa)": "Devotional, bright"
+      },
+      {
+        "Raga Name": "Brindabani Sarang",
+        "Aaroh (Ascending)": "Sa Re Ma Pa Ni Sa’",
+        "Avaroh (Descending)": "Sa’ Ni Pa Ma Re Sa",
+        "Vadi": "Re",
+        "Samvadi": "Pa",
+        "Pakad (Signature Phrase)": "Re Ma Pa, Ni Pa Ma, Re Sa",
+        "Time of Performance": "Noon / afternoon",
+        "Mood (Rasa)": "Devotional, romantic"
+      },
+      {
+        "Raga Name": "Madhmad Sarang",
+        "Aaroh (Ascending)": "Sa Re Ma Pa Ni Sa’",
+        "Avaroh (Descending)": "Sa’ Ni Pa Ma Re Sa",
+        "Vadi": "Ma",
+        "Samvadi": "Re",
+        "Pakad (Signature Phrase)": "Re Ma Pa, Pa Ma Re, Ni Pa Ma",
+        "Time of Performance": "Noon",
+        "Mood (Rasa)": "Soft, pleasing"
+      },
+      {
+        "Raga Name": "Shuddha Sarang",
+        "Aaroh (Ascending)": "Sa Re Ma Pa Ni Sa’",
+        "Avaroh (Descending)": "Sa’ Ni Pa Ma Re Sa",
+        "Vadi": "Ma",
+        "Samvadi": "Sa",
+        "Pakad (Signature Phrase)": "Re Ma Pa, Pa Ni Sa’",
+        "Time of Performance": "Noon",
+        "Mood (Rasa)": "Peaceful, serene"
+      },
+      {
+        "Raga Name": "Desh Sarang",
+        "Aaroh (Ascending)": "Sa Re Ma Pa Ni Sa’",
+        "Avaroh (Descending)": "Sa’ Ni Pa Ma Re Sa",
+        "Vadi": "Pa",
+        "Samvadi": "Sa",
+        "Pakad (Signature Phrase)": "Re Ma Pa, Pa Ni Sa’, Ma Pa",
+        "Time of Performance": "Noon",
+        "Mood (Rasa)": "Joyful, lighthearted"
+      },
+      {
+        "Raga Name": "Tilak Sarang",
+        "Aaroh (Ascending)": "Sa Re Ma Pa Ni Sa’",
+        "Avaroh (Descending)": "Sa’ Ni Pa Ma Re Sa",
+        "Vadi": "Re",
+        "Samvadi": "Pa",
+        "Pakad (Signature Phrase)": "Re Ma Pa, Ma Pa Ni, Pa Ma Re Sa",
+        "Time of Performance": "Noon",
+        "Mood (Rasa)": "Majestic, devotional"
+      },
+      {
+        "Raga Name": "Basant Sarang",
+        "Aaroh (Ascending)": "Sa Re Ma Pa Ni Sa’",
+        "Avaroh (Descending)": "Sa’ Ni Pa Ma Re Sa",
+        "Vadi": "Ma",
+        "Samvadi": "Pa",
+        "Pakad (Signature Phrase)": "Re Ma Pa, Pa Ni Sa’, Ma Pa Ni",
+        "Time of Performance": "Midday / Spring",
+        "Mood (Rasa)": "Joyful, festive"
+      },
+      {
+        "Raga Name": null,
+        "Aaroh (Ascending)": null,
+        "Avaroh (Descending)": null,
+        "Vadi": null,
+        "Samvadi": null,
+        "Pakad (Signature Phrase)": null,
+        "Time of Performance": null,
+        "Mood (Rasa)": null
+      },
+      {
+        "Raga Name": "Note: Perfect! Here’s a detailed reference chart for the Sarang raga family, including Aaroh, Avaroh, Vadi, Samvadi, Pakad, Time, and Mood. I’ve included the most commonly performed variants:",
+        "Aaroh (Ascending)": null,
+        "Avaroh (Descending)": null,
+        "Vadi": null,
+        "Samvadi": null,
+        "Pakad (Signature Phrase)": null,
+        "Time of Performance": null,
+        "Mood (Rasa)": null
+      }
+    ]
+  }
+}

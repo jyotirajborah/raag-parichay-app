@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raag Parichay Explorer</title>
+    <meta name="description" content="Explore Indian Classical Music Raags, Shrutis, and Theory.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    
+    <div class="app-container glass-panel">
+        <nav class="sidebar glass-panel">
+            <div class="logo">
+                <h2>Raag Parichay</h2>
+            </div>
+            <ul class="nav-links">
+                <li data-tab="directory" class="active">Raag Directory</li>
+                <li data-tab="shrutis">Shruti Explorer</li>
+                <li data-tab="theory">Music Theory</li>
+            </ul>
+        </nav>
+        
+        <main class="content-area">
+            <!-- Raag Directory view -->
+            <section id="directory" class="view active-view">
+                <header>
+                    <h1>Raag Directory</h1>
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="Search Raags by name, thaat...">
+                    </div>
+                </header>
+                <div class="grid-container" id="raag-grid">
+                    <!-- Cards will be populated here -->
+                    <div class="loader">Loading...</div>
+                </div>
+            </section>
+            
+            <!-- Shruti Explorer view -->
+            <section id="shrutis" class="view">
+                <header>
+                    <h1>22 Shrutis Explorer</h1>
+                </header>
+                <div class="content-body" id="shruti-content">
+                    <div class="loader">Loading...</div>
+                </div>
+            </section>
+            
+            <!-- Music Theory view -->
+            <section id="theory" class="view">
+                <header>
+                    <h1>Comparative Music Styles</h1>
+                </header>
+                <div class="content-body" id="theory-content">
+                    <div class="loader">Loading...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
