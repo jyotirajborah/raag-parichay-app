@@ -410,24 +410,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderShrutis() {
         const container = document.getElementById('shruti-content');
-        if (!appData['recognizing shrutis'] || !appData['recognizing shrutis'].data) {
+        if (!appData['22 shrutis'] || !appData['22 shrutis'].data) {
             container.innerHTML = '<p>No Shruti data found.</p>';
             return;
         }
 
-        const data = appData['recognizing shrutis'].data;
-        let html = '<table class="data-table"><thead><tr><th>Swara</th><th>Quality</th><th>Tanpura Lock</th></tr></thead><tbody>';
+        const data = appData['22 shrutis'].data;
+        let html = '<table class="data-table"><thead><tr><th>No.</th><th>Swara</th><th>Hindustani</th><th>Carnatic</th><th>Ratio</th><th>Frequency (Hz)</th><th>Western Note</th></tr></thead><tbody>';
         
         data.forEach(row => {
+            const no = cleanString(row['No.']);
             const swara = cleanString(row['Swara']);
-            const quality = cleanString(row['Emotional Quality']);
-            const lock = cleanString(row['How It Locks With Tanpura']);
+            const hindustani = cleanString(row['Hindustani Swara-sthana']);
+            const carnatic = cleanString(row['Shruti Name (Carnatic)']);
+            const ratio = cleanString(row['Frequency Ratio']);
+            const freq = cleanString(row['Shruti Frequency (Hz) : Natural']);
+            const western = cleanString(row['Western Note : Standardization']);
             
-            if (swara || quality) {
+            if (no && swara) {
                 html += `<tr>
+                    <td><strong>${no}</strong></td>
                     <td><strong>${swara}</strong></td>
-                    <td>${quality}</td>
-                    <td>${lock}</td>
+                    <td>${hindustani}</td>
+                    <td>${carnatic}</td>
+                    <td>${ratio}</td>
+                    <td>${freq}</td>
+                    <td>${western}</td>
                 </tr>`;
             }
         });
