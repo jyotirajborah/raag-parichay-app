@@ -1,0 +1,37 @@
+16 (2): ['बिलावल', 'खमाज']
+18 (1): ['कल्याण']
+28 (1): ['काफी']
+4 (1): ['तोड़ी']
+6 (1): ['भैरवी']
+7 (1): ['आसावरी']
+8 (2): ['पूर्वी', 'मारवा']
+9 (1): ['भैरव']
+Bilawal (1): ['Patmanjari']
+Kafi (1): ['Patmanjari']
+Raags (1): ['Thaat']
+Unknown (1): ['Reasearch to be done - Raag according to 22 shruti']
+आसावरी (7): ['आसावरी', 'जौनपुरी', 'अड़ाना', 'Darbari Kanhra', 'Deshi', 'Kaushi Kanhra', 'दरबारी']
+कल्याण (18): ['कल्याण', 'यमन', 'भूपाली', 'हमीर', 'केदार', 'Kamod', 'Hindol', 'Gaur sarang', 'Chayanaut', 'Sudh Kalyan', 'मारु बिहाग', 'Nand', 'शुद्ध सारंग', 'Yamani Bilawal', 'Shyam Kalyan', 'Hemant', 'Jogkaunsh', 'Jaut Kalyan']
+काफी (28): ['काफी', 'वृंदावनी सारंग', 'भीमपलासी', 'बागेश्री', 'Pilu', 'पटदीप', 'बहार', 'Miya Malhar', 'Malgunji', 'चंद्रकौंस', 'Abhogi Kahra', 'Sur Malhar', 'Hanskinkani', 'Dhanashree', 'Bhim', 'Dhani', 'Sahana', 'Jayant Malhar', 'Megh Malhar', 'Miya Ki Sarang', 'Suha', 'Nayaki Kanhara', 'Ramdasi Malhar', 'Sugharai', 'Gauri', 'Barwa', 'Kafi Kanhra', 'शिवरंजनी']
+खमाज (16): ['खमाज', 'देश', 'तिलंग', 'तिलक कामोद', 'Jaijaiwanti', 'Gur Malhar', 'रागेश्री/Rageswari', 'चंपकली', 'जोग', 'Narayani', 'Madhumad Sarang', 'Gara', 'गोरख कल्याण', 'Jinjhoti', 'Khambawati', 'सरस्वती']
+तोड़ी (4): ['तोड़ी', 'मुल्तानी', 'गुजरी तोड़ी', 'मधुवंती']
+पूर्वी (8): ['पूर्वी', 'श्री', 'पूरिया धनाश्री', 'Basant', 'Paraj', 'ललित', 'Rewa', 'Jotashree']
+बिलावल (16): ['बिलावल', 'अल्हैया बिलावल', 'बिहाग', 'दुर्गा', 'शंकरा', 'Deshkar', 'Maluha Kedar', 'हंसध्वनि', 'Jaldhar Kedar', 'Sarparada', 'Gopika Basant', 'Devgiri Bilawal', 'Bhatiyar', 'Nat Bihag', 'Sukla Bilawal', 'Bihagara']
+भैरव (9): ['भैरव', 'Kalingara', 'Vibhas', 'Ramkali', 'Ahir bhairav', 'Bangal Bhairav', 'Anand Bhairav', 'Gunkali', 'Shivmat Bhairav']
+भैरवी (6): ['भैरवी', 'मालकौश', 'Chandrakaush', 'Bhupal Todi', 'कोमल ऋषभ आसावरी', 'Bilaskhani Todi']
+मारवा (8): ['मारवा', 'सोहनी', 'पूरिया', 'पूरिया कल्याण', 'Jaut', 'Bhankhar', 'Lalita Gauri', 'भाटिया']
+
+Total bandish raags: 134
+
+--- RAAG SHEET ---
+Asavari (4): ['Asavari', 'Jaunpuri', 'Adana', 'Darbari']
+Bhairavi (3): ['Malkosh', 'Bhairavi', 'Komal Rishav asavari']
+Bilaval (6): ['Durga', 'Sankara', 'Alhaiya Bilawal', 'Bilawal', 'Bihag', 'Hamsadhwani']
+Kafi (8): ['Vrindavani Sarang', 'Bhimpalasi', 'Bageshri', 'Patdeep', 'Kafi', 'Chandrakauns', 'Pilu', 'Shivranjani']
+Kalyan (5): ['Yaman', 'Bhupali', 'Maru Bihag', 'Shudh Sarang', 'Kedar']
+Khamaj (9): ['Desh', 'Tilang', 'Khamaj', 'Champakali', 'Gorakh Kalyan', 'Jog', 'Rageshree', 'Saraswati', 'Tilak Kamod']
+Marva (3): ['Puriya Kalyan', 'Bhatiyar', 'Sohini']
+Poorvi (4): ['Puriya Dhanashree', 'Shree', 'Laltit', 'Poorvi']
+Todi (3): ['Gujari Todi', 'Madhuvanti', 'Multni']
+
+Total raag sheet raags: 45
