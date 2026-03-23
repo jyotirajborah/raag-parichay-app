@@ -284,17 +284,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         sortedKeys.forEach((thaat, index) => {
-            const swaras = grouped[thaat][0].thaatSwaras || '';
             const color = thaatColors[thaat] || '#9d4edd';
             const card = document.createElement('div');
             card.className = 'thaat-card';
             card.style.setProperty('--thaat-color', color);
             card.style.animationDelay = `${index * 0.05}s`;
+            
+            // Create raag bubbles
+            let raagBubblesHTML = '<div class="raag-bubbles">';
+            grouped[thaat].forEach((raag, idx) => {
+                raagBubblesHTML += `<span class="raag-bubble" style="animation-delay: ${(index * 0.05) + (idx * 0.02)}s">${raag.name}</span>`;
+            });
+            raagBubblesHTML += '</div>';
+            
             card.innerHTML = `
                 <div class="thaat-card-number">${thaatOrder.indexOf(thaat) + 1 || '•'}</div>
-                <h3>${thaat}</h3>
-                <p class="thaat-card-swaras">${swaras}</p>
-                <span class="thaat-card-count">${grouped[thaat].length} Raags</span>
+                <h3>${thaat} <span class="thaat-raag-count">(${grouped[thaat].length})</span></h3>
+                ${raagBubblesHTML}
             `;
             card.addEventListener('click', () => showRaagPanel(thaat, grouped[thaat]));
             selector.appendChild(card);

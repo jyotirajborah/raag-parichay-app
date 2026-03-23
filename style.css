@@ -254,6 +254,38 @@ header h1 {
     color: var(--thaat-color, var(--text-secondary));
 }
 
+.thaat-raag-count {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+.raag-bubbles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.raag-bubble {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.4s ease both;
+}
+
+.raag-bubble:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
 /* Raag Panel */
 .raag-panel {
     padding-bottom: 40px;
