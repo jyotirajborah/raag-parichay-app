@@ -190,21 +190,107 @@ header h1 {
     padding-bottom: 40px;
 }
 
-/* Category Grouping Styles */
-.thaat-category {
-    margin-bottom: 40px;
+/* Thaat Selector Cards */
+.thaat-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.4s ease both;
 }
 
-.thaat-title {
+.thaat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--thaat-color, var(--primary-accent));
+}
+
+.thaat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    border-color: var(--thaat-color, var(--primary-accent));
+}
+
+.thaat-card-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--thaat-color, var(--primary-accent));
+    opacity: 0.3;
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    line-height: 1;
+}
+
+.thaat-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.thaat-card-swaras {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.thaat-card-count {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--thaat-color, var(--text-secondary));
+}
+
+/* Raag Panel */
+.raag-panel {
+    padding-bottom: 40px;
+}
+
+.raag-panel.hidden, .hidden {
+    display: none !important;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(-3px);
+}
+
+.raag-panel-info {
+    margin-bottom: 25px;
+}
+
+.raag-panel-info h2 {
     font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 20px;
-    color: var(--primary-accent);
     display: flex;
     align-items: center;
     gap: 10px;
-    border-bottom: 2px solid rgba(157, 78, 221, 0.2);
-    padding-bottom: 10px;
 }
 
 .count-badge {
@@ -225,6 +311,17 @@ header h1 {
     letter-spacing: 1px;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Card Styling */
 .card {
     background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
@@ -235,6 +332,7 @@ header h1 {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    animation: fadeInUp 0.4s ease both;
 }
 
 .card:hover {

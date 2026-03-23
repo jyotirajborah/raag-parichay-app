@@ -31,14 +31,20 @@
             <!-- Raag Directory view -->
             <section id="directory" class="view active-view">
                 <header>
-                    <h1>Raag Directory</h1>
+                    <h1 id="directory-title">Raag Directory</h1>
                     <div class="search-bar">
                         <input type="text" id="search-input" placeholder="Search Raags by name, thaat...">
                     </div>
                 </header>
-                <div id="raag-grid">
-                    <!-- Categories will be populated here -->
+                <!-- Thaat selector grid (shown first) -->
+                <div id="thaat-selector" class="grid-container">
                     <div class="loader">Loading...</div>
+                </div>
+                <!-- Raag cards for selected thaat (hidden initially) -->
+                <div id="raag-panel" class="raag-panel hidden">
+                    <button id="back-to-thaats" class="back-btn">← All Thaats</button>
+                    <div id="raag-panel-header"></div>
+                    <div id="raag-grid" class="grid-container"></div>
                 </div>
             </section>
             

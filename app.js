@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             appData = data;
             processData();
-            renderRaags(raagsData);
+            renderThaatSelector();
             renderShrutis();
             renderTheory();
         })
@@ -156,27 +156,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function renderRaags(raags) {
-        const container = document.getElementById('raag-grid');
-        container.innerHTML = '';
-        
-        if (raags.length === 0) {
-            container.innerHTML = '<p class="loader">No Raags found.</p>';
-            return;
-        }
+    // Thaat order and grouping
+    const thaatOrder = ['Bilaval', 'Kalyan', 'Khamaj', 'Bhairav', 'Poorvi', 'Marva', 'Kafi', 'Asavari', 'Bhairavi', 'Todi'];
 
-        // Group by thaat
+    // Thaat accent colors for visual distinction
+    const thaatColors = {
+        'Bilaval': '#4fc3f7',
+        'Kalyan': '#ffd54f',
+        'Khamaj': '#81c784',
+        'Bhairav': '#e57373',
+        'Poorvi': '#ce93d8',
+        'Marva': '#ffb74d',
+        'Kafi': '#aed581',
+        'Asavari': '#90a4ae',
+        'Bhairavi': '#f48fb1',
+        'Todi': '#80cbc4'
+    };
+
+    function groupByThaat(raags) {
         const grouped = {};
         raags.forEach(raag => {
-            const thaatKey = raag.thaat ? raag.thaat.trim() : 'Uncategorized';
-            if (!grouped[thaatKey]) {
-                grouped[thaatKey] = [];
-            }
-            grouped[thaatKey].push(raag);
+            const key = raag.thaat ? raag.thaat.trim() : 'Uncategorized';
+            if (!grouped[key]) grouped[key] = [];
+            grouped[key].push(raag);
         });
+        return grouped;
+    }
 
-        // Define a preferred thaat order (the standard 10 thaats)
-        const thaatOrder = ['Bilaval', 'Kalyan', 'Khamaj', 'Bhairav', 'Poorvi', 'Marva', 'Kafi', 'Asavari', 'Bhairavi', 'Todi'];
+    function renderThaatSelector() {
+        const selector = document.getElementById('thaat-selector');
+        const grouped = groupByThaat(raagsData);
+        selector.innerHTML = '';
+
         const sortedKeys = Object.keys(grouped).sort((a, b) => {
             const ia = thaatOrder.indexOf(a);
             const ib = thaatOrder.indexOf(b);
@@ -186,44 +197,129 @@ document.addEventListener('DOMContentLoaded', () => {
             return ia - ib;
         });
 
-        sortedKeys.forEach(thaat => {
-            const categoryDiv = document.createElement('div');
-            categoryDiv.className = 'thaat-category';
-            
-            // Get thaat swaras from first raag in the group
+        sortedKeys.forEach((thaat, index) => {
             const swaras = grouped[thaat][0].thaatSwaras || '';
-            const swarasHtml = swaras ? `<span class="thaat-swaras">${swaras}</span>` : '';
-            
-            const titleHtml = `<h2 class="thaat-title">${thaat === 'Uncategorized' ? 'Other Raags' : thaat + ' Thaat'} <span class="count-badge">${grouped[thaat].length}</span>${swarasHtml}</h2>`;
-            
-            let gridHtml = '<div class="grid-container">';
-            
-            grouped[thaat].forEach(raag => {
-                let cardHtml = `<div class="card">
-                    <h3>${raag.name}</h3>`;
-                if (raag.time) cardHtml += `<p><strong>🕐 Time:</strong> ${raag.time}</p>`;
-                if (raag.details) cardHtml += `<p><strong>📋 Info:</strong> ${raag.details}</p>`;
-                if (raag.bandish) cardHtml += `<p><strong>🎵 Bandish:</strong> ${raag.bandish}</p>`;
-                if (raag.swaras) cardHtml += `<p><strong>🎶 Swaras:</strong> ${raag.swaras}</p>`;
-                cardHtml += `</div>`;
-                gridHtml += cardHtml;
-            });
-            
-            gridHtml += '</div>';
-            
-            categoryDiv.innerHTML = titleHtml + gridHtml;
-            container.appendChild(categoryDiv);
+            const color = thaatColors[thaat] || '#9d4edd';
+            const card = document.createElement('div');
+            card.className = 'thaat-card';
+            card.style.setProperty('--thaat-color', color);
+            card.style.animationDelay = `${index * 0.05}s`;
+            card.innerHTML = `
+                <div class="thaat-card-number">${thaatOrder.indexOf(thaat) + 1 || '•'}</div>
+                <h3>${thaat}</h3>
+                <p class="thaat-card-swaras">${swaras}</p>
+                <span class="thaat-card-count">${grouped[thaat].length} Raags</span>
+            `;
+            card.addEventListener('click', () => showRaagPanel(thaat, grouped[thaat]));
+            selector.appendChild(card);
         });
     }
 
+    function showRaagPanel(thaat, raags) {
+        const selector = document.getElementById('thaat-selector');
+        const panel = document.getElementById('raag-panel');
+        const header = document.getElementById('raag-panel-header');
+        const grid = document.getElementById('raag-grid');
+        const title = document.getElementById('directory-title');
+        const color = thaatColors[thaat] || '#9d4edd';
+
+        // Update header title
+        title.textContent = thaat + ' Thaat';
+
+        // Hide selector, show panel
+        selector.classList.add('hidden');
+        panel.classList.remove('hidden');
+
+        // Build header
+        const swaras = raags[0].thaatSwaras || '';
+        header.innerHTML = `
+            <div class="raag-panel-info" style="border-left: 3px solid ${color}; padding-left: 15px;">
+                <h2 style="color: ${color};">${thaat} Thaat <span class="count-badge">${raags.length}</span></h2>
+                ${swaras ? `<p class="thaat-swaras">${swaras}</p>` : ''}
+            </div>
+        `;
+
+        // Build raag cards
+        grid.innerHTML = '';
+        raags.forEach((raag, i) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.style.animationDelay = `${i * 0.03}s`;
+            card.style.borderTop = `2px solid ${color}`;
+            
+            let html = `<h3>${raag.name}</h3>`;
+            if (raag.time) html += `<p><strong>🕐 Time:</strong> ${raag.time}</p>`;
+            if (raag.details) html += `<p><strong>📋 Info:</strong> ${raag.details}</p>`;
+            if (raag.bandish) html += `<p><strong>🎵 Bandish:</strong> ${raag.bandish}</p>`;
+            if (raag.swaras) html += `<p><strong>🎶 Swaras:</strong> ${raag.swaras}</p>`;
+            
+            card.innerHTML = html;
+            grid.appendChild(card);
+        });
+    }
+
+    function showThaatSelector() {
+        const selector = document.getElementById('thaat-selector');
+        const panel = document.getElementById('raag-panel');
+        const title = document.getElementById('directory-title');
+        
+        title.textContent = 'Raag Directory';
+        panel.classList.add('hidden');
+        selector.classList.remove('hidden');
+        searchInput.value = '';
+    }
+
+    function showSearchResults(raags) {
+        const selector = document.getElementById('thaat-selector');
+        const panel = document.getElementById('raag-panel');
+        const header = document.getElementById('raag-panel-header');
+        const grid = document.getElementById('raag-grid');
+        const title = document.getElementById('directory-title');
+
+        title.textContent = 'Search Results';
+        selector.classList.add('hidden');
+        panel.classList.remove('hidden');
+
+        header.innerHTML = `<div class="raag-panel-info"><h2>Found ${raags.length} Raag${raags.length !== 1 ? 's' : ''}</h2></div>`;
+
+        grid.innerHTML = '';
+        if (raags.length === 0) {
+            grid.innerHTML = '<p class="loader">No Raags found.</p>';
+            return;
+        }
+        raags.forEach((raag, i) => {
+            const color = thaatColors[raag.thaat] || '#9d4edd';
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.style.animationDelay = `${i * 0.03}s`;
+            card.style.borderTop = `2px solid ${color}`;
+            
+            let html = `<h3>${raag.name}</h3>`;
+            html += `<div><span class="tag" style="background: ${color}22; color: ${color};">${raag.thaat} Thaat</span></div>`;
+            if (raag.time) html += `<p><strong>🕐 Time:</strong> ${raag.time}</p>`;
+            if (raag.details) html += `<p><strong>📋 Info:</strong> ${raag.details}</p>`;
+            if (raag.bandish) html += `<p><strong>🎵 Bandish:</strong> ${raag.bandish}</p>`;
+            
+            card.innerHTML = html;
+            grid.appendChild(card);
+        });
+    }
+
+    // Back button handler
+    document.getElementById('back-to-thaats').addEventListener('click', showThaatSelector);
+
     // Search functionality
     searchInput.addEventListener('input', (e) => {
-        const term = e.target.value.toLowerCase();
+        const term = e.target.value.toLowerCase().trim();
+        if (!term) {
+            showThaatSelector();
+            return;
+        }
         const filtered = raagsData.filter(r => 
             r.name.toLowerCase().includes(term) || 
             (r.thaat && r.thaat.toLowerCase().includes(term))
         );
-        renderRaags(filtered);
+        showSearchResults(filtered);
     });
 
     function renderShrutis() {
