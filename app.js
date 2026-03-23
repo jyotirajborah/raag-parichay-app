@@ -83,26 +83,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderRaags(raags) {
-        const grid = document.getElementById('raag-grid');
-        grid.innerHTML = '';
+        const container = document.getElementById('raag-grid');
+        container.innerHTML = '';
         
         if (raags.length === 0) {
-            grid.innerHTML = '<p class="loader">No Raags found.</p>';
+            container.innerHTML = '<p class="loader">No Raags found.</p>';
             return;
         }
 
+        // Group by thaat
+        const grouped = {};
         raags.forEach(raag => {
-            const card = document.createElement('div');
-            card.className = 'card';
+            const thaatKey = raag.thaat ? raag.thaat.trim() : 'Uncategorized';
+            if (!grouped[thaatKey]) {
+                grouped[thaatKey] = [];
+            }
+            grouped[thaatKey].push(raag);
+        });
+
+        // Sort thaat keys alphabetically
+        const thaatKeys = Object.keys(grouped).sort();
+
+        thaatKeys.forEach(thaat => {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.className = 'thaat-category';
             
-            let html = `<h3>${raag.name}</h3>`;
-            if (raag.thaat) html += `<div><span class="tag">${raag.thaat} Thaat</span></div>`;
-            if (raag.time) html += `<p><strong>Time:</strong> ${raag.time}</p>`;
-            if (raag.details) html += `<p><strong>Info:</strong> ${raag.details}</p>`;
-            if (raag.notes) html += `<p><strong>Notes/Mood:</strong> ${raag.notes}</p>`;
+            const titleHtml = `<h2 class="thaat-title">${thaat === 'Uncategorized' ? 'Other Raags' : thaat + ' Thaat'} <span class="count-badge">${grouped[thaat].length}</span></h2>`;
             
-            card.innerHTML = html;
-            grid.appendChild(card);
+            let gridHtml = '<div class="grid-container">';
+            
+            grouped[thaat].forEach(raag => {
+                let cardHtml = `<div class="card">
+                    <h3>${raag.name}</h3>`;
+                // we skip the thaat tag since they are grouped under thaat now
+                if (raag.time) cardHtml += `<p><strong>Time:</strong> ${raag.time}</p>`;
+                if (raag.details) cardHtml += `<p><strong>Info:</strong> ${raag.details}</p>`;
+                if (raag.notes) cardHtml += `<p><strong>Notes/Mood:</strong> ${raag.notes}</p>`;
+                cardHtml += `</div>`;
+                gridHtml += cardHtml;
+            });
+            
+            gridHtml += '</div>';
+            
+            categoryDiv.innerHTML = titleHtml + gridHtml;
+            container.appendChild(categoryDiv);
         });
     }
 
