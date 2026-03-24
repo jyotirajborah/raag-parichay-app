@@ -304,10 +304,13 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.setProperty('--thaat-color', color);
             card.style.animationDelay = `${index * 0.05}s`;
             
-            // Create raag bubbles
+            // Create raag bubbles with bilingual names
             let raagBubblesHTML = '<div class="raag-bubbles">';
             grouped[thaat].forEach((raag, idx) => {
-                raagBubblesHTML += `<span class="raag-bubble" style="animation-delay: ${(index * 0.05) + (idx * 0.02)}s">${raag.name}</span>`;
+                const bilingualName = appData.raag_bilingual_names && appData.raag_bilingual_names[raag.name] 
+                    ? appData.raag_bilingual_names[raag.name] 
+                    : raag.name;
+                raagBubblesHTML += `<span class="raag-bubble" style="animation-delay: ${(index * 0.05) + (idx * 0.02)}s">${bilingualName}</span>`;
             });
             raagBubblesHTML += '</div>';
             
@@ -368,8 +371,11 @@ document.addEventListener('DOMContentLoaded', () => {
             raags.forEach((raag, i) => {
                 const details = raagDetails[raag.name];
                 if (details) {
+                    const bilingualName = appData.raag_bilingual_names && appData.raag_bilingual_names[raag.name] 
+                        ? appData.raag_bilingual_names[raag.name] 
+                        : raag.name;
                     tableHTML += `<tr style="animation-delay: ${i * 0.03}s">`;
-                    tableHTML += `<td><strong>${raag.name}</strong></td>`;
+                    tableHTML += `<td><strong>${bilingualName}</strong></td>`;
                     tableHTML += `<td>${details.aroha || '-'}</td>`;
                     tableHTML += `<td>${details.avaroha || '-'}</td>`;
                     tableHTML += `<td>${details.vadi_samvadi || '-'}</td>`;
