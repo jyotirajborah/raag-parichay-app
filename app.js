@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Thaat order and grouping
-    const thaatOrder = ['Bilaval', 'Kalyan', 'Khamaj', 'Bhairav', 'Poorvi', 'Marva', 'Kafi', 'Asavari', 'Bhairavi', 'Todi'];
+    const thaatOrder = ['Bilaval', 'Kalyan', 'Khamaj', 'Kafi', 'Asavari', 'Bhairav', 'Bhairavi', 'Poorvi', 'Marva', 'Todi'];
 
     // Thaat accent colors for visual distinction
     const thaatColors = {
