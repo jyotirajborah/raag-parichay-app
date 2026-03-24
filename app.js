@@ -245,6 +245,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Thaat order and grouping
     const thaatOrder = ['Bilaval', 'Kalyan', 'Khamaj', 'Kafi', 'Asavari', 'Bhairav', 'Bhairavi', 'Poorvi', 'Marva', 'Todi'];
 
+    // Thaat names in Hindi
+    const thaatNamesHindi = {
+        'Bilaval': 'बिलावल',
+        'Kalyan': 'कल्याण',
+        'Khamaj': 'खमाज',
+        'Kafi': 'काफी',
+        'Asavari': 'आसावरी',
+        'Bhairav': 'भैरव',
+        'Bhairavi': 'भैरवी',
+        'Poorvi': 'पूर्वी',
+        'Marva': 'मारवा',
+        'Todi': 'तोड़ी'
+    };
+
     // Thaat accent colors for visual distinction
     const thaatColors = {
         'Bilaval': '#4fc3f7',
@@ -297,9 +311,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             raagBubblesHTML += '</div>';
             
+            const thaatHindi = thaatNamesHindi[thaat] || '';
+            const thaatDisplay = thaatHindi ? `${thaat} / ${thaatHindi}` : thaat;
+            
             card.innerHTML = `
                 <div class="thaat-card-number">${thaatOrder.indexOf(thaat) + 1 || '•'}</div>
-                <h3>${thaat} <span class="thaat-raag-count">(${grouped[thaat].length})</span></h3>
+                <h3>${thaatDisplay} <span class="thaat-raag-count">(${grouped[thaat].length})</span></h3>
                 ${raagBubblesHTML}
             `;
             card.addEventListener('click', () => showRaagPanel(thaat, grouped[thaat]));
@@ -316,7 +333,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const color = thaatColors[thaat] || '#9d4edd';
 
         // Update header title
-        title.textContent = thaat + ' Thaat';
+        const thaatHindi = thaatNamesHindi[thaat] || '';
+        const thaatDisplay = thaatHindi ? `${thaat} / ${thaatHindi}` : thaat;
+        title.textContent = thaatDisplay + ' Thaat';
 
         // Hide selector, show panel
         selector.classList.add('hidden');
@@ -326,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const swaras = raags[0].thaatSwaras || '';
         header.innerHTML = `
             <div class="raag-panel-info" style="border-left: 3px solid ${color}; padding-left: 15px;">
-                <h2 style="color: ${color};">${thaat} Thaat <span class="count-badge">${raags.length}</span></h2>
+                <h2 style="color: ${color};">${thaatDisplay} Thaat <span class="count-badge">${raags.length}</span></h2>
                 ${swaras ? `<p class="thaat-swaras">${swaras}</p>` : ''}
             </div>
         `;
