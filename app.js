@@ -331,23 +331,57 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // Build raag cards
-        grid.innerHTML = '';
-        raags.forEach((raag, i) => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.style.animationDelay = `${i * 0.03}s`;
-            card.style.borderTop = `2px solid ${color}`;
+        // Check if detailed raag info exists
+        const raagDetails = appData.raag_details && appData.raag_details[thaat];
+        
+        if (raagDetails) {
+            // Build table with detailed information
+            let tableHTML = '<table class="data-table"><thead><tr>';
+            tableHTML += '<th>Raag Name</th>';
+            tableHTML += '<th>Aroha (Ascending)</th>';
+            tableHTML += '<th>Avaroha (Descending)</th>';
+            tableHTML += '<th>Vadi / Samvadi</th>';
+            tableHTML += '<th>Time</th>';
+            tableHTML += '<th>Mood (Rasa)</th>';
+            tableHTML += '<th>Key Notes</th>';
+            tableHTML += '</tr></thead><tbody>';
             
-            let html = `<h3>${raag.name}</h3>`;
-            if (raag.time) html += `<p><strong>🕐 Time:</strong> ${raag.time}</p>`;
-            if (raag.details) html += `<p><strong>📋 Info:</strong> ${raag.details}</p>`;
-            if (raag.bandish) html += `<p><strong>🎵 Bandish:</strong> ${raag.bandish}</p>`;
-            if (raag.swaras) html += `<p><strong>🎶 Swaras:</strong> ${raag.swaras}</p>`;
+            raags.forEach((raag, i) => {
+                const details = raagDetails[raag.name];
+                if (details) {
+                    tableHTML += `<tr style="animation-delay: ${i * 0.03}s">`;
+                    tableHTML += `<td><strong>${raag.name}</strong></td>`;
+                    tableHTML += `<td>${details.aroha || '-'}</td>`;
+                    tableHTML += `<td>${details.avaroha || '-'}</td>`;
+                    tableHTML += `<td>${details.vadi_samvadi || '-'}</td>`;
+                    tableHTML += `<td>${details.time || '-'}</td>`;
+                    tableHTML += `<td>${details.mood || '-'}</td>`;
+                    tableHTML += `<td>${details.key_notes || '-'}</td>`;
+                    tableHTML += '</tr>';
+                }
+            });
             
-            card.innerHTML = html;
-            grid.appendChild(card);
-        });
+            tableHTML += '</tbody></table>';
+            grid.innerHTML = tableHTML;
+        } else {
+            // Build raag cards (fallback for thaats without detailed info)
+            grid.innerHTML = '';
+            raags.forEach((raag, i) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.animationDelay = `${i * 0.03}s`;
+                card.style.borderTop = `2px solid ${color}`;
+                
+                let html = `<h3>${raag.name}</h3>`;
+                if (raag.time) html += `<p><strong>🕐 Time:</strong> ${raag.time}</p>`;
+                if (raag.details) html += `<p><strong>📋 Info:</strong> ${raag.details}</p>`;
+                if (raag.bandish) html += `<p><strong>🎵 Bandish:</strong> ${raag.bandish}</p>`;
+                if (raag.swaras) html += `<p><strong>🎶 Swaras:</strong> ${raag.swaras}</p>`;
+                
+                card.innerHTML = html;
+                grid.appendChild(card);
+            });
+        }
     }
 
     function showThaatSelector() {
