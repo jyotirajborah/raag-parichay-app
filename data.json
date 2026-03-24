@@ -6001,6 +6001,56 @@
         "mood": "Very serious",
         "key_notes": "Same as Darbari Kanhra"
       }
+    },
+    "Bhairavi": {
+      "भैरवी": {
+        "aroha": "S r g M P d n S",
+        "avaroha": "S n d P M g r S",
+        "vadi_samvadi": "M / S",
+        "time": "Morning (end)",
+        "mood": "Devotional, emotional",
+        "key_notes": "All 4 komal"
+      },
+      "मालकौश": {
+        "aroha": "S g M d n S",
+        "avaroha": "S n d M g S",
+        "vadi_samvadi": "M / S",
+        "time": "Night",
+        "mood": "Deep, meditative",
+        "key_notes": "No R, P"
+      },
+      "Chandrakaush": {
+        "aroha": "S g M D n S",
+        "avaroha": "S n D M g S",
+        "vadi_samvadi": "M / S",
+        "time": "Night",
+        "mood": "Romantic, calm",
+        "key_notes": "Shuddha Dha"
+      },
+      "Bhupal Todi": {
+        "aroha": "S r g P d S",
+        "avaroha": "S d P g r S",
+        "vadi_samvadi": "d / g",
+        "time": "Morning",
+        "mood": "Serious",
+        "key_notes": "No Ma, Ni"
+      },
+      "कोमल ऋषभ आसावरी": {
+        "aroha": "S r M P d S",
+        "avaroha": "S n d P M g r S",
+        "vadi_samvadi": "D / G",
+        "time": "Morning",
+        "mood": "Soft",
+        "key_notes": "Mix of Asavari + Bhairavi"
+      },
+      "Bilaskhani Todi": {
+        "aroha": "S r g M P d n S",
+        "avaroha": "S n d P M g r S",
+        "vadi_samvadi": "D / G",
+        "time": "Morning",
+        "mood": "Deep, emotional",
+        "key_notes": "Todi-ang + Bhairavi"
+      }
     }
   }
 }
