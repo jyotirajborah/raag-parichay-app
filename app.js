@@ -522,6 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Audio context for playing frequencies
         let audioContext = null;
         let playingOscillators = {}; // Track multiple playing oscillators by index
+        let baseSa = 240; // Default middle Sa frequency
         
         function initAudio() {
             if (!audioContext) {
@@ -561,10 +562,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return true; // Started
         }
         
-        // Complete 22 Shruti reference data across 3 octaves
-        // Base frequency for middle Sa = 240 Hz
-        const baseSa = 240;
-        
         // Template for 22 shrutis
         const shrutiTemplate = [
             { symbol: 'S', name: 'Shadja', ratio: '1/1', freqRatio: 1.0 },
@@ -590,49 +587,6 @@ document.addEventListener('DOMContentLoaded', () => {
             { symbol: 'N1', name: 'Shuddha Nishad', ratio: '15/8', freqRatio: 1.875 },
             { symbol: 'N2', name: 'Teevra Shuddha Nishad', ratio: '243/128', freqRatio: 1.898 }
         ];
-        
-        // Generate complete shruti data across 3 octaves
-        const shrutiData = [];
-        
-        // Lower Octave (Sa' to N2') - indices 1 to 22 with ' suffix
-        shrutiTemplate.forEach((shruti, i) => {
-            const octaveMultiplier = 0.5;
-            shrutiData.push({
-                index: i + 1,
-                symbol: shruti.symbol + "'",
-                name: shruti.name + ' (Lower)',
-                ratio: shruti.ratio,
-                freq: (baseSa * shruti.freqRatio * octaveMultiplier).toFixed(2),
-                octave: 'lower'
-            });
-        });
-        
-        // Middle Octave (Sa to N2) - indices 1 to 22
-        shrutiTemplate.forEach((shruti, i) => {
-            const octaveMultiplier = 1.0;
-            shrutiData.push({
-                index: i + 1,
-                symbol: shruti.symbol,
-                name: shruti.name,
-                ratio: shruti.ratio,
-                freq: (baseSa * shruti.freqRatio * octaveMultiplier).toFixed(2),
-                octave: 'middle'
-            });
-        });
-        
-        // Upper Octave (Ṡa to Ṅ2) - indices 1 to 22 with dot above
-        shrutiTemplate.forEach((shruti, i) => {
-            const octaveMultiplier = 2.0;
-            const upperSymbol = shruti.symbol.length === 1 ? 'Ṡ' : shruti.symbol[0] + '̇' + shruti.symbol.substring(1);
-            shrutiData.push({
-                index: i + 1,
-                symbol: upperSymbol,
-                name: shruti.name + ' (Upper)',
-                ratio: shruti.ratio,
-                freq: (baseSa * shruti.freqRatio * octaveMultiplier).toFixed(2),
-                octave: 'upper'
-            });
-        });
 
         // Calculate consonant partners (Ma +9, Pa +13)
         function getConsonantPartners(index) {
@@ -641,110 +595,193 @@ document.addEventListener('DOMContentLoaded', () => {
             return { ma: maPartner, pa: paPartner };
         }
         
-        const container = document.getElementById('shruti-visualizer-content');
-        
-        let html = `
-            <div class="shruti-visualizer-intro">
-                <h2>22 Shruti Spectrum - Interactive Explorer</h2>
-                <p>Explore the complete 22-shruti system across three octaves. <strong>Double-click</strong> any shruti to play it continuously (double-click again to stop). <strong>Hover</strong> over any shruti to see its consonant partners highlighted.</p>
-                <div class="consonance-legend">
-                    <div class="legend-item"><span class="legend-box source"></span> Selected Shruti</div>
-                    <div class="legend-item"><span class="legend-box ma"></span> Ma Partner (+9 shrutis)</div>
-                    <div class="legend-item"><span class="legend-box pa"></span> Pa Partner (+13 shrutis)</div>
-                </div>
-            </div>
-        `;
-        
-        // Render each octave horizontally
-        ['lower', 'middle', 'upper'].forEach(octave => {
-            const octaveShrutis = shrutiData.filter(s => s.octave === octave);
-            const octaveLabel = octave === 'lower' ? 'Lower Octave (Sa\')' : 
-                               octave === 'middle' ? 'Middle Octave (Sa) - Reference' : 
-                               'Upper Octave (Ṡa)';
+        function generateShrutiData(saFreq) {
+            const shrutiData = [];
             
-            html += `
-                <div class="octave-row">
-                    <div class="octave-row-label">${octaveLabel}</div>
-                    <div class="shruti-row-horizontal">
-            `;
-            
-            octaveShrutis.forEach(shruti => {
-                const partners = getConsonantPartners(shruti.index);
-                const uniqueId = `${shruti.octave}-${shruti.index}`;
-                
-                html += `
-                    <div class="shruti-cell" 
-                         data-id="${uniqueId}"
-                         data-index="${shruti.index}"
-                         data-octave="${shruti.octave}"
-                         data-freq="${shruti.freq}"
-                         data-ma="${partners.ma}"
-                         data-pa="${partners.pa}">
-                        <div class="shruti-symbol">${shruti.symbol}</div>
-                        <div class="shruti-name">${shruti.name}</div>
-                        <div class="shruti-freq">${shruti.freq} Hz</div>
-                        <div class="playing-indicator">♪</div>
-                    </div>
-                `;
+            // Lower Octave
+            shrutiTemplate.forEach((shruti, i) => {
+                shrutiData.push({
+                    index: i + 1,
+                    symbol: shruti.symbol + "'",
+                    name: shruti.name,
+                    ratio: shruti.ratio,
+                    freq: (saFreq * shruti.freqRatio * 0.5).toFixed(2),
+                    octave: 'lower'
+                });
             });
             
-            html += `
+            // Middle Octave
+            shrutiTemplate.forEach((shruti, i) => {
+                shrutiData.push({
+                    index: i + 1,
+                    symbol: shruti.symbol,
+                    name: shruti.name,
+                    ratio: shruti.ratio,
+                    freq: (saFreq * shruti.freqRatio).toFixed(2),
+                    octave: 'middle'
+                });
+            });
+            
+            // Upper Octave
+            shrutiTemplate.forEach((shruti, i) => {
+                const upperSymbol = shruti.symbol.length === 1 ? 'Ṡ' : shruti.symbol[0] + '̇' + shruti.symbol.substring(1);
+                shrutiData.push({
+                    index: i + 1,
+                    symbol: upperSymbol,
+                    name: shruti.name,
+                    ratio: shruti.ratio,
+                    freq: (saFreq * shruti.freqRatio * 2.0).toFixed(2),
+                    octave: 'upper'
+                });
+            });
+            
+            return shrutiData;
+        }
+        
+        function render() {
+            const shrutiData = generateShrutiData(baseSa);
+            const container = document.getElementById('shruti-visualizer-content');
+            
+            let html = `
+                <div class="shruti-visualizer-intro">
+                    <h2>22 Shruti Spectrum - Interactive Explorer</h2>
+                    <p>Explore the complete 22-shruti system across three octaves. <strong>Double-click</strong> any shruti to play it continuously (double-click again to stop). <strong>Hover</strong> over any shruti to see its consonant partners highlighted.</p>
+                    
+                    <div class="sa-frequency-control">
+                        <label for="sa-freq-input">Middle Sa Frequency (Hz):</label>
+                        <input type="number" id="sa-freq-input" value="${baseSa}" min="100" max="500" step="1">
+                        <button id="apply-sa-freq" class="apply-btn">Apply</button>
+                        <span class="preset-buttons">
+                            <button class="preset-btn" data-freq="220">220 Hz</button>
+                            <button class="preset-btn" data-freq="240">240 Hz</button>
+                            <button class="preset-btn" data-freq="261.63">261.63 Hz (C4)</button>
+                            <button class="preset-btn" data-freq="293.66">293.66 Hz (D4)</button>
+                        </span>
+                    </div>
+                    
+                    <div class="consonance-legend">
+                        <div class="legend-item"><span class="legend-box source"></span> Selected Shruti</div>
+                        <div class="legend-item"><span class="legend-box ma"></span> Ma Partner (+9)</div>
+                        <div class="legend-item"><span class="legend-box pa"></span> Pa Partner (+13)</div>
                     </div>
                 </div>
+                
+                <div class="shruti-grid-compact">
             `;
-        });
-        
-        container.innerHTML = html;
-        
-        // Add event handlers
-        document.querySelectorAll('.shruti-cell').forEach(cell => {
-            // Double-click to toggle continuous play
-            cell.addEventListener('dblclick', function() {
-                const freq = parseFloat(this.getAttribute('data-freq'));
-                const id = this.getAttribute('data-id');
-                const index = this.getAttribute('data-octave') + '-' + this.getAttribute('data-index');
+            
+            // Render all three octaves in one compact grid
+            ['lower', 'middle', 'upper'].forEach(octave => {
+                const octaveShrutis = shrutiData.filter(s => s.octave === octave);
                 
-                const isPlaying = toggleContinuousPlay(freq, index);
+                html += '<div class="shruti-row-compact">';
                 
-                if (isPlaying) {
-                    this.classList.add('playing');
-                } else {
-                    this.classList.remove('playing');
+                octaveShrutis.forEach(shruti => {
+                    const partners = getConsonantPartners(shruti.index);
+                    const uniqueId = `${shruti.octave}-${shruti.index}`;
+                    
+                    html += `
+                        <div class="shruti-cell-compact" 
+                             data-id="${uniqueId}"
+                             data-index="${shruti.index}"
+                             data-octave="${shruti.octave}"
+                             data-freq="${shruti.freq}"
+                             data-ma="${partners.ma}"
+                             data-pa="${partners.pa}">
+                            <div class="shruti-symbol">${shruti.symbol}</div>
+                            <div class="shruti-freq">${shruti.freq}</div>
+                            <div class="playing-indicator">♪</div>
+                        </div>
+                    `;
+                });
+                
+                html += '</div>';
+            });
+            
+            html += '</div>';
+            
+            container.innerHTML = html;
+            
+            // Add Sa frequency control handlers
+            document.getElementById('apply-sa-freq').addEventListener('click', () => {
+                const newSa = parseFloat(document.getElementById('sa-freq-input').value);
+                if (newSa >= 100 && newSa <= 500) {
+                    baseSa = newSa;
+                    // Stop all playing oscillators
+                    Object.keys(playingOscillators).forEach(key => {
+                        playingOscillators[key].gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.1);
+                        playingOscillators[key].oscillator.stop(audioContext.currentTime + 0.1);
+                    });
+                    playingOscillators = {};
+                    render();
                 }
             });
             
-            // Hover to show consonant partners
-            cell.addEventListener('mouseenter', function() {
-                const index = parseInt(this.getAttribute('data-index'));
-                const octave = this.getAttribute('data-octave');
-                const maPartner = parseInt(this.getAttribute('data-ma'));
-                const paPartner = parseInt(this.getAttribute('data-pa'));
-                
-                // Clear previous highlights
-                document.querySelectorAll('.shruti-cell').forEach(c => {
-                    c.classList.remove('source-highlight', 'ma-highlight', 'pa-highlight');
-                });
-                
-                // Highlight source
-                this.classList.add('source-highlight');
-                
-                // Highlight Ma and Pa partners in the same octave
-                document.querySelectorAll(`.shruti-cell[data-octave="${octave}"][data-index="${maPartner}"]`).forEach(c => {
-                    c.classList.add('ma-highlight');
-                });
-                
-                document.querySelectorAll(`.shruti-cell[data-octave="${octave}"][data-index="${paPartner}"]`).forEach(c => {
-                    c.classList.add('pa-highlight');
+            document.querySelectorAll('.preset-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const freq = parseFloat(this.getAttribute('data-freq'));
+                    baseSa = freq;
+                    document.getElementById('sa-freq-input').value = freq;
+                    // Stop all playing oscillators
+                    Object.keys(playingOscillators).forEach(key => {
+                        playingOscillators[key].gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.1);
+                        playingOscillators[key].oscillator.stop(audioContext.currentTime + 0.1);
+                    });
+                    playingOscillators = {};
+                    render();
                 });
             });
             
-            cell.addEventListener('mouseleave', function() {
-                // Remove highlights when mouse leaves
-                document.querySelectorAll('.shruti-cell').forEach(c => {
-                    c.classList.remove('source-highlight', 'ma-highlight', 'pa-highlight');
+            // Add event handlers for shruti cells
+            document.querySelectorAll('.shruti-cell-compact').forEach(cell => {
+                // Double-click to toggle continuous play
+                cell.addEventListener('dblclick', function() {
+                    const freq = parseFloat(this.getAttribute('data-freq'));
+                    const id = this.getAttribute('data-id');
+                    
+                    const isPlaying = toggleContinuousPlay(freq, id);
+                    
+                    if (isPlaying) {
+                        this.classList.add('playing');
+                    } else {
+                        this.classList.remove('playing');
+                    }
+                });
+                
+                // Hover to show consonant partners
+                cell.addEventListener('mouseenter', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const octave = this.getAttribute('data-octave');
+                    const maPartner = parseInt(this.getAttribute('data-ma'));
+                    const paPartner = parseInt(this.getAttribute('data-pa'));
+                    
+                    // Clear previous highlights
+                    document.querySelectorAll('.shruti-cell-compact').forEach(c => {
+                        c.classList.remove('source-highlight', 'ma-highlight', 'pa-highlight');
+                    });
+                    
+                    // Highlight source
+                    this.classList.add('source-highlight');
+                    
+                    // Highlight Ma and Pa partners in the same octave
+                    document.querySelectorAll(`.shruti-cell-compact[data-octave="${octave}"][data-index="${maPartner}"]`).forEach(c => {
+                        c.classList.add('ma-highlight');
+                    });
+                    
+                    document.querySelectorAll(`.shruti-cell-compact[data-octave="${octave}"][data-index="${paPartner}"]`).forEach(c => {
+                        c.classList.add('pa-highlight');
+                    });
+                });
+                
+                cell.addEventListener('mouseleave', function() {
+                    // Remove highlights when mouse leaves
+                    document.querySelectorAll('.shruti-cell-compact').forEach(c => {
+                        c.classList.remove('source-highlight', 'ma-highlight', 'pa-highlight');
+                    });
                 });
             });
-        });
+        }
+        
+        render();
     }
 
     function renderDNAGrid() {

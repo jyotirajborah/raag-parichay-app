@@ -628,48 +628,115 @@ header h1 {
     }
 }
 
-/* Shruti Visualizer Styles - Horizontal Layout */
+/* Shruti Visualizer Styles - Compact Horizontal Layout */
 .shruti-visualizer-intro {
     background: linear-gradient(135deg, rgba(157, 78, 221, 0.15), rgba(255, 158, 0, 0.1));
     border: 1px solid var(--glass-border);
     border-radius: 16px;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 25px;
+    margin-bottom: 25px;
     animation: fadeInUp 0.4s ease both;
 }
 
 .shruti-visualizer-intro h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: #fff;
 }
 
 .shruti-visualizer-intro p {
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.6;
     color: var(--text-secondary);
+    margin-bottom: 18px;
+}
+
+.sa-frequency-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
     margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+
+.sa-frequency-control label {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.sa-frequency-control input[type="number"] {
+    width: 100px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.apply-btn {
+    padding: 8px 20px;
+    background: linear-gradient(135deg, rgba(157, 78, 221, 0.3), rgba(255, 158, 0, 0.2));
+    border: 1px solid var(--primary-accent);
+    border-radius: 8px;
+    color: #fff;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.apply-btn:hover {
+    background: linear-gradient(135deg, rgba(157, 78, 221, 0.4), rgba(255, 158, 0, 0.3));
+    transform: translateY(-2px);
+}
+
+.preset-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.preset-btn {
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.preset-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-color: var(--primary-accent);
 }
 
 .consonance-legend {
     display: flex;
-    gap: 25px;
+    gap: 20px;
     flex-wrap: wrap;
-    margin-top: 20px;
 }
 
 .legend-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.95rem;
+    gap: 8px;
+    font-size: 0.9rem;
     color: var(--text-primary);
 }
 
 .legend-box {
-    width: 30px;
-    height: 20px;
+    width: 28px;
+    height: 18px;
     border-radius: 4px;
     border: 2px solid;
 }
@@ -689,139 +756,154 @@ header h1 {
     border-color: #2196f3;
 }
 
-.octave-row {
-    margin-bottom: 35px;
-    animation: fadeInUp 0.5s ease both;
-}
-
-.octave-row-label {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--primary-accent);
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(157, 78, 221, 0.3);
-}
-
-.shruti-row-horizontal {
+.shruti-grid-compact {
     display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    padding: 15px 5px;
+    flex-direction: column;
+    gap: 3px;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 12px;
+    padding: 10px;
 }
 
-.shruti-cell {
-    flex-shrink: 0;
-    min-width: 90px;
+.shruti-row-compact {
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+}
+
+.shruti-cell-compact {
+    flex: 0 0 auto;
+    width: 60px;
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid var(--glass-border);
-    border-radius: 10px;
-    padding: 12px 8px;
+    border-radius: 8px;
+    padding: 8px 4px;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
 }
 
-.shruti-cell:hover {
-    transform: translateY(-3px);
+.shruti-cell-compact:hover {
+    transform: translateY(-2px);
     background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 6px 15px rgba(157, 78, 221, 0.3);
+    box-shadow: 0 4px 12px rgba(157, 78, 221, 0.3);
 }
 
-.shruti-cell.playing {
+.shruti-cell-compact.playing {
     background: linear-gradient(135deg, rgba(255, 0, 127, 0.3), rgba(255, 105, 180, 0.2));
     border-color: #ff1493;
     animation: pulse-playing 1.5s infinite;
 }
 
 @keyframes pulse-playing {
-    0%, 100% { box-shadow: 0 0 15px rgba(255, 20, 147, 0.5); }
-    50% { box-shadow: 0 0 30px rgba(255, 20, 147, 0.8); }
+    0%, 100% { box-shadow: 0 0 12px rgba(255, 20, 147, 0.5); }
+    50% { box-shadow: 0 0 24px rgba(255, 20, 147, 0.8); }
 }
 
-.shruti-cell.source-highlight {
+.shruti-cell-compact.source-highlight {
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(255, 158, 0, 0.3)) !important;
     border-color: #ffd700 !important;
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6) !important;
-    transform: scale(1.1) !important;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6) !important;
+    transform: scale(1.08) !important;
     z-index: 10;
 }
 
-.shruti-cell.ma-highlight {
+.shruti-cell-compact.ma-highlight {
     background: linear-gradient(135deg, rgba(76, 175, 80, 0.4), rgba(129, 199, 132, 0.3)) !important;
     border-color: #4caf50 !important;
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5) !important;
-    transform: scale(1.08) !important;
+    box-shadow: 0 0 16px rgba(76, 175, 80, 0.5) !important;
+    transform: scale(1.06) !important;
     z-index: 9;
 }
 
-.shruti-cell.pa-highlight {
+.shruti-cell-compact.pa-highlight {
     background: linear-gradient(135deg, rgba(33, 150, 243, 0.4), rgba(100, 181, 246, 0.3)) !important;
     border-color: #2196f3 !important;
-    box-shadow: 0 0 20px rgba(33, 150, 243, 0.5) !important;
-    transform: scale(1.08) !important;
+    box-shadow: 0 0 16px rgba(33, 150, 243, 0.5) !important;
+    transform: scale(1.06) !important;
     z-index: 9;
 }
 
-.shruti-cell .shruti-symbol {
-    font-size: 1.5rem;
+.shruti-cell-compact .shruti-symbol {
+    font-size: 1.3rem;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
-.shruti-cell .shruti-name {
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-    line-height: 1.2;
-    margin-bottom: 5px;
-}
-
-.shruti-cell .shruti-freq {
-    font-size: 0.7rem;
+.shruti-cell-compact .shruti-freq {
+    font-size: 0.65rem;
     font-family: 'Courier New', monospace;
     color: var(--text-secondary);
 }
 
 .playing-indicator {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 1.2rem;
+    top: 3px;
+    right: 3px;
+    font-size: 1rem;
     color: #ff1493;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-.shruti-cell.playing .playing-indicator {
+.shruti-cell-compact.playing .playing-indicator {
     opacity: 1;
     animation: bounce 0.6s infinite;
 }
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+    50% { transform: translateY(-4px); }
+}
+
+@media (max-width: 1400px) {
+    .shruti-cell-compact {
+        width: 55px;
+        padding: 7px 3px;
+    }
+    
+    .shruti-cell-compact .shruti-symbol {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .shruti-cell-compact {
+        width: 50px;
+        padding: 6px 2px;
+    }
+    
+    .shruti-cell-compact .shruti-symbol {
+        font-size: 1.1rem;
+    }
+    
+    .shruti-cell-compact .shruti-freq {
+        font-size: 0.6rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .shruti-cell {
-        min-width: 75px;
-        padding: 10px 6px;
+    .shruti-grid-compact {
+        overflow-x: auto;
     }
     
-    .shruti-cell .shruti-symbol {
-        font-size: 1.3rem;
+    .shruti-row-compact {
+        justify-content: flex-start;
     }
     
-    .shruti-cell .shruti-name {
-        font-size: 0.65rem;
+    .sa-frequency-control {
+        flex-direction: column;
+        align-items: flex-start;
     }
     
-    .octave-row-label {
-        font-size: 1.1rem;
+    .preset-buttons {
+        width: 100%;
+    }
+    
+    .preset-btn {
+        flex: 1;
     }
 }
 
