@@ -687,6 +687,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <div class="current-freq">
                                 <strong id="current-sa-display">${baseSa.toFixed(2)} Hz</strong>
+                                <label class="play-while-sliding">
+                                    <input type="checkbox" id="play-while-sliding-checkbox">
+                                    <span>Play Sa while sliding</span>
+                                </label>
                             </div>
                         </div>
                         
@@ -755,13 +759,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Add Sa frequency slider handler
             const slider = document.getElementById('sa-freq-slider');
             const display = document.getElementById('current-sa-display');
+            const playWhileSlidingCheckbox = document.getElementById('play-while-sliding-checkbox');
+            let sliderOscillator = null;
             
             slider.addEventListener('input', function() {
                 const newSa = parseFloat(this.value);
                 baseSa = newSa;
                 display.textContent = newSa.toFixed(2) + ' Hz';
                 
-                // Stop all playing oscillators
+                // Stop all playing oscillators from shruti cells
                 if (audioContext) {
                     Object.keys(playingOscillators).forEach(key => {
                         playingOscillators[key].gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.1);
@@ -770,8 +776,46 @@ document.addEventListener('DOMContentLoaded', () => {
                     playingOscillators = {};
                 }
                 
+                // Play Sa frequency while sliding if checkbox is checked
+                if (playWhileSlidingCheckbox && playWhileSlidingCheckbox.checked) {
+                    initAudio();
+                    
+                    // Stop previous slider oscillator if exists
+                    if (sliderOscillator) {
+                        sliderOscillator.gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.01);
+                        sliderOscillator.oscillator.stop(audioContext.currentTime + 0.01);
+                    }
+                    
+                    // Create new oscillator for current frequency
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.value = newSa;
+                    oscillator.type = 'sine';
+                    
+                    const now = audioContext.currentTime;
+                    gainNode.gain.setValueAtTime(0, now);
+                    gainNode.gain.linearRampToValueAtTime(0.3, now + 0.01);
+                    
+                    oscillator.start(now);
+                    
+                    sliderOscillator = { oscillator, gainNode };
+                }
+                
                 // Update frequencies without full re-render
                 updateFrequenciesOnly(newSa);
+            });
+            
+            // Stop slider oscillator when slider is released
+            slider.addEventListener('change', function() {
+                if (sliderOscillator) {
+                    sliderOscillator.gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.1);
+                    sliderOscillator.oscillator.stop(audioContext.currentTime + 0.1);
+                    sliderOscillator = null;
+                }
             });
             
             // Add scale button handlers

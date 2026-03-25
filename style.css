@@ -737,12 +737,36 @@ header h1 {
     padding: 8px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .current-freq strong {
     font-size: 1.3rem;
     color: #ff9e00;
     font-family: 'Courier New', monospace;
+}
+
+.play-while-sliding {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    justify-content: center;
+}
+
+.play-while-sliding input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #ff9e00;
+}
+
+.play-while-sliding:hover span {
+    color: var(--text-primary);
 }
 
 .scale-selector {
