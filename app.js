@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             processData();
             renderThaatSelector();
             renderShrutis();
+            renderShrutiVisualizer();
             renderShrutiExplanations();
             renderTheory();
         })
@@ -514,6 +515,270 @@ document.addEventListener('DOMContentLoaded', () => {
         
         html += '</tbody></table>';
         container.innerHTML = html;
+    }
+
+    function renderShrutiVisualizer() {
+        // Comprehensive raag-to-shruti mapping with reasoning
+        const raagShrutiMap = {
+            'यमन': {
+                thaat: 'Kalyan',
+                shrutis: ['S', 'R2', 'G1', 'M1', 'P', 'D2', 'N1'],
+                reasoning: {
+                    'R2': 'Teevra Shuddha Rishabh (9/8) is used for its bright, energetic character that defines evening raags. The slightly sharp position creates forward momentum.',
+                    'G1': 'Shuddha Gandhar (5/4) - the just major third - creates a luminous, open quality. In Yaman, it sits at a higher microtonal position than in Bilawal, making it feel more elevated and evening-appropriate.',
+                    'M1': 'Teevra Madhyam (45/32) is THE defining note of Yaman. This sharp fourth creates the characteristic longing and tension that makes Yaman the quintessential evening raga. Without M1, it would lose its identity.',
+                    'D2': 'Teevra Shuddha Dhaivat (27/16) is slightly sharper than D1, creating brightness and energy. It makes melodic phrases more dynamic and complements the M1 perfectly.',
+                    'N1': 'Shuddha Nishad (15/8) - the just major seventh - creates strong pull toward the upper Sa, providing a sense of completion and resolution.'
+                }
+            },
+            'भैरव': {
+                thaat: 'Bhairav',
+                shrutis: ['S', 'r2', 'G1', 'm1', 'P', 'd2', 'N1'],
+                reasoning: {
+                    'r2': 'Komal Rishabh (16/15) creates the devotional morning character. Slightly higher than r1, it\'s less extreme but still establishes the sacred atmosphere of Bhairav.',
+                    'G1': 'Shuddha Gandhar (5/4) paired with r2 creates the distinctive Bhairav sound - the contrast between flat Re and natural Ga is what makes this raag recognizable.',
+                    'm1': 'Shuddha Madhyam (4/3) often "leans" slightly toward M1 without crossing over, adding mystical tension. This microtonal lean is unique to Bhairav.',
+                    'd2': 'Komal Dhaivat (8/5) pairs with r2 to create symmetry in the octave. It\'s more accessible than d1 while maintaining the devotional mood.',
+                    'N1': 'Shuddha Nishad (15/8) provides the resolution and completes the sacred morning atmosphere.'
+                }
+            },
+            'दरबारी': {
+                thaat: 'Asavari',
+                shrutis: ['S', 'R1', 'g1', 'm1', 'P', 'd1', 'n1'],
+                reasoning: {
+                    'R1': 'Shuddha Rishabh (10/9) - the just major second - is used instead of R2 for its more consonant, pure sound that grounds the raag.',
+                    'g1': 'Ati Komal Gandhar (32/27) is THE signature of Darbari. Rendered with heavy, slow oscillation (andolan), it\'s so low it "leans" toward Rishabh. This is the most microtonally complex note in Hindustani music, creating Darbari\'s midnight gravitas.',
+                    'm1': 'Shuddha Madhyam (4/3) provides stability and grounding in this deeply introspective raag.',
+                    'd1': 'Ati Komal Dhaivat (128/81) - extremely flat - creates deep melancholy. Rendered with slow oscillation like g1, it adds to the raag\'s profound depth.',
+                    'n1': 'Ati Komal Nishad (16/9) completes the somber, introspective character of this midnight raag.'
+                }
+            },
+            'तोड़ी': {
+                thaat: 'Todi',
+                shrutis: ['S', 'r1', 'g1', 'M1', 'P', 'd1', 'N1'],
+                reasoning: {
+                    'r1': 'Ati Komal Rishabh (256/243) - the lowest possible Re - creates an ascetic, deeply devotional character. So flat it\'s almost indistinguishable from Sa.',
+                    'g1': 'Ati Komal Gandhar (32/27) combined with r1 creates intense yearning. The extreme flatness of both notes establishes Todi\'s spiritual intensity.',
+                    'M1': 'Teevra Madhyam (45/32) is the pivotal note in Todi. The combination of flat r1, g1 with sharp M1 creates maximum tension and devotion - this contrast is what makes Todi so powerful.',
+                    'd1': 'Ati Komal Dhaivat (128/81) continues the pattern of extreme flatness, adding to the raag\'s yearning quality.',
+                    'N1': 'Shuddha Nishad (15/8) provides the only "natural" note besides Sa and Pa, creating a point of resolution amidst the tension.'
+                }
+            },
+            'मालकौश': {
+                thaat: 'Bhairavi',
+                shrutis: ['S', 'g1', 'm1', 'd1', 'n1'],
+                reasoning: {
+                    'g1': 'Ati Komal Gandhar (32/27) - no Re at all - creates Malkauns\' mysterious, pentatonic character. The absence of Re makes the g1 even more prominent.',
+                    'm1': 'Shuddha Madhyam (4/3) provides the only "natural" note besides Sa, creating a stable anchor point.',
+                    'd1': 'Ati Komal Dhaivat (128/81) - no Pa - the absence of Pa (the perfect fifth) is highly unusual and creates Malkauns\' enigmatic, night-time atmosphere.',
+                    'n1': 'Ati Komal Nishad (16/9) completes the purely komal character. Malkauns uses only flat notes, creating its dark, mysterious mood.'
+                }
+            },
+            'भूपाली': {
+                thaat: 'Kalyan',
+                shrutis: ['S', 'R1', 'G1', 'P', 'D1'],
+                reasoning: {
+                    'R1': 'Shuddha Rishabh (10/9) - the just major second - is chosen over R2 for its harmonic purity. In pentatonic raags, pure consonance is essential.',
+                    'G1': 'Shuddha Gandhar (5/4) - the just major third - creates perfect consonance with Sa. This pure ratio is what gives Bhupali its serene, meditative quality.',
+                    'D1': 'Shuddha Dhaivat (5/3) - the just major sixth - completes the pentatonic scale with perfect consonance. All three notes (R1, G1, D1) use "just" ratios for maximum harmonic purity.'
+                }
+            },
+            'काफी': {
+                thaat: 'Kafi',
+                shrutis: ['S', 'R2', 'g1', 'm1', 'P', 'D1', 'n1'],
+                reasoning: {
+                    'R2': 'Teevra Shuddha Rishabh (9/8) provides brightness and energy, contrasting with the flat notes.',
+                    'g1': 'Ati Komal Gandhar (32/27) creates the folk-based, earthy character. Less intense than in Darbari, it\'s rendered more straightforwardly.',
+                    'm1': 'Shuddha Madhyam (4/3) provides stability in this accessible, folk-influenced raag.',
+                    'D1': 'Shuddha Dhaivat (5/3) - the just major sixth - creates consonance and openness.',
+                    'n1': 'Ati Komal Nishad (16/9) establishes the characteristic "minor" sound of Kafi, making it folk-like and approachable.'
+                }
+            },
+            'खमाज': {
+                thaat: 'Khamaj',
+                shrutis: ['S', 'R2', 'G1', 'm1', 'P', 'D2', 'n1', 'N1'],
+                reasoning: {
+                    'R2': 'Teevra Shuddha Rishabh (9/8) creates brightness and forward motion.',
+                    'G1': 'Shuddha Gandhar (5/4) provides consonance and openness.',
+                    'm1': 'Shuddha Madhyam (4/3) grounds the raag.',
+                    'D2': 'Teevra Shuddha Dhaivat (27/16) adds brightness.',
+                    'n1': 'Ati Komal Nishad (16/9) is THE defining note - but Khamaj uniquely alternates between n1 and N1, creating its playful, semi-classical character. This alternation is what makes Khamaj perfect for lighter forms like Thumri.',
+                    'N1': 'Shuddha Nishad (15/8) alternates with n1, creating the characteristic Khamaj flavor.'
+                }
+            },
+            'भीमपलासी': {
+                thaat: 'Kafi',
+                shrutis: ['S', 'R1', 'g1', 'm1', 'P', 'D1', 'n1'],
+                reasoning: {
+                    'R1': 'Shuddha Rishabh (10/9) - the just major second - is chosen over R2 for a more grounded, afternoon character.',
+                    'g1': 'Ati Komal Gandhar (32/27) creates the melancholic, introspective mood. In Bhimpalasi, it\'s rendered with gentle oscillation, less intense than Darbari.',
+                    'm1': 'Shuddha Madhyam (4/3) provides stability.',
+                    'D1': 'Shuddha Dhaivat (5/3) creates consonance.',
+                    'n1': 'Ati Komal Nishad (16/9) completes the afternoon melancholy, making Bhimpalasi perfect for contemplative moods.'
+                }
+            },
+            'बागेश्री': {
+                thaat: 'Kafi',
+                shrutis: ['S', 'R1', 'g1', 'm1', 'D1', 'n1'],
+                reasoning: {
+                    'R1': 'Shuddha Rishabh (10/9) provides a pure, grounded foundation.',
+                    'g1': 'Ati Komal Gandhar (32/27) creates the romantic, night-time character. In Bageshri, it\'s rendered smoothly without heavy oscillation.',
+                    'm1': 'Shuddha Madhyam (4/3) - note that Pa is omitted in Bageshri, making m1 even more important as a structural anchor.',
+                    'D1': 'Shuddha Dhaivat (5/3) provides consonance and openness.',
+                    'n1': 'Ati Komal Nishad (16/9) creates the romantic, late-night atmosphere that makes Bageshri so beloved.'
+                }
+            },
+            'मारवा': {
+                thaat: 'Marva',
+                shrutis: ['S', 'r1', 'G2', 'M1', 'D2', 'N1'],
+                reasoning: {
+                    'r1': 'Ati Komal Rishabh (256/243) - extremely flat - creates dramatic tension.',
+                    'G2': 'Teevra Shuddha Gandhar (81/64) - THIS is why G2 instead of G1! The Pythagorean major third is sharper and more tense. Combined with r1 and M1, it creates one of the most dramatic raags in the system. The extreme contrast between the lowest Re and highest Ga creates Marwa\'s "royal" character.',
+                    'M1': 'Teevra Madhyam (45/32) adds to the tension. Note that Pa is omitted, making M1 the highest note in the lower tetrachord.',
+                    'D2': 'Teevra Shuddha Dhaivat (27/16) - sharp and bright - continues the pattern of extreme notes.',
+                    'N1': 'Shuddha Nishad (15/8) provides resolution to this highly tense raag.'
+                }
+            },
+            'पूर्वी': {
+                thaat: 'Poorvi',
+                shrutis: ['S', 'r1', 'G1', 'm1', 'M1', 'P', 'd1', 'N1'],
+                reasoning: {
+                    'r1': 'Ati Komal Rishabh (256/243) creates the devotional, evening character.',
+                    'G1': 'Shuddha Gandhar (5/4) - G1 not G2 - because Poorvi needs the just major third for consonance. The contrast with r1 is already dramatic enough.',
+                    'm1': 'Shuddha Madhyam (4/3) and M1 both appear, creating unique color.',
+                    'M1': 'Teevra Madhyam (45/32) is the defining note, creating tension and forward motion.',
+                    'd1': 'Ati Komal Dhaivat (128/81) adds to the devotional intensity.',
+                    'N1': 'Shuddha Nishad (15/8) provides resolution.'
+                }
+            }
+        };
+
+        // Populate raag selector
+        const selector = document.getElementById('raag-selector');
+        const sortedRaags = Object.keys(raagShrutiMap).sort();
+        sortedRaags.forEach(raag => {
+            const option = document.createElement('option');
+            option.value = raag;
+            option.textContent = raag;
+            selector.appendChild(option);
+        });
+
+        // 22 Shruti reference data
+        const shrutiData = [
+            { symbol: 'S', name: 'Shadja', ratio: '1/1', cents: '0', freq: '240.00' },
+            { symbol: 'r1', name: 'Ati Komal Rishabh', ratio: '256/243', cents: '-10', freq: '252.84' },
+            { symbol: 'r2', name: 'Komal Rishabh', ratio: '16/15', cents: '+11', freq: '256.00' },
+            { symbol: 'R1', name: 'Shuddha Rishabh', ratio: '10/9', cents: '-18', freq: '266.67' },
+            { symbol: 'R2', name: 'Teevra Shuddha Rishabh', ratio: '9/8', cents: '+4', freq: '270.00' },
+            { symbol: 'g1', name: 'Ati Komal Gandhar', ratio: '32/27', cents: '-6', freq: '284.44' },
+            { symbol: 'g2', name: 'Komal Gandhar', ratio: '6/5', cents: '+15', freq: '288.00' },
+            { symbol: 'G1', name: 'Shuddha Gandhar', ratio: '5/4', cents: '-14', freq: '300.00' },
+            { symbol: 'G2', name: 'Teevra Shuddha Gandhar', ratio: '81/64', cents: '+8', freq: '303.75' },
+            { symbol: 'm1', name: 'Shuddha Madhyam', ratio: '4/3', cents: '-2', freq: '320.00' },
+            { symbol: 'm2', name: 'Ek Shruti Madhyam', ratio: '27/20', cents: '+19', freq: '324.00' },
+            { symbol: 'M1', name: 'Teevra Madhyam', ratio: '45/32', cents: '-10', freq: '337.50' },
+            { symbol: 'M2', name: 'Teevratama Madhyam', ratio: '64/45', cents: '+12', freq: '341.33' },
+            { symbol: 'P', name: 'Pancham', ratio: '3/2', cents: '+2', freq: '360.00' },
+            { symbol: 'd1', name: 'Ati Komal Dhaivat', ratio: '128/81', cents: '-8', freq: '379.26' },
+            { symbol: 'd2', name: 'Komal Dhaivat', ratio: '8/5', cents: '+13', freq: '384.00' },
+            { symbol: 'D1', name: 'Shuddha Dhaivat', ratio: '5/3', cents: '-16', freq: '400.00' },
+            { symbol: 'D2', name: 'Teevra Shuddha Dhaivat', ratio: '27/16', cents: '+6', freq: '405.00' },
+            { symbol: 'n1', name: 'Ati Komal Nishad', ratio: '16/9', cents: '-4', freq: '426.67' },
+            { symbol: 'n2', name: 'Komal Nishad', ratio: '9/5', cents: '+17', freq: '432.00' },
+            { symbol: 'N1', name: 'Shuddha Nishad', ratio: '15/8', cents: '-12', freq: '450.00' },
+            { symbol: 'N2', name: 'Teevra Shuddha Nishad', ratio: '243/128', cents: '+10', freq: '455.62' }
+        ];
+
+        function renderScale(selectedRaag) {
+            const container = document.getElementById('shruti-visualizer-content');
+            
+            if (!selectedRaag) {
+                container.innerHTML = '<div class="visualizer-intro"><p>Select a raag from the dropdown above to see its exact shruti positions on the 22-shruti scale. Each highlighted note will show why that specific shruti was chosen.</p></div>';
+                return;
+            }
+
+            const raagData = raagShrutiMap[selectedRaag];
+            const usedShrutis = raagData.shrutis;
+
+            let html = `
+                <div class="raag-info-card">
+                    <h2>${selectedRaag}</h2>
+                    <p class="thaat-label">Thaat: ${raagData.thaat}</p>
+                    <p class="shruti-list">Shrutis: ${usedShrutis.join(' ')}</p>
+                </div>
+                
+                <div class="shruti-scale-container">
+                    <h3>22-Shruti Scale</h3>
+                    <div class="shruti-scale">
+            `;
+
+            shrutiData.forEach(shruti => {
+                const isUsed = usedShrutis.includes(shruti.symbol);
+                const reasoning = raagData.reasoning[shruti.symbol] || '';
+                
+                html += `
+                    <div class="shruti-note ${isUsed ? 'active' : ''}" 
+                         data-shruti="${shruti.symbol}"
+                         data-reasoning="${reasoning}">
+                        <div class="shruti-symbol">${shruti.symbol}</div>
+                        <div class="shruti-name">${shruti.name}</div>
+                        <div class="shruti-ratio">${shruti.ratio}</div>
+                        ${isUsed ? '<div class="shruti-indicator">●</div>' : ''}
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                </div>
+                
+                <div class="reasoning-panel">
+                    <h3>Why These Shrutis?</h3>
+                    <div class="reasoning-cards">
+            `;
+
+            usedShrutis.forEach(shruti => {
+                if (raagData.reasoning[shruti]) {
+                    const shrutiInfo = shrutiData.find(s => s.symbol === shruti);
+                    html += `
+                        <div class="reasoning-card">
+                            <h4>${shruti} - ${shrutiInfo.name}</h4>
+                            <div class="reasoning-specs">
+                                <span class="spec">Ratio: ${shrutiInfo.ratio}</span>
+                                <span class="spec">Cents: ${shrutiInfo.cents}</span>
+                                <span class="spec">Freq: ${shrutiInfo.freq} Hz</span>
+                            </div>
+                            <p class="reasoning-text">${raagData.reasoning[shruti]}</p>
+                        </div>
+                    `;
+                }
+            });
+
+            html += `
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML = html;
+
+            // Add hover effects
+            document.querySelectorAll('.shruti-note.active').forEach(note => {
+                note.addEventListener('mouseenter', function() {
+                    const reasoning = this.getAttribute('data-reasoning');
+                    if (reasoning) {
+                        this.setAttribute('title', reasoning);
+                    }
+                });
+            });
+        }
+
+        // Initial render
+        renderScale(null);
+
+        // Handle raag selection
+        selector.addEventListener('change', (e) => {
+            renderScale(e.target.value);
+        });
     }
 
     function renderShrutiExplanations() {

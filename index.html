@@ -23,6 +23,7 @@
             <ul class="nav-links">
                 <li data-tab="directory" class="active">Raag Directory</li>
                 <li data-tab="shrutis">Shruti Explorer</li>
+                <li data-tab="shruti-visualizer">Shruti Visualizer</li>
                 <li data-tab="shruti-explanation">Shruti Selection Guide</li>
                 <li data-tab="theory">Music Theory</li>
             </ul>
@@ -56,6 +57,23 @@
                 </header>
                 <div class="content-body" id="shruti-content">
                     <div class="loader">Loading...</div>
+                </div>
+            </section>
+            
+            <!-- Shruti Visualizer view -->
+            <section id="shruti-visualizer" class="view">
+                <header>
+                    <h1>Interactive Shruti Visualizer</h1>
+                    <div class="search-bar">
+                        <select id="raag-selector" class="raag-dropdown">
+                            <option value="">Select a Raag...</option>
+                        </select>
+                    </div>
+                </header>
+                <div class="content-body" id="shruti-visualizer-content">
+                    <div class="visualizer-intro">
+                        <p>Select a raag from the dropdown above to see its exact shruti positions on the 22-shruti scale. Each highlighted note will show why that specific shruti was chosen.</p>
+                    </div>
                 </div>
             </section>
             

@@ -627,3 +627,261 @@ header h1 {
         width: 100%;
     }
 }
+
+/* Shruti Visualizer Styles */
+.raag-dropdown {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 12px 20px;
+    width: 300px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.raag-dropdown:hover, .raag-dropdown:focus {
+    border-color: var(--primary-accent);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.raag-dropdown option {
+    background: #1a1625;
+    color: var(--text-primary);
+    padding: 10px;
+}
+
+.visualizer-intro {
+    background: linear-gradient(135deg, rgba(157, 78, 221, 0.1), rgba(255, 158, 0, 0.05));
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.visualizer-intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.raag-info-card {
+    background: linear-gradient(135deg, rgba(157, 78, 221, 0.15), rgba(255, 158, 0, 0.1));
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.4s ease both;
+}
+
+.raag-info-card h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #e0aaff, #ff9e00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.thaat-label {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.shruti-list {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
+
+.shruti-scale-container {
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.5s ease both;
+}
+
+.shruti-scale-container h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.shruti-scale {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.shruti-note {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 15px 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: default;
+    opacity: 0.4;
+}
+
+.shruti-note.active {
+    background: linear-gradient(135deg, rgba(157, 78, 221, 0.3), rgba(255, 158, 0, 0.2));
+    border-color: var(--primary-accent);
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(157, 78, 221, 0.3);
+}
+
+.shruti-note.active:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(157, 78, 221, 0.5);
+}
+
+.shruti-symbol {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.shruti-note.active .shruti-symbol {
+    color: #fff;
+}
+
+.shruti-name {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.shruti-ratio {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+}
+
+.shruti-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.5rem;
+    color: var(--secondary-accent);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+.reasoning-panel {
+    animation: fadeInUp 0.6s ease both;
+}
+
+.reasoning-panel h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.reasoning-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.reasoning-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border: 1px solid var(--glass-border);
+    border-left: 4px solid var(--primary-accent);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.4s ease both;
+}
+
+.reasoning-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(157, 78, 221, 0.2);
+    border-left-color: var(--secondary-accent);
+}
+
+.reasoning-card h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.reasoning-specs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.reasoning-specs .spec {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: rgba(157, 78, 221, 0.2);
+    color: #e0aaff;
+    border: 1px solid rgba(157, 78, 221, 0.3);
+}
+
+.reasoning-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* Responsive adjustments for visualizer */
+@media (max-width: 1200px) {
+    .reasoning-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .shruti-scale {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .raag-dropdown {
+        width: 100%;
+    }
+    
+    .shruti-scale {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 6px;
+    }
+    
+    .shruti-note {
+        padding: 10px 5px;
+    }
+    
+    .shruti-symbol {
+        font-size: 1.1rem;
+    }
+    
+    .shruti-name {
+        font-size: 0.6rem;
+    }
+}
