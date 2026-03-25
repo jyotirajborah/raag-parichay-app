@@ -781,12 +781,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.addEventListener('click', function() {
                     const freq = parseFloat(this.getAttribute('data-freq'));
                     baseSa = freq;
-                    slider.value = freq;
-                    display.textContent = freq.toFixed(2) + ' Hz';
-                    
-                    // Update active state
-                    document.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
                     
                     // Stop all playing oscillators
                     if (audioContext) {
@@ -796,7 +790,19 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                         playingOscillators = {};
                     }
+                    
+                    // Re-render with new frequency
                     render();
+                    
+                    // After render, update the slider and display (since render recreates them)
+                    const newSlider = document.getElementById('sa-freq-slider');
+                    const newDisplay = document.getElementById('current-sa-display');
+                    if (newSlider) newSlider.value = freq;
+                    if (newDisplay) newDisplay.textContent = freq.toFixed(2) + ' Hz';
+                    
+                    // Update active state on buttons
+                    document.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
                 });
             });
             
