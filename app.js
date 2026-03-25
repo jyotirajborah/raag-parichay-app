@@ -565,37 +565,106 @@ document.addEventListener('DOMContentLoaded', () => {
             currentOscillator = oscillator;
         }
         
-        // 22 Shruti reference data with index (0-23 for 2 octaves)
-        // Index 0 = Lower Sa, Indices 1-22 = Middle octave, Index 23 = Upper Sa
-        const shrutiData = [
-            // Lower Octave Sa
-            { index: 0, symbol: 'Ṡ', name: 'Shadja (Lower)', ratio: '1/2', cents: '-1200', freq: '120.00', freqRatio: 0.5, octave: 'lower' },
-            // Middle Octave (Standard 22 shrutis)
-            { index: 1, symbol: 'S', name: 'Shadja', ratio: '1/1', cents: '0', freq: '240.00', freqRatio: 1.0, octave: 'middle' },
-            { index: 2, symbol: 'r1', name: 'Ati Komal Rishabh', ratio: '256/243', cents: '-10', freq: '252.84', freqRatio: 1.053, octave: 'middle' },
-            { index: 3, symbol: 'r2', name: 'Komal Rishabh', ratio: '16/15', cents: '+11', freq: '256.00', freqRatio: 1.067, octave: 'middle' },
-            { index: 4, symbol: 'R1', name: 'Shuddha Rishabh', ratio: '10/9', cents: '-18', freq: '266.67', freqRatio: 1.111, octave: 'middle' },
-            { index: 5, symbol: 'R2', name: 'Teevra Shuddha Rishabh', ratio: '9/8', cents: '+4', freq: '270.00', freqRatio: 1.125, octave: 'middle' },
-            { index: 6, symbol: 'g1', name: 'Ati Komal Gandhar', ratio: '32/27', cents: '-6', freq: '284.44', freqRatio: 1.185, octave: 'middle' },
-            { index: 7, symbol: 'g2', name: 'Komal Gandhar', ratio: '6/5', cents: '+15', freq: '288.00', freqRatio: 1.2, octave: 'middle' },
-            { index: 8, symbol: 'G1', name: 'Shuddha Gandhar', ratio: '5/4', cents: '-14', freq: '300.00', freqRatio: 1.25, octave: 'middle' },
-            { index: 9, symbol: 'G2', name: 'Teevra Shuddha Gandhar', ratio: '81/64', cents: '+8', freq: '303.75', freqRatio: 1.266, octave: 'middle' },
-            { index: 10, symbol: 'm1', name: 'Shuddha Madhyam', ratio: '4/3', cents: '-2', freq: '320.00', freqRatio: 1.333, octave: 'middle' },
-            { index: 11, symbol: 'm2', name: 'Ek Shruti Madhyam', ratio: '27/20', cents: '+19', freq: '324.00', freqRatio: 1.35, octave: 'middle' },
-            { index: 12, symbol: 'M1', name: 'Teevra Madhyam', ratio: '45/32', cents: '-10', freq: '337.50', freqRatio: 1.406, octave: 'middle' },
-            { index: 13, symbol: 'M2', name: 'Teevratama Madhyam', ratio: '64/45', cents: '+12', freq: '341.33', freqRatio: 1.422, octave: 'middle' },
-            { index: 14, symbol: 'P', name: 'Pancham', ratio: '3/2', cents: '+2', freq: '360.00', freqRatio: 1.5, octave: 'middle' },
-            { index: 15, symbol: 'd1', name: 'Ati Komal Dhaivat', ratio: '128/81', cents: '-8', freq: '379.26', freqRatio: 1.58, octave: 'middle' },
-            { index: 16, symbol: 'd2', name: 'Komal Dhaivat', ratio: '8/5', cents: '+13', freq: '384.00', freqRatio: 1.6, octave: 'middle' },
-            { index: 17, symbol: 'D1', name: 'Shuddha Dhaivat', ratio: '5/3', cents: '-16', freq: '400.00', freqRatio: 1.667, octave: 'middle' },
-            { index: 18, symbol: 'D2', name: 'Teevra Shuddha Dhaivat', ratio: '27/16', cents: '+6', freq: '405.00', freqRatio: 1.688, octave: 'middle' },
-            { index: 19, symbol: 'n1', name: 'Ati Komal Nishad', ratio: '16/9', cents: '-4', freq: '426.67', freqRatio: 1.778, octave: 'middle' },
-            { index: 20, symbol: 'n2', name: 'Komal Nishad', ratio: '9/5', cents: '+17', freq: '432.00', freqRatio: 1.8, octave: 'middle' },
-            { index: 21, symbol: 'N1', name: 'Shuddha Nishad', ratio: '15/8', cents: '-12', freq: '450.00', freqRatio: 1.875, octave: 'middle' },
-            { index: 22, symbol: 'N2', name: 'Teevra Shuddha Nishad', ratio: '243/128', cents: '+10', freq: '455.62', freqRatio: 1.898, octave: 'middle' },
-            // Upper Octave Sa
-            { index: 23, symbol: 'Ṡ', name: 'Shadja (Upper)', ratio: '2/1', cents: '+1200', freq: '480.00', freqRatio: 2.0, octave: 'upper' }
+        // Complete 22 Shruti reference data across 4 octaves
+        // Base frequency for middle Sa = 240 Hz
+        const baseSa = 240;
+        
+        // Template for 22 shrutis (indices 1-22 in middle octave)
+        const shrutiTemplate = [
+            { symbol: 'S', name: 'Shadja', ratio: '1/1', cents: '0', freqRatio: 1.0 },
+            { symbol: 'r1', name: 'Ati Komal Rishabh', ratio: '256/243', cents: '-10', freqRatio: 1.053 },
+            { symbol: 'r2', name: 'Komal Rishabh', ratio: '16/15', cents: '+11', freqRatio: 1.067 },
+            { symbol: 'R1', name: 'Shuddha Rishabh', ratio: '10/9', cents: '-18', freqRatio: 1.111 },
+            { symbol: 'R2', name: 'Teevra Shuddha Rishabh', ratio: '9/8', cents: '+4', freqRatio: 1.125 },
+            { symbol: 'g1', name: 'Ati Komal Gandhar', ratio: '32/27', cents: '-6', freqRatio: 1.185 },
+            { symbol: 'g2', name: 'Komal Gandhar', ratio: '6/5', cents: '+15', freqRatio: 1.2 },
+            { symbol: 'G1', name: 'Shuddha Gandhar', ratio: '5/4', cents: '-14', freqRatio: 1.25 },
+            { symbol: 'G2', name: 'Teevra Shuddha Gandhar', ratio: '81/64', cents: '+8', freqRatio: 1.266 },
+            { symbol: 'm1', name: 'Shuddha Madhyam', ratio: '4/3', cents: '-2', freqRatio: 1.333 },
+            { symbol: 'm2', name: 'Ek Shruti Madhyam', ratio: '27/20', cents: '+19', freqRatio: 1.35 },
+            { symbol: 'M1', name: 'Teevra Madhyam', ratio: '45/32', cents: '-10', freqRatio: 1.406 },
+            { symbol: 'M2', name: 'Teevratama Madhyam', ratio: '64/45', cents: '+12', freqRatio: 1.422 },
+            { symbol: 'P', name: 'Pancham', ratio: '3/2', cents: '+2', freqRatio: 1.5 },
+            { symbol: 'd1', name: 'Ati Komal Dhaivat', ratio: '128/81', cents: '-8', freqRatio: 1.58 },
+            { symbol: 'd2', name: 'Komal Dhaivat', ratio: '8/5', cents: '+13', freqRatio: 1.6 },
+            { symbol: 'D1', name: 'Shuddha Dhaivat', ratio: '5/3', cents: '-16', freqRatio: 1.667 },
+            { symbol: 'D2', name: 'Teevra Shuddha Dhaivat', ratio: '27/16', cents: '+6', freqRatio: 1.688 },
+            { symbol: 'n1', name: 'Ati Komal Nishad', ratio: '16/9', cents: '-4', freqRatio: 1.778 },
+            { symbol: 'n2', name: 'Komal Nishad', ratio: '9/5', cents: '+17', freqRatio: 1.8 },
+            { symbol: 'N1', name: 'Shuddha Nishad', ratio: '15/8', cents: '-12', freqRatio: 1.875 },
+            { symbol: 'N2', name: 'Teevra Shuddha Nishad', ratio: '243/128', cents: '+10', freqRatio: 1.898 }
         ];
+        
+        // Generate complete shruti data across octaves
+        const shrutiData = [];
+        let globalIndex = -21; // Start from lower octave (indices -21 to 0)
+        
+        // Lower Octave (Sa' to N2') - indices -21 to 0
+        shrutiTemplate.forEach((shruti, i) => {
+            const octaveMultiplier = 0.5; // Lower octave is half frequency
+            shrutiData.push({
+                index: globalIndex,
+                symbol: shruti.symbol + "'",
+                name: shruti.name + ' (Lower)',
+                ratio: shruti.ratio,
+                cents: shruti.cents,
+                freq: (baseSa * shruti.freqRatio * octaveMultiplier).toFixed(2),
+                freqRatio: shruti.freqRatio * octaveMultiplier,
+                octave: 'lower'
+            });
+            globalIndex++;
+        });
+        
+        // Middle Octave (Sa to N2) - indices 1 to 22
+        globalIndex = 1;
+        shrutiTemplate.forEach((shruti, i) => {
+            const octaveMultiplier = 1.0; // Middle octave is base frequency
+            shrutiData.push({
+                index: globalIndex,
+                symbol: shruti.symbol,
+                name: shruti.name,
+                ratio: shruti.ratio,
+                cents: shruti.cents,
+                freq: (baseSa * shruti.freqRatio * octaveMultiplier).toFixed(2),
+                freqRatio: shruti.freqRatio * octaveMultiplier,
+                octave: 'middle'
+            });
+            globalIndex++;
+        });
+        
+        // Upper Octave (Ṡa to Ṅ2) - indices 23 to 44
+        globalIndex = 23;
+        shrutiTemplate.forEach((shruti, i) => {
+            const octaveMultiplier = 2.0; // Upper octave is double frequency
+            shrutiData.push({
+                index: globalIndex,
+                symbol: 'Ṡ' + shruti.symbol.substring(1), // Add dot above for upper octave
+                name: shruti.name + ' (Upper)',
+                ratio: shruti.ratio,
+                cents: shruti.cents,
+                freq: (baseSa * shruti.freqRatio * octaveMultiplier).toFixed(2),
+                freqRatio: shruti.freqRatio * octaveMultiplier,
+                octave: 'upper'
+            });
+            globalIndex++;
+        });
+        
+        // Second Upper Octave (Ṡ̇a to Ṅ̇2) - indices 45 to 66
+        globalIndex = 45;
+        shrutiTemplate.forEach((shruti, i) => {
+            const octaveMultiplier = 4.0; // Second upper octave is 4x frequency
+            shrutiData.push({
+                index: globalIndex,
+                symbol: 'Ṡ̇' + shruti.symbol.substring(1), // Add double dot above
+                name: shruti.name + ' (2nd Upper)',
+                ratio: shruti.ratio,
+                cents: shruti.cents,
+                freq: (baseSa * shruti.freqRatio * octaveMultiplier).toFixed(2),
+                freqRatio: shruti.freqRatio * octaveMultiplier,
+                octave: 'upper2'
+            });
+            globalIndex++;
+        });
 
         // Calculate consonant partners using 9 or 13 rule
         function getConsonantPartners(shrutiIndex) {
@@ -773,20 +842,60 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 <div class="consonance-info-card">
                     <h3>🎵 The 9 or 13 Rule - Consonant Harmony</h3>
-                    <p>Hover over any shruti to see its consonant partners (works within the middle octave):</p>
+                    <p>Hover over any shruti to see its consonant partners (calculated within middle octave indices 1-22):</p>
                     <ul>
                         <li><strong>+9 Shrutis</strong> = Madhyam Partner (4th) - Frequency × 1.333</li>
                         <li><strong>+13 Shrutis</strong> = Pancham Partner (5th) - Frequency × 1.5</li>
                     </ul>
-                    <p class="info-note">The scale now shows 2 full octaves: Lower Ṡ (120 Hz) → Middle S-N2 → Upper Ṡ (480 Hz)</p>
+                    <p class="info-note">Complete Spectrum: Lower Octave (Sa' to N2') → Middle Octave (Sa to N2) → Upper Octave (Ṡa to Ṅ2) → 2nd Upper Octave (Ṡ̇a to Ṅ̇2)</p>
                 </div>
                 
                 <div class="shruti-scale-container">
-                    <h3>24-Shruti Scale (2 Octaves: Lower Ṡ to Upper Ṡ)</h3>
-                    <div class="shruti-scale">
+                    <h3>Complete 88-Shruti Spectrum (4 Octaves: 60 Hz to 960 Hz)</h3>
+                    
+                    <!-- Lower Octave -->
+                    <div class="octave-section">
+                        <h4 class="octave-label">Lower Octave (Sa' to N2') - 60-227 Hz</h4>
+                        <div class="shruti-scale">
             `;
 
-            shrutiData.forEach(shruti => {
+            // Render Lower Octave
+            shrutiData.filter(s => s.octave === 'lower').forEach(shruti => {
+                const isUsed = usedShrutis.includes(shruti.symbol.replace("'", ""));
+                const reasoning = raagData.reasoning[shruti.symbol.replace("'", "")] || '';
+                const partners = getConsonantPartners(shruti.index + 22); // Map to middle octave for consonance
+                const maPartner = shrutiData.find(s => s.index === partners.ma);
+                const paPartner = shrutiData.find(s => s.index === partners.pa);
+                
+                html += `
+                    <div class="shruti-note ${isUsed ? 'active' : ''}" 
+                         data-shruti="${shruti.symbol}"
+                         data-index="${shruti.index}"
+                         data-octave="${shruti.octave}"
+                         data-ma-partner="${partners.ma}"
+                         data-pa-partner="${partners.pa}"
+                         data-reasoning="${reasoning}">
+                        <div class="shruti-index">#${shruti.index}</div>
+                        <div class="shruti-symbol">${shruti.symbol}</div>
+                        <div class="shruti-name">${shruti.name}</div>
+                        <div class="shruti-freq">${shruti.freq} Hz</div>
+                        ${isUsed ? '<div class="shruti-indicator">●</div>' : ''}
+                    </div>
+                `;
+            });
+
+            html += `
+                        </div>
+                    </div>
+                    
+                    <!-- Middle Octave -->
+                    <div class="octave-section">
+                        <h4 class="octave-label">Middle Octave (Sa to N2) - 240-455 Hz [Reference Octave]</h4>
+                        <div class="shruti-scale">
+            `;
+
+            // Render Middle Octave
+            shrutiData.filter(s => s.octave === 'middle').forEach(shruti => {
                 const isUsed = usedShrutis.includes(shruti.symbol);
                 const reasoning = raagData.reasoning[shruti.symbol] || '';
                 const partners = getConsonantPartners(shruti.index);
@@ -804,13 +913,86 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="shruti-index">#${shruti.index}</div>
                         <div class="shruti-symbol">${shruti.symbol}</div>
                         <div class="shruti-name">${shruti.name}</div>
-                        <div class="shruti-ratio">${shruti.ratio}</div>
+                        <div class="shruti-freq">${shruti.freq} Hz</div>
                         ${isUsed ? '<div class="shruti-indicator">●</div>' : ''}
                     </div>
                 `;
             });
 
             html += `
+                        </div>
+                    </div>
+                    
+                    <!-- Upper Octave -->
+                    <div class="octave-section">
+                        <h4 class="octave-label">Upper Octave (Ṡa to Ṅ2) - 480-911 Hz</h4>
+                        <div class="shruti-scale">
+            `;
+
+            // Render Upper Octave
+            shrutiData.filter(s => s.octave === 'upper').forEach(shruti => {
+                const baseSymbol = shruti.symbol.substring(1); // Remove dot
+                const isUsed = usedShrutis.includes(baseSymbol);
+                const reasoning = raagData.reasoning[baseSymbol] || '';
+                const partners = getConsonantPartners(shruti.index - 22); // Map to middle octave for consonance
+                const maPartner = shrutiData.find(s => s.index === partners.ma);
+                const paPartner = shrutiData.find(s => s.index === partners.pa);
+                
+                html += `
+                    <div class="shruti-note ${isUsed ? 'active' : ''}" 
+                         data-shruti="${shruti.symbol}"
+                         data-index="${shruti.index}"
+                         data-octave="${shruti.octave}"
+                         data-ma-partner="${partners.ma}"
+                         data-pa-partner="${partners.pa}"
+                         data-reasoning="${reasoning}">
+                        <div class="shruti-index">#${shruti.index}</div>
+                        <div class="shruti-symbol">${shruti.symbol}</div>
+                        <div class="shruti-name">${shruti.name}</div>
+                        <div class="shruti-freq">${shruti.freq} Hz</div>
+                        ${isUsed ? '<div class="shruti-indicator">●</div>' : ''}
+                    </div>
+                `;
+            });
+
+            html += `
+                        </div>
+                    </div>
+                    
+                    <!-- Second Upper Octave -->
+                    <div class="octave-section">
+                        <h4 class="octave-label">2nd Upper Octave (Ṡ̇a to Ṅ̇2) - 960-1822 Hz</h4>
+                        <div class="shruti-scale">
+            `;
+
+            // Render Second Upper Octave
+            shrutiData.filter(s => s.octave === 'upper2').forEach(shruti => {
+                const baseSymbol = shruti.symbol.substring(2); // Remove double dot
+                const isUsed = usedShrutis.includes(baseSymbol);
+                const reasoning = raagData.reasoning[baseSymbol] || '';
+                const partners = getConsonantPartners(shruti.index - 44); // Map to middle octave for consonance
+                const maPartner = shrutiData.find(s => s.index === partners.ma);
+                const paPartner = shrutiData.find(s => s.index === partners.pa);
+                
+                html += `
+                    <div class="shruti-note ${isUsed ? 'active' : ''}" 
+                         data-shruti="${shruti.symbol}"
+                         data-index="${shruti.index}"
+                         data-octave="${shruti.octave}"
+                         data-ma-partner="${partners.ma}"
+                         data-pa-partner="${partners.pa}"
+                         data-reasoning="${reasoning}">
+                        <div class="shruti-index">#${shruti.index}</div>
+                        <div class="shruti-symbol">${shruti.symbol}</div>
+                        <div class="shruti-name">${shruti.name}</div>
+                        <div class="shruti-freq">${shruti.freq} Hz</div>
+                        ${isUsed ? '<div class="shruti-indicator">●</div>' : ''}
+                    </div>
+                `;
+            });
+
+            html += `
+                        </div>
                     </div>
                     <div id="consonance-display" class="consonance-display"></div>
                 </div>
@@ -1034,11 +1216,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 
                 <div class="shruti-scale-container">
-                    <h3>24-Shruti Scale (2 Octaves - Click to Play, Double-click to Select)</h3>
-                    <div class="shruti-scale">
+                    <h3>Complete 88-Shruti Spectrum (4 Octaves - Click to Play, Double-click to Select)</h3>
+                    
+                    <!-- Lower Octave -->
+                    <div class="octave-section">
+                        <h4 class="octave-label">Lower Octave (Sa' to N2')</h4>
+                        <div class="shruti-scale">
             `;
 
-            shrutiData.forEach(shruti => {
+            // Render Lower Octave
+            shrutiData.filter(s => s.octave === 'lower').forEach(shruti => {
+                const isSelected = selectedShrutis.includes(shruti.index);
+                const partners = getConsonantPartners(shruti.index + 22);
+                
+                html += `
+                    <div class="shruti-note ${isSelected ? 'selected' : ''} clickable" 
+                         data-shruti="${shruti.symbol}"
+                         data-index="${shruti.index}"
+                         data-octave="${shruti.octave}"
+                         data-ma-partner="${partners.ma}"
+                         data-pa-partner="${partners.pa}">
+                        <div class="shruti-index">#${shruti.index}</div>
+                        <div class="shruti-symbol">${shruti.symbol}</div>
+                        <div class="shruti-name">${shruti.name}</div>
+                        <div class="shruti-freq">${shruti.freq} Hz</div>
+                        ${isSelected ? '<div class="shruti-indicator">✓</div>' : ''}
+                    </div>
+                `;
+            });
+
+            html += `
+                        </div>
+                    </div>
+                    
+                    <!-- Middle Octave -->
+                    <div class="octave-section">
+                        <h4 class="octave-label">Middle Octave (Sa to N2) [Reference]</h4>
+                        <div class="shruti-scale">
+            `;
+
+            // Render Middle Octave
+            shrutiData.filter(s => s.octave === 'middle').forEach(shruti => {
                 const isSelected = selectedShrutis.includes(shruti.index);
                 const partners = getConsonantPartners(shruti.index);
                 
@@ -1052,13 +1270,76 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="shruti-index">#${shruti.index}</div>
                         <div class="shruti-symbol">${shruti.symbol}</div>
                         <div class="shruti-name">${shruti.name}</div>
-                        <div class="shruti-ratio">${shruti.ratio}</div>
+                        <div class="shruti-freq">${shruti.freq} Hz</div>
                         ${isSelected ? '<div class="shruti-indicator">✓</div>' : ''}
                     </div>
                 `;
             });
 
             html += `
+                        </div>
+                    </div>
+                    
+                    <!-- Upper Octave -->
+                    <div class="octave-section">
+                        <h4 class="octave-label">Upper Octave (Ṡa to Ṅ2)</h4>
+                        <div class="shruti-scale">
+            `;
+
+            // Render Upper Octave
+            shrutiData.filter(s => s.octave === 'upper').forEach(shruti => {
+                const isSelected = selectedShrutis.includes(shruti.index);
+                const partners = getConsonantPartners(shruti.index - 22);
+                
+                html += `
+                    <div class="shruti-note ${isSelected ? 'selected' : ''} clickable" 
+                         data-shruti="${shruti.symbol}"
+                         data-index="${shruti.index}"
+                         data-octave="${shruti.octave}"
+                         data-ma-partner="${partners.ma}"
+                         data-pa-partner="${partners.pa}">
+                        <div class="shruti-index">#${shruti.index}</div>
+                        <div class="shruti-symbol">${shruti.symbol}</div>
+                        <div class="shruti-name">${shruti.name}</div>
+                        <div class="shruti-freq">${shruti.freq} Hz</div>
+                        ${isSelected ? '<div class="shruti-indicator">✓</div>' : ''}
+                    </div>
+                `;
+            });
+
+            html += `
+                        </div>
+                    </div>
+                    
+                    <!-- Second Upper Octave -->
+                    <div class="octave-section">
+                        <h4 class="octave-label">2nd Upper Octave (Ṡ̇a to Ṅ̇2)</h4>
+                        <div class="shruti-scale">
+            `;
+
+            // Render Second Upper Octave
+            shrutiData.filter(s => s.octave === 'upper2').forEach(shruti => {
+                const isSelected = selectedShrutis.includes(shruti.index);
+                const partners = getConsonantPartners(shruti.index - 44);
+                
+                html += `
+                    <div class="shruti-note ${isSelected ? 'selected' : ''} clickable" 
+                         data-shruti="${shruti.symbol}"
+                         data-index="${shruti.index}"
+                         data-octave="${shruti.octave}"
+                         data-ma-partner="${partners.ma}"
+                         data-pa-partner="${partners.pa}">
+                        <div class="shruti-index">#${shruti.index}</div>
+                        <div class="shruti-symbol">${shruti.symbol}</div>
+                        <div class="shruti-name">${shruti.name}</div>
+                        <div class="shruti-freq">${shruti.freq} Hz</div>
+                        ${isSelected ? '<div class="shruti-indicator">✓</div>' : ''}
+                    </div>
+                `;
+            });
+
+            html += `
+                        </div>
                     </div>
                     <div id="consonance-display" class="consonance-display"></div>
                 </div>
@@ -1295,7 +1576,120 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderDNAGrid() {
         const container = document.getElementById('dna-grid-content');
         
-        // Define the DNA Grid rows based on Dr. Oke's research
+        // Three rows representing the 22 Shruti DNA as shown in the presentation
+        const dnaRows = [
+            {
+                name: 'Row 1 (Tara - Upper)',
+                color: '#FFD700',
+                shrutis: 'P¹→R1→D1→G1→N1→M1→r1→d1→g1→n1'
+            },
+            {
+                name: 'Row 2 (Ati-Tara - Highest)',
+                color: '#FFA500',
+                shrutis: '1→d1→g1→n1→m1→ S →P→R2→D2→G2→N2→M2'
+            },
+            {
+                name: 'Row 3 (Ati-Komal - Lowest)',
+                color: '#FF8C00',
+                shrutis: '2→G2→N2→M2→r2→d2→ g2 →n2→m2→Ṡ2'
+            }
+        ];
+        
+        let html = `
+            <div class="dna-intro-card">
+                <h2>22 Shruti DNA</h2>
+                <p>The 22 shrutis are organized in three fundamental rows (Bheemapalas), each representing different harmonic relationships. Ragas are formed by "cutting" specific sequences from this DNA structure.</p>
+                <div class="dna-key-concepts">
+                    <div class="concept-box">
+                        <h4>Tara (Upper Row)</h4>
+                        <p>Contains the primary shuddha (natural) notes with just intonation ratios</p>
+                    </div>
+                    <div class="concept-box">
+                        <h4>Ati-Tara (Highest Row)</h4>
+                        <p>Contains teevra (sharp) variants and connects through Shadja (Sa)</p>
+                    </div>
+                    <div class="concept-box">
+                        <h4>Ati-Komal (Lowest Row)</h4>
+                        <p>Contains komal (flat) variants creating depth and emotion</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Render the three DNA rows
+        html += `<div class="dna-grid-presentation">`;
+        
+        dnaRows.forEach((row, index) => {
+            html += `
+                <div class="dna-row-container" style="animation-delay: ${index * 0.15}s">
+                    <div class="dna-row-header" style="border-left-color: ${row.color}">
+                        <h3 style="color: ${row.color}">${row.name}</h3>
+                    </div>
+                    <div class="dna-row-display" style="border-color: ${row.color}">
+                        <div class="dna-sequence">${row.shrutis}</div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += `</div>`;
+        
+        // Add detailed explanation section
+        html += `
+            <div class="dna-explanation-section">
+                <h3>Understanding the DNA Structure</h3>
+                <div class="explanation-grid">
+                    <div class="explanation-card">
+                        <h4>🧬 What is Shruti DNA?</h4>
+                        <p>Dr. Vidyadhar Oke's research reveals that all 22 shrutis are interconnected through specific mathematical relationships. These three rows (called Bheemapalas) represent the complete harmonic framework from which every raga is derived.</p>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>✂️ How Ragas are "Cut"</h4>
+                        <p>Each raga selects specific shrutis from these rows. For example, Darabari uses a sequence from the middle section, while Bairagi uses a different "cut" from the same DNA. The arrows (→) show the natural progression between consonant shrutis.</p>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>🎵 Harmonic Relationships</h4>
+                        <p>The positioning in these rows is not arbitrary - it follows the natural harmonic series and the relationships of Ma (perfect fourth) and Pa (perfect fifth). Moving horizontally maintains consonance, while jumping between rows creates tension.</p>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>📊 S-G, S-P Relationships</h4>
+                        <p>The 22 shrutis are related by two fundamental intervals: the Shadja-Gandhar (major third) and Shadja-Pancham (perfect fifth) relationships. These create the three distinct rows with their characteristic sounds.</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Add example ragas section
+        html += `
+            <div class="dna-examples-section">
+                <h3>Example: How Ragas are Cut from DNA</h3>
+                <div class="dna-examples-grid">
+                    <div class="dna-example-card">
+                        <h4>🎼 Darabari</h4>
+                        <div class="path-display">P¹→R1→D1→G1→N1→M1→r1→d1→g1→n1</div>
+                        <p class="path-description">Cut from Row 1 (Tara). This sequence creates the deep, meditative character of Darbari Kanada, one of the most profound midnight ragas.</p>
+                    </div>
+                    <div class="dna-example-card">
+                        <h4>🎼 Bairagi</h4>
+                        <div class="path-display">n1→m1→ S →P→R2→D2</div>
+                        <p class="path-description">Cut from Row 2 (Ati-Tara). This creates the devotional, renunciate character of Bairagi, perfect for morning meditation.</p>
+                    </div>
+                    <div class="dna-example-card">
+                        <h4>🎼 Bhupali</h4>
+                        <div class="path-display">S → R1 → G1 → P → D1</div>
+                        <p class="path-description">A pentatonic cut using only shuddha notes from Row 1. Creates the serene, evening atmosphere of Bhupali.</p>
+                    </div>
+                    <div class="dna-example-card">
+                        <h4>🎼 Malkauns</h4>
+                        <div class="path-display">S → g1 → m1 → d1 → n1</div>
+                        <p class="path-description">Uses komal (flat) notes from the lower sections. Creates the dark, mysterious midnight mood of Malkauns.</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        container.innerHTML = html;
+    }
         const dnaRows = {
             alpha: {
                 name: 'Alpha Row (Just Intonation)',
@@ -1458,31 +1852,19 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = html;
         
         // Add click handlers to play frequencies
-        document.querySelectorAll('.dna-node').forEach(node => {
+        document.querySelectorAll('.spectrum-node').forEach(node => {
             node.addEventListener('click', function() {
-                const index = parseInt(this.getAttribute('data-index'));
+                const frequency = parseFloat(this.getAttribute('data-freq'));
                 const symbol = this.getAttribute('data-symbol');
                 
-                // Find frequency from shrutiData (if available from visualizer)
-                const frequencies = {
-                    1: 240, 2: 252.84, 3: 256, 4: 266.67, 5: 270,
-                    6: 284.44, 7: 288, 8: 300, 9: 303.75, 10: 320,
-                    11: 324, 12: 337.5, 13: 341.33, 14: 360, 15: 379.26,
-                    16: 384, 17: 400, 18: 405, 19: 426.67, 20: 432,
-                    21: 450, 22: 455.62
-                };
-                
-                const frequency = frequencies[index];
-                
-                // Play frequency (reuse audio context if available)
-                if (window.audioContext) {
-                    playDNAFrequency(frequency);
-                }
+                playDNAFrequency(frequency);
                 
                 // Visual feedback
                 this.style.transform = 'scale(1.15)';
+                this.style.boxShadow = '0 0 30px rgba(255, 215, 0, 0.8)';
                 setTimeout(() => {
                     this.style.transform = '';
+                    this.style.boxShadow = '';
                 }, 300);
             });
         });

@@ -724,6 +724,23 @@ header h1 {
     margin-top: 20px;
 }
 
+.octave-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.octave-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+}
+
 .shruti-note {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--glass-border);
@@ -767,7 +784,8 @@ header h1 {
     line-height: 1.2;
 }
 
-.shruti-ratio {
+.shruti-ratio,
+.shruti-freq {
     font-size: 0.65rem;
     color: var(--text-secondary);
     font-family: 'Courier New', monospace;
@@ -1499,30 +1517,202 @@ header h1 {
     border-color: #ffc107 !important;
 }
 
-/* DNA Grid Styles */
+/* DNA Grid Styles - Presentation Mode */
 .dna-intro-card {
-    background: linear-gradient(135deg, rgba(157, 78, 221, 0.15), rgba(255, 158, 0, 0.1));
-    border: 1px solid var(--glass-border);
+    background: linear-gradient(135deg, rgba(139, 90, 43, 0.4), rgba(101, 67, 33, 0.3));
+    border: 2px solid rgba(205, 133, 63, 0.3);
     border-radius: 16px;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 35px;
+    margin-bottom: 35px;
     animation: fadeInUp 0.4s ease both;
 }
 
 .dna-intro-card h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    background: linear-gradient(45deg, #e0aaff, #ff9e00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #FFD700;
+    text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
 }
 
 .dna-intro-card p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #F5DEB3;
     margin-bottom: 20px;
+}
+
+.octave-legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.legend-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid;
+}
+
+.legend-dot.lower {
+    background: rgba(144, 164, 174, 0.3);
+    border-color: #90a4ae;
+}
+
+.legend-dot.middle {
+    background: rgba(79, 195, 247, 0.3);
+    border-color: #4fc3f7;
+}
+
+.legend-dot.upper {
+    background: rgba(255, 213, 79, 0.3);
+    border-color: #ffd54f;
+}
+
+.legend-dot.higher {
+    background: rgba(255, 158, 0, 0.3);
+    border-color: #ff9e00;
+}
+
+.complete-spectrum-container {
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.5s ease both;
+}
+
+.complete-spectrum-container h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.spectrum-scroll {
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 20px 0;
+}
+
+.spectrum-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: max-content;
+}
+
+.octave-section {
+    display: flex;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.octave-label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+}
+
+.octave-shrutis {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.spectrum-node {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid;
+    border-radius: 12px;
+    padding: 12px 15px;
+    min-width: 110px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.spectrum-node:hover {
+    transform: scale(1.08);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 20px rgba(157, 78, 221, 0.3);
+}
+
+.spectrum-symbol {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.spectrum-name {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.spectrum-freq {
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+    color: var(--text-secondary);
+}
+
+/* Octave-specific styling */
+.octave-section.lower .spectrum-node {
+    opacity: 0.7;
+}
+
+.octave-section.middle .spectrum-node {
+    opacity: 1;
+}
+
+.octave-section.upper .spectrum-node {
+    opacity: 0.9;
+}
+
+.octave-section.higher .spectrum-node {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .octave-legend {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .spectrum-node {
+        min-width: 90px;
+        padding: 10px 12px;
+    }
+    
+    .spectrum-symbol {
+        font-size: 1.3rem;
+    }
+    
+    .octave-label {
+        font-size: 0.85rem;
+        padding: 10px 8px;
+    }
 }
 
 .dna-key-concepts {
@@ -1554,30 +1744,31 @@ header h1 {
 }
 
 .dna-row-container {
-    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-    border: 1px solid var(--glass-border);
+    background: linear-gradient(135deg, rgba(139, 90, 43, 0.25), rgba(101, 67, 33, 0.15));
+    border: 2px solid rgba(205, 133, 63, 0.25);
     border-radius: 16px;
-    padding: 25px;
-    margin-bottom: 25px;
+    padding: 30px;
+    margin-bottom: 30px;
     animation: fadeInUp 0.5s ease both;
 }
 
 .dna-row-header {
-    border-left: 4px solid;
+    border-left: 5px solid;
     padding-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .dna-row-header h3 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .dna-row-header p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #F5DEB3;
 }
 
 .dna-row-grid {
@@ -1585,7 +1776,9 @@ header h1 {
     align-items: center;
     gap: 0;
     overflow-x: auto;
-    padding: 20px 0;
+    padding: 25px 10px;
+    background: rgba(101, 67, 33, 0.15);
+    border-radius: 12px;
 }
 
 .dna-node-wrapper {
@@ -1595,69 +1788,76 @@ header h1 {
 }
 
 .dna-node {
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid;
-    border-radius: 12px;
-    padding: 15px 20px;
+    background: rgba(139, 90, 43, 0.3);
+    border: 2px solid rgba(205, 133, 63, 0.5);
+    border-radius: 10px;
+    padding: 12px 18px;
     text-align: center;
-    min-width: 120px;
+    min-width: 100px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
 }
 
 .dna-node:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(157, 78, 221, 0.3);
-    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    background: rgba(139, 90, 43, 0.5);
+    border-color: #FFD700;
 }
 
 .dna-node-index {
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-    margin-bottom: 5px;
+    font-size: 0.65rem;
+    color: #D2B48C;
+    margin-bottom: 4px;
+    font-weight: 600;
 }
 
 .dna-node-symbol {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: #fff;
-    margin-bottom: 5px;
+    color: #FFD700;
+    margin-bottom: 4px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .dna-node-name {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
+    font-size: 0.7rem;
+    color: #F5DEB3;
     line-height: 1.2;
 }
 
 .dna-connection {
-    width: 60px;
-    height: 3px;
+    width: 50px;
+    height: 2px;
     position: relative;
-    margin: 0 10px;
+    margin: 0 8px;
+    background: rgba(205, 133, 63, 0.4);
 }
 
 .dna-connection::after {
     content: '→';
     position: absolute;
-    right: -8px;
-    top: -10px;
-    font-size: 1.2rem;
-    color: inherit;
+    right: -10px;
+    top: -12px;
+    font-size: 1.4rem;
+    color: #FFD700;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .connection-label {
     position: absolute;
-    top: -20px;
+    top: -22px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.7rem;
-    color: var(--text-secondary);
-    background: rgba(0, 0, 0, 0.5);
-    padding: 2px 6px;
-    border-radius: 4px;
+    color: #FFD700;
+    background: rgba(101, 67, 33, 0.8);
+    padding: 3px 7px;
+    border-radius: 5px;
     white-space: nowrap;
+    font-weight: 600;
+    border: 1px solid rgba(205, 133, 63, 0.4);
 }
 
 .dna-examples-section {
@@ -1669,7 +1869,8 @@ header h1 {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #fff;
+    color: #FFD700;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .dna-examples-grid {
@@ -1679,9 +1880,9 @@ header h1 {
 }
 
 .dna-example-card {
-    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-    border: 1px solid var(--glass-border);
-    border-left: 4px solid var(--primary-accent);
+    background: linear-gradient(135deg, rgba(139, 90, 43, 0.25), rgba(101, 67, 33, 0.15));
+    border: 2px solid rgba(205, 133, 63, 0.3);
+    border-left: 5px solid #FFD700;
     border-radius: 12px;
     padding: 20px;
     transition: all 0.3s ease;
@@ -1689,36 +1890,104 @@ header h1 {
 
 .dna-example-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(157, 78, 221, 0.2);
-    border-left-color: var(--secondary-accent);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+    border-left-color: #FFA500;
 }
 
 .dna-example-card h4 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #fff;
+    color: #FFD700;
     margin-bottom: 12px;
 }
 
 .path-display {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--primary-accent);
-    margin-bottom: 8px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #FFA500;
+    margin-bottom: 10px;
     letter-spacing: 1px;
+    font-family: 'Courier New', monospace;
 }
 
 .path-indices {
     font-size: 0.85rem;
     font-family: 'Courier New', monospace;
-    color: var(--text-secondary);
+    color: #D2B48C;
     margin-bottom: 12px;
 }
 
 .path-description {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #F5DEB3;
+}
+
+/* New DNA row display styles */
+.dna-row-display {
+    background: rgba(101, 67, 33, 0.2);
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.dna-sequence {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #FFD700;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    line-height: 1.8;
+}
+
+.dna-explanation-section {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.5s ease both;
+}
+
+.dna-explanation-section h3 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #FFD700;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.explanation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.explanation-card {
+    background: linear-gradient(135deg, rgba(139, 90, 43, 0.25), rgba(101, 67, 33, 0.15));
+    border: 2px solid rgba(205, 133, 63, 0.3);
+    border-radius: 12px;
+    padding: 22px;
+    transition: all 0.3s ease;
+}
+
+.explanation-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(255, 215, 0, 0.25);
+    border-color: rgba(255, 215, 0, 0.4);
+}
+
+.explanation-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FFD700;
+    margin-bottom: 12px;
+}
+
+.explanation-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #F5DEB3;
 }
 
 @media (max-width: 1200px) {
