@@ -521,6 +521,49 @@ document.addEventListener('DOMContentLoaded', () => {
         let customMode = false;
         let selectedShrutis = [];
         
+        // Audio context for playing frequencies
+        let audioContext = null;
+        let currentOscillator = null;
+        
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+        
+        function playFrequency(frequency, duration = 1000) {
+            initAudio();
+            
+            // Stop any currently playing sound
+            if (currentOscillator) {
+                currentOscillator.stop();
+                currentOscillator = null;
+            }
+            
+            // Create oscillator
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            // Set frequency
+            oscillator.frequency.value = frequency;
+            oscillator.type = 'sine'; // Pure tone
+            
+            // Envelope for smooth attack and release
+            const now = audioContext.currentTime;
+            gainNode.gain.setValueAtTime(0, now);
+            gainNode.gain.linearRampToValueAtTime(0.3, now + 0.05); // Attack
+            gainNode.gain.linearRampToValueAtTime(0.3, now + duration / 1000 - 0.1); // Sustain
+            gainNode.gain.linearRampToValueAtTime(0, now + duration / 1000); // Release
+            
+            oscillator.start(now);
+            oscillator.stop(now + duration / 1000);
+            
+            currentOscillator = oscillator;
+        }
+        
         // 22 Shruti reference data with index (1-22)
         const shrutiData = [
             { index: 1, symbol: 'S', name: 'Shadja', ratio: '1/1', cents: '0', freq: '240.00', freqRatio: 1.0 },
@@ -707,7 +750,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('shruti-visualizer-content');
             
             if (!selectedRaag) {
-                container.innerHTML = '<div class="visualizer-intro"><p>Select a raag from the dropdown above to see its exact shruti positions on the 22-shruti scale. Each highlighted note will show why that specific shruti was chosen.</p></div>';
+                container.innerHTML = '<div class="visualizer-intro"><p>Select a raag from the dropdown above to see its exact shruti positions on the 22-shruti scale. <strong>Click any shruti to hear its frequency!</strong></p></div>';
                 return;
             }
 
@@ -804,6 +847,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Add interactive hover effects for consonance visualization
             document.querySelectorAll('.shruti-note').forEach(note => {
+                // Click to play frequency
+                note.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const shrutiInfo = shrutiData.find(s => s.index === index);
+                    const frequency = parseFloat(shrutiInfo.freq);
+                    
+                    playFrequency(frequency);
+                    
+                    // Visual feedback
+                    this.style.animation = 'none';
+                    setTimeout(() => {
+                        this.style.animation = '';
+                    }, 10);
+                });
+                
                 note.addEventListener('mouseenter', function() {
                     const index = parseInt(this.getAttribute('data-index'));
                     const symbol = this.getAttribute('data-shruti');
@@ -918,9 +976,9 @@ document.addEventListener('DOMContentLoaded', () => {
             let html = `
                 <div class="custom-scale-info">
                     <h2>🎼 Build Your Own Scale</h2>
-                    <p>Click on any shruti to add it to your scale. The system will validate consonance using the 9 or 13 Rule.</p>
+                    <p><strong>Click</strong> any shruti to hear its frequency. <strong>Double-click</strong> to add/remove from your scale.</p>
                     <div class="selected-scale">
-                        <strong>Your Scale:</strong> ${selectedShrutis.length > 0 ? selectedShrutis.map(i => shrutiData.find(s => s.index === i).symbol).join(' ') : 'Empty - Click shrutis to add'}
+                        <strong>Your Scale:</strong> ${selectedShrutis.length > 0 ? selectedShrutis.map(i => shrutiData.find(s => s.index === i).symbol).join(' ') : 'Empty - Double-click shrutis to add'}
                     </div>
                 </div>
                 
@@ -980,7 +1038,23 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Add click handlers for custom mode
             document.querySelectorAll('.shruti-note.clickable').forEach(note => {
-                note.addEventListener('click', function() {
+                // Single click to play frequency
+                note.addEventListener('click', function(e) {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const shrutiInfo = shrutiData.find(s => s.index === index);
+                    const frequency = parseFloat(shrutiInfo.freq);
+                    
+                    playFrequency(frequency);
+                    
+                    // Visual feedback
+                    this.style.animation = 'none';
+                    setTimeout(() => {
+                        this.style.animation = '';
+                    }, 10);
+                });
+                
+                // Double click to toggle selection
+                note.addEventListener('dblclick', function() {
                     const index = parseInt(this.getAttribute('data-index'));
                     
                     if (selectedShrutis.includes(index)) {

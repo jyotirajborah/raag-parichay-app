@@ -1439,3 +1439,37 @@ header h1 {
         gap: 8px;
     }
 }
+
+/* Audio playback visual feedback */
+@keyframes audioPlay {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+    100% { transform: scale(1); }
+}
+
+.shruti-note {
+    cursor: pointer !important;
+}
+
+.shruti-note:active {
+    animation: audioPlay 0.3s ease;
+}
+
+/* Add speaker icon hint */
+.shruti-note::after {
+    content: '🔊';
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.shruti-note:hover::after {
+    opacity: 0.5;
+}
+
+.shruti-note.active::after {
+    opacity: 0.7;
+}
