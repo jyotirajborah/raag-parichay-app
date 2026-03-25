@@ -522,6 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Audio context for playing frequencies
         let audioContext = null;
         let playingOscillators = {}; // Track multiple playing oscillators by index
+        let sliderOscillator = null; // Track slider/checkbox oscillator
         let baseSa = 240; // Default middle Sa frequency
         
         function initAudio() {
@@ -760,7 +761,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const slider = document.getElementById('sa-freq-slider');
             const display = document.getElementById('current-sa-display');
             const playWhileSlidingCheckbox = document.getElementById('play-while-sliding-checkbox');
-            let sliderOscillator = null;
             
             slider.addEventListener('input', function() {
                 const newSa = parseFloat(this.value);
