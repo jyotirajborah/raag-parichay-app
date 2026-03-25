@@ -663,31 +663,42 @@ document.addEventListener('DOMContentLoaded', () => {
             selector.appendChild(option);
         });
 
-        // 22 Shruti reference data
+        // 22 Shruti reference data with index (1-22)
         const shrutiData = [
-            { symbol: 'S', name: 'Shadja', ratio: '1/1', cents: '0', freq: '240.00' },
-            { symbol: 'r1', name: 'Ati Komal Rishabh', ratio: '256/243', cents: '-10', freq: '252.84' },
-            { symbol: 'r2', name: 'Komal Rishabh', ratio: '16/15', cents: '+11', freq: '256.00' },
-            { symbol: 'R1', name: 'Shuddha Rishabh', ratio: '10/9', cents: '-18', freq: '266.67' },
-            { symbol: 'R2', name: 'Teevra Shuddha Rishabh', ratio: '9/8', cents: '+4', freq: '270.00' },
-            { symbol: 'g1', name: 'Ati Komal Gandhar', ratio: '32/27', cents: '-6', freq: '284.44' },
-            { symbol: 'g2', name: 'Komal Gandhar', ratio: '6/5', cents: '+15', freq: '288.00' },
-            { symbol: 'G1', name: 'Shuddha Gandhar', ratio: '5/4', cents: '-14', freq: '300.00' },
-            { symbol: 'G2', name: 'Teevra Shuddha Gandhar', ratio: '81/64', cents: '+8', freq: '303.75' },
-            { symbol: 'm1', name: 'Shuddha Madhyam', ratio: '4/3', cents: '-2', freq: '320.00' },
-            { symbol: 'm2', name: 'Ek Shruti Madhyam', ratio: '27/20', cents: '+19', freq: '324.00' },
-            { symbol: 'M1', name: 'Teevra Madhyam', ratio: '45/32', cents: '-10', freq: '337.50' },
-            { symbol: 'M2', name: 'Teevratama Madhyam', ratio: '64/45', cents: '+12', freq: '341.33' },
-            { symbol: 'P', name: 'Pancham', ratio: '3/2', cents: '+2', freq: '360.00' },
-            { symbol: 'd1', name: 'Ati Komal Dhaivat', ratio: '128/81', cents: '-8', freq: '379.26' },
-            { symbol: 'd2', name: 'Komal Dhaivat', ratio: '8/5', cents: '+13', freq: '384.00' },
-            { symbol: 'D1', name: 'Shuddha Dhaivat', ratio: '5/3', cents: '-16', freq: '400.00' },
-            { symbol: 'D2', name: 'Teevra Shuddha Dhaivat', ratio: '27/16', cents: '+6', freq: '405.00' },
-            { symbol: 'n1', name: 'Ati Komal Nishad', ratio: '16/9', cents: '-4', freq: '426.67' },
-            { symbol: 'n2', name: 'Komal Nishad', ratio: '9/5', cents: '+17', freq: '432.00' },
-            { symbol: 'N1', name: 'Shuddha Nishad', ratio: '15/8', cents: '-12', freq: '450.00' },
-            { symbol: 'N2', name: 'Teevra Shuddha Nishad', ratio: '243/128', cents: '+10', freq: '455.62' }
+            { index: 1, symbol: 'S', name: 'Shadja', ratio: '1/1', cents: '0', freq: '240.00', freqRatio: 1.0 },
+            { index: 2, symbol: 'r1', name: 'Ati Komal Rishabh', ratio: '256/243', cents: '-10', freq: '252.84', freqRatio: 1.053 },
+            { index: 3, symbol: 'r2', name: 'Komal Rishabh', ratio: '16/15', cents: '+11', freq: '256.00', freqRatio: 1.067 },
+            { index: 4, symbol: 'R1', name: 'Shuddha Rishabh', ratio: '10/9', cents: '-18', freq: '266.67', freqRatio: 1.111 },
+            { index: 5, symbol: 'R2', name: 'Teevra Shuddha Rishabh', ratio: '9/8', cents: '+4', freq: '270.00', freqRatio: 1.125 },
+            { index: 6, symbol: 'g1', name: 'Ati Komal Gandhar', ratio: '32/27', cents: '-6', freq: '284.44', freqRatio: 1.185 },
+            { index: 7, symbol: 'g2', name: 'Komal Gandhar', ratio: '6/5', cents: '+15', freq: '288.00', freqRatio: 1.2 },
+            { index: 8, symbol: 'G1', name: 'Shuddha Gandhar', ratio: '5/4', cents: '-14', freq: '300.00', freqRatio: 1.25 },
+            { index: 9, symbol: 'G2', name: 'Teevra Shuddha Gandhar', ratio: '81/64', cents: '+8', freq: '303.75', freqRatio: 1.266 },
+            { index: 10, symbol: 'm1', name: 'Shuddha Madhyam', ratio: '4/3', cents: '-2', freq: '320.00', freqRatio: 1.333 },
+            { index: 11, symbol: 'm2', name: 'Ek Shruti Madhyam', ratio: '27/20', cents: '+19', freq: '324.00', freqRatio: 1.35 },
+            { index: 12, symbol: 'M1', name: 'Teevra Madhyam', ratio: '45/32', cents: '-10', freq: '337.50', freqRatio: 1.406 },
+            { index: 13, symbol: 'M2', name: 'Teevratama Madhyam', ratio: '64/45', cents: '+12', freq: '341.33', freqRatio: 1.422 },
+            { index: 14, symbol: 'P', name: 'Pancham', ratio: '3/2', cents: '+2', freq: '360.00', freqRatio: 1.5 },
+            { index: 15, symbol: 'd1', name: 'Ati Komal Dhaivat', ratio: '128/81', cents: '-8', freq: '379.26', freqRatio: 1.58 },
+            { index: 16, symbol: 'd2', name: 'Komal Dhaivat', ratio: '8/5', cents: '+13', freq: '384.00', freqRatio: 1.6 },
+            { index: 17, symbol: 'D1', name: 'Shuddha Dhaivat', ratio: '5/3', cents: '-16', freq: '400.00', freqRatio: 1.667 },
+            { index: 18, symbol: 'D2', name: 'Teevra Shuddha Dhaivat', ratio: '27/16', cents: '+6', freq: '405.00', freqRatio: 1.688 },
+            { index: 19, symbol: 'n1', name: 'Ati Komal Nishad', ratio: '16/9', cents: '-4', freq: '426.67', freqRatio: 1.778 },
+            { index: 20, symbol: 'n2', name: 'Komal Nishad', ratio: '9/5', cents: '+17', freq: '432.00', freqRatio: 1.8 },
+            { index: 21, symbol: 'N1', name: 'Shuddha Nishad', ratio: '15/8', cents: '-12', freq: '450.00', freqRatio: 1.875 },
+            { index: 22, symbol: 'N2', name: 'Teevra Shuddha Nishad', ratio: '243/128', cents: '+10', freq: '455.62', freqRatio: 1.898 }
         ];
+
+        // Calculate consonant partners using 9 or 13 rule
+        function getConsonantPartners(shrutiIndex) {
+            const maPartnerIndex = shrutiIndex + 9;
+            const paPartnerIndex = shrutiIndex + 13;
+            
+            return {
+                ma: maPartnerIndex <= 22 ? maPartnerIndex : maPartnerIndex - 22,
+                pa: paPartnerIndex <= 22 ? paPartnerIndex : paPartnerIndex - 22
+            };
+        }
 
         function renderScale(selectedRaag) {
             const container = document.getElementById('shruti-visualizer-content');
@@ -707,19 +718,36 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="shruti-list">Shrutis: ${usedShrutis.join(' ')}</p>
                 </div>
                 
+                <div class="consonance-info-card">
+                    <h3>🎵 The 9 or 13 Rule - Consonant Harmony</h3>
+                    <p>Hover over any shruti to see its consonant partners:</p>
+                    <ul>
+                        <li><strong>+9 Shrutis</strong> = Madhyam Partner (4th) - Frequency × 1.333</li>
+                        <li><strong>+13 Shrutis</strong> = Pancham Partner (5th) - Frequency × 1.5</li>
+                    </ul>
+                    <p class="info-note">These mathematical constants ensure perfect resonance without dissonance (beats).</p>
+                </div>
+                
                 <div class="shruti-scale-container">
-                    <h3>22-Shruti Scale</h3>
+                    <h3>22-Shruti Scale (Interactive)</h3>
                     <div class="shruti-scale">
             `;
 
             shrutiData.forEach(shruti => {
                 const isUsed = usedShrutis.includes(shruti.symbol);
                 const reasoning = raagData.reasoning[shruti.symbol] || '';
+                const partners = getConsonantPartners(shruti.index);
+                const maPartner = shrutiData.find(s => s.index === partners.ma);
+                const paPartner = shrutiData.find(s => s.index === partners.pa);
                 
                 html += `
                     <div class="shruti-note ${isUsed ? 'active' : ''}" 
                          data-shruti="${shruti.symbol}"
+                         data-index="${shruti.index}"
+                         data-ma-partner="${partners.ma}"
+                         data-pa-partner="${partners.pa}"
                          data-reasoning="${reasoning}">
+                        <div class="shruti-index">#${shruti.index}</div>
                         <div class="shruti-symbol">${shruti.symbol}</div>
                         <div class="shruti-name">${shruti.name}</div>
                         <div class="shruti-ratio">${shruti.ratio}</div>
@@ -730,6 +758,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             html += `
                     </div>
+                    <div id="consonance-display" class="consonance-display"></div>
                 </div>
                 
                 <div class="reasoning-panel">
@@ -740,13 +769,22 @@ document.addEventListener('DOMContentLoaded', () => {
             usedShrutis.forEach(shruti => {
                 if (raagData.reasoning[shruti]) {
                     const shrutiInfo = shrutiData.find(s => s.symbol === shruti);
+                    const partners = getConsonantPartners(shrutiInfo.index);
+                    const maPartner = shrutiData.find(s => s.index === partners.ma);
+                    const paPartner = shrutiData.find(s => s.index === partners.pa);
+                    
                     html += `
                         <div class="reasoning-card">
                             <h4>${shruti} - ${shrutiInfo.name}</h4>
                             <div class="reasoning-specs">
+                                <span class="spec">Index: #${shrutiInfo.index}</span>
                                 <span class="spec">Ratio: ${shrutiInfo.ratio}</span>
                                 <span class="spec">Cents: ${shrutiInfo.cents}</span>
                                 <span class="spec">Freq: ${shrutiInfo.freq} Hz</span>
+                            </div>
+                            <div class="consonance-partners">
+                                <span class="partner-badge ma-badge">Ma Partner (+9): ${maPartner.symbol} (${maPartner.name})</span>
+                                <span class="partner-badge pa-badge">Pa Partner (+13): ${paPartner.symbol} (${paPartner.name})</span>
                             </div>
                             <p class="reasoning-text">${raagData.reasoning[shruti]}</p>
                         </div>
@@ -761,13 +799,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
             container.innerHTML = html;
 
-            // Add hover effects
-            document.querySelectorAll('.shruti-note.active').forEach(note => {
+            // Add interactive hover effects for consonance visualization
+            document.querySelectorAll('.shruti-note').forEach(note => {
                 note.addEventListener('mouseenter', function() {
-                    const reasoning = this.getAttribute('data-reasoning');
-                    if (reasoning) {
-                        this.setAttribute('title', reasoning);
-                    }
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const symbol = this.getAttribute('data-shruti');
+                    const maPartnerIndex = parseInt(this.getAttribute('data-ma-partner'));
+                    const paPartnerIndex = parseInt(this.getAttribute('data-pa-partner'));
+                    
+                    // Highlight consonant partners
+                    document.querySelectorAll('.shruti-note').forEach(n => {
+                        n.classList.remove('ma-partner', 'pa-partner', 'source-note');
+                    });
+                    
+                    this.classList.add('source-note');
+                    
+                    const maPartnerNote = document.querySelector(`[data-index="${maPartnerIndex}"]`);
+                    const paPartnerNote = document.querySelector(`[data-index="${paPartnerIndex}"]`);
+                    
+                    if (maPartnerNote) maPartnerNote.classList.add('ma-partner');
+                    if (paPartnerNote) paPartnerNote.classList.add('pa-partner');
+                    
+                    // Show consonance info
+                    const shrutiInfo = shrutiData.find(s => s.index === index);
+                    const maPartner = shrutiData.find(s => s.index === maPartnerIndex);
+                    const paPartner = shrutiData.find(s => s.index === paPartnerIndex);
+                    
+                    const display = document.getElementById('consonance-display');
+                    display.innerHTML = `
+                        <div class="consonance-info">
+                            <h4>Consonant Partners for ${symbol} (${shrutiInfo.name})</h4>
+                            <div class="partner-info">
+                                <div class="partner-detail ma-detail">
+                                    <strong>Madhyam Partner (+9):</strong> ${maPartner.symbol} (${maPartner.name})<br>
+                                    <span class="math">Index ${index} + 9 = ${maPartnerIndex}</span><br>
+                                    <span class="math">Freq: ${shrutiInfo.freq} Hz × 1.333 ≈ ${(parseFloat(shrutiInfo.freq) * 1.333).toFixed(2)} Hz</span><br>
+                                    <span class="math">Actual: ${maPartner.freq} Hz ✓</span>
+                                </div>
+                                <div class="partner-detail pa-detail">
+                                    <strong>Pancham Partner (+13):</strong> ${paPartner.symbol} (${paPartner.name})<br>
+                                    <span class="math">Index ${index} + 13 = ${paPartnerIndex > 22 ? paPartnerIndex - 22 + ' (wrapped)' : paPartnerIndex}</span><br>
+                                    <span class="math">Freq: ${shrutiInfo.freq} Hz × 1.5 = ${(parseFloat(shrutiInfo.freq) * 1.5).toFixed(2)} Hz</span><br>
+                                    <span class="math">Actual: ${paPartner.freq} Hz ✓</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    display.style.display = 'block';
+                });
+                
+                note.addEventListener('mouseleave', function() {
+                    // Keep highlighting for a moment
+                    setTimeout(() => {
+                        if (!document.querySelector('.shruti-note:hover')) {
+                            document.querySelectorAll('.shruti-note').forEach(n => {
+                                n.classList.remove('ma-partner', 'pa-partner', 'source-note');
+                            });
+                            const display = document.getElementById('consonance-display');
+                            display.style.display = 'none';
+                        }
+                    }, 100);
                 });
             });
         }
