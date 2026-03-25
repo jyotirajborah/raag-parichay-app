@@ -564,30 +564,36 @@ document.addEventListener('DOMContentLoaded', () => {
             currentOscillator = oscillator;
         }
         
-        // 22 Shruti reference data with index (1-22)
+        // 22 Shruti reference data with index (0-23 for 2 octaves)
+        // Index 0 = Lower Sa, Indices 1-22 = Middle octave, Index 23 = Upper Sa
         const shrutiData = [
-            { index: 1, symbol: 'S', name: 'Shadja', ratio: '1/1', cents: '0', freq: '240.00', freqRatio: 1.0 },
-            { index: 2, symbol: 'r1', name: 'Ati Komal Rishabh', ratio: '256/243', cents: '-10', freq: '252.84', freqRatio: 1.053 },
-            { index: 3, symbol: 'r2', name: 'Komal Rishabh', ratio: '16/15', cents: '+11', freq: '256.00', freqRatio: 1.067 },
-            { index: 4, symbol: 'R1', name: 'Shuddha Rishabh', ratio: '10/9', cents: '-18', freq: '266.67', freqRatio: 1.111 },
-            { index: 5, symbol: 'R2', name: 'Teevra Shuddha Rishabh', ratio: '9/8', cents: '+4', freq: '270.00', freqRatio: 1.125 },
-            { index: 6, symbol: 'g1', name: 'Ati Komal Gandhar', ratio: '32/27', cents: '-6', freq: '284.44', freqRatio: 1.185 },
-            { index: 7, symbol: 'g2', name: 'Komal Gandhar', ratio: '6/5', cents: '+15', freq: '288.00', freqRatio: 1.2 },
-            { index: 8, symbol: 'G1', name: 'Shuddha Gandhar', ratio: '5/4', cents: '-14', freq: '300.00', freqRatio: 1.25 },
-            { index: 9, symbol: 'G2', name: 'Teevra Shuddha Gandhar', ratio: '81/64', cents: '+8', freq: '303.75', freqRatio: 1.266 },
-            { index: 10, symbol: 'm1', name: 'Shuddha Madhyam', ratio: '4/3', cents: '-2', freq: '320.00', freqRatio: 1.333 },
-            { index: 11, symbol: 'm2', name: 'Ek Shruti Madhyam', ratio: '27/20', cents: '+19', freq: '324.00', freqRatio: 1.35 },
-            { index: 12, symbol: 'M1', name: 'Teevra Madhyam', ratio: '45/32', cents: '-10', freq: '337.50', freqRatio: 1.406 },
-            { index: 13, symbol: 'M2', name: 'Teevratama Madhyam', ratio: '64/45', cents: '+12', freq: '341.33', freqRatio: 1.422 },
-            { index: 14, symbol: 'P', name: 'Pancham', ratio: '3/2', cents: '+2', freq: '360.00', freqRatio: 1.5 },
-            { index: 15, symbol: 'd1', name: 'Ati Komal Dhaivat', ratio: '128/81', cents: '-8', freq: '379.26', freqRatio: 1.58 },
-            { index: 16, symbol: 'd2', name: 'Komal Dhaivat', ratio: '8/5', cents: '+13', freq: '384.00', freqRatio: 1.6 },
-            { index: 17, symbol: 'D1', name: 'Shuddha Dhaivat', ratio: '5/3', cents: '-16', freq: '400.00', freqRatio: 1.667 },
-            { index: 18, symbol: 'D2', name: 'Teevra Shuddha Dhaivat', ratio: '27/16', cents: '+6', freq: '405.00', freqRatio: 1.688 },
-            { index: 19, symbol: 'n1', name: 'Ati Komal Nishad', ratio: '16/9', cents: '-4', freq: '426.67', freqRatio: 1.778 },
-            { index: 20, symbol: 'n2', name: 'Komal Nishad', ratio: '9/5', cents: '+17', freq: '432.00', freqRatio: 1.8 },
-            { index: 21, symbol: 'N1', name: 'Shuddha Nishad', ratio: '15/8', cents: '-12', freq: '450.00', freqRatio: 1.875 },
-            { index: 22, symbol: 'N2', name: 'Teevra Shuddha Nishad', ratio: '243/128', cents: '+10', freq: '455.62', freqRatio: 1.898 }
+            // Lower Octave Sa
+            { index: 0, symbol: 'Ṡ', name: 'Shadja (Lower)', ratio: '1/2', cents: '-1200', freq: '120.00', freqRatio: 0.5, octave: 'lower' },
+            // Middle Octave (Standard 22 shrutis)
+            { index: 1, symbol: 'S', name: 'Shadja', ratio: '1/1', cents: '0', freq: '240.00', freqRatio: 1.0, octave: 'middle' },
+            { index: 2, symbol: 'r1', name: 'Ati Komal Rishabh', ratio: '256/243', cents: '-10', freq: '252.84', freqRatio: 1.053, octave: 'middle' },
+            { index: 3, symbol: 'r2', name: 'Komal Rishabh', ratio: '16/15', cents: '+11', freq: '256.00', freqRatio: 1.067, octave: 'middle' },
+            { index: 4, symbol: 'R1', name: 'Shuddha Rishabh', ratio: '10/9', cents: '-18', freq: '266.67', freqRatio: 1.111, octave: 'middle' },
+            { index: 5, symbol: 'R2', name: 'Teevra Shuddha Rishabh', ratio: '9/8', cents: '+4', freq: '270.00', freqRatio: 1.125, octave: 'middle' },
+            { index: 6, symbol: 'g1', name: 'Ati Komal Gandhar', ratio: '32/27', cents: '-6', freq: '284.44', freqRatio: 1.185, octave: 'middle' },
+            { index: 7, symbol: 'g2', name: 'Komal Gandhar', ratio: '6/5', cents: '+15', freq: '288.00', freqRatio: 1.2, octave: 'middle' },
+            { index: 8, symbol: 'G1', name: 'Shuddha Gandhar', ratio: '5/4', cents: '-14', freq: '300.00', freqRatio: 1.25, octave: 'middle' },
+            { index: 9, symbol: 'G2', name: 'Teevra Shuddha Gandhar', ratio: '81/64', cents: '+8', freq: '303.75', freqRatio: 1.266, octave: 'middle' },
+            { index: 10, symbol: 'm1', name: 'Shuddha Madhyam', ratio: '4/3', cents: '-2', freq: '320.00', freqRatio: 1.333, octave: 'middle' },
+            { index: 11, symbol: 'm2', name: 'Ek Shruti Madhyam', ratio: '27/20', cents: '+19', freq: '324.00', freqRatio: 1.35, octave: 'middle' },
+            { index: 12, symbol: 'M1', name: 'Teevra Madhyam', ratio: '45/32', cents: '-10', freq: '337.50', freqRatio: 1.406, octave: 'middle' },
+            { index: 13, symbol: 'M2', name: 'Teevratama Madhyam', ratio: '64/45', cents: '+12', freq: '341.33', freqRatio: 1.422, octave: 'middle' },
+            { index: 14, symbol: 'P', name: 'Pancham', ratio: '3/2', cents: '+2', freq: '360.00', freqRatio: 1.5, octave: 'middle' },
+            { index: 15, symbol: 'd1', name: 'Ati Komal Dhaivat', ratio: '128/81', cents: '-8', freq: '379.26', freqRatio: 1.58, octave: 'middle' },
+            { index: 16, symbol: 'd2', name: 'Komal Dhaivat', ratio: '8/5', cents: '+13', freq: '384.00', freqRatio: 1.6, octave: 'middle' },
+            { index: 17, symbol: 'D1', name: 'Shuddha Dhaivat', ratio: '5/3', cents: '-16', freq: '400.00', freqRatio: 1.667, octave: 'middle' },
+            { index: 18, symbol: 'D2', name: 'Teevra Shuddha Dhaivat', ratio: '27/16', cents: '+6', freq: '405.00', freqRatio: 1.688, octave: 'middle' },
+            { index: 19, symbol: 'n1', name: 'Ati Komal Nishad', ratio: '16/9', cents: '-4', freq: '426.67', freqRatio: 1.778, octave: 'middle' },
+            { index: 20, symbol: 'n2', name: 'Komal Nishad', ratio: '9/5', cents: '+17', freq: '432.00', freqRatio: 1.8, octave: 'middle' },
+            { index: 21, symbol: 'N1', name: 'Shuddha Nishad', ratio: '15/8', cents: '-12', freq: '450.00', freqRatio: 1.875, octave: 'middle' },
+            { index: 22, symbol: 'N2', name: 'Teevra Shuddha Nishad', ratio: '243/128', cents: '+10', freq: '455.62', freqRatio: 1.898, octave: 'middle' },
+            // Upper Octave Sa
+            { index: 23, symbol: 'Ṡ', name: 'Shadja (Upper)', ratio: '2/1', cents: '+1200', freq: '480.00', freqRatio: 2.0, octave: 'upper' }
         ];
 
         // Calculate consonant partners using 9 or 13 rule
@@ -766,16 +772,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 <div class="consonance-info-card">
                     <h3>🎵 The 9 or 13 Rule - Consonant Harmony</h3>
-                    <p>Hover over any shruti to see its consonant partners:</p>
+                    <p>Hover over any shruti to see its consonant partners (works within the middle octave):</p>
                     <ul>
                         <li><strong>+9 Shrutis</strong> = Madhyam Partner (4th) - Frequency × 1.333</li>
                         <li><strong>+13 Shrutis</strong> = Pancham Partner (5th) - Frequency × 1.5</li>
                     </ul>
-                    <p class="info-note">These mathematical constants ensure perfect resonance without dissonance (beats).</p>
+                    <p class="info-note">The scale now shows 2 full octaves: Lower Ṡ (120 Hz) → Middle S-N2 → Upper Ṡ (480 Hz)</p>
                 </div>
                 
                 <div class="shruti-scale-container">
-                    <h3>22-Shruti Scale (Interactive)</h3>
+                    <h3>24-Shruti Scale (2 Octaves: Lower Ṡ to Upper Ṡ)</h3>
                     <div class="shruti-scale">
             `;
 
@@ -790,6 +796,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="shruti-note ${isUsed ? 'active' : ''}" 
                          data-shruti="${shruti.symbol}"
                          data-index="${shruti.index}"
+                         data-octave="${shruti.octave}"
                          data-ma-partner="${partners.ma}"
                          data-pa-partner="${partners.pa}"
                          data-reasoning="${reasoning}">
@@ -1026,7 +1033,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 
                 <div class="shruti-scale-container">
-                    <h3>22-Shruti Scale (Click to Select)</h3>
+                    <h3>24-Shruti Scale (2 Octaves - Click to Play, Double-click to Select)</h3>
                     <div class="shruti-scale">
             `;
 
@@ -1038,6 +1045,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="shruti-note ${isSelected ? 'selected' : ''} clickable" 
                          data-shruti="${shruti.symbol}"
                          data-index="${shruti.index}"
+                         data-octave="${shruti.octave}"
                          data-ma-partner="${partners.ma}"
                          data-pa-partner="${partners.pa}">
                         <div class="shruti-index">#${shruti.index}</div>

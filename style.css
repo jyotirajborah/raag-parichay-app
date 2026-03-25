@@ -1473,3 +1473,28 @@ header h1 {
 .shruti-note.active::after {
     opacity: 0.7;
 }
+
+/* Octave styling */
+.shruti-note[data-octave="lower"],
+.shruti-note[data-octave="upper"] {
+    background: rgba(255, 193, 7, 0.1) !important;
+    border-color: rgba(255, 193, 7, 0.3) !important;
+}
+
+.shruti-note[data-octave="lower"] .shruti-symbol,
+.shruti-note[data-octave="upper"] .shruti-symbol {
+    color: #ffd54f;
+    font-size: 1.6rem;
+}
+
+.shruti-note[data-octave="lower"].active,
+.shruti-note[data-octave="upper"].active {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.4), rgba(255, 152, 0, 0.3)) !important;
+    border-color: #ffc107 !important;
+}
+
+.shruti-note[data-octave="lower"].selected,
+.shruti-note[data-octave="upper"].selected {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.5), rgba(255, 152, 0, 0.4)) !important;
+    border-color: #ffc107 !important;
+}
