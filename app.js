@@ -818,6 +818,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
+            // Add checkbox handler to play/stop Sa when checked/unchecked
+            playWhileSlidingCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    // Start playing current Sa frequency
+                    initAudio();
+                    
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.value = baseSa;
+                    oscillator.type = 'sine';
+                    
+                    const now = audioContext.currentTime;
+                    gainNode.gain.setValueAtTime(0, now);
+                    gainNode.gain.linearRampToValueAtTime(0.3, now + 0.1);
+                    
+                    oscillator.start(now);
+                    
+                    sliderOscillator = { oscillator, gainNode };
+                } else {
+                    // Stop playing
+                    if (sliderOscillator) {
+                        sliderOscillator.gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.1);
+                        sliderOscillator.oscillator.stop(audioContext.currentTime + 0.1);
+                        sliderOscillator = null;
+                    }
+                }
+            });
+            
             // Add scale button handlers
             document.querySelectorAll('.scale-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
