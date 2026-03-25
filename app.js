@@ -649,21 +649,45 @@ document.addEventListener('DOMContentLoaded', () => {
             const shrutiData = generateShrutiData(baseSa);
             const container = document.getElementById('shruti-visualizer-content');
             
+            // Calculate frequency range: lower octave N2 to upper octave N2
+            const lowerN2Freq = (baseSa * 1.898 * 0.5).toFixed(2); // N2 in lower octave
+            const upperN2Freq = (baseSa * 1.898 * 2.0).toFixed(2); // N2 in upper octave
+            
             let html = `
                 <div class="shruti-visualizer-intro">
                     <h2>22 Shruti Spectrum - Interactive Explorer</h2>
                     <p>Explore the complete 22-shruti system across three octaves. <strong>Double-click</strong> any shruti to play it continuously (double-click again to stop). <strong>Hover</strong> over any shruti to see its consonant partners highlighted.</p>
                     
                     <div class="sa-frequency-control">
-                        <label for="sa-freq-input">Middle Sa Frequency (Hz):</label>
-                        <input type="number" id="sa-freq-input" value="${baseSa}" min="100" max="500" step="1">
-                        <button id="apply-sa-freq" class="apply-btn">Apply</button>
-                        <span class="preset-buttons">
-                            <button class="preset-btn" data-freq="220">220 Hz</button>
-                            <button class="preset-btn" data-freq="240">240 Hz</button>
-                            <button class="preset-btn" data-freq="261.63">261.63 Hz (C4)</button>
-                            <button class="preset-btn" data-freq="293.66">293.66 Hz (D4)</button>
-                        </span>
+                        <div class="slider-control">
+                            <label for="sa-freq-slider">Middle Sa Frequency:</label>
+                            <div class="slider-wrapper">
+                                <span class="slider-label">${lowerN2Freq} Hz</span>
+                                <input type="range" id="sa-freq-slider" value="${baseSa}" min="100" max="950" step="0.1">
+                                <span class="slider-label">${upperN2Freq} Hz</span>
+                            </div>
+                            <div class="current-freq">
+                                <strong id="current-sa-display">${baseSa} Hz</strong>
+                            </div>
+                        </div>
+                        
+                        <div class="scale-selector">
+                            <label>Select Scale (Middle Sa):</label>
+                            <div class="scale-buttons">
+                                <button class="scale-btn" data-freq="130.81" data-note="C3">C3 (130.81 Hz)</button>
+                                <button class="scale-btn" data-freq="146.83" data-note="D3">D3 (146.83 Hz)</button>
+                                <button class="scale-btn" data-freq="164.81" data-note="E3">E3 (164.81 Hz)</button>
+                                <button class="scale-btn" data-freq="174.61" data-note="F3">F3 (174.61 Hz)</button>
+                                <button class="scale-btn" data-freq="196.00" data-note="G3">G3 (196.00 Hz)</button>
+                                <button class="scale-btn" data-freq="220.00" data-note="A3">A3 (220.00 Hz)</button>
+                                <button class="scale-btn active" data-freq="240.00" data-note="B3">B3 (240.00 Hz)</button>
+                                <button class="scale-btn" data-freq="261.63" data-note="C4">C4 (261.63 Hz)</button>
+                                <button class="scale-btn" data-freq="293.66" data-note="D4">D4 (293.66 Hz)</button>
+                                <button class="scale-btn" data-freq="329.63" data-note="E4">E4 (329.63 Hz)</button>
+                                <button class="scale-btn" data-freq="349.23" data-note="F4">F4 (349.23 Hz)</button>
+                                <button class="scale-btn" data-freq="392.00" data-note="G4">G4 (392.00 Hz)</button>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="consonance-legend">
@@ -708,32 +732,46 @@ document.addEventListener('DOMContentLoaded', () => {
             
             container.innerHTML = html;
             
-            // Add Sa frequency control handlers
-            document.getElementById('apply-sa-freq').addEventListener('click', () => {
-                const newSa = parseFloat(document.getElementById('sa-freq-input').value);
-                if (newSa >= 100 && newSa <= 500) {
-                    baseSa = newSa;
-                    // Stop all playing oscillators
+            // Add Sa frequency slider handler
+            const slider = document.getElementById('sa-freq-slider');
+            const display = document.getElementById('current-sa-display');
+            
+            slider.addEventListener('input', function() {
+                const newSa = parseFloat(this.value);
+                baseSa = newSa;
+                display.textContent = newSa.toFixed(2) + ' Hz';
+                
+                // Stop all playing oscillators
+                if (audioContext) {
                     Object.keys(playingOscillators).forEach(key => {
                         playingOscillators[key].gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.1);
                         playingOscillators[key].oscillator.stop(audioContext.currentTime + 0.1);
                     });
                     playingOscillators = {};
-                    render();
                 }
+                render();
             });
             
-            document.querySelectorAll('.preset-btn').forEach(btn => {
+            // Add scale button handlers
+            document.querySelectorAll('.scale-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const freq = parseFloat(this.getAttribute('data-freq'));
                     baseSa = freq;
-                    document.getElementById('sa-freq-input').value = freq;
+                    slider.value = freq;
+                    display.textContent = freq.toFixed(2) + ' Hz';
+                    
+                    // Update active state
+                    document.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
                     // Stop all playing oscillators
-                    Object.keys(playingOscillators).forEach(key => {
-                        playingOscillators[key].gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.1);
-                        playingOscillators[key].oscillator.stop(audioContext.currentTime + 0.1);
-                    });
-                    playingOscillators = {};
+                    if (audioContext) {
+                        Object.keys(playingOscillators).forEach(key => {
+                            playingOscillators[key].gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.1);
+                            playingOscillators[key].oscillator.stop(audioContext.currentTime + 0.1);
+                        });
+                        playingOscillators = {};
+                    }
                     render();
                 });
             });
