@@ -467,3 +467,163 @@ header h1 {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.3);
 }
+
+/* Shruti Explanation Styles */
+.shruti-explanation-intro {
+    background: linear-gradient(135deg, rgba(157, 78, 221, 0.15), rgba(255, 158, 0, 0.1));
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.4s ease both;
+}
+
+.shruti-explanation-intro h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #e0aaff, #ff9e00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.explanation-section {
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 25px;
+    animation: fadeInUp 0.4s ease both;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-accent);
+    display: inline-block;
+}
+
+.section-intro {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.shruti-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.shruti-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+    border: 1px solid var(--glass-border);
+    border-left: 4px solid var(--primary-accent);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.4s ease both;
+}
+
+.shruti-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(157, 78, 221, 0.2);
+    border-left-color: var(--secondary-accent);
+}
+
+.shruti-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.shruti-specs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.spec-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: rgba(157, 78, 221, 0.2);
+    color: #e0aaff;
+    border: 1px solid rgba(157, 78, 221, 0.3);
+}
+
+.shruti-usage {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.shruti-usage strong {
+    color: var(--text-primary);
+}
+
+.shruti-reason {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .shruti-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 90vh;
+    }
+    
+    .sidebar {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+    }
+    
+    .nav-links {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+    
+    .content-area {
+        position: relative;
+    }
+    
+    .view {
+        position: relative;
+        padding: 20px;
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-bar input {
+        width: 100%;
+    }
+}
