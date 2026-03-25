@@ -909,19 +909,42 @@ document.addEventListener('DOMContentLoaded', () => {
                     display.style.display = 'block';
                 });
                 
-                note.addEventListener('mouseleave', function() {
-                    // Keep highlighting for a moment
+                note.addEventListener('mouseleave', function(e) {
+                    // Don't hide if moving to the consonance display
+                    const display = document.getElementById('consonance-display');
+                    const relatedTarget = e.relatedTarget;
+                    
+                    if (relatedTarget && (display.contains(relatedTarget) || relatedTarget === display)) {
+                        return;
+                    }
+                    
                     setTimeout(() => {
-                        if (!document.querySelector('.shruti-note:hover')) {
+                        if (!document.querySelector('.shruti-note:hover') && !display.matches(':hover')) {
                             document.querySelectorAll('.shruti-note').forEach(n => {
                                 n.classList.remove('ma-partner', 'pa-partner', 'source-note');
                             });
-                            const display = document.getElementById('consonance-display');
                             display.style.display = 'none';
                         }
                     }, 100);
                 });
             });
+            
+            // Keep consonance display visible when hovering over it
+            const display = document.getElementById('consonance-display');
+            if (display) {
+                display.addEventListener('mouseenter', function() {
+                    this.style.display = 'block';
+                });
+                
+                display.addEventListener('mouseleave', function() {
+                    if (!document.querySelector('.shruti-note:hover')) {
+                        document.querySelectorAll('.shruti-note').forEach(n => {
+                            n.classList.remove('ma-partner', 'pa-partner', 'source-note');
+                        });
+                        this.style.display = 'none';
+                    }
+                });
+            }
         }
 
         // Initial render
@@ -1113,18 +1136,41 @@ document.addEventListener('DOMContentLoaded', () => {
                     display.style.display = 'block';
                 });
                 
-                note.addEventListener('mouseleave', function() {
+                note.addEventListener('mouseleave', function(e) {
+                    const display = document.getElementById('consonance-display');
+                    const relatedTarget = e.relatedTarget;
+                    
+                    if (relatedTarget && (display.contains(relatedTarget) || relatedTarget === display)) {
+                        return;
+                    }
+                    
                     setTimeout(() => {
-                        if (!document.querySelector('.shruti-note:hover')) {
+                        if (!document.querySelector('.shruti-note:hover') && !display.matches(':hover')) {
                             document.querySelectorAll('.shruti-note').forEach(n => {
                                 n.classList.remove('ma-partner', 'pa-partner', 'source-note');
                             });
-                            const display = document.getElementById('consonance-display');
                             display.style.display = 'none';
                         }
                     }, 100);
                 });
             });
+            
+            // Keep consonance display visible when hovering over it
+            const display = document.getElementById('consonance-display');
+            if (display) {
+                display.addEventListener('mouseenter', function() {
+                    this.style.display = 'block';
+                });
+                
+                display.addEventListener('mouseleave', function() {
+                    if (!document.querySelector('.shruti-note:hover')) {
+                        document.querySelectorAll('.shruti-note').forEach(n => {
+                            n.classList.remove('ma-partner', 'pa-partner', 'source-note');
+                        });
+                        this.style.display = 'none';
+                    }
+                });
+            }
         }
         
         function validateScale() {
