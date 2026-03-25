@@ -64,10 +64,20 @@
             <section id="shruti-visualizer" class="view">
                 <header>
                     <h1>Interactive Shruti Visualizer</h1>
-                    <div class="search-bar">
-                        <select id="raag-selector" class="raag-dropdown">
-                            <option value="">Select a Raag...</option>
-                        </select>
+                    <div class="visualizer-controls">
+                        <div class="mode-selector">
+                            <button id="preset-mode-btn" class="mode-btn active">Preset Raags</button>
+                            <button id="custom-mode-btn" class="mode-btn">Build Your Scale</button>
+                        </div>
+                        <div id="preset-controls" class="control-group">
+                            <select id="raag-selector" class="raag-dropdown">
+                                <option value="">Select a Raag...</option>
+                            </select>
+                        </div>
+                        <div id="custom-controls" class="control-group hidden">
+                            <button id="clear-scale-btn" class="action-btn">Clear Scale</button>
+                            <button id="validate-scale-btn" class="action-btn primary">Validate Consonance</button>
+                        </div>
                     </div>
                 </header>
                 <div class="content-body" id="shruti-visualizer-content">

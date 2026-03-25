@@ -518,6 +518,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderShrutiVisualizer() {
+        let customMode = false;
+        let selectedShrutis = [];
+        
         // Comprehensive raag-to-shruti mapping with reasoning
         const raagShrutiMap = {
             'यमन': {
@@ -866,10 +869,298 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initial render
         renderScale(null);
 
+        // Mode switching
+        const presetModeBtn = document.getElementById('preset-mode-btn');
+        const customModeBtn = document.getElementById('custom-mode-btn');
+        const presetControls = document.getElementById('preset-controls');
+        const customControls = document.getElementById('custom-controls');
+        
+        presetModeBtn.addEventListener('click', () => {
+            customMode = false;
+            presetModeBtn.classList.add('active');
+            customModeBtn.classList.remove('active');
+            presetControls.classList.remove('hidden');
+            customControls.classList.add('hidden');
+            selectedShrutis = [];
+            renderScale(selector.value || null);
+        });
+        
+        customModeBtn.addEventListener('click', () => {
+            customMode = true;
+            customModeBtn.classList.add('active');
+            presetModeBtn.classList.remove('active');
+            customControls.classList.remove('hidden');
+            presetControls.classList.add('hidden');
+            selectedShrutis = [];
+            renderCustomScale();
+        });
+
         // Handle raag selection
         selector.addEventListener('change', (e) => {
-            renderScale(e.target.value);
+            if (!customMode) {
+                renderScale(e.target.value);
+            }
         });
+        
+        // Custom scale controls
+        document.getElementById('clear-scale-btn').addEventListener('click', () => {
+            selectedShrutis = [];
+            renderCustomScale();
+        });
+        
+        document.getElementById('validate-scale-btn').addEventListener('click', () => {
+            validateScale();
+        });
+        
+        function renderCustomScale() {
+            const container = document.getElementById('shruti-visualizer-content');
+            
+            let html = `
+                <div class="custom-scale-info">
+                    <h2>🎼 Build Your Own Scale</h2>
+                    <p>Click on any shruti to add it to your scale. The system will validate consonance using the 9 or 13 Rule.</p>
+                    <div class="selected-scale">
+                        <strong>Your Scale:</strong> ${selectedShrutis.length > 0 ? selectedShrutis.map(i => shrutiData.find(s => s.index === i).symbol).join(' ') : 'Empty - Click shrutis to add'}
+                    </div>
+                </div>
+                
+                <div class="consonance-rules-card">
+                    <h3>📐 The Mathematical Rules</h3>
+                    <div class="rules-grid">
+                        <div class="rule-box">
+                            <h4>Consonance Formula</h4>
+                            <p>Two notes are consonant if their index difference is exactly <strong>9</strong> or <strong>13</strong></p>
+                            <div class="formula">Distance = |Index₁ - Index₂|</div>
+                            <div class="formula">✓ If distance = 9 or 13 → Consonant</div>
+                            <div class="formula">✗ If distance = 2 or 20 → Dissonant</div>
+                        </div>
+                        <div class="rule-box">
+                            <h4>Row Consistency Rule</h4>
+                            <p>Stay within the same "DNA Row" for stability:</p>
+                            <div class="formula">Alpha Row: R1, G1, D1, N1 (indices 4, 8, 17, 21)</div>
+                            <div class="formula">Beta Row: R2, G2, D2, N2 (indices 5, 9, 18, 22)</div>
+                            <p class="warning">⚠️ Mixing rows creates unstable distances (e.g., 15 instead of 13)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="shruti-scale-container">
+                    <h3>22-Shruti Scale (Click to Select)</h3>
+                    <div class="shruti-scale">
+            `;
+
+            shrutiData.forEach(shruti => {
+                const isSelected = selectedShrutis.includes(shruti.index);
+                const partners = getConsonantPartners(shruti.index);
+                
+                html += `
+                    <div class="shruti-note ${isSelected ? 'selected' : ''} clickable" 
+                         data-shruti="${shruti.symbol}"
+                         data-index="${shruti.index}"
+                         data-ma-partner="${partners.ma}"
+                         data-pa-partner="${partners.pa}">
+                        <div class="shruti-index">#${shruti.index}</div>
+                        <div class="shruti-symbol">${shruti.symbol}</div>
+                        <div class="shruti-name">${shruti.name}</div>
+                        <div class="shruti-ratio">${shruti.ratio}</div>
+                        ${isSelected ? '<div class="shruti-indicator">✓</div>' : ''}
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                    <div id="consonance-display" class="consonance-display"></div>
+                </div>
+                
+                <div id="validation-results" class="validation-results"></div>
+            `;
+
+            container.innerHTML = html;
+            
+            // Add click handlers for custom mode
+            document.querySelectorAll('.shruti-note.clickable').forEach(note => {
+                note.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    
+                    if (selectedShrutis.includes(index)) {
+                        selectedShrutis = selectedShrutis.filter(i => i !== index);
+                    } else {
+                        selectedShrutis.push(index);
+                        selectedShrutis.sort((a, b) => a - b);
+                    }
+                    
+                    renderCustomScale();
+                });
+                
+                // Keep hover functionality
+                note.addEventListener('mouseenter', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const symbol = this.getAttribute('data-shruti');
+                    const maPartnerIndex = parseInt(this.getAttribute('data-ma-partner'));
+                    const paPartnerIndex = parseInt(this.getAttribute('data-pa-partner'));
+                    
+                    document.querySelectorAll('.shruti-note').forEach(n => {
+                        n.classList.remove('ma-partner', 'pa-partner', 'source-note');
+                    });
+                    
+                    this.classList.add('source-note');
+                    
+                    const maPartnerNote = document.querySelector(`[data-index="${maPartnerIndex}"]`);
+                    const paPartnerNote = document.querySelector(`[data-index="${paPartnerIndex}"]`);
+                    
+                    if (maPartnerNote) maPartnerNote.classList.add('ma-partner');
+                    if (paPartnerNote) paPartnerNote.classList.add('pa-partner');
+                    
+                    const shrutiInfo = shrutiData.find(s => s.index === index);
+                    const maPartner = shrutiData.find(s => s.index === maPartnerIndex);
+                    const paPartner = shrutiData.find(s => s.index === paPartnerIndex);
+                    
+                    const display = document.getElementById('consonance-display');
+                    display.innerHTML = `
+                        <div class="consonance-info">
+                            <h4>Consonant Partners for ${symbol} (${shrutiInfo.name})</h4>
+                            <div class="partner-info">
+                                <div class="partner-detail ma-detail">
+                                    <strong>Madhyam Partner (+9):</strong> ${maPartner.symbol} (${maPartner.name})<br>
+                                    <span class="math">Index ${index} + 9 = ${maPartnerIndex}</span><br>
+                                    <span class="math">Freq: ${shrutiInfo.freq} Hz × 1.333 ≈ ${(parseFloat(shrutiInfo.freq) * 1.333).toFixed(2)} Hz</span><br>
+                                    <span class="math">Actual: ${maPartner.freq} Hz ✓</span>
+                                </div>
+                                <div class="partner-detail pa-detail">
+                                    <strong>Pancham Partner (+13):</strong> ${paPartner.symbol} (${paPartner.name})<br>
+                                    <span class="math">Index ${index} + 13 = ${paPartnerIndex > 22 ? paPartnerIndex - 22 + ' (wrapped)' : paPartnerIndex}</span><br>
+                                    <span class="math">Freq: ${shrutiInfo.freq} Hz × 1.5 = ${(parseFloat(shrutiInfo.freq) * 1.5).toFixed(2)} Hz</span><br>
+                                    <span class="math">Actual: ${paPartner.freq} Hz ✓</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    display.style.display = 'block';
+                });
+                
+                note.addEventListener('mouseleave', function() {
+                    setTimeout(() => {
+                        if (!document.querySelector('.shruti-note:hover')) {
+                            document.querySelectorAll('.shruti-note').forEach(n => {
+                                n.classList.remove('ma-partner', 'pa-partner', 'source-note');
+                            });
+                            const display = document.getElementById('consonance-display');
+                            display.style.display = 'none';
+                        }
+                    }, 100);
+                });
+            });
+        }
+        
+        function validateScale() {
+            if (selectedShrutis.length < 2) {
+                alert('Please select at least 2 shrutis to validate');
+                return;
+            }
+            
+            const results = document.getElementById('validation-results');
+            let html = '<div class="validation-panel"><h3>🔍 Consonance Validation Results</h3>';
+            
+            const pairs = [];
+            const consonantPairs = [];
+            const dissonantPairs = [];
+            
+            // Check all pairs
+            for (let i = 0; i < selectedShrutis.length; i++) {
+                for (let j = i + 1; j < selectedShrutis.length; j++) {
+                    const idx1 = selectedShrutis[i];
+                    const idx2 = selectedShrutis[j];
+                    const distance = Math.abs(idx2 - idx1);
+                    const shruti1 = shrutiData.find(s => s.index === idx1);
+                    const shruti2 = shrutiData.find(s => s.index === idx2);
+                    
+                    const isConsonant = distance === 9 || distance === 13;
+                    const isDissonant = distance === 2 || distance === 20;
+                    
+                    const pair = {
+                        shruti1,
+                        shruti2,
+                        distance,
+                        isConsonant,
+                        isDissonant
+                    };
+                    
+                    pairs.push(pair);
+                    if (isConsonant) consonantPairs.push(pair);
+                    if (isDissonant) dissonantPairs.push(pair);
+                }
+            }
+            
+            // Summary
+            html += `<div class="validation-summary">`;
+            html += `<div class="summary-stat good">✓ Consonant Pairs: ${consonantPairs.length}</div>`;
+            html += `<div class="summary-stat bad">✗ Dissonant Pairs: ${dissonantPairs.length}</div>`;
+            html += `<div class="summary-stat neutral">~ Neutral Pairs: ${pairs.length - consonantPairs.length - dissonantPairs.length}</div>`;
+            html += `</div>`;
+            
+            // Consonant pairs
+            if (consonantPairs.length > 0) {
+                html += '<div class="pair-section good-section"><h4>✓ Consonant Pairs (Distance = 9 or 13)</h4>';
+                consonantPairs.forEach(pair => {
+                    const relationship = pair.distance === 9 ? 'Madhyam (4th)' : 'Pancham (5th)';
+                    html += `
+                        <div class="pair-card good">
+                            <strong>${pair.shruti1.symbol} ↔ ${pair.shruti2.symbol}</strong>
+                            <span class="distance">Distance: ${pair.distance} (${relationship})</span>
+                            <span class="verdict">Perfect Consonance ✓</span>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            
+            // Dissonant pairs
+            if (dissonantPairs.length > 0) {
+                html += '<div class="pair-section bad-section"><h4>✗ Dissonant Pairs (Distance = 2 or 20)</h4>';
+                dissonantPairs.forEach(pair => {
+                    html += `
+                        <div class="pair-card bad">
+                            <strong>${pair.shruti1.symbol} ↔ ${pair.shruti2.symbol}</strong>
+                            <span class="distance">Distance: ${pair.distance}</span>
+                            <span class="verdict">⚠️ Creates Beats - Avoid Playing Together</span>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            
+            // Neutral pairs
+            const neutralPairs = pairs.filter(p => !p.isConsonant && !p.isDissonant);
+            if (neutralPairs.length > 0) {
+                html += '<div class="pair-section neutral-section"><h4>~ Neutral Pairs (Other Distances)</h4>';
+                neutralPairs.forEach(pair => {
+                    html += `
+                        <div class="pair-card neutral">
+                            <strong>${pair.shruti1.symbol} ↔ ${pair.shruti2.symbol}</strong>
+                            <span class="distance">Distance: ${pair.distance}</span>
+                            <span class="verdict">Neither strongly consonant nor dissonant</span>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            
+            // Overall verdict
+            const score = (consonantPairs.length / pairs.length) * 100;
+            html += `<div class="overall-verdict">`;
+            if (dissonantPairs.length === 0 && consonantPairs.length >= pairs.length * 0.5) {
+                html += `<div class="verdict-box excellent">🎵 Excellent Scale! ${score.toFixed(0)}% consonant pairs, no dissonance.</div>`;
+            } else if (dissonantPairs.length === 0) {
+                html += `<div class="verdict-box good">✓ Valid Scale. No dissonant pairs detected.</div>`;
+            } else {
+                html += `<div class="verdict-box warning">⚠️ Warning: ${dissonantPairs.length} dissonant pair(s) detected. Consider removing conflicting notes.</div>`;
+            }
+            html += `</div>`;
+            
+            html += '</div>';
+            results.innerHTML = html;
+        }
     }
 
     function renderShrutiExplanations() {
