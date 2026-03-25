@@ -674,18 +674,19 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="scale-selector">
                             <label>Select Scale (Middle Sa):</label>
                             <div class="scale-buttons">
+                                <button class="scale-btn" data-freq="87.31" data-note="F2">F2 (87.31 Hz)</button>
+                                <button class="scale-btn" data-freq="92.50" data-note="F#2">F#2 (92.50 Hz)</button>
+                                <button class="scale-btn" data-freq="98.00" data-note="G2">G2 (98.00 Hz)</button>
+                                <button class="scale-btn" data-freq="103.83" data-note="G#2">G#2 (103.83 Hz)</button>
+                                <button class="scale-btn" data-freq="110.00" data-note="A2">A2 (110.00 Hz)</button>
+                                <button class="scale-btn" data-freq="116.54" data-note="A#2">A#2 (116.54 Hz)</button>
+                                <button class="scale-btn" data-freq="123.47" data-note="B2">B2 (123.47 Hz)</button>
                                 <button class="scale-btn" data-freq="130.81" data-note="C3">C3 (130.81 Hz)</button>
+                                <button class="scale-btn" data-freq="138.59" data-note="C#3">C#3 (138.59 Hz)</button>
                                 <button class="scale-btn" data-freq="146.83" data-note="D3">D3 (146.83 Hz)</button>
+                                <button class="scale-btn" data-freq="155.56" data-note="D#3">D#3 (155.56 Hz)</button>
                                 <button class="scale-btn" data-freq="164.81" data-note="E3">E3 (164.81 Hz)</button>
-                                <button class="scale-btn" data-freq="174.61" data-note="F3">F3 (174.61 Hz)</button>
-                                <button class="scale-btn" data-freq="196.00" data-note="G3">G3 (196.00 Hz)</button>
-                                <button class="scale-btn" data-freq="220.00" data-note="A3">A3 (220.00 Hz)</button>
-                                <button class="scale-btn active" data-freq="240.00" data-note="B3">B3 (240.00 Hz)</button>
-                                <button class="scale-btn" data-freq="261.63" data-note="C4">C4 (261.63 Hz)</button>
-                                <button class="scale-btn" data-freq="293.66" data-note="D4">D4 (293.66 Hz)</button>
-                                <button class="scale-btn" data-freq="329.63" data-note="E4">E4 (329.63 Hz)</button>
-                                <button class="scale-btn" data-freq="349.23" data-note="F4">F4 (349.23 Hz)</button>
-                                <button class="scale-btn" data-freq="392.00" data-note="G4">G4 (392.00 Hz)</button>
+                                <button class="scale-btn active" data-freq="174.61" data-note="F3">F3 (174.61 Hz)</button>
                             </div>
                         </div>
                     </div>
