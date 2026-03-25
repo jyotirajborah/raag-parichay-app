@@ -519,12 +519,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderShrutiVisualizer() {
-        let customMode = false;
-        let selectedShrutis = [];
-        
         // Audio context for playing frequencies
         let audioContext = null;
-        let currentOscillator = null;
+        let playingOscillators = {}; // Track multiple playing oscillators by index
         
         function initAudio() {
             if (!audioContext) {
@@ -532,152 +529,225 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        function playFrequency(frequency, duration = 1000) {
+        function toggleContinuousPlay(frequency, index) {
             initAudio();
             
-            // Stop any currently playing sound
-            if (currentOscillator) {
-                currentOscillator.stop();
-                currentOscillator = null;
+            // If already playing, stop it
+            if (playingOscillators[index]) {
+                playingOscillators[index].gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.1);
+                playingOscillators[index].oscillator.stop(audioContext.currentTime + 0.1);
+                delete playingOscillators[index];
+                return false; // Stopped
             }
             
-            // Create oscillator
+            // Start continuous play
             const oscillator = audioContext.createOscillator();
             const gainNode = audioContext.createGain();
             
             oscillator.connect(gainNode);
             gainNode.connect(audioContext.destination);
             
-            // Set frequency
             oscillator.frequency.value = frequency;
-            oscillator.type = 'sine'; // Pure tone
+            oscillator.type = 'sine';
             
-            // Envelope for smooth attack and release
+            // Smooth fade in
             const now = audioContext.currentTime;
             gainNode.gain.setValueAtTime(0, now);
-            gainNode.gain.linearRampToValueAtTime(0.3, now + 0.05); // Attack
-            gainNode.gain.linearRampToValueAtTime(0.3, now + duration / 1000 - 0.1); // Sustain
-            gainNode.gain.linearRampToValueAtTime(0, now + duration / 1000); // Release
+            gainNode.gain.linearRampToValueAtTime(0.3, now + 0.1);
             
             oscillator.start(now);
-            oscillator.stop(now + duration / 1000);
             
-            currentOscillator = oscillator;
+            playingOscillators[index] = { oscillator, gainNode };
+            return true; // Started
         }
         
-        // Complete 22 Shruti reference data across 4 octaves
+        // Complete 22 Shruti reference data across 3 octaves
         // Base frequency for middle Sa = 240 Hz
         const baseSa = 240;
         
-        // Template for 22 shrutis (indices 1-22 in middle octave)
+        // Template for 22 shrutis
         const shrutiTemplate = [
-            { symbol: 'S', name: 'Shadja', ratio: '1/1', cents: '0', freqRatio: 1.0 },
-            { symbol: 'r1', name: 'Ati Komal Rishabh', ratio: '256/243', cents: '-10', freqRatio: 1.053 },
-            { symbol: 'r2', name: 'Komal Rishabh', ratio: '16/15', cents: '+11', freqRatio: 1.067 },
-            { symbol: 'R1', name: 'Shuddha Rishabh', ratio: '10/9', cents: '-18', freqRatio: 1.111 },
-            { symbol: 'R2', name: 'Teevra Shuddha Rishabh', ratio: '9/8', cents: '+4', freqRatio: 1.125 },
-            { symbol: 'g1', name: 'Ati Komal Gandhar', ratio: '32/27', cents: '-6', freqRatio: 1.185 },
-            { symbol: 'g2', name: 'Komal Gandhar', ratio: '6/5', cents: '+15', freqRatio: 1.2 },
-            { symbol: 'G1', name: 'Shuddha Gandhar', ratio: '5/4', cents: '-14', freqRatio: 1.25 },
-            { symbol: 'G2', name: 'Teevra Shuddha Gandhar', ratio: '81/64', cents: '+8', freqRatio: 1.266 },
-            { symbol: 'm1', name: 'Shuddha Madhyam', ratio: '4/3', cents: '-2', freqRatio: 1.333 },
-            { symbol: 'm2', name: 'Ek Shruti Madhyam', ratio: '27/20', cents: '+19', freqRatio: 1.35 },
-            { symbol: 'M1', name: 'Teevra Madhyam', ratio: '45/32', cents: '-10', freqRatio: 1.406 },
-            { symbol: 'M2', name: 'Teevratama Madhyam', ratio: '64/45', cents: '+12', freqRatio: 1.422 },
-            { symbol: 'P', name: 'Pancham', ratio: '3/2', cents: '+2', freqRatio: 1.5 },
-            { symbol: 'd1', name: 'Ati Komal Dhaivat', ratio: '128/81', cents: '-8', freqRatio: 1.58 },
-            { symbol: 'd2', name: 'Komal Dhaivat', ratio: '8/5', cents: '+13', freqRatio: 1.6 },
-            { symbol: 'D1', name: 'Shuddha Dhaivat', ratio: '5/3', cents: '-16', freqRatio: 1.667 },
-            { symbol: 'D2', name: 'Teevra Shuddha Dhaivat', ratio: '27/16', cents: '+6', freqRatio: 1.688 },
-            { symbol: 'n1', name: 'Ati Komal Nishad', ratio: '16/9', cents: '-4', freqRatio: 1.778 },
-            { symbol: 'n2', name: 'Komal Nishad', ratio: '9/5', cents: '+17', freqRatio: 1.8 },
-            { symbol: 'N1', name: 'Shuddha Nishad', ratio: '15/8', cents: '-12', freqRatio: 1.875 },
-            { symbol: 'N2', name: 'Teevra Shuddha Nishad', ratio: '243/128', cents: '+10', freqRatio: 1.898 }
+            { symbol: 'S', name: 'Shadja', ratio: '1/1', freqRatio: 1.0 },
+            { symbol: 'r1', name: 'Ati Komal Rishabh', ratio: '256/243', freqRatio: 1.053 },
+            { symbol: 'r2', name: 'Komal Rishabh', ratio: '16/15', freqRatio: 1.067 },
+            { symbol: 'R1', name: 'Shuddha Rishabh', ratio: '10/9', freqRatio: 1.111 },
+            { symbol: 'R2', name: 'Teevra Shuddha Rishabh', ratio: '9/8', freqRatio: 1.125 },
+            { symbol: 'g1', name: 'Ati Komal Gandhar', ratio: '32/27', freqRatio: 1.185 },
+            { symbol: 'g2', name: 'Komal Gandhar', ratio: '6/5', freqRatio: 1.2 },
+            { symbol: 'G1', name: 'Shuddha Gandhar', ratio: '5/4', freqRatio: 1.25 },
+            { symbol: 'G2', name: 'Teevra Shuddha Gandhar', ratio: '81/64', freqRatio: 1.266 },
+            { symbol: 'm1', name: 'Shuddha Madhyam', ratio: '4/3', freqRatio: 1.333 },
+            { symbol: 'm2', name: 'Ek Shruti Madhyam', ratio: '27/20', freqRatio: 1.35 },
+            { symbol: 'M1', name: 'Teevra Madhyam', ratio: '45/32', freqRatio: 1.406 },
+            { symbol: 'M2', name: 'Teevratama Madhyam', ratio: '64/45', freqRatio: 1.422 },
+            { symbol: 'P', name: 'Pancham', ratio: '3/2', freqRatio: 1.5 },
+            { symbol: 'd1', name: 'Ati Komal Dhaivat', ratio: '128/81', freqRatio: 1.58 },
+            { symbol: 'd2', name: 'Komal Dhaivat', ratio: '8/5', freqRatio: 1.6 },
+            { symbol: 'D1', name: 'Shuddha Dhaivat', ratio: '5/3', freqRatio: 1.667 },
+            { symbol: 'D2', name: 'Teevra Shuddha Dhaivat', ratio: '27/16', freqRatio: 1.688 },
+            { symbol: 'n1', name: 'Ati Komal Nishad', ratio: '16/9', freqRatio: 1.778 },
+            { symbol: 'n2', name: 'Komal Nishad', ratio: '9/5', freqRatio: 1.8 },
+            { symbol: 'N1', name: 'Shuddha Nishad', ratio: '15/8', freqRatio: 1.875 },
+            { symbol: 'N2', name: 'Teevra Shuddha Nishad', ratio: '243/128', freqRatio: 1.898 }
         ];
         
-        // Generate complete shruti data across octaves
+        // Generate complete shruti data across 3 octaves
         const shrutiData = [];
-        let globalIndex = -21; // Start from lower octave (indices -21 to 0)
         
-        // Lower Octave (Sa' to N2') - indices -21 to 0
+        // Lower Octave (Sa' to N2') - indices 1 to 22 with ' suffix
         shrutiTemplate.forEach((shruti, i) => {
-            const octaveMultiplier = 0.5; // Lower octave is half frequency
+            const octaveMultiplier = 0.5;
             shrutiData.push({
-                index: globalIndex,
+                index: i + 1,
                 symbol: shruti.symbol + "'",
                 name: shruti.name + ' (Lower)',
                 ratio: shruti.ratio,
-                cents: shruti.cents,
                 freq: (baseSa * shruti.freqRatio * octaveMultiplier).toFixed(2),
-                freqRatio: shruti.freqRatio * octaveMultiplier,
                 octave: 'lower'
             });
-            globalIndex++;
         });
         
         // Middle Octave (Sa to N2) - indices 1 to 22
-        globalIndex = 1;
         shrutiTemplate.forEach((shruti, i) => {
-            const octaveMultiplier = 1.0; // Middle octave is base frequency
+            const octaveMultiplier = 1.0;
             shrutiData.push({
-                index: globalIndex,
+                index: i + 1,
                 symbol: shruti.symbol,
                 name: shruti.name,
                 ratio: shruti.ratio,
-                cents: shruti.cents,
                 freq: (baseSa * shruti.freqRatio * octaveMultiplier).toFixed(2),
-                freqRatio: shruti.freqRatio * octaveMultiplier,
                 octave: 'middle'
             });
-            globalIndex++;
         });
         
-        // Upper Octave (Ṡa to Ṅ2) - indices 23 to 44
-        globalIndex = 23;
+        // Upper Octave (Ṡa to Ṅ2) - indices 1 to 22 with dot above
         shrutiTemplate.forEach((shruti, i) => {
-            const octaveMultiplier = 2.0; // Upper octave is double frequency
+            const octaveMultiplier = 2.0;
+            const upperSymbol = shruti.symbol.length === 1 ? 'Ṡ' : shruti.symbol[0] + '̇' + shruti.symbol.substring(1);
             shrutiData.push({
-                index: globalIndex,
-                symbol: 'Ṡ' + shruti.symbol.substring(1), // Add dot above for upper octave
+                index: i + 1,
+                symbol: upperSymbol,
                 name: shruti.name + ' (Upper)',
                 ratio: shruti.ratio,
-                cents: shruti.cents,
                 freq: (baseSa * shruti.freqRatio * octaveMultiplier).toFixed(2),
-                freqRatio: shruti.freqRatio * octaveMultiplier,
                 octave: 'upper'
             });
-            globalIndex++;
-        });
-        
-        // Second Upper Octave (Ṡ̇a to Ṅ̇2) - indices 45 to 66
-        globalIndex = 45;
-        shrutiTemplate.forEach((shruti, i) => {
-            const octaveMultiplier = 4.0; // Second upper octave is 4x frequency
-            shrutiData.push({
-                index: globalIndex,
-                symbol: 'Ṡ̇' + shruti.symbol.substring(1), // Add double dot above
-                name: shruti.name + ' (2nd Upper)',
-                ratio: shruti.ratio,
-                cents: shruti.cents,
-                freq: (baseSa * shruti.freqRatio * octaveMultiplier).toFixed(2),
-                freqRatio: shruti.freqRatio * octaveMultiplier,
-                octave: 'upper2'
-            });
-            globalIndex++;
         });
 
-        // Calculate consonant partners using 9 or 13 rule
-        function getConsonantPartners(shrutiIndex) {
-            const maPartnerIndex = shrutiIndex + 9;
-            const paPartnerIndex = shrutiIndex + 13;
-            
-            return {
-                ma: maPartnerIndex <= 22 ? maPartnerIndex : maPartnerIndex - 22,
-                pa: paPartnerIndex <= 22 ? paPartnerIndex : paPartnerIndex - 22
-            };
+        // Calculate consonant partners (Ma +9, Pa +13)
+        function getConsonantPartners(index) {
+            const maPartner = ((index + 9 - 1) % 22) + 1;
+            const paPartner = ((index + 13 - 1) % 22) + 1;
+            return { ma: maPartner, pa: paPartner };
         }
         
-        // Comprehensive raag-to-shruti mapping with reasoning
+        const container = document.getElementById('shruti-visualizer-content');
+        
+        let html = `
+            <div class="shruti-visualizer-intro">
+                <h2>22 Shruti Spectrum - Interactive Explorer</h2>
+                <p>Explore the complete 22-shruti system across three octaves. <strong>Double-click</strong> any shruti to play it continuously (double-click again to stop). <strong>Hover</strong> over any shruti to see its consonant partners highlighted.</p>
+                <div class="consonance-legend">
+                    <div class="legend-item"><span class="legend-box source"></span> Selected Shruti</div>
+                    <div class="legend-item"><span class="legend-box ma"></span> Ma Partner (+9 shrutis)</div>
+                    <div class="legend-item"><span class="legend-box pa"></span> Pa Partner (+13 shrutis)</div>
+                </div>
+            </div>
+        `;
+        
+        // Render each octave horizontally
+        ['lower', 'middle', 'upper'].forEach(octave => {
+            const octaveShrutis = shrutiData.filter(s => s.octave === octave);
+            const octaveLabel = octave === 'lower' ? 'Lower Octave (Sa\')' : 
+                               octave === 'middle' ? 'Middle Octave (Sa) - Reference' : 
+                               'Upper Octave (Ṡa)';
+            
+            html += `
+                <div class="octave-row">
+                    <div class="octave-row-label">${octaveLabel}</div>
+                    <div class="shruti-row-horizontal">
+            `;
+            
+            octaveShrutis.forEach(shruti => {
+                const partners = getConsonantPartners(shruti.index);
+                const uniqueId = `${shruti.octave}-${shruti.index}`;
+                
+                html += `
+                    <div class="shruti-cell" 
+                         data-id="${uniqueId}"
+                         data-index="${shruti.index}"
+                         data-octave="${shruti.octave}"
+                         data-freq="${shruti.freq}"
+                         data-ma="${partners.ma}"
+                         data-pa="${partners.pa}">
+                        <div class="shruti-symbol">${shruti.symbol}</div>
+                        <div class="shruti-name">${shruti.name}</div>
+                        <div class="shruti-freq">${shruti.freq} Hz</div>
+                        <div class="playing-indicator">♪</div>
+                    </div>
+                `;
+            });
+            
+            html += `
+                    </div>
+                </div>
+            `;
+        });
+        
+        container.innerHTML = html;
+        
+        // Add event handlers
+        document.querySelectorAll('.shruti-cell').forEach(cell => {
+            // Double-click to toggle continuous play
+            cell.addEventListener('dblclick', function() {
+                const freq = parseFloat(this.getAttribute('data-freq'));
+                const id = this.getAttribute('data-id');
+                const index = this.getAttribute('data-octave') + '-' + this.getAttribute('data-index');
+                
+                const isPlaying = toggleContinuousPlay(freq, index);
+                
+                if (isPlaying) {
+                    this.classList.add('playing');
+                } else {
+                    this.classList.remove('playing');
+                }
+            });
+            
+            // Hover to show consonant partners
+            cell.addEventListener('mouseenter', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                const octave = this.getAttribute('data-octave');
+                const maPartner = parseInt(this.getAttribute('data-ma'));
+                const paPartner = parseInt(this.getAttribute('data-pa'));
+                
+                // Clear previous highlights
+                document.querySelectorAll('.shruti-cell').forEach(c => {
+                    c.classList.remove('source-highlight', 'ma-highlight', 'pa-highlight');
+                });
+                
+                // Highlight source
+                this.classList.add('source-highlight');
+                
+                // Highlight Ma and Pa partners in the same octave
+                document.querySelectorAll(`.shruti-cell[data-octave="${octave}"][data-index="${maPartner}"]`).forEach(c => {
+                    c.classList.add('ma-highlight');
+                });
+                
+                document.querySelectorAll(`.shruti-cell[data-octave="${octave}"][data-index="${paPartner}"]`).forEach(c => {
+                    c.classList.add('pa-highlight');
+                });
+            });
+            
+            cell.addEventListener('mouseleave', function() {
+                // Remove highlights when mouse leaves
+                document.querySelectorAll('.shruti-cell').forEach(c => {
+                    c.classList.remove('source-highlight', 'ma-highlight', 'pa-highlight');
+                });
+            });
+        });
+    }
+
+    function renderDNAGrid() {
         const raagShrutiMap = {
             'यमन': {
                 thaat: 'Kalyan',
