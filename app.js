@@ -748,8 +748,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderDNAGrid() {
-        const raagShrutiMap = {
-            'यमन': {
+        const container = document.getElementById('dna-grid-content');
+        
+        // Three rows representing the 22 Shruti DNA as shown in the presentation
                 thaat: 'Kalyan',
                 shrutis: ['S', 'R2', 'G1', 'M1', 'P', 'D2', 'N1'],
                 reasoning: {
