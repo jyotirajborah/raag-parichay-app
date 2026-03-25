@@ -624,7 +624,14 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Upper Octave
             shrutiTemplate.forEach((shruti, i) => {
-                const upperSymbol = shruti.symbol.length === 1 ? 'Ṡ' : shruti.symbol[0] + '̇' + shruti.symbol.substring(1);
+                let upperSymbol;
+                if (shruti.symbol.length === 1) {
+                    // Single character: add dot above
+                    upperSymbol = shruti.symbol + '̇';
+                } else {
+                    // Multi-character: add dot above first character
+                    upperSymbol = shruti.symbol[0] + '̇' + shruti.symbol.substring(1);
+                }
                 shrutiData.push({
                     index: i + 1,
                     symbol: upperSymbol,
