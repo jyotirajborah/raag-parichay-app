@@ -809,12 +809,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateFrequenciesOnly(newSa);
             });
             
-            // Stop slider oscillator when slider is released
+            // When slider is released, keep playing if checkbox is checked
             slider.addEventListener('change', function() {
-                if (sliderOscillator) {
-                    sliderOscillator.gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.1);
-                    sliderOscillator.oscillator.stop(audioContext.currentTime + 0.1);
-                    sliderOscillator = null;
+                const checkbox = document.getElementById('play-while-sliding-checkbox');
+                
+                // If checkbox is checked, keep the current frequency playing
+                // (sliderOscillator is already playing from the input event)
+                // If checkbox is not checked, stop playing
+                if (!checkbox || !checkbox.checked) {
+                    if (sliderOscillator) {
+                        sliderOscillator.gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.1);
+                        sliderOscillator.oscillator.stop(audioContext.currentTime + 0.1);
+                        sliderOscillator = null;
+                    }
                 }
             });
             
