@@ -662,32 +662,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             });
-            
-            // Update slider range labels
-            const lowerSaFreq = (newSa * 0.5).toFixed(2);
-            const upperN2Freq = (newSa * 1.898 * 2.0).toFixed(2);
-            const minLabel = document.getElementById('min-freq-label');
-            const maxLabel = document.getElementById('max-freq-label');
-            if (minLabel) minLabel.textContent = `${lowerSaFreq} Hz (Sa')`;
-            if (maxLabel) maxLabel.textContent = `${upperN2Freq} Hz (Ṅ2)`;
-            
-            // Update slider min/max
-            const slider = document.getElementById('sa-freq-slider');
-            if (slider) {
-                slider.min = newSa * 0.5;
-                slider.max = newSa * 1.898 * 2.0;
-            }
         }
         
         function render() {
             const shrutiData = generateShrutiData(baseSa);
             const container = document.getElementById('shruti-visualizer-content');
             
-            // Calculate frequency range: lower octave Sa to upper octave N2
-            const lowerSaFreq = (baseSa * 0.5).toFixed(2); // Sa in lower octave
-            const upperN2Freq = (baseSa * 1.898 * 2.0).toFixed(2); // N2 in upper octave
-            const minFreq = baseSa * 0.5; // Lower octave Sa
-            const maxFreq = baseSa * 1.898 * 2.0; // Upper octave N2
+            // Fixed slider range from a reasonable lower Sa to upper N2
+            // Using a reference Sa of 240 Hz for calculating the range
+            const referenceSa = 240;
+            const minFreq = referenceSa * 0.5; // ~120 Hz (lower octave Sa)
+            const maxFreq = referenceSa * 1.898 * 2.0; // ~911 Hz (upper octave N2)
             
             let html = `
                 <div class="shruti-visualizer-intro">
@@ -698,9 +683,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="slider-control">
                             <label for="sa-freq-slider">Middle Sa Frequency:</label>
                             <div class="slider-wrapper">
-                                <span class="slider-label" id="min-freq-label">${lowerSaFreq} Hz (Sa')</span>
+                                <span class="slider-label">120 Hz (Lower Sa)</span>
                                 <input type="range" id="sa-freq-slider" value="${baseSa}" min="${minFreq}" max="${maxFreq}" step="0.1">
-                                <span class="slider-label" id="max-freq-label">${upperN2Freq} Hz (Ṅ2)</span>
+                                <span class="slider-label">911 Hz (Upper N2)</span>
                             </div>
                             <div class="current-freq">
                                 <strong id="current-sa-display">${baseSa.toFixed(2)} Hz</strong>
