@@ -437,6 +437,22 @@ header h1 {
     animation: fadeInUp 0.4s ease both;
 }
 
+.youtube-link {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(255, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.youtube-link:hover {
+    background: rgba(255, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;

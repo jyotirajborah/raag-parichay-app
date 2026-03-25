@@ -366,6 +366,8 @@ document.addEventListener('DOMContentLoaded', () => {
             tableHTML += '<th>Time</th>';
             tableHTML += '<th>Mood (Rasa)</th>';
             tableHTML += '<th>Key Notes</th>';
+            tableHTML += '<th>🎵 Instrumental</th>';
+            tableHTML += '<th>🎤 Vocal</th>';
             tableHTML += '</tr></thead><tbody>';
             
             raags.forEach((raag, i) => {
@@ -382,6 +384,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     tableHTML += `<td>${details.time || '-'}</td>`;
                     tableHTML += `<td>${details.mood || '-'}</td>`;
                     tableHTML += `<td>${details.key_notes || '-'}</td>`;
+                    tableHTML += `<td>${details.youtube_instrumental ? `<a href="${details.youtube_instrumental}" target="_blank" class="youtube-link">▶ Play</a>` : '-'}</td>`;
+                    tableHTML += `<td>${details.youtube_vocal ? `<a href="${details.youtube_vocal}" target="_blank" class="youtube-link">▶ Play</a>` : '-'}</td>`;
                     tableHTML += '</tr>';
                 }
             });
