@@ -521,6 +521,43 @@ document.addEventListener('DOMContentLoaded', () => {
         let customMode = false;
         let selectedShrutis = [];
         
+        // 22 Shruti reference data with index (1-22)
+        const shrutiData = [
+            { index: 1, symbol: 'S', name: 'Shadja', ratio: '1/1', cents: '0', freq: '240.00', freqRatio: 1.0 },
+            { index: 2, symbol: 'r1', name: 'Ati Komal Rishabh', ratio: '256/243', cents: '-10', freq: '252.84', freqRatio: 1.053 },
+            { index: 3, symbol: 'r2', name: 'Komal Rishabh', ratio: '16/15', cents: '+11', freq: '256.00', freqRatio: 1.067 },
+            { index: 4, symbol: 'R1', name: 'Shuddha Rishabh', ratio: '10/9', cents: '-18', freq: '266.67', freqRatio: 1.111 },
+            { index: 5, symbol: 'R2', name: 'Teevra Shuddha Rishabh', ratio: '9/8', cents: '+4', freq: '270.00', freqRatio: 1.125 },
+            { index: 6, symbol: 'g1', name: 'Ati Komal Gandhar', ratio: '32/27', cents: '-6', freq: '284.44', freqRatio: 1.185 },
+            { index: 7, symbol: 'g2', name: 'Komal Gandhar', ratio: '6/5', cents: '+15', freq: '288.00', freqRatio: 1.2 },
+            { index: 8, symbol: 'G1', name: 'Shuddha Gandhar', ratio: '5/4', cents: '-14', freq: '300.00', freqRatio: 1.25 },
+            { index: 9, symbol: 'G2', name: 'Teevra Shuddha Gandhar', ratio: '81/64', cents: '+8', freq: '303.75', freqRatio: 1.266 },
+            { index: 10, symbol: 'm1', name: 'Shuddha Madhyam', ratio: '4/3', cents: '-2', freq: '320.00', freqRatio: 1.333 },
+            { index: 11, symbol: 'm2', name: 'Ek Shruti Madhyam', ratio: '27/20', cents: '+19', freq: '324.00', freqRatio: 1.35 },
+            { index: 12, symbol: 'M1', name: 'Teevra Madhyam', ratio: '45/32', cents: '-10', freq: '337.50', freqRatio: 1.406 },
+            { index: 13, symbol: 'M2', name: 'Teevratama Madhyam', ratio: '64/45', cents: '+12', freq: '341.33', freqRatio: 1.422 },
+            { index: 14, symbol: 'P', name: 'Pancham', ratio: '3/2', cents: '+2', freq: '360.00', freqRatio: 1.5 },
+            { index: 15, symbol: 'd1', name: 'Ati Komal Dhaivat', ratio: '128/81', cents: '-8', freq: '379.26', freqRatio: 1.58 },
+            { index: 16, symbol: 'd2', name: 'Komal Dhaivat', ratio: '8/5', cents: '+13', freq: '384.00', freqRatio: 1.6 },
+            { index: 17, symbol: 'D1', name: 'Shuddha Dhaivat', ratio: '5/3', cents: '-16', freq: '400.00', freqRatio: 1.667 },
+            { index: 18, symbol: 'D2', name: 'Teevra Shuddha Dhaivat', ratio: '27/16', cents: '+6', freq: '405.00', freqRatio: 1.688 },
+            { index: 19, symbol: 'n1', name: 'Ati Komal Nishad', ratio: '16/9', cents: '-4', freq: '426.67', freqRatio: 1.778 },
+            { index: 20, symbol: 'n2', name: 'Komal Nishad', ratio: '9/5', cents: '+17', freq: '432.00', freqRatio: 1.8 },
+            { index: 21, symbol: 'N1', name: 'Shuddha Nishad', ratio: '15/8', cents: '-12', freq: '450.00', freqRatio: 1.875 },
+            { index: 22, symbol: 'N2', name: 'Teevra Shuddha Nishad', ratio: '243/128', cents: '+10', freq: '455.62', freqRatio: 1.898 }
+        ];
+
+        // Calculate consonant partners using 9 or 13 rule
+        function getConsonantPartners(shrutiIndex) {
+            const maPartnerIndex = shrutiIndex + 9;
+            const paPartnerIndex = shrutiIndex + 13;
+            
+            return {
+                ma: maPartnerIndex <= 22 ? maPartnerIndex : maPartnerIndex - 22,
+                pa: paPartnerIndex <= 22 ? paPartnerIndex : paPartnerIndex - 22
+            };
+        }
+        
         // Comprehensive raag-to-shruti mapping with reasoning
         const raagShrutiMap = {
             'यमन': {
@@ -665,43 +702,6 @@ document.addEventListener('DOMContentLoaded', () => {
             option.textContent = raag;
             selector.appendChild(option);
         });
-
-        // 22 Shruti reference data with index (1-22)
-        const shrutiData = [
-            { index: 1, symbol: 'S', name: 'Shadja', ratio: '1/1', cents: '0', freq: '240.00', freqRatio: 1.0 },
-            { index: 2, symbol: 'r1', name: 'Ati Komal Rishabh', ratio: '256/243', cents: '-10', freq: '252.84', freqRatio: 1.053 },
-            { index: 3, symbol: 'r2', name: 'Komal Rishabh', ratio: '16/15', cents: '+11', freq: '256.00', freqRatio: 1.067 },
-            { index: 4, symbol: 'R1', name: 'Shuddha Rishabh', ratio: '10/9', cents: '-18', freq: '266.67', freqRatio: 1.111 },
-            { index: 5, symbol: 'R2', name: 'Teevra Shuddha Rishabh', ratio: '9/8', cents: '+4', freq: '270.00', freqRatio: 1.125 },
-            { index: 6, symbol: 'g1', name: 'Ati Komal Gandhar', ratio: '32/27', cents: '-6', freq: '284.44', freqRatio: 1.185 },
-            { index: 7, symbol: 'g2', name: 'Komal Gandhar', ratio: '6/5', cents: '+15', freq: '288.00', freqRatio: 1.2 },
-            { index: 8, symbol: 'G1', name: 'Shuddha Gandhar', ratio: '5/4', cents: '-14', freq: '300.00', freqRatio: 1.25 },
-            { index: 9, symbol: 'G2', name: 'Teevra Shuddha Gandhar', ratio: '81/64', cents: '+8', freq: '303.75', freqRatio: 1.266 },
-            { index: 10, symbol: 'm1', name: 'Shuddha Madhyam', ratio: '4/3', cents: '-2', freq: '320.00', freqRatio: 1.333 },
-            { index: 11, symbol: 'm2', name: 'Ek Shruti Madhyam', ratio: '27/20', cents: '+19', freq: '324.00', freqRatio: 1.35 },
-            { index: 12, symbol: 'M1', name: 'Teevra Madhyam', ratio: '45/32', cents: '-10', freq: '337.50', freqRatio: 1.406 },
-            { index: 13, symbol: 'M2', name: 'Teevratama Madhyam', ratio: '64/45', cents: '+12', freq: '341.33', freqRatio: 1.422 },
-            { index: 14, symbol: 'P', name: 'Pancham', ratio: '3/2', cents: '+2', freq: '360.00', freqRatio: 1.5 },
-            { index: 15, symbol: 'd1', name: 'Ati Komal Dhaivat', ratio: '128/81', cents: '-8', freq: '379.26', freqRatio: 1.58 },
-            { index: 16, symbol: 'd2', name: 'Komal Dhaivat', ratio: '8/5', cents: '+13', freq: '384.00', freqRatio: 1.6 },
-            { index: 17, symbol: 'D1', name: 'Shuddha Dhaivat', ratio: '5/3', cents: '-16', freq: '400.00', freqRatio: 1.667 },
-            { index: 18, symbol: 'D2', name: 'Teevra Shuddha Dhaivat', ratio: '27/16', cents: '+6', freq: '405.00', freqRatio: 1.688 },
-            { index: 19, symbol: 'n1', name: 'Ati Komal Nishad', ratio: '16/9', cents: '-4', freq: '426.67', freqRatio: 1.778 },
-            { index: 20, symbol: 'n2', name: 'Komal Nishad', ratio: '9/5', cents: '+17', freq: '432.00', freqRatio: 1.8 },
-            { index: 21, symbol: 'N1', name: 'Shuddha Nishad', ratio: '15/8', cents: '-12', freq: '450.00', freqRatio: 1.875 },
-            { index: 22, symbol: 'N2', name: 'Teevra Shuddha Nishad', ratio: '243/128', cents: '+10', freq: '455.62', freqRatio: 1.898 }
-        ];
-
-        // Calculate consonant partners using 9 or 13 rule
-        function getConsonantPartners(shrutiIndex) {
-            const maPartnerIndex = shrutiIndex + 9;
-            const paPartnerIndex = shrutiIndex + 13;
-            
-            return {
-                ma: maPartnerIndex <= 22 ? maPartnerIndex : maPartnerIndex - 22,
-                pa: paPartnerIndex <= 22 ? paPartnerIndex : paPartnerIndex - 22
-            };
-        }
 
         function renderScale(selectedRaag) {
             const container = document.getElementById('shruti-visualizer-content');
