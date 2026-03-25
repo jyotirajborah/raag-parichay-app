@@ -759,25 +759,28 @@ header h1 {
 .shruti-grid-compact {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 12px;
-    padding: 10px;
+    padding: 8px;
+    overflow-x: auto;
+    max-width: 100%;
 }
 
 .shruti-row-compact {
     display: flex;
-    gap: 3px;
-    justify-content: center;
+    gap: 2px;
+    justify-content: flex-start;
+    min-width: min-content;
 }
 
 .shruti-cell-compact {
     flex: 0 0 auto;
-    width: 60px;
+    width: 52px;
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid var(--glass-border);
-    border-radius: 8px;
-    padding: 8px 4px;
+    border-radius: 6px;
+    padding: 6px 2px;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -826,14 +829,14 @@ header h1 {
 }
 
 .shruti-cell-compact .shruti-symbol {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .shruti-cell-compact .shruti-freq {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-family: 'Courier New', monospace;
     color: var(--text-secondary);
 }
@@ -858,29 +861,58 @@ header h1 {
     50% { transform: translateY(-4px); }
 }
 
-@media (max-width: 1400px) {
+/* Responsive adjustments for shruti visualizer */
+@media (max-width: 1600px) {
     .shruti-cell-compact {
-        width: 55px;
-        padding: 7px 3px;
+        width: 48px;
+        padding: 5px 2px;
     }
     
     .shruti-cell-compact .shruti-symbol {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .shruti-cell-compact .shruti-freq {
+        font-size: 0.55rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    .shruti-cell-compact {
+        width: 44px;
+        padding: 5px 1px;
+    }
+    
+    .shruti-cell-compact .shruti-symbol {
+        font-size: 0.95rem;
+    }
+    
+    .shruti-cell-compact .shruti-freq {
+        font-size: 0.5rem;
     }
 }
 
 @media (max-width: 1200px) {
     .shruti-cell-compact {
-        width: 50px;
-        padding: 6px 2px;
+        width: 40px;
+        padding: 4px 1px;
     }
     
     .shruti-cell-compact .shruti-symbol {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
     
     .shruti-cell-compact .shruti-freq {
-        font-size: 0.6rem;
+        font-size: 0.48rem;
+    }
+    
+    .shruti-row-compact {
+        gap: 1px;
+    }
+    
+    .shruti-grid-compact {
+        gap: 1px;
+        padding: 6px;
     }
 }
 
