@@ -645,13 +645,49 @@ document.addEventListener('DOMContentLoaded', () => {
             return shrutiData;
         }
         
+        function updateFrequenciesOnly(newSa) {
+            // Update only the frequency displays without re-rendering entire HTML
+            const shrutiData = generateShrutiData(newSa);
+            
+            document.querySelectorAll('.shruti-cell-compact').forEach(cell => {
+                const octave = cell.getAttribute('data-octave');
+                const index = parseInt(cell.getAttribute('data-index'));
+                
+                const shruti = shrutiData.find(s => s.octave === octave && s.index === index);
+                if (shruti) {
+                    cell.setAttribute('data-freq', shruti.freq);
+                    const freqElement = cell.querySelector('.shruti-freq');
+                    if (freqElement) {
+                        freqElement.textContent = shruti.freq;
+                    }
+                }
+            });
+            
+            // Update slider range labels
+            const lowerSaFreq = (newSa * 0.5).toFixed(2);
+            const upperN2Freq = (newSa * 1.898 * 2.0).toFixed(2);
+            const minLabel = document.getElementById('min-freq-label');
+            const maxLabel = document.getElementById('max-freq-label');
+            if (minLabel) minLabel.textContent = `${lowerSaFreq} Hz (Sa')`;
+            if (maxLabel) maxLabel.textContent = `${upperN2Freq} Hz (Ṅ2)`;
+            
+            // Update slider min/max
+            const slider = document.getElementById('sa-freq-slider');
+            if (slider) {
+                slider.min = newSa * 0.5;
+                slider.max = newSa * 1.898 * 2.0;
+            }
+        }
+        
         function render() {
             const shrutiData = generateShrutiData(baseSa);
             const container = document.getElementById('shruti-visualizer-content');
             
-            // Calculate frequency range: lower octave N2 to upper octave N2
-            const lowerN2Freq = (baseSa * 1.898 * 0.5).toFixed(2); // N2 in lower octave
+            // Calculate frequency range: lower octave Sa to upper octave N2
+            const lowerSaFreq = (baseSa * 0.5).toFixed(2); // Sa in lower octave
             const upperN2Freq = (baseSa * 1.898 * 2.0).toFixed(2); // N2 in upper octave
+            const minFreq = baseSa * 0.5; // Lower octave Sa
+            const maxFreq = baseSa * 1.898 * 2.0; // Upper octave N2
             
             let html = `
                 <div class="shruti-visualizer-intro">
@@ -662,12 +698,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="slider-control">
                             <label for="sa-freq-slider">Middle Sa Frequency:</label>
                             <div class="slider-wrapper">
-                                <span class="slider-label">${lowerN2Freq} Hz</span>
-                                <input type="range" id="sa-freq-slider" value="${baseSa}" min="100" max="950" step="0.1">
-                                <span class="slider-label">${upperN2Freq} Hz</span>
+                                <span class="slider-label" id="min-freq-label">${lowerSaFreq} Hz (Sa')</span>
+                                <input type="range" id="sa-freq-slider" value="${baseSa}" min="${minFreq}" max="${maxFreq}" step="0.1">
+                                <span class="slider-label" id="max-freq-label">${upperN2Freq} Hz (Ṅ2)</span>
                             </div>
                             <div class="current-freq">
-                                <strong id="current-sa-display">${baseSa} Hz</strong>
+                                <strong id="current-sa-display">${baseSa.toFixed(2)} Hz</strong>
                             </div>
                         </div>
                         
@@ -750,7 +786,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                     playingOscillators = {};
                 }
-                render();
+                
+                // Update frequencies without full re-render
+                updateFrequenciesOnly(newSa);
             });
             
             // Add scale button handlers
