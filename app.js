@@ -805,23 +805,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         container.innerHTML = html;
-    }
-
-    // Search functionality for shruti explanations
-    shrutiSearchInput.addEventListener('input', (e) => {
-        const term = e.target.value.toLowerCase().trim();
-        const sections = document.querySelectorAll('.explanation-section');
         
-        if (!term) {
-            sections.forEach(section => section.style.display = 'block');
-            return;
-        }
-        
-        sections.forEach(section => {
-            const text = section.textContent.toLowerCase();
-            section.style.display = text.includes(term) ? 'block' : 'none';
+        // Search functionality for shruti explanations
+        shrutiSearchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase().trim();
+            const sections = document.querySelectorAll('.explanation-section');
+            
+            if (!term) {
+                sections.forEach(section => section.style.display = 'block');
+                return;
+            }
+            
+            sections.forEach(section => {
+                const text = section.textContent.toLowerCase();
+                section.style.display = text.includes(term) ? 'block' : 'none';
+            });
         });
-    });
+    }
 
     function renderTheory() {
         const container = document.getElementById('theory-content');
