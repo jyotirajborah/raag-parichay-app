@@ -668,11 +668,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const shrutiData = generateShrutiData(baseSa);
             const container = document.getElementById('shruti-visualizer-content');
             
-            // Fixed slider range from a reasonable lower Sa to upper N2
-            // Using a reference Sa of 240 Hz for calculating the range
-            const referenceSa = 240;
-            const minFreq = referenceSa * 0.5; // ~120 Hz (lower octave Sa)
-            const maxFreq = referenceSa * 1.898 * 2.0; // ~911 Hz (upper octave N2)
+            // Fixed slider range
+            const minFreq = 69.30; // Lower bound
+            const maxFreq = 526.09; // Upper bound
             
             let html = `
                 <div class="shruti-visualizer-intro">
@@ -683,9 +681,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="slider-control">
                             <label for="sa-freq-slider">Middle Sa Frequency:</label>
                             <div class="slider-wrapper">
-                                <span class="slider-label">120 Hz (Lower Sa)</span>
+                                <span class="slider-label">69.30 Hz</span>
                                 <input type="range" id="sa-freq-slider" value="${baseSa}" min="${minFreq}" max="${maxFreq}" step="0.1">
-                                <span class="slider-label">911 Hz (Upper N2)</span>
+                                <span class="slider-label">526.09 Hz</span>
                             </div>
                             <div class="current-freq">
                                 <strong id="current-sa-display">${baseSa.toFixed(2)} Hz</strong>
