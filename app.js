@@ -856,7 +856,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const freq = parseFloat(this.getAttribute('data-freq'));
                     baseSa = freq;
                     
-                    // Stop all playing oscillators
+                    // Stop all playing oscillators from shruti cells
                     if (audioContext) {
                         Object.keys(playingOscillators).forEach(key => {
                             playingOscillators[key].gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.1);
@@ -865,14 +865,46 @@ document.addEventListener('DOMContentLoaded', () => {
                         playingOscillators = {};
                     }
                     
+                    // Stop and restart slider oscillator if checkbox is checked
+                    const checkbox = document.getElementById('play-while-sliding-checkbox');
+                    if (sliderOscillator) {
+                        sliderOscillator.gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.01);
+                        sliderOscillator.oscillator.stop(audioContext.currentTime + 0.01);
+                        sliderOscillator = null;
+                    }
+                    
                     // Re-render with new frequency
                     render();
                     
                     // After render, update the slider and display (since render recreates them)
                     const newSlider = document.getElementById('sa-freq-slider');
                     const newDisplay = document.getElementById('current-sa-display');
+                    const newCheckbox = document.getElementById('play-while-sliding-checkbox');
                     if (newSlider) newSlider.value = freq;
                     if (newDisplay) newDisplay.textContent = freq.toFixed(2) + ' Hz';
+                    
+                    // Restart playing if checkbox was checked
+                    if (checkbox && checkbox.checked && newCheckbox) {
+                        newCheckbox.checked = true;
+                        initAudio();
+                        
+                        const oscillator = audioContext.createOscillator();
+                        const gainNode = audioContext.createGain();
+                        
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audioContext.destination);
+                        
+                        oscillator.frequency.value = freq;
+                        oscillator.type = 'sine';
+                        
+                        const now = audioContext.currentTime;
+                        gainNode.gain.setValueAtTime(0, now);
+                        gainNode.gain.linearRampToValueAtTime(0.3, now + 0.1);
+                        
+                        oscillator.start(now);
+                        
+                        sliderOscillator = { oscillator, gainNode };
+                    }
                     
                     // Update active state on buttons
                     document.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('active'));
