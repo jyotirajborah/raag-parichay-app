@@ -148,7 +148,7 @@ body {
     padding: 40px;
     padding-right: 40px;
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: visible;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
