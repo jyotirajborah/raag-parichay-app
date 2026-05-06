@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function processData() {
         // Thaat numbers mapping
         const thaatNumbers = {
-            'Bilaval': 1,
+            'Bilawal': 1,
             'Kalyan': 2,
             'Khamaj': 3,
             'Kafi': 4,
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Thaat swaras (notes) for each thaat
         const thaatSwaras = {
-            'Bilaval': 'Sa Re Ga Ma Pa Dha Ni',
+            'Bilawal': 'Sa Re Ga Ma Pa Dha Ni',
             'Kalyan': 'Sa Re Ga Mā Pa Dha Ni',
             'Kafi': 'Sa Re ga Ma Pa Dha ni',
             'Khamaj': 'Sa Re Ga Ma Pa Dha ni',
@@ -79,22 +79,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // Authoritative list: 120 raags under 10 thaats (from user's Excel data)
         const raagDirectory = [
             // Bilaval Thaat (16)
-            { name: 'बिलावल', thaat: 'Bilaval' },
-            { name: 'अल्हैया बिलावल', thaat: 'Bilaval' },
-            { name: 'बिहाग', thaat: 'Bilaval' },
-            { name: 'दुर्गा', thaat: 'Bilaval' },
-            { name: 'शंकरा', thaat: 'Bilaval' },
-            { name: 'Deshkar', thaat: 'Bilaval' },
-            { name: 'Maluha Kedar', thaat: 'Bilaval' },
-            { name: 'हंसध्वनि', thaat: 'Bilaval' },
-            { name: 'Jaldhar Kedar', thaat: 'Bilaval' },
-            { name: 'Sarparada', thaat: 'Bilaval' },
-            { name: 'Gopika Basant', thaat: 'Bilaval' },
-            { name: 'Devgiri Bilawal', thaat: 'Bilaval' },
-            { name: 'Bhatiyar', thaat: 'Bilaval' },
-            { name: 'Nat Bihag', thaat: 'Bilaval' },
-            { name: 'Sukla Bilawal', thaat: 'Bilaval' },
-            { name: 'Bihagara', thaat: 'Bilaval' },
+            { name: 'बिलावल', thaat: 'Bilawal' },
+            { name: 'अल्हैया बिलावल', thaat: 'Bilawal' },
+            { name: 'बिहाग', thaat: 'Bilawal' },
+            { name: 'दुर्गा', thaat: 'Bilawal' },
+            { name: 'शंकरा', thaat: 'Bilawal' },
+            { name: 'Deshkar', thaat: 'Bilawal' },
+            { name: 'Maluha Kedar', thaat: 'Bilawal' },
+            { name: 'हंसध्वनि', thaat: 'Bilawal' },
+            { name: 'Jaldhar Kedar', thaat: 'Bilawal' },
+            { name: 'Sarparada', thaat: 'Bilawal' },
+            { name: 'Gopika Basant', thaat: 'Bilawal' },
+            { name: 'Devgiri Bilawal', thaat: 'Bilawal' },
+            { name: 'Bhatiyar', thaat: 'Bilawal' },
+            { name: 'Nat Bihag', thaat: 'Bilawal' },
+            { name: 'Sukla Bilawal', thaat: 'Bilawal' },
+            { name: 'Bihagara', thaat: 'Bilawal' },
             // Kalyan Thaat (18)
             { name: 'कल्याण', thaat: 'Kalyan' },
             { name: 'यमन', thaat: 'Kalyan' },
@@ -262,11 +262,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Thaat order and grouping
-    const thaatOrder = ['Bilaval', 'Kalyan', 'Khamaj', 'Kafi', 'Asavari', 'Bhairav', 'Bhairavi', 'Poorvi', 'Marva', 'Todi'];
+    const thaatOrder = ['Bilawal', 'Kalyan', 'Khamaj', 'Kafi', 'Asavari', 'Bhairav', 'Bhairavi', 'Poorvi', 'Marva', 'Todi'];
 
     // Thaat names in Hindi
     const thaatNamesHindi = {
-        'Bilaval': 'बिलावल',
+        'Bilawal': 'बिलावल',
         'Kalyan': 'कल्याण',
         'Khamaj': 'खमाज',
         'Kafi': 'काफी',
@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Thaat accent colors for visual distinction
     const thaatColors = {
-        'Bilaval': '#4fc3f7',
+        'Bilawal': '#4fc3f7',
         'Kalyan': '#ffd54f',
         'Khamaj': '#81c784',
         'Bhairav': '#e57373',
@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Get thaat number
         const thaatNumbers = {
-            'Bilaval': 1,
+            'Bilawal': 1,
             'Kalyan': 2,
             'Khamaj': 3,
             'Kafi': 4,
@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check for special notes
         let specialNote = '';
         if (appData.thaat_info && appData.thaat_info.special_notes) {
-            if (thaat === 'Bilaval' || thaat === 'Kafi') {
+            if (thaat === 'Bilawal' || thaat === 'Kafi') {
                 const patmanjari = appData.thaat_info.special_notes.patmanjari;
                 if (patmanjari) {
                     specialNote = `<p class="special-note">📌 ${patmanjari.note}: Bilawal Patmanjari या Kafi Patmanjari</p>`;
