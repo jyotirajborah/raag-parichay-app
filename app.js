@@ -1357,7 +1357,30 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update raag selector to trigger derivation rendering
         render();
         
+        // Add mode button handlers
+        const presetModeBtn = document.getElementById('preset-mode-btn');
+        const customModeBtn = document.getElementById('custom-mode-btn');
+        const presetControls = document.getElementById('preset-controls');
+        const customControls = document.getElementById('custom-controls');
+        
+        if (presetModeBtn && customModeBtn && presetControls && customControls) {
+            presetModeBtn.addEventListener('click', function() {
+                presetModeBtn.classList.add('active');
+                customModeBtn.classList.remove('active');
+                presetControls.classList.remove('hidden');
+                customControls.classList.add('hidden');
+            });
+            
+            customModeBtn.addEventListener('click', function() {
+                customModeBtn.classList.add('active');
+                presetModeBtn.classList.remove('active');
+                customControls.classList.remove('hidden');
+                presetControls.classList.add('hidden');
+            });
+        }
+        
         // After render completes, set up the derivation section
+        // Use a longer timeout to ensure render() has completed
         setTimeout(() => {
             const raagSelector = document.getElementById('raag-selector');
             const visualizerContent = document.getElementById('shruti-visualizer-content');
@@ -1379,6 +1402,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     raagSelector.appendChild(option);
                 });
                 
+                console.log('Raag options added:', raagSelector.options.length);
+                
                 // Add derivation container if it doesn't exist
                 let derivationSection = document.getElementById('swara-derivation-section');
                 if (!derivationSection) {
@@ -1396,8 +1421,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const selectedRaag = this.value;
                     renderSwaraDerivation(selectedRaag || null);
                 });
+            } else {
+                console.error('Elements not found:', { raagSelector, visualizerContent });
             }
-        }, 200);
+        }, 500);
     }
 
     function renderDNAGrid() {
