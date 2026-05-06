@@ -969,7 +969,435 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
         
+        // Add Swara Derivation Section
+        function renderSwaraDerivation(raagName) {
+            const derivationContainer = document.getElementById('swara-derivation-section');
+            if (!derivationContainer) return;
+            
+            // Define swara derivation data for specific raags
+            const swaraDerivations = {
+                'यमन': {
+                    raagName: 'Yaman (यमन)',
+                    targetSwara: 'Ga',
+                    neighbors: { left: 'Re', right: 'Ma#' },
+                    ratios: { re: 9/8, ma: 45/32 },
+                    correctGa: 5/4,
+                    reFreq: 9/8,
+                    maFreq: 45/32,
+                    span: '5/4',
+                    spanCalculation: '(45/32) ÷ (9/8) = (45/32) × (8/9) = 5/4',
+                    factorization: '5/4 = (10/9) × (9/8)',
+                    gaRatio: '5/4',
+                    gaCalculation: 'Ga = Re × (10/9) = (9/8) × (10/9) = 5/4',
+                    explanation: 'In Yaman, the Teevra Madhyam (Ma#) raises the span between Re and Ma. This forces Ga to sit at 5/4, the just major third. This is the only position that creates balanced intervals on both sides and maintains consonance with Pa.'
+                },
+                'तोड़ी': {
+                    raagName: 'Todi (तोड़ी)',
+                    targetSwara: 'Ga',
+                    neighbors: { left: 'Re (komal)', right: 'Ma#' },
+                    ratios: { re: 16/15, ma: 45/32 },
+                    correctGa: 6/5,
+                    reFreq: 16/15,
+                    maFreq: 45/32,
+                    span: '3/2',
+                    spanCalculation: '(45/32) ÷ (16/15) ≈ 3/2',
+                    factorization: '3/2 = (6/5) × (5/4)',
+                    gaRatio: '6/5',
+                    gaCalculation: 'Ga = Re × (6/5) ≈ 6/5',
+                    explanation: 'In Todi, the komal Re drops the lower bound while Ma# raises the upper bound, creating a massive span. Ga must sit at 6/5 (komal Gandhar) to maintain balance. This lower position creates the characteristic emotional intensity and spiritual longing of Todi.'
+                },
+                'काफी': {
+                    raagName: 'Kafi (काफी)',
+                    targetSwara: 'Ga',
+                    neighbors: { left: 'Re', right: 'Ma' },
+                    ratios: { re: 9/8, ma: 4/3 },
+                    correctGa: 6/5,
+                    reFreq: 9/8,
+                    maFreq: 4/3,
+                    span: '32/27',
+                    spanCalculation: '(4/3) ÷ (9/8) = 32/27',
+                    factorization: '32/27 = (6/5) × (10/9)',
+                    gaRatio: '6/5',
+                    gaCalculation: 'Ga = 6/5 for folk character',
+                    explanation: 'Kafi uses komal Gandhar (6/5) instead of shuddha Gandhar to create its characteristic folk-like, earthy quality. The lower Ga creates a softer melancholy compared to the bright major scale of Bilawal.'
+                }
+            };
+            
+            const derivation = swaraDerivations[raagName];
+            if (!derivation) {
+                derivationContainer.innerHTML = '<div class="derivation-placeholder"><p>Select a raag from the dropdown above to see the interactive mathematical derivation of its swara positions.</p></div>';
+                return;
+            }
+            
+            // Audio context for playing
+            let gaOscillator = null;
+            let saOscillator = null;
+            let reOscillator = null;
+            let maOscillator = null;
+            let paOscillator = null;
+            let gaAudioContext = null;
+            let isPlaying = false;
+            const baseSa = 240; // Hz
+            
+            function initGaAudio() {
+                if (!gaAudioContext) {
+                    gaAudioContext = new (window.AudioContext || window.webkitAudioContext)();
+                }
+            }
+            
+            function createOscillator(frequency) {
+                const oscillator = gaAudioContext.createOscillator();
+                const gainNode = gaAudioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(gaAudioContext.destination);
+                
+                oscillator.frequency.value = frequency;
+                oscillator.type = 'sine';
+                
+                const now = gaAudioContext.currentTime;
+                gainNode.gain.setValueAtTime(0, now);
+                gainNode.gain.linearRampToValueAtTime(0.25, now + 0.05);
+                
+                oscillator.start(now);
+                
+                return { oscillator, gainNode };
+            }
+            
+            function stopOscillator(osc) {
+                if (osc) {
+                    osc.gainNode.gain.linearRampToValueAtTime(0, gaAudioContext.currentTime + 0.1);
+                    osc.oscillator.stop(gaAudioContext.currentTime + 0.1);
+                }
+            }
+            
+            function playGa(gaRatio) {
+                initGaAudio();
+                
+                // Stop previous oscillators
+                stopOscillator(gaOscillator);
+                stopOscillator(saOscillator);
+                stopOscillator(reOscillator);
+                stopOscillator(maOscillator);
+                stopOscillator(paOscillator);
+                
+                // Play Ga
+                gaOscillator = createOscillator(baseSa * gaRatio);
+                
+                // Play Sa if checkbox is checked
+                const saCheckbox = document.getElementById('play-sa-checkbox');
+                if (saCheckbox && saCheckbox.checked) {
+                    saOscillator = createOscillator(baseSa * 1.0);
+                }
+                
+                // Play Re if checkbox is checked
+                const reCheckbox = document.getElementById('play-re-checkbox');
+                if (reCheckbox && reCheckbox.checked) {
+                    reOscillator = createOscillator(baseSa * derivation.ratios.re);
+                }
+                
+                // Play Ma if checkbox is checked
+                const maCheckbox = document.getElementById('play-ma-checkbox');
+                if (maCheckbox && maCheckbox.checked) {
+                    maOscillator = createOscillator(baseSa * derivation.ratios.ma);
+                }
+                
+                // Play Pa if checkbox is checked
+                const paCheckbox = document.getElementById('play-pa-checkbox');
+                if (paCheckbox && paCheckbox.checked) {
+                    paOscillator = createOscillator(baseSa * 1.5); // Pa is always 3/2
+                }
+                
+                isPlaying = true;
+            }
+            
+            function stopGa() {
+                stopOscillator(gaOscillator);
+                stopOscillator(saOscillator);
+                stopOscillator(reOscillator);
+                stopOscillator(maOscillator);
+                stopOscillator(paOscillator);
+                
+                gaOscillator = null;
+                saOscillator = null;
+                reOscillator = null;
+                maOscillator = null;
+                paOscillator = null;
+                isPlaying = false;
+            }
+            
+            function togglePlayGa(gaRatio) {
+                if (isPlaying) {
+                    stopGa();
+                    return false; // Stopped
+                } else {
+                    playGa(gaRatio);
+                    return true; // Playing
+                }
+            }
+            
+            let html = `
+                <div class="swara-derivation-card">
+                    <h2>🎵 Interactive Swara Explorer: ${derivation.targetSwara} in ${derivation.raagName}</h2>
+                    <p class="derivation-intro">Slide ${derivation.targetSwara} to hear different positions, then find the mathematically correct placement</p>
+                    
+                    <div class="interactive-ga-section">
+                        <div class="scale-visualization">
+                            <div class="scale-line">
+                                <div class="scale-marker neighbor-marker" style="left: 0%">
+                                    <div class="marker-label">${derivation.neighbors.left}</div>
+                                    <div class="marker-freq">${derivation.ratios.re.toFixed(4)}</div>
+                                </div>
+                                <div class="scale-marker ga-marker" id="ga-position-marker" style="left: 50%">
+                                    <div class="marker-label">${derivation.targetSwara}</div>
+                                    <div class="marker-freq" id="ga-freq-display">1.2000</div>
+                                </div>
+                                <div class="scale-marker neighbor-marker" style="left: 100%">
+                                    <div class="marker-label">${derivation.neighbors.right}</div>
+                                    <div class="marker-freq">${derivation.ratios.ma.toFixed(4)}</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ga-slider-control">
+                            <label>Slide ${derivation.targetSwara} position:</label>
+                            <input type="range" id="ga-position-slider" 
+                                   min="${derivation.ratios.re}" 
+                                   max="${derivation.ratios.ma}" 
+                                   step="0.001" 
+                                   value="${(derivation.ratios.re + derivation.ratios.ma) / 2}">
+                            
+                            <div class="play-with-options">
+                                <h4>Play together with:</h4>
+                                <div class="note-checkboxes">
+                                    <label class="note-checkbox">
+                                        <input type="checkbox" id="play-sa-checkbox">
+                                        <span>Sa (Tonic)</span>
+                                    </label>
+                                    <label class="note-checkbox">
+                                        <input type="checkbox" id="play-re-checkbox">
+                                        <span>${derivation.neighbors.left}</span>
+                                    </label>
+                                    <label class="note-checkbox">
+                                        <input type="checkbox" id="play-ma-checkbox">
+                                        <span>${derivation.neighbors.right}</span>
+                                    </label>
+                                    <label class="note-checkbox">
+                                        <input type="checkbox" id="play-pa-checkbox">
+                                        <span>Pa (Fifth)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="slider-actions">
+                                <button id="play-ga-btn" class="action-btn">🔊 Play ${derivation.targetSwara}</button>
+                                <button id="snap-correct-btn" class="action-btn primary">✨ Snap to Correct Position</button>
+                            </div>
+                        </div>
+                        
+                        <div class="interval-analysis">
+                            <div class="interval-box">
+                                <h4>${derivation.neighbors.left} → ${derivation.targetSwara}</h4>
+                                <div class="interval-value" id="re-ga-interval">-</div>
+                                <div class="interval-status" id="re-ga-status"></div>
+                            </div>
+                            <div class="interval-box">
+                                <h4>${derivation.targetSwara} → ${derivation.neighbors.right}</h4>
+                                <div class="interval-value" id="ga-ma-interval">-</div>
+                                <div class="interval-status" id="ga-ma-status"></div>
+                            </div>
+                            <div class="interval-box">
+                                <h4>Clustering Check</h4>
+                                <div class="interval-value" id="clustering-check">-</div>
+                                <div class="interval-status" id="clustering-status"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="derivation-explanation">
+                        <h4>💡 The Mathematical Solution</h4>
+                        <div class="solution-steps">
+                            <div class="solution-step">
+                                <strong>1. Span:</strong> ${derivation.spanCalculation} = ${derivation.span}
+                            </div>
+                            <div class="solution-step">
+                                <strong>2. Factorization:</strong> ${derivation.factorization}
+                            </div>
+                            <div class="solution-step">
+                                <strong>3. Result:</strong> ${derivation.gaCalculation}
+                            </div>
+                            <div class="solution-step correct-answer">
+                                <strong>✓ Correct ${derivation.targetSwara}:</strong> ${derivation.gaRatio} = ${derivation.correctGa.toFixed(4)}
+                            </div>
+                        </div>
+                        <p>${derivation.explanation}</p>
+                    </div>
+                </div>
+            `;
+            
+            derivationContainer.innerHTML = html;
+            
+            // Add interactivity
+            const slider = document.getElementById('ga-position-slider');
+            const gaMarker = document.getElementById('ga-position-marker');
+            const gaFreqDisplay = document.getElementById('ga-freq-display');
+            const playBtn = document.getElementById('play-ga-btn');
+            const snapBtn = document.getElementById('snap-correct-btn');
+            
+            const reGaInterval = document.getElementById('re-ga-interval');
+            const reGaStatus = document.getElementById('re-ga-status');
+            const gaMaInterval = document.getElementById('ga-ma-interval');
+            const gaMaStatus = document.getElementById('ga-ma-status');
+            const clusteringCheck = document.getElementById('clustering-check');
+            const clusteringStatus = document.getElementById('clustering-status');
+            
+            function updateGaPosition(gaValue) {
+                const gaRatio = parseFloat(gaValue);
+                
+                // Update marker position (percentage between Re and Ma)
+                const percentage = ((gaRatio - derivation.ratios.re) / (derivation.ratios.ma - derivation.ratios.re)) * 100;
+                gaMarker.style.left = percentage + '%';
+                gaFreqDisplay.textContent = gaRatio.toFixed(4);
+                
+                // Calculate intervals
+                const reToGa = gaRatio / derivation.ratios.re;
+                const gaToMa = derivation.ratios.ma / gaRatio;
+                
+                reGaInterval.textContent = reToGa.toFixed(4);
+                gaMaInterval.textContent = gaToMa.toFixed(4);
+                
+                // Check if close to correct position
+                const isCorrect = Math.abs(gaRatio - derivation.correctGa) < 0.005;
+                
+                if (isCorrect) {
+                    reGaStatus.textContent = '✓ Perfect!';
+                    reGaStatus.className = 'interval-status correct';
+                    gaMaStatus.textContent = '✓ Balanced!';
+                    gaMaStatus.className = 'interval-status correct';
+                    gaMarker.classList.add('correct-position');
+                } else {
+                    reGaStatus.textContent = '';
+                    reGaStatus.className = 'interval-status';
+                    gaMaStatus.textContent = '';
+                    gaMaStatus.className = 'interval-status';
+                    gaMarker.classList.remove('correct-position');
+                }
+                
+                // Clustering check (should be > 16/15 ≈ 1.0667)
+                const minInterval = Math.min(reToGa, gaToMa);
+                clusteringCheck.textContent = minInterval.toFixed(4);
+                if (minInterval > 1.0667) {
+                    clusteringStatus.textContent = '✓ No clustering';
+                    clusteringStatus.className = 'interval-status correct';
+                } else {
+                    clusteringStatus.textContent = '⚠ Too close!';
+                    clusteringStatus.className = 'interval-status warning';
+                }
+            }
+            
+            playBtn.addEventListener('click', function() {
+                const gaRatio = parseFloat(slider.value);
+                const nowPlaying = togglePlayGa(gaRatio);
+                
+                if (nowPlaying) {
+                    playBtn.textContent = '⏸ Stop Ga';
+                    playBtn.classList.add('playing');
+                } else {
+                    playBtn.textContent = '🔊 Play Ga';
+                    playBtn.classList.remove('playing');
+                }
+            });
+            
+            // Update frequency when slider moves while playing
+            slider.addEventListener('input', function() {
+                updateGaPosition(this.value);
+                
+                // If currently playing, update the frequency in real-time
+                if (isPlaying) {
+                    const gaRatio = parseFloat(this.value);
+                    playGa(gaRatio); // Restart with new frequency
+                }
+            });
+            
+            // Add checkbox listeners to update sound when toggled
+            const checkboxes = ['play-sa-checkbox', 'play-re-checkbox', 'play-ma-checkbox', 'play-pa-checkbox'];
+            checkboxes.forEach(id => {
+                const checkbox = document.getElementById(id);
+                if (checkbox) {
+                    checkbox.addEventListener('change', function() {
+                        // If currently playing, restart to include/exclude the note
+                        if (isPlaying) {
+                            const gaRatio = parseFloat(slider.value);
+                            playGa(gaRatio);
+                        }
+                    });
+                }
+            });
+            
+            snapBtn.addEventListener('click', function() {
+                slider.value = derivation.correctGa;
+                updateGaPosition(derivation.correctGa);
+                
+                // If playing, update to correct frequency
+                if (isPlaying) {
+                    playGa(derivation.correctGa);
+                }
+                
+                // Visual feedback
+                snapBtn.textContent = '✓ Correct Position!';
+                setTimeout(() => {
+                    snapBtn.textContent = '✨ Snap to Correct Position';
+                }, 2000);
+            });
+            
+            // Initialize
+            updateGaPosition(slider.value);
+        }
+        
+        // Update raag selector to trigger derivation rendering
         render();
+        
+        // After render completes, set up the derivation section
+        setTimeout(() => {
+            const raagSelector = document.getElementById('raag-selector');
+            const visualizerContent = document.getElementById('shruti-visualizer-content');
+            
+            if (raagSelector && visualizerContent) {
+                // Populate raag selector with available raags
+                const availableRaags = ['यमन', 'तोड़ी', 'काफी'];
+                
+                // Clear existing options except the first one
+                while (raagSelector.options.length > 1) {
+                    raagSelector.remove(1);
+                }
+                
+                // Add raag options
+                availableRaags.forEach(raag => {
+                    const option = document.createElement('option');
+                    option.value = raag;
+                    option.textContent = raag;
+                    raagSelector.appendChild(option);
+                });
+                
+                // Add derivation container if it doesn't exist
+                let derivationSection = document.getElementById('swara-derivation-section');
+                if (!derivationSection) {
+                    derivationSection = document.createElement('div');
+                    derivationSection.id = 'swara-derivation-section';
+                    derivationSection.className = 'swara-derivation-section';
+                    visualizerContent.appendChild(derivationSection);
+                }
+                
+                // Initialize with placeholder
+                renderSwaraDerivation(null);
+                
+                // Add change event listener
+                raagSelector.addEventListener('change', function() {
+                    const selectedRaag = this.value;
+                    renderSwaraDerivation(selectedRaag || null);
+                });
+            }
+        }, 200);
     }
 
     function renderDNAGrid() {
