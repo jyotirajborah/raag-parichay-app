@@ -388,14 +388,15 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Add columns based on available data
         if (raagDetails) {
-            tableHTML += '<th>Aroha (Ascending)</th>';
-            tableHTML += '<th>Avaroha (Descending)</th>';
+            tableHTML += '<th>Aroha (आरोह)</th>';
+            tableHTML += '<th>Avaroha (अवरोह)</th>';
+            tableHTML += '<th>Jati (जाति)</th>';
             tableHTML += '<th>Vadi / Samvadi</th>';
+            tableHTML += '<th>Pakad (पकड़)</th>';
             tableHTML += '<th>Time</th>';
-            tableHTML += '<th>Mood (Rasa)</th>';
-            tableHTML += '<th>Key Notes</th>';
-            tableHTML += '<th>🎵 Instrumental</th>';
-            tableHTML += '<th>🎤 Vocal</th>';
+            tableHTML += '<th>Prakriti (प्रकृति)</th>';
+            tableHTML += '<th>Similar Raags</th>';
+            tableHTML += '<th>Chalan (चलन)</th>';
         } else {
             tableHTML += '<th>Vilambit Bandish (विलंबित)</th>';
             tableHTML += '<th>Drut Bandish (द्रुत)</th>';
@@ -418,12 +419,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const details = raagDetails[raag.name];
                 tableHTML += `<td>${details.aroha || '-'}</td>`;
                 tableHTML += `<td>${details.avaroha || '-'}</td>`;
+                tableHTML += `<td>${details.jati || '-'}</td>`;
                 tableHTML += `<td>${details.vadi_samvadi || '-'}</td>`;
+                tableHTML += `<td>${details.pakad || '-'}</td>`;
                 tableHTML += `<td>${details.time || '-'}</td>`;
-                tableHTML += `<td>${details.mood || '-'}</td>`;
-                tableHTML += `<td>${details.key_notes || '-'}</td>`;
-                tableHTML += `<td>${details.youtube_instrumental ? `<a href="${details.youtube_instrumental}" target="_blank" class="youtube-link">▶ Play</a>` : '-'}</td>`;
-                tableHTML += `<td>${details.youtube_vocal ? `<a href="${details.youtube_vocal}" target="_blank" class="youtube-link">▶ Play</a>` : '-'}</td>`;
+                tableHTML += `<td>${details.prakriti || '-'}</td>`;
+                tableHTML += `<td>${details.similar || '-'}</td>`;
+                tableHTML += `<td>${details.chalan || '-'}</td>`;
             } else {
                 // Show bandish data
                 const bandishParts = raag.bandish ? raag.bandish.split(' | ') : ['', ''];
