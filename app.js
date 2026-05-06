@@ -382,7 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const raagDetails = appData.raag_details && appData.raag_details[thaat];
         
         // Always build table with available information
-        let tableHTML = '<table class="data-table"><thead><tr>';
+        let tableHTML = '<table><thead><tr>';
         tableHTML += '<th>S.No.</th>';
         tableHTML += '<th>Raag Name</th>';
         
@@ -443,12 +443,13 @@ document.addEventListener('DOMContentLoaded', () => {
         
         tableHTML += '</tbody></table>';
         
-        // Add scroll hint if table has many columns
-        if (raagDetails) {
-            grid.innerHTML = '<div class="table-scroll-hint">← Scroll horizontally to see all columns →</div>' + tableHTML;
-        } else {
-            grid.innerHTML = tableHTML;
-        }
+        // Wrap table in scrollable container
+        const tableWrapper = `
+            <div class="table-scroll-hint">← Scroll horizontally to see all columns →</div>
+            <div class="data-table">${tableHTML}</div>
+        `;
+        
+        grid.innerHTML = tableWrapper;
     }
 
     function showThaatSelector() {

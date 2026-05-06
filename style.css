@@ -426,38 +426,31 @@ header h1 {
     margin-top: 20px;
     background: rgba(0,0,0,0.2);
     border-radius: 12px;
-    overflow: hidden;
-    display: block;
     overflow-x: auto;
-    white-space: nowrap;
+    display: block;
 }
 
-.data-table thead,
-.data-table tbody {
-    display: table;
+.data-table table {
     width: 100%;
-    table-layout: fixed;
+    min-width: 800px;
 }
 
 .data-table th, .data-table td {
-    padding: 12px 10px;
+    padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid var(--glass-border);
-    min-width: 120px;
-    word-wrap: break-word;
     white-space: normal;
+    word-wrap: break-word;
 }
 
 .data-table th:first-child,
 .data-table td:first-child {
-    min-width: 60px;
-    max-width: 60px;
+    width: 60px;
 }
 
 .data-table th:nth-child(2),
 .data-table td:nth-child(2) {
-    min-width: 150px;
-    max-width: 200px;
+    min-width: 180px;
     font-weight: 600;
 }
 
@@ -465,9 +458,6 @@ header h1 {
     background: rgba(255,255,255,0.05);
     font-weight: 600;
     color: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 10;
 }
 
 .data-table tr:last-child td {
