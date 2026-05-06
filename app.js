@@ -383,6 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Always build table with available information
         let tableHTML = '<table class="data-table"><thead><tr>';
+        tableHTML += '<th>S.No.</th>';
         tableHTML += '<th>Raag Name</th>';
         
         // Add columns based on available data
@@ -410,6 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 : raag.name;
             
             tableHTML += `<tr style="animation-delay: ${i * 0.03}s">`;
+            tableHTML += `<td><strong>${i + 1}</strong></td>`;
             tableHTML += `<td><strong>${bilingualName}</strong></td>`;
             
             if (raagDetails && raagDetails[raag.name]) {
