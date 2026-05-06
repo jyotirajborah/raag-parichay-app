@@ -3395,312 +3395,150 @@
     ]
   },
   "raag_details": {
-    "Bilaval": {
-      "बिलावल": {
-        "aroha": "S R G M P D N S",
-        "avaroha": "S N D P M G R S",
-        "vadi_samvadi": "D / G",
-        "time": "Morning",
-        "mood": "Peaceful, devotional",
-        "key_notes": "All shuddha swaras",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bilawal%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bilawal%20vocal%20khyal%20bandish%20classical"
-      },
-      "अल्हैया बिलावल": {
-        "aroha": "S R G P D N S",
-        "avaroha": "S N D P M G R S",
-        "vadi_samvadi": "D / G",
-        "time": "Morning",
-        "mood": "Graceful, romantic",
-        "key_notes": "M omitted in aroha",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Alhaiya%20Bilawal%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Alhaiya%20Bilawal%20vocal%20khyal%20bandish%20classical"
-      },
-      "बिहाग": {
-        "aroha": "S G M P N S",
-        "avaroha": "S N D P M G M G R S",
-        "vadi_samvadi": "G / N",
-        "time": "Night",
-        "mood": "Romantic, joyful",
-        "key_notes": "Tivra Ma used",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bihag%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bihag%20vocal%20khyal%20bandish%20classical"
-      },
-      "दुर्गा": {
-        "aroha": "S R M P D S",
-        "avaroha": "S D P M R S",
-        "vadi_samvadi": "M / S",
-        "time": "Evening",
-        "mood": "Devotional, calm",
-        "key_notes": "Pentatonic (no G, N)",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Durga%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Durga%20vocal%20khyal%20bandish%20classical"
-      },
-      "शंकरा": {
-        "aroha": "S R G P N S",
-        "avaroha": "S N P G R S",
-        "vadi_samvadi": "P / R",
-        "time": "Late Night",
-        "mood": "Heroic, majestic",
-        "key_notes": "No M, D",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Shankara%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Shankara%20vocal%20khyal%20bandish%20classical"
-      },
-      "Deshkar": {
-        "aroha": "S R G P D S",
-        "avaroha": "S D P G R S",
-        "vadi_samvadi": "D / G",
-        "time": "Morning",
-        "mood": "Bright, energetic",
-        "key_notes": "Similar to Bhoopali",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Deshkar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Deshkar%20vocal%20khyal%20bandish%20classical"
-      },
-      "Maluha Kedar": {
-        "aroha": "S M G M P D N S",
-        "avaroha": "S N D P M G R S",
-        "vadi_samvadi": "M / S",
-        "time": "Night",
-        "mood": "Devotional",
-        "key_notes": "Kedar ang",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Maluha%20Kedar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Maluha%20Kedar%20vocal%20khyal%20bandish%20classical"
-      },
-      "हंसध्वनि": {
-        "aroha": "S R G P N S",
-        "avaroha": "S N P G R S",
-        "vadi_samvadi": "G / N",
-        "time": "Evening",
-        "mood": "Auspicious",
-        "key_notes": "Pentatonic, no M, D",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Hamsadhwani%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Hamsadhwani%20vocal%20khyal%20bandish%20classical"
-      },
-      "Jaldhar Kedar": {
-        "aroha": "S M P N S",
-        "avaroha": "S N D P M G R S",
-        "vadi_samvadi": "M / S",
-        "time": "Night",
-        "mood": "Calm",
-        "key_notes": "Kedar variant",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Jaldhar%20Kedar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Jaldhar%20Kedar%20vocal%20khyal%20bandish%20classical"
-      },
-      "Sarparada": {
-        "aroha": "S R G M P D N S",
-        "avaroha": "S N D P M G R S",
-        "vadi_samvadi": "P / R",
-        "time": "Morning",
-        "mood": "Serious",
-        "key_notes": "Rarely performed",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Sarparada%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Sarparada%20vocal%20khyal%20bandish%20classical"
-      },
-      "Gopika Basant": {
-        "aroha": "S R G M P D N S",
-        "avaroha": "S N D P M G R S",
-        "vadi_samvadi": "M / S",
-        "time": "Spring",
-        "mood": "Romantic",
-        "key_notes": "Basant influence",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Gopika%20Basant%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Gopika%20Basant%20vocal%20khyal%20bandish%20classical"
-      },
-      "Devgiri Bilawal": {
-        "aroha": "S R G M P D N S",
-        "avaroha": "S N D P M G R S",
-        "vadi_samvadi": "D / G",
-        "time": "Morning",
-        "mood": "Devotional",
-        "key_notes": "Variant of Bilawal",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Devgiri%20Bilawal%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Devgiri%20Bilawal%20vocal%20khyal%20bandish%20classical"
-      },
-      "Bhatiyar": {
-        "aroha": "S R G M D N S",
-        "avaroha": "S N D P M G R S",
-        "vadi_samvadi": "D / R",
-        "time": "Early Morning",
-        "mood": "Serious",
-        "key_notes": "Sharp mood",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bhatiyar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bhatiyar%20vocal%20khyal%20bandish%20classical"
-      },
-      "Nat Bihag": {
-        "aroha": "S G M P N S",
-        "avaroha": "S N D P M G R S",
-        "vadi_samvadi": "G / N",
-        "time": "Night",
-        "mood": "Romantic",
-        "key_notes": "Blend of Nat & Bihag",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Nat%20Bihag%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Nat%20Bihag%20vocal%20khyal%20bandish%20classical"
-      },
-      "Sukla Bilawal": {
-        "aroha": "S R G M P D N S",
-        "avaroha": "S N D P M G R S",
-        "vadi_samvadi": "D / G",
-        "time": "Morning",
-        "mood": "Peaceful",
-        "key_notes": "Pure Bilawal form",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Shukla%20Bilawal%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Shukla%20Bilawal%20vocal%20khyal%20bandish%20classical"
-      },
-      "Bihagara": {
-        "aroha": "S G M P N S",
-        "avaroha": "S N D P M G R S",
-        "vadi_samvadi": "G / N",
-        "time": "Night",
-        "mood": "Romantic",
-        "key_notes": "Bihag variant",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bihagara%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bihagara%20vocal%20khyal%20bandish%20classical"
-      }
-    },
     "Kalyan": {
       "कल्याण": {
         "aroha": "S R G M# P D N S",
         "avaroha": "S N D P M# G R S",
         "vadi_samvadi": "G / N",
         "time": "Evening",
-        "mood": "Devotional",
-        "key_notes": "Tivra Ma dominant"
+        "key_notes": "Tivra Ma dominant",
+        "prakriti": "Devotional"
       },
       "यमन": {
         "aroha": "N R G M# D N S",
         "avaroha": "S N D P M# G R S",
         "vadi_samvadi": "G / N",
         "time": "Evening",
-        "mood": "Peaceful, romantic",
-        "key_notes": "Most prominent Kalyan raag"
+        "key_notes": "Most prominent Kalyan raag",
+        "prakriti": "Peaceful, romantic"
       },
       "भूपाली": {
         "aroha": "S R G P D S",
         "avaroha": "S D P G R S",
         "vadi_samvadi": "G / D",
         "time": "Evening",
-        "mood": "Calm, devotional",
-        "key_notes": "No M, N (pentatonic)"
+        "key_notes": "No M, N (pentatonic)",
+        "prakriti": "Calm, devotional"
       },
       "हमीर": {
         "aroha": "S R G M# P D N S",
         "avaroha": "S N D P M# G R S",
         "vadi_samvadi": "D / G",
         "time": "Night",
-        "mood": "Majestic",
-        "key_notes": "Vakra phrases"
+        "key_notes": "Vakra phrases",
+        "prakriti": "Majestic"
       },
       "केदार": {
         "aroha": "S M M P N S",
         "avaroha": "S N D P M G R S",
         "vadi_samvadi": "M / S",
         "time": "Night",
-        "mood": "Devotional",
-        "key_notes": "Both Ma used"
+        "key_notes": "Both Ma used",
+        "prakriti": "Devotional"
       },
       "Kamod": {
         "aroha": "S R P M# P D S",
         "avaroha": "S N D P M# G R S",
         "vadi_samvadi": "P / R",
         "time": "Night",
-        "mood": "Romantic",
-        "key_notes": "Vakra structure"
+        "key_notes": "Vakra structure",
+        "prakriti": "Romantic"
       },
       "Hindol": {
         "aroha": "S G M# D N S",
         "avaroha": "S N D M# G S",
         "vadi_samvadi": "D / G",
         "time": "Morning",
-        "mood": "Meditative",
-        "key_notes": "No R, P"
+        "key_notes": "No R, P",
+        "prakriti": "Meditative"
       },
       "Gaur Sarang": {
         "aroha": "S R M# P N S",
         "avaroha": "S N D P M# R S",
         "vadi_samvadi": "R / P",
         "time": "Afternoon",
-        "mood": "Peaceful",
-        "key_notes": "Sarang ang"
+        "key_notes": "Sarang ang",
+        "prakriti": "Peaceful"
       },
       "Chayanaut": {
         "aroha": "S R G M# P D N S",
         "avaroha": "S N D P M# G R S",
         "vadi_samvadi": "P / R",
         "time": "Night",
-        "mood": "Romantic",
-        "key_notes": "Mix of Kalyan + Nat"
+        "key_notes": "Mix of Kalyan + Nat",
+        "prakriti": "Romantic"
       },
       "Sudh Kalyan": {
         "aroha": "S R G M# P D N S",
         "avaroha": "S N D P M G R S",
         "vadi_samvadi": "G / N",
         "time": "Evening",
-        "mood": "Devotional",
-        "key_notes": "Both Ma (shuddha + tivra)"
+        "key_notes": "Both Ma (shuddha + tivra)",
+        "prakriti": "Devotional"
       },
       "मारु बिहाग": {
         "aroha": "S G M# P N S",
         "avaroha": "S N D P M# G R S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Romantic",
-        "key_notes": "Bihag + Kalyan blend"
+        "key_notes": "Bihag + Kalyan blend",
+        "prakriti": "Romantic"
       },
       "Nand": {
         "aroha": "S G M# P N S",
         "avaroha": "S N D P M# G R S",
         "vadi_samvadi": "M / S",
         "time": "Night",
-        "mood": "Sweet, romantic",
-        "key_notes": "Close to Yaman"
+        "key_notes": "Close to Yaman",
+        "prakriti": "Sweet, romantic"
       },
       "शुद्ध सारंग": {
         "aroha": "S R M P N S",
         "avaroha": "S N D P M R S",
         "vadi_samvadi": "R / P",
         "time": "Afternoon",
-        "mood": "Peaceful",
-        "key_notes": "No G, D"
+        "key_notes": "No G, D",
+        "prakriti": "Peaceful"
       },
       "Yamani Bilawal": {
         "aroha": "S R G M# P D N S",
         "avaroha": "S N D P M G R S",
         "vadi_samvadi": "G / D",
         "time": "Evening",
-        "mood": "Mixed mood",
-        "key_notes": "Blend of Yaman + Bilawal"
+        "key_notes": "Blend of Yaman + Bilawal",
+        "prakriti": "Mixed mood"
       },
       "Shyam Kalyan": {
         "aroha": "S R G M# P D N S",
         "avaroha": "S N D P M G R S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Devotional",
-        "key_notes": "Yaman variant"
+        "key_notes": "Yaman variant",
+        "prakriti": "Devotional"
       },
       "Hemant": {
         "aroha": "S R G M# P D N S",
         "avaroha": "S N D P M# G R S",
         "vadi_samvadi": "D / G",
         "time": "Night",
-        "mood": "Serious",
-        "key_notes": "Rare raag"
+        "key_notes": "Rare raag",
+        "prakriti": "Serious"
       },
       "Jogkaunsh": {
         "aroha": "S G M# D n S",
         "avaroha": "S n D M# G S",
         "vadi_samvadi": "M / S",
         "time": "Night",
-        "mood": "Deep, mystical",
-        "key_notes": "Komal Ni used"
+        "key_notes": "Komal Ni used",
+        "prakriti": "Deep, mystical"
       },
       "Jaut Kalyan": {
         "aroha": "S R G M# P D N S",
         "avaroha": "S N D P M# G R S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Bright",
-        "key_notes": "Jait influence"
+        "key_notes": "Jait influence",
+        "prakriti": "Bright"
       }
     },
     "Khamaj": {
@@ -3709,128 +3547,128 @@
         "avaroha": "S n D P M G R S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Romantic, light",
-        "key_notes": "Komal Ni in descent"
+        "key_notes": "Komal Ni in descent",
+        "prakriti": "Romantic, light"
       },
       "देश": {
         "aroha": "S R M P N S",
         "avaroha": "S n D P M G R S",
         "vadi_samvadi": "R / P",
         "time": "Night",
-        "mood": "Patriotic, romantic",
-        "key_notes": "Widely used"
+        "key_notes": "Widely used",
+        "prakriti": "Patriotic, romantic"
       },
       "तिलंग": {
         "aroha": "S G M P N S",
         "avaroha": "S n P M G S",
         "vadi_samvadi": "G / N",
         "time": "Evening",
-        "mood": "Devotional",
-        "key_notes": "Both Ni used"
+        "key_notes": "Both Ni used",
+        "prakriti": "Devotional"
       },
       "तिलक कामोद": {
         "aroha": "S G M P N S",
         "avaroha": "S n D P M G R S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Romantic",
-        "key_notes": "Vakra"
+        "key_notes": "Vakra",
+        "prakriti": "Romantic"
       },
       "Jaijaiwanti": {
         "aroha": "S R G M P D N S",
         "avaroha": "S n D P M G R S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Emotional",
-        "key_notes": "Both Ga & Ni"
+        "key_notes": "Both Ga & Ni",
+        "prakriti": "Emotional"
       },
       "Gur Malhar": {
         "aroha": "S R M P N S",
         "avaroha": "S n D P M R S",
         "vadi_samvadi": "M / S",
         "time": "Monsoon",
-        "mood": "Devotional",
-        "key_notes": "Malhar ang"
+        "key_notes": "Malhar ang",
+        "prakriti": "Devotional"
       },
       "रागेश्री/Rageswari": {
         "aroha": "S G M D N S",
         "avaroha": "S n D M G R S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Romantic",
-        "key_notes": "No Pa"
+        "key_notes": "No Pa",
+        "prakriti": "Romantic"
       },
       "चंपकली": {
         "aroha": "S R G M P D N S",
         "avaroha": "S n D P M G R S",
         "vadi_samvadi": "P / R",
         "time": "Night",
-        "mood": "Soft",
-        "key_notes": "Rare"
+        "key_notes": "Rare",
+        "prakriti": "Soft"
       },
       "जोग": {
         "aroha": "S G M P n S",
         "avaroha": "S n P M G S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Meditative",
-        "key_notes": "Komal Ga + Ni feel"
+        "key_notes": "Komal Ga + Ni feel",
+        "prakriti": "Meditative"
       },
       "Narayani": {
         "aroha": "S R M P D S",
         "avaroha": "S D P M R S",
         "vadi_samvadi": "R / P",
         "time": "Morning",
-        "mood": "Devotional",
-        "key_notes": "No Ni"
+        "key_notes": "No Ni",
+        "prakriti": "Devotional"
       },
       "Madhumad Sarang": {
         "aroha": "S R M P N S",
         "avaroha": "S N D P M R S",
         "vadi_samvadi": "R / P",
         "time": "Afternoon",
-        "mood": "Peaceful",
-        "key_notes": "Shuddha Ni"
+        "key_notes": "Shuddha Ni",
+        "prakriti": "Peaceful"
       },
       "Gara": {
         "aroha": "S G M P N S",
         "avaroha": "S n D P M G R S",
         "vadi_samvadi": "G / N",
         "time": "Light",
-        "mood": "Romantic",
-        "key_notes": "Thumri style"
+        "key_notes": "Thumri style",
+        "prakriti": "Romantic"
       },
       "गोरख कल्याण": {
         "aroha": "S R M P D N S",
         "avaroha": "S n D P M R S",
         "vadi_samvadi": "M / S",
         "time": "Evening",
-        "mood": "Devotional",
-        "key_notes": "Kalyan touch"
+        "key_notes": "Kalyan touch",
+        "prakriti": "Devotional"
       },
       "Jinjhoti": {
         "aroha": "S R G M P D N S",
         "avaroha": "S n D P M G R S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Playful",
-        "key_notes": "Light classical"
+        "key_notes": "Light classical",
+        "prakriti": "Playful"
       },
       "Khambawati": {
         "aroha": "S R G M P D N S",
         "avaroha": "S n D P M G R S",
         "vadi_samvadi": "P / R",
         "time": "Night",
-        "mood": "Serious",
-        "key_notes": "Rare"
+        "key_notes": "Rare",
+        "prakriti": "Serious"
       },
       "सरस्वती": {
         "aroha": "S R M P D S",
         "avaroha": "S D P M R S",
         "vadi_samvadi": "R / P",
         "time": "Morning",
-        "mood": "Devotional",
-        "key_notes": "Pentatonic"
+        "key_notes": "Pentatonic",
+        "prakriti": "Devotional"
       }
     },
     "Bhairav": {
@@ -3839,72 +3677,72 @@
         "avaroha": "S N d P M G r S",
         "vadi_samvadi": "d / r",
         "time": "Early Morning",
-        "mood": "Serious, devotional",
-        "key_notes": "Core Bhairav"
+        "key_notes": "Core Bhairav",
+        "prakriti": "Serious, devotional"
       },
       "Kalingara": {
         "aroha": "S r G M P d N S",
         "avaroha": "S N d P M G r S",
         "vadi_samvadi": "P / S",
         "time": "Morning",
-        "mood": "Energetic",
-        "key_notes": "Faster chalan"
+        "key_notes": "Faster chalan",
+        "prakriti": "Energetic"
       },
       "Vibhas": {
         "aroha": "S r G P d S",
         "avaroha": "S d P G r S",
         "vadi_samvadi": "G / d",
         "time": "Morning",
-        "mood": "Veer (heroic)",
-        "key_notes": "No Ma, Ni"
+        "key_notes": "No Ma, Ni",
+        "prakriti": "Veer (heroic)"
       },
       "Ramkali": {
         "aroha": "S r G M P d N S",
         "avaroha": "S N d P M G r S",
         "vadi_samvadi": "P / S",
         "time": "Early Morning",
-        "mood": "Serious, philosophical",
-        "key_notes": "Vakra phrases"
+        "key_notes": "Vakra phrases",
+        "prakriti": "Serious, philosophical"
       },
       "Ahir Bhairav": {
         "aroha": "S r G M P D n S",
         "avaroha": "S n D P M G r S",
         "vadi_samvadi": "M / S",
         "time": "Morning",
-        "mood": "Peaceful, sweet",
-        "key_notes": "Komal Re + Komal Ni (n)"
+        "key_notes": "Komal Re + Komal Ni (n)",
+        "prakriti": "Peaceful, sweet"
       },
       "Bangal Bhairav": {
         "aroha": "S r G M P d N S",
         "avaroha": "S N d P M G r S",
         "vadi_samvadi": "d / r",
         "time": "Morning",
-        "mood": "Serious",
-        "key_notes": "Rare"
+        "key_notes": "Rare",
+        "prakriti": "Serious"
       },
       "Anand Bhairav": {
         "aroha": "S r G M P d N S",
         "avaroha": "S N d P M G r S",
         "vadi_samvadi": "M / S",
         "time": "Morning",
-        "mood": "Joyful-serious",
-        "key_notes": "Blend feel"
+        "key_notes": "Blend feel",
+        "prakriti": "Joyful-serious"
       },
       "Gunkali": {
         "aroha": "S r G P d S",
         "avaroha": "S d P G r S",
         "vadi_samvadi": "G / d",
         "time": "Morning",
-        "mood": "Light",
-        "key_notes": "Similar to Vibhas"
+        "key_notes": "Similar to Vibhas",
+        "prakriti": "Light"
       },
       "Shivmat Bhairav": {
         "aroha": "S r G M P d N S",
         "avaroha": "S N d P M G r S",
         "vadi_samvadi": "d / r",
         "time": "Morning",
-        "mood": "Deep, meditative",
-        "key_notes": "Rare"
+        "key_notes": "Rare",
+        "prakriti": "Deep, meditative"
       }
     },
     "Poorvi": {
@@ -3913,64 +3751,64 @@
         "avaroha": "S N d P M# G r S",
         "vadi_samvadi": "G / N",
         "time": "Evening",
-        "mood": "Serious, intense",
-        "key_notes": "Core Poorvi"
+        "key_notes": "Core Poorvi",
+        "prakriti": "Serious, intense"
       },
       "श्री": {
         "aroha": "S r M# P N S",
         "avaroha": "S N d P M# G r S",
         "vadi_samvadi": "R / P",
         "time": "Evening",
-        "mood": "Majestic, devotional",
-        "key_notes": "No Ga in aroha"
+        "key_notes": "No Ga in aroha",
+        "prakriti": "Majestic, devotional"
       },
       "पूरिया धनाश्री": {
         "aroha": "N r G M# D N S",
         "avaroha": "S N D P M# G r S",
         "vadi_samvadi": "P / R",
         "time": "Evening",
-        "mood": "Serious, romantic",
-        "key_notes": "Starts from Ni"
+        "key_notes": "Starts from Ni",
+        "prakriti": "Serious, romantic"
       },
       "Basant": {
         "aroha": "S G M# D N S",
         "avaroha": "S N d P M# G r S",
         "vadi_samvadi": "M# / S",
         "time": "Spring",
-        "mood": "Joyful, vibrant",
-        "key_notes": "Both Dha used"
+        "key_notes": "Both Dha used",
+        "prakriti": "Joyful, vibrant"
       },
       "Paraj": {
         "aroha": "S r G M# P D N S",
         "avaroha": "S N D P M# G r S",
         "vadi_samvadi": "P / R",
         "time": "Late Night",
-        "mood": "Romantic",
-        "key_notes": "Blend character"
+        "key_notes": "Blend character",
+        "prakriti": "Romantic"
       },
       "ललित": {
         "aroha": "S r G M M# D N S",
         "avaroha": "S N D M# M G r S",
         "vadi_samvadi": "M / S",
         "time": "Early Morning",
-        "mood": "Deep, mystical",
-        "key_notes": "Both Ma used"
+        "key_notes": "Both Ma used",
+        "prakriti": "Deep, mystical"
       },
       "Rewa": {
         "aroha": "S r G M# P d N S",
         "avaroha": "S N d P M# G r S",
         "vadi_samvadi": "P / R",
         "time": "Evening",
-        "mood": "Serious",
-        "key_notes": "Rare"
+        "key_notes": "Rare",
+        "prakriti": "Serious"
       },
       "Jotashree": {
         "aroha": "S r G M# P D N S",
         "avaroha": "S N D P M# G r S",
         "vadi_samvadi": "R / P",
         "time": "Night",
-        "mood": "Sweet-serious",
-        "key_notes": "Jait influence"
+        "key_notes": "Jait influence",
+        "prakriti": "Sweet-serious"
       }
     },
     "Marva": {
@@ -3979,64 +3817,64 @@
         "avaroha": "S N D M# G r S",
         "vadi_samvadi": "r / D",
         "time": "Evening",
-        "mood": "Tense, serious",
-        "key_notes": "No Pa, very intense"
+        "key_notes": "No Pa, very intense",
+        "prakriti": "Tense, serious"
       },
       "सोहनी": {
         "aroha": "S G M# D N S",
         "avaroha": "S N D M# G S",
         "vadi_samvadi": "D / G",
         "time": "Late Night",
-        "mood": "Sharp, brilliant",
-        "key_notes": "No Re, Pa"
+        "key_notes": "No Re, Pa",
+        "prakriti": "Sharp, brilliant"
       },
       "पूरिया": {
         "aroha": "N r G M# D N S",
         "avaroha": "S N D M# G r S",
         "vadi_samvadi": "G / N",
         "time": "Evening",
-        "mood": "Serious, calm",
-        "key_notes": "Starts from Ni"
+        "key_notes": "Starts from Ni",
+        "prakriti": "Serious, calm"
       },
       "पूरिया कल्याण": {
         "aroha": "N R G M# D N S",
         "avaroha": "S N D P M# G R S",
         "vadi_samvadi": "G / N",
         "time": "Evening",
-        "mood": "Mixed (Kalyan touch)",
-        "key_notes": "Shuddha Re used"
+        "key_notes": "Shuddha Re used",
+        "prakriti": "Mixed (Kalyan touch)"
       },
       "Jaut": {
         "aroha": "S R G M# P D N S",
         "avaroha": "S N D P M# G R S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Bright",
-        "key_notes": "Close to Kalyan"
+        "key_notes": "Close to Kalyan",
+        "prakriti": "Bright"
       },
       "Bhankhar": {
         "aroha": "S r G M# P D N S",
         "avaroha": "S N D P M# G r S",
         "vadi_samvadi": "P / R",
         "time": "Evening",
-        "mood": "Serious",
-        "key_notes": "Rare"
+        "key_notes": "Rare",
+        "prakriti": "Serious"
       },
       "Lalita Gauri": {
         "aroha": "S r G M M# D N S",
         "avaroha": "S N D M# M G r S",
         "vadi_samvadi": "M / S",
         "time": "Morning",
-        "mood": "Deep, devotional",
-        "key_notes": "Both Ma used"
+        "key_notes": "Both Ma used",
+        "prakriti": "Deep, devotional"
       },
       "भाटिया": {
         "aroha": "S r G M# D N S",
         "avaroha": "S N D M# G r S",
         "vadi_samvadi": "D / G",
         "time": "Evening",
-        "mood": "Serious",
-        "key_notes": "Close to Marwa"
+        "key_notes": "Close to Marwa",
+        "prakriti": "Serious"
       }
     },
     "Kafi": {
@@ -4045,224 +3883,224 @@
         "avaroha": "S n D P M g R S",
         "vadi_samvadi": "P / S",
         "time": "Evening",
-        "mood": "Romantic, folk",
-        "key_notes": "Core Kafi"
+        "key_notes": "Core Kafi",
+        "prakriti": "Romantic, folk"
       },
       "वृंदावनी सारंग": {
         "aroha": "S R M P N S",
         "avaroha": "S N P M R S",
         "vadi_samvadi": "R / P",
         "time": "Afternoon",
-        "mood": "Devotional",
-        "key_notes": "No Ga, Dha"
+        "key_notes": "No Ga, Dha",
+        "prakriti": "Devotional"
       },
       "भीमपलासी": {
         "aroha": "S g M P n S",
         "avaroha": "S n D P M g R S",
         "vadi_samvadi": "M / S",
         "time": "Afternoon",
-        "mood": "Deep, romantic",
-        "key_notes": "Komal Ga, Ni"
+        "key_notes": "Komal Ga, Ni",
+        "prakriti": "Deep, romantic"
       },
       "बागेश्री": {
         "aroha": "S g M D n S",
         "avaroha": "S n D P M g R S",
         "vadi_samvadi": "M / S",
         "time": "Night",
-        "mood": "Romantic",
-        "key_notes": "No Pa in aroha"
+        "key_notes": "No Pa in aroha",
+        "prakriti": "Romantic"
       },
       "Pilu": {
         "aroha": "S R g M P D n S",
         "avaroha": "S n D P M g R S",
         "vadi_samvadi": "G / N",
         "time": "Any",
-        "mood": "Light, playful",
-        "key_notes": "Mixed swaras"
+        "key_notes": "Mixed swaras",
+        "prakriti": "Light, playful"
       },
       "पटदीप": {
         "aroha": "N S g M P N S",
         "avaroha": "S N D P M g R S",
         "vadi_samvadi": "P / S",
         "time": "Evening",
-        "mood": "Romantic",
-        "key_notes": "Starts from Ni"
+        "key_notes": "Starts from Ni",
+        "prakriti": "Romantic"
       },
       "बहार": {
         "aroha": "S R g M P D N S",
         "avaroha": "S N D P M g R S",
         "vadi_samvadi": "M / S",
         "time": "Spring",
-        "mood": "Joyful",
-        "key_notes": "Seasonal raag"
+        "key_notes": "Seasonal raag",
+        "prakriti": "Joyful"
       },
       "Miya Malhar": {
         "aroha": "S R M P n S",
         "avaroha": "S n D P M R S",
         "vadi_samvadi": "M / S",
         "time": "Monsoon",
-        "mood": "Powerful",
-        "key_notes": "Malhar ang"
+        "key_notes": "Malhar ang",
+        "prakriti": "Powerful"
       },
       "Malgunji": {
         "aroha": "S R g M P D N S",
         "avaroha": "S N D P M g R S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Romantic",
-        "key_notes": "Blend"
+        "key_notes": "Blend",
+        "prakriti": "Romantic"
       },
       "चंद्रकौंस": {
         "aroha": "S g M D n S",
         "avaroha": "S n D M g S",
         "vadi_samvadi": "M / S",
         "time": "Night",
-        "mood": "Meditative",
-        "key_notes": "Pentatonic"
+        "key_notes": "Pentatonic",
+        "prakriti": "Meditative"
       },
       "Abhogi Kahra": {
         "aroha": "S R g M D n S",
         "avaroha": "S n D M g R S",
         "vadi_samvadi": "M / S",
         "time": "Night",
-        "mood": "Serious",
-        "key_notes": "No Pa"
+        "key_notes": "No Pa",
+        "prakriti": "Serious"
       },
       "Sur Malhar": {
         "aroha": "S R M P N S",
         "avaroha": "S N D P M R S",
         "vadi_samvadi": "R / P",
         "time": "Monsoon",
-        "mood": "Devotional",
-        "key_notes": "Malhar variant"
+        "key_notes": "Malhar variant",
+        "prakriti": "Devotional"
       },
       "Hanskinkani": {
         "aroha": "S R g M P D N S",
         "avaroha": "S N D P M g R S",
         "vadi_samvadi": "P / R",
         "time": "Night",
-        "mood": "Light",
-        "key_notes": "Rare"
+        "key_notes": "Rare",
+        "prakriti": "Light"
       },
       "Dhanashree": {
         "aroha": "S R g M P D n S",
         "avaroha": "S n D P M g R S",
         "vadi_samvadi": "P / S",
         "time": "Evening",
-        "mood": "Devotional",
-        "key_notes": "Close to Bhimpalasi"
+        "key_notes": "Close to Bhimpalasi",
+        "prakriti": "Devotional"
       },
       "Bhim": {
         "aroha": "S g M P D n S",
         "avaroha": "S n D P M g S",
         "vadi_samvadi": "M / S",
         "time": "Night",
-        "mood": "Deep",
-        "key_notes": "Rare"
+        "key_notes": "Rare",
+        "prakriti": "Deep"
       },
       "Dhani": {
         "aroha": "S g M P n S",
         "avaroha": "S n P M g S",
         "vadi_samvadi": "M / S",
         "time": "Evening",
-        "mood": "Sweet",
-        "key_notes": "Pentatonic"
+        "key_notes": "Pentatonic",
+        "prakriti": "Sweet"
       },
       "Sahana": {
         "aroha": "S R g M P D n S",
         "avaroha": "S n D P M g R S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Romantic",
-        "key_notes": "Carnatic influence"
+        "key_notes": "Carnatic influence",
+        "prakriti": "Romantic"
       },
       "Jayant Malhar": {
         "aroha": "S R M P N S",
         "avaroha": "S N D P M R S",
         "vadi_samvadi": "R / P",
         "time": "Monsoon",
-        "mood": "Joyful",
-        "key_notes": "Malhar ang"
+        "key_notes": "Malhar ang",
+        "prakriti": "Joyful"
       },
       "Megh Malhar": {
         "aroha": "S R M P n S",
         "avaroha": "S n P M R S",
         "vadi_samvadi": "M / S",
         "time": "Monsoon",
-        "mood": "Calm",
-        "key_notes": "Rain feel"
+        "key_notes": "Rain feel",
+        "prakriti": "Calm"
       },
       "Miya Ki Sarang": {
         "aroha": "S R M P N S",
         "avaroha": "S N D P M R S",
         "vadi_samvadi": "R / P",
         "time": "Afternoon",
-        "mood": "Bright",
-        "key_notes": "Sarang style"
+        "key_notes": "Sarang style",
+        "prakriti": "Bright"
       },
       "Suha": {
         "aroha": "S R g M P D N S",
         "avaroha": "S N D P M g R S",
         "vadi_samvadi": "P / R",
         "time": "Night",
-        "mood": "Romantic",
-        "key_notes": "Soft"
+        "key_notes": "Soft",
+        "prakriti": "Romantic"
       },
       "Nayaki Kanhara": {
         "aroha": "S R g M P D n S",
         "avaroha": "S n D P M g R S",
         "vadi_samvadi": "M / S",
         "time": "Night",
-        "mood": "Serious",
-        "key_notes": "Kanhra ang"
+        "key_notes": "Kanhra ang",
+        "prakriti": "Serious"
       },
       "Ramdasi Malhar": {
         "aroha": "S R M P N S",
         "avaroha": "S N D P M R S",
         "vadi_samvadi": "R / P",
         "time": "Monsoon",
-        "mood": "Devotional",
-        "key_notes": "Malhar variant"
+        "key_notes": "Malhar variant",
+        "prakriti": "Devotional"
       },
       "Sugharai": {
         "aroha": "S R g M P D N S",
         "avaroha": "S N D P M g R S",
         "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Romantic",
-        "key_notes": "Rare"
+        "key_notes": "Rare",
+        "prakriti": "Romantic"
       },
       "Gauri": {
         "aroha": "S R g M P D N S",
         "avaroha": "S N D P M g R S",
         "vadi_samvadi": "R / P",
         "time": "Morning",
-        "mood": "Serious",
-        "key_notes": "Variant"
+        "key_notes": "Variant",
+        "prakriti": "Serious"
       },
       "Barwa": {
         "aroha": "S R g M P D N S",
         "avaroha": "S N D P M g R S",
         "vadi_samvadi": "G / N",
         "time": "Evening",
-        "mood": "Romantic",
-        "key_notes": "Light"
+        "key_notes": "Light",
+        "prakriti": "Romantic"
       },
       "Kafi Kanhra": {
         "aroha": "S R g M P D n S",
         "avaroha": "S n D P M g R S",
         "vadi_samvadi": "M / S",
         "time": "Night",
-        "mood": "Deep",
-        "key_notes": "Blend"
+        "key_notes": "Blend",
+        "prakriti": "Deep"
       },
       "शिवरंजनी": {
         "aroha": "S R g P D S",
         "avaroha": "S D P g R S",
         "vadi_samvadi": "D / G",
         "time": "Evening",
-        "mood": "Sad, emotional",
-        "key_notes": "No Ma, Ni"
+        "key_notes": "No Ma, Ni",
+        "prakriti": "Sad, emotional"
       }
     },
     "Asavari": {
@@ -4271,56 +4109,56 @@
         "avaroha": "S n d P M g R S",
         "vadi_samvadi": "D / G",
         "time": "Morning",
-        "mood": "Serious, devotional",
-        "key_notes": "Core Asavari"
+        "key_notes": "Core Asavari",
+        "prakriti": "Serious, devotional"
       },
       "जौनपुरी": {
         "aroha": "S R M P D n S",
         "avaroha": "S n d P M g R S",
         "vadi_samvadi": "D / G",
         "time": "Morning",
-        "mood": "Pathos, soft",
-        "key_notes": "Komal Ga, Dha"
+        "key_notes": "Komal Ga, Dha",
+        "prakriti": "Pathos, soft"
       },
       "अड़ाना": {
         "aroha": "S R M P N S",
         "avaroha": "S N d P M G R S",
         "vadi_samvadi": "P / R",
         "time": "Late Night",
-        "mood": "Veer (heroic)",
-        "key_notes": "Mix of shuddha & komal"
+        "key_notes": "Mix of shuddha & komal",
+        "prakriti": "Veer (heroic)"
       },
       "Darbari Kanhra": {
         "aroha": "S R g M P d n S",
         "avaroha": "S n d P M g R S",
         "vadi_samvadi": "R / P",
         "time": "Late Night",
-        "mood": "Deep, serious",
-        "key_notes": "Heavy gamak"
+        "key_notes": "Heavy gamak",
+        "prakriti": "Deep, serious"
       },
       "Deshi": {
         "aroha": "S R M P D N S",
         "avaroha": "S N d P M g R S",
         "vadi_samvadi": "P / R",
         "time": "Evening",
-        "mood": "Romantic",
-        "key_notes": "Light classical"
+        "key_notes": "Light classical",
+        "prakriti": "Romantic"
       },
       "Kaushi Kanhra": {
         "aroha": "S g M d n S",
         "avaroha": "S n d M g R S",
         "vadi_samvadi": "M / S",
         "time": "Night",
-        "mood": "Deep, meditative",
-        "key_notes": "No Pa"
+        "key_notes": "No Pa",
+        "prakriti": "Deep, meditative"
       },
       "दरबारी": {
         "aroha": "S R g M P d n S",
         "avaroha": "S n d P M g R S",
         "vadi_samvadi": "R / P",
         "time": "Late Night",
-        "mood": "Very serious",
-        "key_notes": "Same as Darbari Kanhra"
+        "key_notes": "Same as Darbari Kanhra",
+        "prakriti": "Very serious"
       }
     },
     "Bhairavi": {
@@ -4329,48 +4167,48 @@
         "avaroha": "S n d P M g r S",
         "vadi_samvadi": "M / S",
         "time": "Morning (end)",
-        "mood": "Devotional, emotional",
-        "key_notes": "All 4 komal"
+        "key_notes": "All 4 komal",
+        "prakriti": "Devotional, emotional"
       },
       "मालकौश": {
         "aroha": "S g M d n S",
         "avaroha": "S n d M g S",
         "vadi_samvadi": "M / S",
         "time": "Night",
-        "mood": "Deep, meditative",
-        "key_notes": "No R, P"
+        "key_notes": "No R, P",
+        "prakriti": "Deep, meditative"
       },
       "Chandrakaush": {
         "aroha": "S g M D n S",
         "avaroha": "S n D M g S",
         "vadi_samvadi": "M / S",
         "time": "Night",
-        "mood": "Romantic, calm",
-        "key_notes": "Shuddha Dha"
+        "key_notes": "Shuddha Dha",
+        "prakriti": "Romantic, calm"
       },
       "Bhupal Todi": {
         "aroha": "S r g P d S",
         "avaroha": "S d P g r S",
         "vadi_samvadi": "d / g",
         "time": "Morning",
-        "mood": "Serious",
-        "key_notes": "No Ma, Ni"
+        "key_notes": "No Ma, Ni",
+        "prakriti": "Serious"
       },
       "कोमल ऋषभ आसावरी": {
         "aroha": "S r M P d S",
         "avaroha": "S n d P M g r S",
         "vadi_samvadi": "D / G",
         "time": "Morning",
-        "mood": "Soft",
-        "key_notes": "Mix of Asavari + Bhairavi"
+        "key_notes": "Mix of Asavari + Bhairavi",
+        "prakriti": "Soft"
       },
       "Bilaskhani Todi": {
         "aroha": "S r g M P d n S",
         "avaroha": "S n d P M g r S",
         "vadi_samvadi": "D / G",
         "time": "Morning",
-        "mood": "Deep, emotional",
-        "key_notes": "Todi-ang + Bhairavi"
+        "key_notes": "Todi-ang + Bhairavi",
+        "prakriti": "Deep, emotional"
       }
     },
     "Todi": {
@@ -4379,226 +4217,194 @@
         "avaroha": "S N d P M# g r S",
         "vadi_samvadi": "D / G",
         "time": "Morning",
-        "mood": "Deep, serious",
-        "key_notes": "Core Todi"
+        "key_notes": "Core Todi",
+        "prakriti": "Deep, serious"
       },
       "मुल्तानी": {
         "aroha": "N S g M# P N S",
         "avaroha": "S N d P M# g r S",
         "vadi_samvadi": "P / R",
         "time": "Afternoon",
-        "mood": "Intense, calm",
-        "key_notes": "Starts from Ni"
+        "key_notes": "Starts from Ni",
+        "prakriti": "Intense, calm"
       },
       "गुजरी तोड़ी": {
         "aroha": "S r g M# d N S",
         "avaroha": "S N d M# g r S",
         "vadi_samvadi": "D / G",
         "time": "Morning",
-        "mood": "Very serious",
-        "key_notes": "No Pa"
+        "key_notes": "No Pa",
+        "prakriti": "Very serious"
       },
       "मधुवंती": {
         "aroha": "N R G M# P N S",
         "avaroha": "S N D P M# G R S",
         "vadi_samvadi": "P / R",
         "time": "Evening",
-        "mood": "Romantic, sweet",
-        "key_notes": "No komal swaras (exception)"
+        "key_notes": "No komal swaras (exception)",
+        "prakriti": "Romantic, sweet"
       }
     },
     "Bilawal": {
       "बिलावल": {
-        "aroha": "S R G M P D N S | Ab: S N D P M G R S (Varjit: None)",
+        "aroha": "S R G M P D N S",
         "avaroha": "S N D P M G R S",
-        "jati": "Sampurna–Sampurna",
-        "vadi_samvadi": "V: Dha | Sv: Ga",
-        "pakad": "G R G, D N D P, G M R S",
+        "vadi_samvadi": "D / G",
         "time": "Morning",
-        "mood": "Shant",
-        "similar": "Alhaiya Bilawal",
-        "chalan": "S R G, G M P, D N S, N D P, M G R S",
-        "key_notes": "G R G, D N D P, G M R S"
+        "key_notes": "All shuddha swaras",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bilawal%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bilawal%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Peaceful, devotional"
       },
       "अल्हैया बिलावल": {
-        "aroha": "S R G M P D N S | Ab: S n D P M G R S (Varjit: Komal Ni in Ab)",
-        "avaroha": "S n D P M G R S",
-        "jati": "Sampurna–Sampurna",
-        "vadi_samvadi": "V: Dha | Sv: Ga",
-        "pakad": "D N D P, M G R G",
+        "aroha": "S R G P D N S",
+        "avaroha": "S N D P M G R S",
+        "vadi_samvadi": "D / G",
         "time": "Morning",
-        "mood": "Gambhir",
-        "similar": "Bilawal",
-        "chalan": "S R G M, D N S, N D P, M G R G, R S",
-        "key_notes": "D N D P, M G R G"
+        "key_notes": "M omitted in aroha",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Alhaiya%20Bilawal%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Alhaiya%20Bilawal%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Graceful, romantic"
       },
       "बिहाग": {
-        "aroha": "S G M P N S (Varjit: R, D) | Ab: S N D P M G M G R S",
+        "aroha": "S G M P N S",
         "avaroha": "S N D P M G M G R S",
-        "jati": "Audav–Sampurna",
-        "vadi_samvadi": "V: Ga | Sv: Ni",
-        "pakad": "G M P, N P, G M G",
+        "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Shringar",
-        "similar": "Nat Bihag",
-        "chalan": "G M P N S, N D P, M G M G, R S",
-        "key_notes": "G M P, N P, G M G"
+        "key_notes": "Tivra Ma used",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bihag%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bihag%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Romantic, joyful"
       },
       "दुर्गा": {
-        "aroha": "S R M P D S (Varjit: G, N) | Ab: S D P M R S (Varjit: G, N)",
+        "aroha": "S R M P D S",
         "avaroha": "S D P M R S",
-        "jati": "Audav–Audav",
-        "vadi_samvadi": "V: Ma | Sv: Sa",
-        "pakad": "M R P, D P M R",
+        "vadi_samvadi": "M / S",
         "time": "Evening",
-        "mood": "Shant",
-        "similar": "Deshkar",
-        "chalan": "S R M P, D S, D P M R, S",
-        "key_notes": "M R P, D P M R"
+        "key_notes": "Pentatonic (no G, N)",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Durga%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Durga%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Devotional, calm"
       },
       "शंकरा": {
-        "aroha": "S R G P D S (Varjit: M, N) | Ab: S N D P G R S",
-        "avaroha": "S N D P G R S",
-        "jati": "Shadav–Sampurna",
-        "vadi_samvadi": "V: Pa | Sv: Re",
-        "pakad": "G P D, P G R",
-        "time": "Night",
-        "mood": "Veer",
-        "similar": "—",
-        "chalan": "S R G P, D S, N D P, G R S",
-        "key_notes": "G P D, P G R"
+        "aroha": "S R G P N S",
+        "avaroha": "S N P G R S",
+        "vadi_samvadi": "P / R",
+        "time": "Late Night",
+        "key_notes": "No M, D",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Shankara%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Shankara%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Heroic, majestic"
       },
       "Deshkar": {
-        "aroha": "S R G P D S (Varjit: M, N) | Ab: S D P G R S (Varjit: M, N)",
+        "aroha": "S R G P D S",
         "avaroha": "S D P G R S",
-        "jati": "Audav–Audav",
-        "vadi_samvadi": "V: Pa | Sv: Re",
-        "pakad": "G P D, G R S",
+        "vadi_samvadi": "D / G",
         "time": "Morning",
-        "mood": "Veer",
-        "similar": "Durga",
-        "chalan": "S R G P, D S, D P G R, S",
-        "key_notes": "G P D, G R S"
+        "key_notes": "Similar to Bhoopali",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Deshkar%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Deshkar%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Bright, energetic"
       },
       "Maluha Kedar": {
-        "aroha": "S M P N S (Varjit: R, G) | Ab: S N D P M G R S",
+        "aroha": "S M G M P D N S",
         "avaroha": "S N D P M G R S",
-        "jati": "Shadav–Sampurna",
-        "vadi_samvadi": "V: Ma | Sv: Sa",
-        "pakad": "M P N S, N D P",
-        "time": "Evening",
-        "mood": "Shant",
-        "similar": "Kedar",
-        "chalan": "M P N S, N D P, M G R S",
-        "key_notes": "M P N S, N D P"
+        "vadi_samvadi": "M / S",
+        "time": "Night",
+        "key_notes": "Kedar ang",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Maluha%20Kedar%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Maluha%20Kedar%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Devotional"
       },
       "हंसध्वनि": {
-        "aroha": "S R G P N S (Varjit: M, D) | Ab: S N P G R S (Varjit: M, D)",
+        "aroha": "S R G P N S",
         "avaroha": "S N P G R S",
-        "jati": "Audav–Audav",
-        "vadi_samvadi": "V: Ga | Sv: Ni",
-        "pakad": "R G P, N P G R",
+        "vadi_samvadi": "G / N",
         "time": "Evening",
-        "mood": "Bhakti",
-        "similar": "—",
-        "chalan": "S R G P, N S, N P G R, S",
-        "key_notes": "R G P, N P G R"
+        "key_notes": "Pentatonic, no M, D",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Hamsadhwani%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Hamsadhwani%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Auspicious"
       },
       "Jaldhar Kedar": {
-        "aroha": "S M P N S (Varjit: R, G) | Ab: S N D P M G R S",
+        "aroha": "S M P N S",
         "avaroha": "S N D P M G R S",
-        "jati": "Shadav–Sampurna",
-        "vadi_samvadi": "V: Ma | Sv: Sa",
-        "pakad": "M P N S, D P M",
-        "time": "Evening",
-        "mood": "Shant",
-        "similar": "Kedar",
-        "chalan": "M P N S, N D P, M G R S",
-        "key_notes": "M P N S, D P M"
+        "vadi_samvadi": "M / S",
+        "time": "Night",
+        "key_notes": "Kedar variant",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Jaldhar%20Kedar%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Jaldhar%20Kedar%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Calm"
       },
       "Sarparada": {
-        "aroha": "S R M P D S (Varjit: G, N) | Ab: S N D P M R S",
-        "avaroha": "S N D P M R S",
-        "jati": "Shadav–Sampurna",
-        "vadi_samvadi": "V: Ma | Sv: Sa",
-        "pakad": "M P D, P M R",
-        "time": "Evening",
-        "mood": "Serious",
-        "similar": "—",
-        "chalan": "S R M P, D S, N D P, M R S",
-        "key_notes": "M P D, P M R"
+        "aroha": "S R G M P D N S",
+        "avaroha": "S N D P M G R S",
+        "vadi_samvadi": "P / R",
+        "time": "Morning",
+        "key_notes": "Rarely performed",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Sarparada%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Sarparada%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Serious"
       },
       "Gopika Basant": {
-        "aroha": "S R G M P D N S | Ab: S N D P M G R S",
+        "aroha": "S R G M P D N S",
         "avaroha": "S N D P M G R S",
-        "jati": "Sampurna–Sampurna",
-        "vadi_samvadi": "V: Ma | Sv: Sa",
-        "pakad": "G M P, D N S",
-        "time": "Spring/Evening",
-        "mood": "Shringar",
-        "similar": "Basant",
-        "chalan": "S R G M P, D N S, N D P, M G R S",
-        "key_notes": "G M P, D N S"
+        "vadi_samvadi": "M / S",
+        "time": "Spring",
+        "key_notes": "Basant influence",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Gopika%20Basant%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Gopika%20Basant%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Romantic"
       },
       "Devgiri Bilawal": {
-        "aroha": "S R G M P D N S | Ab: S N D P M G R S",
+        "aroha": "S R G M P D N S",
         "avaroha": "S N D P M G R S",
-        "jati": "Sampurna–Sampurna",
-        "vadi_samvadi": "V: Dha | Sv: Ga",
-        "pakad": "D N S, N D P",
+        "vadi_samvadi": "D / G",
         "time": "Morning",
-        "mood": "Shant",
-        "similar": "Bilawal",
-        "chalan": "S R G M, P D N S, N D P, M G R S",
-        "key_notes": "D N S, N D P"
+        "key_notes": "Variant of Bilawal",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Devgiri%20Bilawal%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Devgiri%20Bilawal%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Devotional"
       },
       "Bhatiyar": {
-        "aroha": "S r G M P D N S | Ab: S N D P M G r S",
-        "avaroha": "S N D P M G r S",
-        "jati": "Sampurna–Sampurna",
-        "vadi_samvadi": "V: Ma | Sv: Sa",
-        "pakad": "r G M, D N S",
+        "aroha": "S R G M D N S",
+        "avaroha": "S N D P M G R S",
+        "vadi_samvadi": "D / R",
         "time": "Early Morning",
-        "mood": "Serious",
-        "similar": "Marwa",
-        "chalan": "r G M P, D N S, N D P, M G r S",
-        "key_notes": "r G M, D N S"
+        "key_notes": "Sharp mood",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bhatiyar%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bhatiyar%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Serious"
       },
       "Nat Bihag": {
-        "aroha": "S G M P N S (Varjit: R, D) | Ab: S N D P M G R S",
+        "aroha": "S G M P N S",
         "avaroha": "S N D P M G R S",
-        "jati": "Audav–Sampurna",
-        "vadi_samvadi": "V: Ga | Sv: Ni",
-        "pakad": "G M P N P, G M R S",
+        "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Shringar",
-        "similar": "Bihag",
-        "chalan": "G M P N S, N P, M G R S",
-        "key_notes": "G M P N P, G M R S"
+        "key_notes": "Blend of Nat & Bihag",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Nat%20Bihag%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Nat%20Bihag%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Romantic"
       },
       "Sukla Bilawal": {
-        "aroha": "S R G M P D N S | Ab: S N D P M G R S",
+        "aroha": "S R G M P D N S",
         "avaroha": "S N D P M G R S",
-        "jati": "Sampurna–Sampurna",
-        "vadi_samvadi": "V: Dha | Sv: Ga",
-        "pakad": "G R S, D N D P",
+        "vadi_samvadi": "D / G",
         "time": "Morning",
-        "mood": "Shant",
-        "similar": "Bilawal",
-        "chalan": "S R G M P, D N S, N D P, M G R S",
-        "key_notes": "G R S, D N D P"
+        "key_notes": "Pure Bilawal form",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Shukla%20Bilawal%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Shukla%20Bilawal%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Peaceful"
       },
       "Bihagara": {
-        "aroha": "S G M P N S (Varjit: R, D) | Ab: S N D P M G R S",
+        "aroha": "S G M P N S",
         "avaroha": "S N D P M G R S",
-        "jati": "Audav–Sampurna",
-        "vadi_samvadi": "V: Ga | Sv: Ni",
-        "pakad": "G M P, G M R S",
+        "vadi_samvadi": "G / N",
         "time": "Night",
-        "mood": "Shringar",
-        "similar": "Bihag",
-        "chalan": "G M P N S, N D P, M G R S",
-        "key_notes": "G M P, G M R S"
+        "key_notes": "Bihag variant",
+        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bihagara%20instrumental%20sitar%20flute%20classical",
+        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bihagara%20vocal%20khyal%20bandish%20classical",
+        "prakriti": "Romantic"
       }
     }
   },
