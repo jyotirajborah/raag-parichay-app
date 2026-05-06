@@ -48,6 +48,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function processData() {
+        // Thaat numbers mapping
+        const thaatNumbers = {
+            'Bilaval': 1,
+            'Kalyan': 2,
+            'Khamaj': 3,
+            'Kafi': 4,
+            'Asavari': 5,
+            'Bhairav': 6,
+            'Bhairavi': 7,
+            'Poorvi': 8,
+            'Marva': 9,
+            'Todi': 10
+        };
+        
         // Thaat swaras (notes) for each thaat
         const thaatSwaras = {
             'Bilaval': 'Sa Re Ga Ma Pa Dha Ni',
@@ -339,6 +353,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const grid = document.getElementById('raag-grid');
         const title = document.getElementById('directory-title');
         const color = thaatColors[thaat] || '#9d4edd';
+        
+        // Get thaat number
+        const thaatNumbers = {
+            'Bilaval': 1,
+            'Kalyan': 2,
+            'Khamaj': 3,
+            'Kafi': 4,
+            'Asavari': 5,
+            'Bhairav': 6,
+            'Bhairavi': 7,
+            'Poorvi': 8,
+            'Marva': 9,
+            'Todi': 10
+        };
+        const thaatNumber = thaatNumbers[thaat] || '';
 
         // Update header title
         const thaatHindi = thaatNamesHindi[thaat] || '';
@@ -381,28 +410,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check if detailed raag info exists
         const raagDetails = appData.raag_details && appData.raag_details[thaat];
         
-        // Always build table with available information
+        // Always build table with all columns
         let tableHTML = '<table><thead><tr>';
         tableHTML += '<th>S.No.</th>';
-        tableHTML += '<th>Raag Name</th>';
-        
-        // Add columns based on available data
-        if (raagDetails) {
-            tableHTML += '<th>Aroha (आरोह)</th>';
-            tableHTML += '<th>Avaroha (अवरोह)</th>';
-            tableHTML += '<th>Jati (जाति)</th>';
-            tableHTML += '<th>Vadi / Samvadi</th>';
-            tableHTML += '<th>Pakad (पकड़)</th>';
-            tableHTML += '<th>Time</th>';
-            tableHTML += '<th>Prakriti (प्रकृति)</th>';
-            tableHTML += '<th>Similar Raags</th>';
-            tableHTML += '<th>Chalan (चलन)</th>';
-        } else {
-            tableHTML += '<th>Vilambit Bandish (विलंबित)</th>';
-            tableHTML += '<th>Drut Bandish (द्रुत)</th>';
-            tableHTML += '<th>Time</th>';
-            tableHTML += '<th>Details</th>';
-        }
+        tableHTML += '<th>S.No. Thaat</th>';
+        tableHTML += '<th>थाट</th>';
+        tableHTML += '<th>राग</th>';
+        tableHTML += '<th>विलंबित लय (धीमा टेम्पो) - आम बंदिश</th>';
+        tableHTML += '<th>द्रुत लय (तेज टेम्पो) - आम बंदिश</th>';
+        tableHTML += '<th>Aroha (आरोह)</th>';
+        tableHTML += '<th>Avaroha (अवरोह)</th>';
+        tableHTML += '<th>Jati (जाति)</th>';
+        tableHTML += '<th>Vadi / Samvadi</th>';
+        tableHTML += '<th>Pakad (पकड़)</th>';
+        tableHTML += '<th>Time</th>';
+        tableHTML += '<th>Prakriti (प्रकृति)</th>';
+        tableHTML += '<th>Similar Raags</th>';
+        tableHTML += '<th>Chalan (चलन)</th>';
         
         tableHTML += '</tr></thead><tbody>';
         
@@ -413,8 +437,27 @@ document.addEventListener('DOMContentLoaded', () => {
             
             tableHTML += `<tr style="animation-delay: ${i * 0.03}s">`;
             tableHTML += `<td><strong>${i + 1}</strong></td>`;
+            
+            // S.No. Thaat (only show for first raag)
+            if (i === 0) {
+                tableHTML += `<td rowspan="${raags.length}"><strong>${thaatNumber}</strong></td>`;
+                // Thaat name (only show for first raag)
+                const thaatHindi = thaatNamesHindi[thaat] || thaat;
+                tableHTML += `<td rowspan="${raags.length}"><strong>${thaatHindi}</strong></td>`;
+            }
+            
+            // Raag name
             tableHTML += `<td><strong>${bilingualName}</strong></td>`;
             
+            // Bandish data
+            const bandishParts = raag.bandish ? raag.bandish.split(' | ') : ['', ''];
+            const vilambit = bandishParts[0] ? bandishParts[0].replace('Vilambit: ', '') : '-';
+            const drut = bandishParts[1] ? bandishParts[1].replace('Drut: ', '') : '-';
+            
+            tableHTML += `<td>${vilambit}</td>`;
+            tableHTML += `<td>${drut}</td>`;
+            
+            // Comprehensive raag details
             if (raagDetails && raagDetails[raag.name]) {
                 const details = raagDetails[raag.name];
                 tableHTML += `<td>${details.aroha || '-'}</td>`;
@@ -427,15 +470,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 tableHTML += `<td>${details.similar || '-'}</td>`;
                 tableHTML += `<td>${details.chalan || '-'}</td>`;
             } else {
-                // Show bandish data
-                const bandishParts = raag.bandish ? raag.bandish.split(' | ') : ['', ''];
-                const vilambit = bandishParts[0] ? bandishParts[0].replace('Vilambit: ', '') : '-';
-                const drut = bandishParts[1] ? bandishParts[1].replace('Drut: ', '') : '-';
-                
-                tableHTML += `<td>${vilambit}</td>`;
-                tableHTML += `<td>${drut}</td>`;
+                // Fill with dashes if no details
+                tableHTML += `<td>-</td>`;
+                tableHTML += `<td>-</td>`;
+                tableHTML += `<td>-</td>`;
+                tableHTML += `<td>-</td>`;
+                tableHTML += `<td>-</td>`;
                 tableHTML += `<td>${raag.time || '-'}</td>`;
-                tableHTML += `<td>${raag.details || '-'}</td>`;
+                tableHTML += `<td>-</td>`;
+                tableHTML += `<td>-</td>`;
+                tableHTML += `<td>-</td>`;
             }
             
             tableHTML += '</tr>';
