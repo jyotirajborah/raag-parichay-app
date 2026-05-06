@@ -442,7 +442,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         tableHTML += '</tbody></table>';
-        grid.innerHTML = tableHTML;
+        
+        // Add scroll hint if table has many columns
+        if (raagDetails) {
+            grid.innerHTML = '<div class="table-scroll-hint">← Scroll horizontally to see all columns →</div>' + tableHTML;
+        } else {
+            grid.innerHTML = tableHTML;
+        }
     }
 
     function showThaatSelector() {

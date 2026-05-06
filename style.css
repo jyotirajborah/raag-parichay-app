@@ -427,18 +427,47 @@ header h1 {
     background: rgba(0,0,0,0.2);
     border-radius: 12px;
     overflow: hidden;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.data-table thead,
+.data-table tbody {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
 }
 
 .data-table th, .data-table td {
-    padding: 15px;
+    padding: 12px 10px;
     text-align: left;
     border-bottom: 1px solid var(--glass-border);
+    min-width: 120px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.data-table th:first-child,
+.data-table td:first-child {
+    min-width: 60px;
+    max-width: 60px;
+}
+
+.data-table th:nth-child(2),
+.data-table td:nth-child(2) {
+    min-width: 150px;
+    max-width: 200px;
+    font-weight: 600;
 }
 
 .data-table th {
     background: rgba(255,255,255,0.05);
     font-weight: 600;
     color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .data-table tr:last-child td {
@@ -451,6 +480,17 @@ header h1 {
 
 .data-table tbody tr {
     animation: fadeInUp 0.4s ease both;
+}
+
+.table-scroll-hint {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    padding: 8px;
+    background: rgba(255, 167, 38, 0.1);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border: 1px dashed rgba(255, 167, 38, 0.3);
 }
 
 .youtube-link {
