@@ -381,10 +381,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check if detailed raag info exists
         const raagDetails = appData.raag_details && appData.raag_details[thaat];
         
+        // Always build table with available information
+        let tableHTML = '<table class="data-table"><thead><tr>';
+        tableHTML += '<th>Raag Name</th>';
+        
+        // Add columns based on available data
         if (raagDetails) {
-            // Build table with detailed information
-            let tableHTML = '<table class="data-table"><thead><tr>';
-            tableHTML += '<th>Raag Name</th>';
             tableHTML += '<th>Aroha (Ascending)</th>';
             tableHTML += '<th>Avaroha (Descending)</th>';
             tableHTML += '<th>Vadi / Samvadi</th>';
@@ -393,49 +395,50 @@ document.addEventListener('DOMContentLoaded', () => {
             tableHTML += '<th>Key Notes</th>';
             tableHTML += '<th>🎵 Instrumental</th>';
             tableHTML += '<th>🎤 Vocal</th>';
-            tableHTML += '</tr></thead><tbody>';
-            
-            raags.forEach((raag, i) => {
-                const details = raagDetails[raag.name];
-                if (details) {
-                    const bilingualName = appData.raag_bilingual_names && appData.raag_bilingual_names[raag.name] 
-                        ? appData.raag_bilingual_names[raag.name] 
-                        : raag.name;
-                    tableHTML += `<tr style="animation-delay: ${i * 0.03}s">`;
-                    tableHTML += `<td><strong>${bilingualName}</strong></td>`;
-                    tableHTML += `<td>${details.aroha || '-'}</td>`;
-                    tableHTML += `<td>${details.avaroha || '-'}</td>`;
-                    tableHTML += `<td>${details.vadi_samvadi || '-'}</td>`;
-                    tableHTML += `<td>${details.time || '-'}</td>`;
-                    tableHTML += `<td>${details.mood || '-'}</td>`;
-                    tableHTML += `<td>${details.key_notes || '-'}</td>`;
-                    tableHTML += `<td>${details.youtube_instrumental ? `<a href="${details.youtube_instrumental}" target="_blank" class="youtube-link">▶ Play</a>` : '-'}</td>`;
-                    tableHTML += `<td>${details.youtube_vocal ? `<a href="${details.youtube_vocal}" target="_blank" class="youtube-link">▶ Play</a>` : '-'}</td>`;
-                    tableHTML += '</tr>';
-                }
-            });
-            
-            tableHTML += '</tbody></table>';
-            grid.innerHTML = tableHTML;
         } else {
-            // Build raag cards (fallback for thaats without detailed info)
-            grid.innerHTML = '';
-            raags.forEach((raag, i) => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.style.animationDelay = `${i * 0.03}s`;
-                card.style.borderTop = `2px solid ${color}`;
-                
-                let html = `<h3>${raag.name}</h3>`;
-                if (raag.time) html += `<p><strong>🕐 Time:</strong> ${raag.time}</p>`;
-                if (raag.details) html += `<p><strong>📋 Info:</strong> ${raag.details}</p>`;
-                if (raag.bandish) html += `<p><strong>🎵 Bandish:</strong> ${raag.bandish}</p>`;
-                if (raag.swaras) html += `<p><strong>🎶 Swaras:</strong> ${raag.swaras}</p>`;
-                
-                card.innerHTML = html;
-                grid.appendChild(card);
-            });
+            tableHTML += '<th>Vilambit Bandish (विलंबित)</th>';
+            tableHTML += '<th>Drut Bandish (द्रुत)</th>';
+            tableHTML += '<th>Time</th>';
+            tableHTML += '<th>Details</th>';
         }
+        
+        tableHTML += '</tr></thead><tbody>';
+        
+        raags.forEach((raag, i) => {
+            const bilingualName = appData.raag_bilingual_names && appData.raag_bilingual_names[raag.name] 
+                ? appData.raag_bilingual_names[raag.name] 
+                : raag.name;
+            
+            tableHTML += `<tr style="animation-delay: ${i * 0.03}s">`;
+            tableHTML += `<td><strong>${bilingualName}</strong></td>`;
+            
+            if (raagDetails && raagDetails[raag.name]) {
+                const details = raagDetails[raag.name];
+                tableHTML += `<td>${details.aroha || '-'}</td>`;
+                tableHTML += `<td>${details.avaroha || '-'}</td>`;
+                tableHTML += `<td>${details.vadi_samvadi || '-'}</td>`;
+                tableHTML += `<td>${details.time || '-'}</td>`;
+                tableHTML += `<td>${details.mood || '-'}</td>`;
+                tableHTML += `<td>${details.key_notes || '-'}</td>`;
+                tableHTML += `<td>${details.youtube_instrumental ? `<a href="${details.youtube_instrumental}" target="_blank" class="youtube-link">▶ Play</a>` : '-'}</td>`;
+                tableHTML += `<td>${details.youtube_vocal ? `<a href="${details.youtube_vocal}" target="_blank" class="youtube-link">▶ Play</a>` : '-'}</td>`;
+            } else {
+                // Show bandish data
+                const bandishParts = raag.bandish ? raag.bandish.split(' | ') : ['', ''];
+                const vilambit = bandishParts[0] ? bandishParts[0].replace('Vilambit: ', '') : '-';
+                const drut = bandishParts[1] ? bandishParts[1].replace('Drut: ', '') : '-';
+                
+                tableHTML += `<td>${vilambit}</td>`;
+                tableHTML += `<td>${drut}</td>`;
+                tableHTML += `<td>${raag.time || '-'}</td>`;
+                tableHTML += `<td>${raag.details || '-'}</td>`;
+            }
+            
+            tableHTML += '</tr>';
+        });
+        
+        tableHTML += '</tbody></table>';
+        grid.innerHTML = tableHTML;
     }
 
     function showThaatSelector() {
