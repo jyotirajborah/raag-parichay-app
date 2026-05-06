@@ -501,17 +501,6 @@ header h1 {
     animation: fadeInUp 0.4s ease both;
 }
 
-.table-scroll-hint {
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-    padding: 8px;
-    background: rgba(255, 167, 38, 0.1);
-    border-radius: 6px;
-    margin-bottom: 10px;
-    border: 1px dashed rgba(255, 167, 38, 0.3);
-}
-
 .youtube-link {
     color: #ff0000;
     text-decoration: none;
