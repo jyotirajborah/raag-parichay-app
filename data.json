@@ -3564,33 +3564,23 @@
         "vadi_samvadi": "G / N",
         "time": "Evening",
         "mood": "Devotional",
-        "key_notes": "Tivra Ma dominant",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Kalyan%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Kalyan%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Tivra Ma dominant"
       },
       "यमन": {
-        "aroha": "N R G M^ D N S | Ab: S N D P M^ G R S",
-        "avaroha": "S N D P M^ G R S",
-        "jati": "Sampurna–Sampurna",
-        "vadi_samvadi": "Ga | Ni",
-        "pakad": "N R G, R G M^ D, N D P",
+        "aroha": "N R G M# D N S",
+        "avaroha": "S N D P M# G R S",
+        "vadi_samvadi": "G / N",
         "time": "Evening",
-        "prakriti": "Bhakti",
-        "similar": "Kalyan",
-        "chalan": "N R G M^, D N S, N D P, M^ G R S",
-        "key_notes": "N R G, R G M^ D, N D P"
+        "mood": "Peaceful, romantic",
+        "key_notes": "Most prominent Kalyan raag"
       },
       "भूपाली": {
-        "aroha": "S R G P D S (Varjit: M, N) | Ab: S D P G R S (Varjit: M, N)",
+        "aroha": "S R G P D S",
         "avaroha": "S D P G R S",
-        "jati": "Audav–Audav",
-        "vadi_samvadi": "Ga | Dha",
-        "pakad": "G R S, D P G, R G",
+        "vadi_samvadi": "G / D",
         "time": "Evening",
-        "prakriti": "Shant",
-        "similar": "Deshkar",
-        "chalan": "S R G P, D S, D P G R, S",
-        "key_notes": "G R S, D P G, R G"
+        "mood": "Calm, devotional",
+        "key_notes": "No M, N (pentatonic)"
       },
       "हमीर": {
         "aroha": "S R G M# P D N S",
@@ -3598,9 +3588,7 @@
         "vadi_samvadi": "D / G",
         "time": "Night",
         "mood": "Majestic",
-        "key_notes": "Vakra phrases",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Hameer%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Hameer%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Vakra phrases"
       },
       "केदार": {
         "aroha": "S M M P N S",
@@ -3608,9 +3596,7 @@
         "vadi_samvadi": "M / S",
         "time": "Night",
         "mood": "Devotional",
-        "key_notes": "Both Ma used",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Kedar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Kedar%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Both Ma used"
       },
       "Kamod": {
         "aroha": "S R P M# P D S",
@@ -3618,9 +3604,7 @@
         "vadi_samvadi": "P / R",
         "time": "Night",
         "mood": "Romantic",
-        "key_notes": "Vakra structure",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Kamod%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Kamod%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Vakra structure"
       },
       "Hindol": {
         "aroha": "S G M# D N S",
@@ -3628,9 +3612,7 @@
         "vadi_samvadi": "D / G",
         "time": "Morning",
         "mood": "Meditative",
-        "key_notes": "No R, P",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Hindol%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Hindol%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No R, P"
       },
       "Gaur Sarang": {
         "aroha": "S R M# P N S",
@@ -3638,9 +3620,7 @@
         "vadi_samvadi": "R / P",
         "time": "Afternoon",
         "mood": "Peaceful",
-        "key_notes": "Sarang ang",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Gaur%20Sarang%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Gaur%20Sarang%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Sarang ang"
       },
       "Chayanaut": {
         "aroha": "S R G M# P D N S",
@@ -3648,9 +3628,7 @@
         "vadi_samvadi": "P / R",
         "time": "Night",
         "mood": "Romantic",
-        "key_notes": "Mix of Kalyan + Nat",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Chayanaut%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Chayanaut%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Mix of Kalyan + Nat"
       },
       "Sudh Kalyan": {
         "aroha": "S R G M# P D N S",
@@ -3658,9 +3636,7 @@
         "vadi_samvadi": "G / N",
         "time": "Evening",
         "mood": "Devotional",
-        "key_notes": "Both Ma (shuddha + tivra)",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Shuddh%20Kalyan%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Shuddh%20Kalyan%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Both Ma (shuddha + tivra)"
       },
       "मारु बिहाग": {
         "aroha": "S G M# P N S",
@@ -3668,9 +3644,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Romantic",
-        "key_notes": "Bihag + Kalyan blend",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Maru%20Bihag%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Maru%20Bihag%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Bihag + Kalyan blend"
       },
       "Nand": {
         "aroha": "S G M# P N S",
@@ -3678,9 +3652,7 @@
         "vadi_samvadi": "M / S",
         "time": "Night",
         "mood": "Sweet, romantic",
-        "key_notes": "Close to Yaman",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Nand%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Nand%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Close to Yaman"
       },
       "शुद्ध सारंग": {
         "aroha": "S R M P N S",
@@ -3688,9 +3660,7 @@
         "vadi_samvadi": "R / P",
         "time": "Afternoon",
         "mood": "Peaceful",
-        "key_notes": "No G, D",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Shuddh%20Sarang%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Shuddh%20Sarang%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No G, D"
       },
       "Yamani Bilawal": {
         "aroha": "S R G M# P D N S",
@@ -3698,9 +3668,7 @@
         "vadi_samvadi": "G / D",
         "time": "Evening",
         "mood": "Mixed mood",
-        "key_notes": "Blend of Yaman + Bilawal",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Yamani%20Bilawal%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Yamani%20Bilawal%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Blend of Yaman + Bilawal"
       },
       "Shyam Kalyan": {
         "aroha": "S R G M# P D N S",
@@ -3708,9 +3676,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Devotional",
-        "key_notes": "Yaman variant",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Shyam%20Kalyan%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Shyam%20Kalyan%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Yaman variant"
       },
       "Hemant": {
         "aroha": "S R G M# P D N S",
@@ -3718,9 +3684,7 @@
         "vadi_samvadi": "D / G",
         "time": "Night",
         "mood": "Serious",
-        "key_notes": "Rare raag",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Hemant%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Hemant%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Rare raag"
       },
       "Jogkaunsh": {
         "aroha": "S G M# D n S",
@@ -3728,9 +3692,7 @@
         "vadi_samvadi": "M / S",
         "time": "Night",
         "mood": "Deep, mystical",
-        "key_notes": "Komal Ni used",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Jogkauns%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Jogkauns%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Komal Ni used"
       },
       "Jaut Kalyan": {
         "aroha": "S R G M# P D N S",
@@ -3738,9 +3700,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Bright",
-        "key_notes": "Jait influence",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Jait%20Kalyan%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Jait%20Kalyan%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Jait influence"
       }
     },
     "Khamaj": {
@@ -3750,9 +3710,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Romantic, light",
-        "key_notes": "Komal Ni in descent",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Khamaj%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Khamaj%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Komal Ni in descent"
       },
       "देश": {
         "aroha": "S R M P N S",
@@ -3760,9 +3718,7 @@
         "vadi_samvadi": "R / P",
         "time": "Night",
         "mood": "Patriotic, romantic",
-        "key_notes": "Widely used",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Desh%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Desh%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Widely used"
       },
       "तिलंग": {
         "aroha": "S G M P N S",
@@ -3770,9 +3726,7 @@
         "vadi_samvadi": "G / N",
         "time": "Evening",
         "mood": "Devotional",
-        "key_notes": "Both Ni used",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Tilang%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Tilang%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Both Ni used"
       },
       "तिलक कामोद": {
         "aroha": "S G M P N S",
@@ -3780,9 +3734,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Romantic",
-        "key_notes": "Vakra",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Tilak%20Kamod%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Tilak%20Kamod%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Vakra"
       },
       "Jaijaiwanti": {
         "aroha": "S R G M P D N S",
@@ -3790,9 +3742,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Emotional",
-        "key_notes": "Both Ga & Ni",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Jaijaiwanti%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Jaijaiwanti%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Both Ga & Ni"
       },
       "Gur Malhar": {
         "aroha": "S R M P N S",
@@ -3800,9 +3750,7 @@
         "vadi_samvadi": "M / S",
         "time": "Monsoon",
         "mood": "Devotional",
-        "key_notes": "Malhar ang",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Gaud%20Malhar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Gaud%20Malhar%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Malhar ang"
       },
       "रागेश्री/Rageswari": {
         "aroha": "S G M D N S",
@@ -3810,9 +3758,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Romantic",
-        "key_notes": "No Pa",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Rageshwari%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Rageshwari%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Pa"
       },
       "चंपकली": {
         "aroha": "S R G M P D N S",
@@ -3820,9 +3766,7 @@
         "vadi_samvadi": "P / R",
         "time": "Night",
         "mood": "Soft",
-        "key_notes": "Rare",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Champakali%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Champakali%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Rare"
       },
       "जोग": {
         "aroha": "S G M P n S",
@@ -3830,9 +3774,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Meditative",
-        "key_notes": "Komal Ga + Ni feel",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Jog%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Jog%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Komal Ga + Ni feel"
       },
       "Narayani": {
         "aroha": "S R M P D S",
@@ -3840,9 +3782,7 @@
         "vadi_samvadi": "R / P",
         "time": "Morning",
         "mood": "Devotional",
-        "key_notes": "No Ni",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Narayani%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Narayani%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Ni"
       },
       "Madhumad Sarang": {
         "aroha": "S R M P N S",
@@ -3850,9 +3790,7 @@
         "vadi_samvadi": "R / P",
         "time": "Afternoon",
         "mood": "Peaceful",
-        "key_notes": "Shuddha Ni",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Madhmad%20Sarang%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Madhmad%20Sarang%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Shuddha Ni"
       },
       "Gara": {
         "aroha": "S G M P N S",
@@ -3860,9 +3798,7 @@
         "vadi_samvadi": "G / N",
         "time": "Light",
         "mood": "Romantic",
-        "key_notes": "Thumri style",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Gara%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Gara%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Thumri style"
       },
       "गोरख कल्याण": {
         "aroha": "S R M P D N S",
@@ -3870,9 +3806,7 @@
         "vadi_samvadi": "M / S",
         "time": "Evening",
         "mood": "Devotional",
-        "key_notes": "Kalyan touch",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Gorakh%20Kalyan%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Gorakh%20Kalyan%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Kalyan touch"
       },
       "Jinjhoti": {
         "aroha": "S R G M P D N S",
@@ -3880,9 +3814,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Playful",
-        "key_notes": "Light classical",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Jhinjhoti%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Jhinjhoti%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Light classical"
       },
       "Khambawati": {
         "aroha": "S R G M P D N S",
@@ -3890,9 +3822,7 @@
         "vadi_samvadi": "P / R",
         "time": "Night",
         "mood": "Serious",
-        "key_notes": "Rare",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Khambavati%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Khambavati%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Rare"
       },
       "सरस्वती": {
         "aroha": "S R M P D S",
@@ -3900,9 +3830,7 @@
         "vadi_samvadi": "R / P",
         "time": "Morning",
         "mood": "Devotional",
-        "key_notes": "Pentatonic",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Saraswati%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Saraswati%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Pentatonic"
       }
     },
     "Bhairav": {
@@ -3912,9 +3840,7 @@
         "vadi_samvadi": "d / r",
         "time": "Early Morning",
         "mood": "Serious, devotional",
-        "key_notes": "Core Bhairav",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bhairav%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bhairav%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Core Bhairav"
       },
       "Kalingara": {
         "aroha": "S r G M P d N S",
@@ -3922,9 +3848,7 @@
         "vadi_samvadi": "P / S",
         "time": "Morning",
         "mood": "Energetic",
-        "key_notes": "Faster chalan",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Kalingada%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Kalingada%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Faster chalan"
       },
       "Vibhas": {
         "aroha": "S r G P d S",
@@ -3932,9 +3856,7 @@
         "vadi_samvadi": "G / d",
         "time": "Morning",
         "mood": "Veer (heroic)",
-        "key_notes": "No Ma, Ni",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Vibhas%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Vibhas%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Ma, Ni"
       },
       "Ramkali": {
         "aroha": "S r G M P d N S",
@@ -3942,9 +3864,7 @@
         "vadi_samvadi": "P / S",
         "time": "Early Morning",
         "mood": "Serious, philosophical",
-        "key_notes": "Vakra phrases",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Ramkali%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Ramkali%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Vakra phrases"
       },
       "Ahir Bhairav": {
         "aroha": "S r G M P D n S",
@@ -3952,9 +3872,7 @@
         "vadi_samvadi": "M / S",
         "time": "Morning",
         "mood": "Peaceful, sweet",
-        "key_notes": "Komal Re + Komal Ni (n)",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Ahir%20Bhairav%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Ahir%20Bhairav%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Komal Re + Komal Ni (n)"
       },
       "Bangal Bhairav": {
         "aroha": "S r G M P d N S",
@@ -3962,9 +3880,7 @@
         "vadi_samvadi": "d / r",
         "time": "Morning",
         "mood": "Serious",
-        "key_notes": "Rare",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bangal%20Bhairav%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bangal%20Bhairav%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Rare"
       },
       "Anand Bhairav": {
         "aroha": "S r G M P d N S",
@@ -3972,9 +3888,7 @@
         "vadi_samvadi": "M / S",
         "time": "Morning",
         "mood": "Joyful-serious",
-        "key_notes": "Blend feel",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Anand%20Bhairav%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Anand%20Bhairav%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Blend feel"
       },
       "Gunkali": {
         "aroha": "S r G P d S",
@@ -3982,9 +3896,7 @@
         "vadi_samvadi": "G / d",
         "time": "Morning",
         "mood": "Light",
-        "key_notes": "Similar to Vibhas",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Gunkali%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Gunkali%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Similar to Vibhas"
       },
       "Shivmat Bhairav": {
         "aroha": "S r G M P d N S",
@@ -3992,9 +3904,7 @@
         "vadi_samvadi": "d / r",
         "time": "Morning",
         "mood": "Deep, meditative",
-        "key_notes": "Rare",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Shivmat%20Bhairav%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Shivmat%20Bhairav%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Rare"
       }
     },
     "Poorvi": {
@@ -4004,9 +3914,7 @@
         "vadi_samvadi": "G / N",
         "time": "Evening",
         "mood": "Serious, intense",
-        "key_notes": "Core Poorvi",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Poorvi%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Poorvi%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Core Poorvi"
       },
       "श्री": {
         "aroha": "S r M# P N S",
@@ -4014,9 +3922,7 @@
         "vadi_samvadi": "R / P",
         "time": "Evening",
         "mood": "Majestic, devotional",
-        "key_notes": "No Ga in aroha",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Shri%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Shri%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Ga in aroha"
       },
       "पूरिया धनाश्री": {
         "aroha": "N r G M# D N S",
@@ -4024,9 +3930,7 @@
         "vadi_samvadi": "P / R",
         "time": "Evening",
         "mood": "Serious, romantic",
-        "key_notes": "Starts from Ni",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Puriya%20Dhanashri%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Puriya%20Dhanashri%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Starts from Ni"
       },
       "Basant": {
         "aroha": "S G M# D N S",
@@ -4034,9 +3938,7 @@
         "vadi_samvadi": "M# / S",
         "time": "Spring",
         "mood": "Joyful, vibrant",
-        "key_notes": "Both Dha used",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Basant%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Basant%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Both Dha used"
       },
       "Paraj": {
         "aroha": "S r G M# P D N S",
@@ -4044,9 +3946,7 @@
         "vadi_samvadi": "P / R",
         "time": "Late Night",
         "mood": "Romantic",
-        "key_notes": "Blend character",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Paraj%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Paraj%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Blend character"
       },
       "ललित": {
         "aroha": "S r G M M# D N S",
@@ -4054,9 +3954,7 @@
         "vadi_samvadi": "M / S",
         "time": "Early Morning",
         "mood": "Deep, mystical",
-        "key_notes": "Both Ma used",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Lalit%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Lalit%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Both Ma used"
       },
       "Rewa": {
         "aroha": "S r G M# P d N S",
@@ -4064,9 +3962,7 @@
         "vadi_samvadi": "P / R",
         "time": "Evening",
         "mood": "Serious",
-        "key_notes": "Rare",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Rewa%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Rewa%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Rare"
       },
       "Jotashree": {
         "aroha": "S r G M# P D N S",
@@ -4074,9 +3970,7 @@
         "vadi_samvadi": "R / P",
         "time": "Night",
         "mood": "Sweet-serious",
-        "key_notes": "Jait influence",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Jaitashri%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Jaitashri%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Jait influence"
       }
     },
     "Marva": {
@@ -4086,9 +3980,7 @@
         "vadi_samvadi": "r / D",
         "time": "Evening",
         "mood": "Tense, serious",
-        "key_notes": "No Pa, very intense",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Marwa%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Marwa%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Pa, very intense"
       },
       "सोहनी": {
         "aroha": "S G M# D N S",
@@ -4096,9 +3988,7 @@
         "vadi_samvadi": "D / G",
         "time": "Late Night",
         "mood": "Sharp, brilliant",
-        "key_notes": "No Re, Pa",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Sohni%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Sohni%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Re, Pa"
       },
       "पूरिया": {
         "aroha": "N r G M# D N S",
@@ -4106,9 +3996,7 @@
         "vadi_samvadi": "G / N",
         "time": "Evening",
         "mood": "Serious, calm",
-        "key_notes": "Starts from Ni",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Puriya%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Puriya%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Starts from Ni"
       },
       "पूरिया कल्याण": {
         "aroha": "N R G M# D N S",
@@ -4116,9 +4004,7 @@
         "vadi_samvadi": "G / N",
         "time": "Evening",
         "mood": "Mixed (Kalyan touch)",
-        "key_notes": "Shuddha Re used",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Puriya%20Kalyan%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Puriya%20Kalyan%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Shuddha Re used"
       },
       "Jaut": {
         "aroha": "S R G M# P D N S",
@@ -4126,9 +4012,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Bright",
-        "key_notes": "Close to Kalyan",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Jait%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Jait%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Close to Kalyan"
       },
       "Bhankhar": {
         "aroha": "S r G M# P D N S",
@@ -4136,9 +4020,7 @@
         "vadi_samvadi": "P / R",
         "time": "Evening",
         "mood": "Serious",
-        "key_notes": "Rare",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bhankhar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bhankhar%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Rare"
       },
       "Lalita Gauri": {
         "aroha": "S r G M M# D N S",
@@ -4146,9 +4028,7 @@
         "vadi_samvadi": "M / S",
         "time": "Morning",
         "mood": "Deep, devotional",
-        "key_notes": "Both Ma used",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Lalita%20Gauri%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Lalita%20Gauri%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Both Ma used"
       },
       "भाटिया": {
         "aroha": "S r G M# D N S",
@@ -4156,23 +4036,17 @@
         "vadi_samvadi": "D / G",
         "time": "Evening",
         "mood": "Serious",
-        "key_notes": "Close to Marwa",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bhatiyar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bhatiyar%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Close to Marwa"
       }
     },
     "Kafi": {
       "काफी": {
-        "aroha": "S R g M P D n S | Ab: S n D P M g R S",
+        "aroha": "S R g M P D n S",
         "avaroha": "S n D P M g R S",
-        "jati": "Sampurna–Sampurna",
-        "vadi_samvadi": "Pa | Sa",
-        "pakad": "g M P, D n P M g",
+        "vadi_samvadi": "P / S",
         "time": "Evening",
-        "prakriti": "Bhakti",
-        "similar": "Bageshree",
-        "chalan": "S R g M P D n S, n D P M g R S",
-        "key_notes": "g M P, D n P M g"
+        "mood": "Romantic, folk",
+        "key_notes": "Core Kafi"
       },
       "वृंदावनी सारंग": {
         "aroha": "S R M P N S",
@@ -4180,9 +4054,7 @@
         "vadi_samvadi": "R / P",
         "time": "Afternoon",
         "mood": "Devotional",
-        "key_notes": "No Ga, Dha",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Vrindavani%20Sarang%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Vrindavani%20Sarang%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Ga, Dha"
       },
       "भीमपलासी": {
         "aroha": "S g M P n S",
@@ -4190,9 +4062,7 @@
         "vadi_samvadi": "M / S",
         "time": "Afternoon",
         "mood": "Deep, romantic",
-        "key_notes": "Komal Ga, Ni",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bhimpalasi%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bhimpalasi%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Komal Ga, Ni"
       },
       "बागेश्री": {
         "aroha": "S g M D n S",
@@ -4200,9 +4070,7 @@
         "vadi_samvadi": "M / S",
         "time": "Night",
         "mood": "Romantic",
-        "key_notes": "No Pa in aroha",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bageshri%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bageshri%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Pa in aroha"
       },
       "Pilu": {
         "aroha": "S R g M P D n S",
@@ -4210,9 +4078,7 @@
         "vadi_samvadi": "G / N",
         "time": "Any",
         "mood": "Light, playful",
-        "key_notes": "Mixed swaras",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Pilu%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Pilu%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Mixed swaras"
       },
       "पटदीप": {
         "aroha": "N S g M P N S",
@@ -4220,9 +4086,7 @@
         "vadi_samvadi": "P / S",
         "time": "Evening",
         "mood": "Romantic",
-        "key_notes": "Starts from Ni",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Patdeep%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Patdeep%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Starts from Ni"
       },
       "बहार": {
         "aroha": "S R g M P D N S",
@@ -4230,9 +4094,7 @@
         "vadi_samvadi": "M / S",
         "time": "Spring",
         "mood": "Joyful",
-        "key_notes": "Seasonal raag",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bahar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bahar%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Seasonal raag"
       },
       "Miya Malhar": {
         "aroha": "S R M P n S",
@@ -4240,9 +4102,7 @@
         "vadi_samvadi": "M / S",
         "time": "Monsoon",
         "mood": "Powerful",
-        "key_notes": "Malhar ang",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Miyan%20Malhar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Miyan%20Malhar%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Malhar ang"
       },
       "Malgunji": {
         "aroha": "S R g M P D N S",
@@ -4250,9 +4110,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Romantic",
-        "key_notes": "Blend",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Malgunji%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Malgunji%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Blend"
       },
       "चंद्रकौंस": {
         "aroha": "S g M D n S",
@@ -4260,9 +4118,7 @@
         "vadi_samvadi": "M / S",
         "time": "Night",
         "mood": "Meditative",
-        "key_notes": "Pentatonic",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Chandrakauns%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Chandrakauns%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Pentatonic"
       },
       "Abhogi Kahra": {
         "aroha": "S R g M D n S",
@@ -4270,9 +4126,7 @@
         "vadi_samvadi": "M / S",
         "time": "Night",
         "mood": "Serious",
-        "key_notes": "No Pa",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Abhogi%20Kanhra%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Abhogi%20Kanhra%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Pa"
       },
       "Sur Malhar": {
         "aroha": "S R M P N S",
@@ -4280,9 +4134,7 @@
         "vadi_samvadi": "R / P",
         "time": "Monsoon",
         "mood": "Devotional",
-        "key_notes": "Malhar variant",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Sur%20Malhar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Sur%20Malhar%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Malhar variant"
       },
       "Hanskinkani": {
         "aroha": "S R g M P D N S",
@@ -4290,9 +4142,7 @@
         "vadi_samvadi": "P / R",
         "time": "Night",
         "mood": "Light",
-        "key_notes": "Rare",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Hanskinkini%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Hanskinkini%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Rare"
       },
       "Dhanashree": {
         "aroha": "S R g M P D n S",
@@ -4300,9 +4150,7 @@
         "vadi_samvadi": "P / S",
         "time": "Evening",
         "mood": "Devotional",
-        "key_notes": "Close to Bhimpalasi",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Dhanashri%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Dhanashri%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Close to Bhimpalasi"
       },
       "Bhim": {
         "aroha": "S g M P D n S",
@@ -4310,9 +4158,7 @@
         "vadi_samvadi": "M / S",
         "time": "Night",
         "mood": "Deep",
-        "key_notes": "Rare",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bhim%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bhim%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Rare"
       },
       "Dhani": {
         "aroha": "S g M P n S",
@@ -4320,9 +4166,7 @@
         "vadi_samvadi": "M / S",
         "time": "Evening",
         "mood": "Sweet",
-        "key_notes": "Pentatonic",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Dhani%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Dhani%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Pentatonic"
       },
       "Sahana": {
         "aroha": "S R g M P D n S",
@@ -4330,9 +4174,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Romantic",
-        "key_notes": "Carnatic influence",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Sahana%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Sahana%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Carnatic influence"
       },
       "Jayant Malhar": {
         "aroha": "S R M P N S",
@@ -4340,9 +4182,7 @@
         "vadi_samvadi": "R / P",
         "time": "Monsoon",
         "mood": "Joyful",
-        "key_notes": "Malhar ang",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Jayant%20Malhar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Jayant%20Malhar%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Malhar ang"
       },
       "Megh Malhar": {
         "aroha": "S R M P n S",
@@ -4350,9 +4190,7 @@
         "vadi_samvadi": "M / S",
         "time": "Monsoon",
         "mood": "Calm",
-        "key_notes": "Rain feel",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Megh%20Malhar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Megh%20Malhar%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Rain feel"
       },
       "Miya Ki Sarang": {
         "aroha": "S R M P N S",
@@ -4360,9 +4198,7 @@
         "vadi_samvadi": "R / P",
         "time": "Afternoon",
         "mood": "Bright",
-        "key_notes": "Sarang style",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Miyan%20Ki%20Sarang%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Miyan%20Ki%20Sarang%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Sarang style"
       },
       "Suha": {
         "aroha": "S R g M P D N S",
@@ -4370,9 +4206,7 @@
         "vadi_samvadi": "P / R",
         "time": "Night",
         "mood": "Romantic",
-        "key_notes": "Soft",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Suha%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Suha%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Soft"
       },
       "Nayaki Kanhara": {
         "aroha": "S R g M P D n S",
@@ -4380,9 +4214,7 @@
         "vadi_samvadi": "M / S",
         "time": "Night",
         "mood": "Serious",
-        "key_notes": "Kanhra ang",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Nayaki%20Kanhra%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Nayaki%20Kanhra%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Kanhra ang"
       },
       "Ramdasi Malhar": {
         "aroha": "S R M P N S",
@@ -4390,9 +4222,7 @@
         "vadi_samvadi": "R / P",
         "time": "Monsoon",
         "mood": "Devotional",
-        "key_notes": "Malhar variant",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Ramdasi%20Malhar%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Ramdasi%20Malhar%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Malhar variant"
       },
       "Sugharai": {
         "aroha": "S R g M P D N S",
@@ -4400,9 +4230,7 @@
         "vadi_samvadi": "G / N",
         "time": "Night",
         "mood": "Romantic",
-        "key_notes": "Rare",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Sugharai%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Sugharai%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Rare"
       },
       "Gauri": {
         "aroha": "S R g M P D N S",
@@ -4410,9 +4238,7 @@
         "vadi_samvadi": "R / P",
         "time": "Morning",
         "mood": "Serious",
-        "key_notes": "Variant",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Gauri%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Gauri%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Variant"
       },
       "Barwa": {
         "aroha": "S R g M P D N S",
@@ -4420,9 +4246,7 @@
         "vadi_samvadi": "G / N",
         "time": "Evening",
         "mood": "Romantic",
-        "key_notes": "Light",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Barwa%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Barwa%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Light"
       },
       "Kafi Kanhra": {
         "aroha": "S R g M P D n S",
@@ -4430,9 +4254,7 @@
         "vadi_samvadi": "M / S",
         "time": "Night",
         "mood": "Deep",
-        "key_notes": "Blend",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Kafi%20Kanhra%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Kafi%20Kanhra%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Blend"
       },
       "शिवरंजनी": {
         "aroha": "S R g P D S",
@@ -4440,9 +4262,7 @@
         "vadi_samvadi": "D / G",
         "time": "Evening",
         "mood": "Sad, emotional",
-        "key_notes": "No Ma, Ni",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Shivranjani%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Shivranjani%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Ma, Ni"
       }
     },
     "Asavari": {
@@ -4452,9 +4272,7 @@
         "vadi_samvadi": "D / G",
         "time": "Morning",
         "mood": "Serious, devotional",
-        "key_notes": "Core Asavari",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Asavari%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Asavari%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Core Asavari"
       },
       "जौनपुरी": {
         "aroha": "S R M P D n S",
@@ -4462,9 +4280,7 @@
         "vadi_samvadi": "D / G",
         "time": "Morning",
         "mood": "Pathos, soft",
-        "key_notes": "Komal Ga, Dha",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Jaunpuri%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Jaunpuri%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Komal Ga, Dha"
       },
       "अड़ाना": {
         "aroha": "S R M P N S",
@@ -4472,9 +4288,7 @@
         "vadi_samvadi": "P / R",
         "time": "Late Night",
         "mood": "Veer (heroic)",
-        "key_notes": "Mix of shuddha & komal",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Adana%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Adana%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Mix of shuddha & komal"
       },
       "Darbari Kanhra": {
         "aroha": "S R g M P d n S",
@@ -4482,9 +4296,7 @@
         "vadi_samvadi": "R / P",
         "time": "Late Night",
         "mood": "Deep, serious",
-        "key_notes": "Heavy gamak",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Darbari%20Kanhra%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Darbari%20Kanhra%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Heavy gamak"
       },
       "Deshi": {
         "aroha": "S R M P D N S",
@@ -4492,9 +4304,7 @@
         "vadi_samvadi": "P / R",
         "time": "Evening",
         "mood": "Romantic",
-        "key_notes": "Light classical",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Deshi%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Deshi%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Light classical"
       },
       "Kaushi Kanhra": {
         "aroha": "S g M d n S",
@@ -4502,9 +4312,7 @@
         "vadi_samvadi": "M / S",
         "time": "Night",
         "mood": "Deep, meditative",
-        "key_notes": "No Pa",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Kaushi%20Kanhra%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Kaushi%20Kanhra%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Pa"
       },
       "दरबारी": {
         "aroha": "S R g M P d n S",
@@ -4512,9 +4320,7 @@
         "vadi_samvadi": "R / P",
         "time": "Late Night",
         "mood": "Very serious",
-        "key_notes": "Same as Darbari Kanhra",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Darbari%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Darbari%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Same as Darbari Kanhra"
       }
     },
     "Bhairavi": {
@@ -4524,9 +4330,7 @@
         "vadi_samvadi": "M / S",
         "time": "Morning (end)",
         "mood": "Devotional, emotional",
-        "key_notes": "All 4 komal",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bhairavi%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bhairavi%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "All 4 komal"
       },
       "मालकौश": {
         "aroha": "S g M d n S",
@@ -4534,9 +4338,7 @@
         "vadi_samvadi": "M / S",
         "time": "Night",
         "mood": "Deep, meditative",
-        "key_notes": "No R, P",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Malkauns%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Malkauns%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No R, P"
       },
       "Chandrakaush": {
         "aroha": "S g M D n S",
@@ -4544,9 +4346,7 @@
         "vadi_samvadi": "M / S",
         "time": "Night",
         "mood": "Romantic, calm",
-        "key_notes": "Shuddha Dha",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Chandrakaush%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Chandrakaush%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Shuddha Dha"
       },
       "Bhupal Todi": {
         "aroha": "S r g P d S",
@@ -4554,9 +4354,7 @@
         "vadi_samvadi": "d / g",
         "time": "Morning",
         "mood": "Serious",
-        "key_notes": "No Ma, Ni",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bhupal%20Todi%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bhupal%20Todi%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Ma, Ni"
       },
       "कोमल ऋषभ आसावरी": {
         "aroha": "S r M P d S",
@@ -4564,9 +4362,7 @@
         "vadi_samvadi": "D / G",
         "time": "Morning",
         "mood": "Soft",
-        "key_notes": "Mix of Asavari + Bhairavi",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Komal%20Rishabh%20Asavari%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Komal%20Rishabh%20Asavari%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Mix of Asavari + Bhairavi"
       },
       "Bilaskhani Todi": {
         "aroha": "S r g M P d n S",
@@ -4574,23 +4370,17 @@
         "vadi_samvadi": "D / G",
         "time": "Morning",
         "mood": "Deep, emotional",
-        "key_notes": "Todi-ang + Bhairavi",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Bilaskhani%20Todi%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Bilaskhani%20Todi%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Todi-ang + Bhairavi"
       }
     },
     "Todi": {
       "तोड़ी": {
-        "aroha": "S r g M^ P d N S | Ab: S N d P M^ g r S",
-        "avaroha": "S N d P M^ g r S",
-        "jati": "Sampurna–Sampurna",
-        "vadi_samvadi": "Dha | Ga",
-        "pakad": "g M^ d N, d P M^ g",
+        "aroha": "S r g M# P d N S",
+        "avaroha": "S N d P M# g r S",
+        "vadi_samvadi": "D / G",
         "time": "Morning",
-        "prakriti": "Serious",
-        "similar": "Multani",
-        "chalan": "S r g M^ P d N S, N d P M^ g r S",
-        "key_notes": "g M^ d N, d P M^ g"
+        "mood": "Deep, serious",
+        "key_notes": "Core Todi"
       },
       "मुल्तानी": {
         "aroha": "N S g M# P N S",
@@ -4598,9 +4388,7 @@
         "vadi_samvadi": "P / R",
         "time": "Afternoon",
         "mood": "Intense, calm",
-        "key_notes": "Starts from Ni",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Multani%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Multani%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "Starts from Ni"
       },
       "गुजरी तोड़ी": {
         "aroha": "S r g M# d N S",
@@ -4608,9 +4396,7 @@
         "vadi_samvadi": "D / G",
         "time": "Morning",
         "mood": "Very serious",
-        "key_notes": "No Pa",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Gujari%20Todi%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Gujari%20Todi%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No Pa"
       },
       "मधुवंती": {
         "aroha": "N R G M# P N S",
@@ -4618,9 +4404,7 @@
         "vadi_samvadi": "P / R",
         "time": "Evening",
         "mood": "Romantic, sweet",
-        "key_notes": "No komal swaras (exception)",
-        "youtube_instrumental": "https://www.youtube.com/results?search_query=Raag%20Madhuvanti%20instrumental%20sitar%20flute%20classical",
-        "youtube_vocal": "https://www.youtube.com/results?search_query=Raag%20Madhuvanti%20vocal%20khyal%20bandish%20classical"
+        "key_notes": "No komal swaras (exception)"
       }
     },
     "Bilawal": {
@@ -4628,10 +4412,10 @@
         "aroha": "S R G M P D N S | Ab: S N D P M G R S (Varjit: None)",
         "avaroha": "S N D P M G R S",
         "jati": "Sampurna–Sampurna",
-        "vadi_samvadi": "Dha | Ga",
+        "vadi_samvadi": "V: Dha | Sv: Ga",
         "pakad": "G R G, D N D P, G M R S",
         "time": "Morning",
-        "prakriti": "Shant",
+        "mood": "Shant",
         "similar": "Alhaiya Bilawal",
         "chalan": "S R G, G M P, D N S, N D P, M G R S",
         "key_notes": "G R G, D N D P, G M R S"
@@ -4640,10 +4424,10 @@
         "aroha": "S R G M P D N S | Ab: S n D P M G R S (Varjit: Komal Ni in Ab)",
         "avaroha": "S n D P M G R S",
         "jati": "Sampurna–Sampurna",
-        "vadi_samvadi": "Dha | Ga",
+        "vadi_samvadi": "V: Dha | Sv: Ga",
         "pakad": "D N D P, M G R G",
         "time": "Morning",
-        "prakriti": "Gambhir",
+        "mood": "Gambhir",
         "similar": "Bilawal",
         "chalan": "S R G M, D N S, N D P, M G R G, R S",
         "key_notes": "D N D P, M G R G"
@@ -4652,10 +4436,10 @@
         "aroha": "S G M P N S (Varjit: R, D) | Ab: S N D P M G M G R S",
         "avaroha": "S N D P M G M G R S",
         "jati": "Audav–Sampurna",
-        "vadi_samvadi": "Ga | Ni",
+        "vadi_samvadi": "V: Ga | Sv: Ni",
         "pakad": "G M P, N P, G M G",
         "time": "Night",
-        "prakriti": "Shringar",
+        "mood": "Shringar",
         "similar": "Nat Bihag",
         "chalan": "G M P N S, N D P, M G M G, R S",
         "key_notes": "G M P, N P, G M G"
@@ -4664,10 +4448,10 @@
         "aroha": "S R M P D S (Varjit: G, N) | Ab: S D P M R S (Varjit: G, N)",
         "avaroha": "S D P M R S",
         "jati": "Audav–Audav",
-        "vadi_samvadi": "Ma | Sa",
+        "vadi_samvadi": "V: Ma | Sv: Sa",
         "pakad": "M R P, D P M R",
         "time": "Evening",
-        "prakriti": "Shant",
+        "mood": "Shant",
         "similar": "Deshkar",
         "chalan": "S R M P, D S, D P M R, S",
         "key_notes": "M R P, D P M R"
@@ -4676,13 +4460,145 @@
         "aroha": "S R G P D S (Varjit: M, N) | Ab: S N D P G R S",
         "avaroha": "S N D P G R S",
         "jati": "Shadav–Sampurna",
-        "vadi_samvadi": "Pa | Re",
+        "vadi_samvadi": "V: Pa | Sv: Re",
         "pakad": "G P D, P G R",
         "time": "Night",
-        "prakriti": "Veer",
+        "mood": "Veer",
         "similar": "—",
         "chalan": "S R G P, D S, N D P, G R S",
         "key_notes": "G P D, P G R"
+      },
+      "Deshkar": {
+        "aroha": "S R G P D S (Varjit: M, N) | Ab: S D P G R S (Varjit: M, N)",
+        "avaroha": "S D P G R S",
+        "jati": "Audav–Audav",
+        "vadi_samvadi": "V: Pa | Sv: Re",
+        "pakad": "G P D, G R S",
+        "time": "Morning",
+        "mood": "Veer",
+        "similar": "Durga",
+        "chalan": "S R G P, D S, D P G R, S",
+        "key_notes": "G P D, G R S"
+      },
+      "Maluha Kedar": {
+        "aroha": "S M P N S (Varjit: R, G) | Ab: S N D P M G R S",
+        "avaroha": "S N D P M G R S",
+        "jati": "Shadav–Sampurna",
+        "vadi_samvadi": "V: Ma | Sv: Sa",
+        "pakad": "M P N S, N D P",
+        "time": "Evening",
+        "mood": "Shant",
+        "similar": "Kedar",
+        "chalan": "M P N S, N D P, M G R S",
+        "key_notes": "M P N S, N D P"
+      },
+      "हंसध्वनि": {
+        "aroha": "S R G P N S (Varjit: M, D) | Ab: S N P G R S (Varjit: M, D)",
+        "avaroha": "S N P G R S",
+        "jati": "Audav–Audav",
+        "vadi_samvadi": "V: Ga | Sv: Ni",
+        "pakad": "R G P, N P G R",
+        "time": "Evening",
+        "mood": "Bhakti",
+        "similar": "—",
+        "chalan": "S R G P, N S, N P G R, S",
+        "key_notes": "R G P, N P G R"
+      },
+      "Jaldhar Kedar": {
+        "aroha": "S M P N S (Varjit: R, G) | Ab: S N D P M G R S",
+        "avaroha": "S N D P M G R S",
+        "jati": "Shadav–Sampurna",
+        "vadi_samvadi": "V: Ma | Sv: Sa",
+        "pakad": "M P N S, D P M",
+        "time": "Evening",
+        "mood": "Shant",
+        "similar": "Kedar",
+        "chalan": "M P N S, N D P, M G R S",
+        "key_notes": "M P N S, D P M"
+      },
+      "Sarparada": {
+        "aroha": "S R M P D S (Varjit: G, N) | Ab: S N D P M R S",
+        "avaroha": "S N D P M R S",
+        "jati": "Shadav–Sampurna",
+        "vadi_samvadi": "V: Ma | Sv: Sa",
+        "pakad": "M P D, P M R",
+        "time": "Evening",
+        "mood": "Serious",
+        "similar": "—",
+        "chalan": "S R M P, D S, N D P, M R S",
+        "key_notes": "M P D, P M R"
+      },
+      "Gopika Basant": {
+        "aroha": "S R G M P D N S | Ab: S N D P M G R S",
+        "avaroha": "S N D P M G R S",
+        "jati": "Sampurna–Sampurna",
+        "vadi_samvadi": "V: Ma | Sv: Sa",
+        "pakad": "G M P, D N S",
+        "time": "Spring/Evening",
+        "mood": "Shringar",
+        "similar": "Basant",
+        "chalan": "S R G M P, D N S, N D P, M G R S",
+        "key_notes": "G M P, D N S"
+      },
+      "Devgiri Bilawal": {
+        "aroha": "S R G M P D N S | Ab: S N D P M G R S",
+        "avaroha": "S N D P M G R S",
+        "jati": "Sampurna–Sampurna",
+        "vadi_samvadi": "V: Dha | Sv: Ga",
+        "pakad": "D N S, N D P",
+        "time": "Morning",
+        "mood": "Shant",
+        "similar": "Bilawal",
+        "chalan": "S R G M, P D N S, N D P, M G R S",
+        "key_notes": "D N S, N D P"
+      },
+      "Bhatiyar": {
+        "aroha": "S r G M P D N S | Ab: S N D P M G r S",
+        "avaroha": "S N D P M G r S",
+        "jati": "Sampurna–Sampurna",
+        "vadi_samvadi": "V: Ma | Sv: Sa",
+        "pakad": "r G M, D N S",
+        "time": "Early Morning",
+        "mood": "Serious",
+        "similar": "Marwa",
+        "chalan": "r G M P, D N S, N D P, M G r S",
+        "key_notes": "r G M, D N S"
+      },
+      "Nat Bihag": {
+        "aroha": "S G M P N S (Varjit: R, D) | Ab: S N D P M G R S",
+        "avaroha": "S N D P M G R S",
+        "jati": "Audav–Sampurna",
+        "vadi_samvadi": "V: Ga | Sv: Ni",
+        "pakad": "G M P N P, G M R S",
+        "time": "Night",
+        "mood": "Shringar",
+        "similar": "Bihag",
+        "chalan": "G M P N S, N P, M G R S",
+        "key_notes": "G M P N P, G M R S"
+      },
+      "Sukla Bilawal": {
+        "aroha": "S R G M P D N S | Ab: S N D P M G R S",
+        "avaroha": "S N D P M G R S",
+        "jati": "Sampurna–Sampurna",
+        "vadi_samvadi": "V: Dha | Sv: Ga",
+        "pakad": "G R S, D N D P",
+        "time": "Morning",
+        "mood": "Shant",
+        "similar": "Bilawal",
+        "chalan": "S R G M P, D N S, N D P, M G R S",
+        "key_notes": "G R S, D N D P"
+      },
+      "Bihagara": {
+        "aroha": "S G M P N S (Varjit: R, D) | Ab: S N D P M G R S",
+        "avaroha": "S N D P M G R S",
+        "jati": "Audav–Sampurna",
+        "vadi_samvadi": "V: Ga | Sv: Ni",
+        "pakad": "G M P, G M R S",
+        "time": "Night",
+        "mood": "Shringar",
+        "similar": "Bihag",
+        "chalan": "G M P N S, N D P, M G R S",
+        "key_notes": "G M P, G M R S"
       }
     }
   },
