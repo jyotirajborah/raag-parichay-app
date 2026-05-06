@@ -347,6 +347,18 @@ header h1 {
     letter-spacing: 1px;
 }
 
+.special-note {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffa726;
+    background: rgba(255, 167, 38, 0.1);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-top: 10px;
+    border-left: 3px solid #ffa726;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;

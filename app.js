@@ -349,12 +349,32 @@ document.addEventListener('DOMContentLoaded', () => {
         selector.classList.add('hidden');
         panel.classList.remove('hidden');
 
-        // Build header
-        const swaras = raags[0].thaatSwaras || '';
+        // Build header with thaat swara information
+        const thaatInfo = appData.thaat_info && appData.thaat_info.thaat_swaras && appData.thaat_info.thaat_swaras[thaat];
+        const swaras = thaatInfo ? thaatInfo.swaras : (raags[0].thaatSwaras || '');
+        
+        // Check for special notes
+        let specialNote = '';
+        if (appData.thaat_info && appData.thaat_info.special_notes) {
+            if (thaat === 'Bilaval' || thaat === 'Kafi') {
+                const patmanjari = appData.thaat_info.special_notes.patmanjari;
+                if (patmanjari) {
+                    specialNote = `<p class="special-note">📌 ${patmanjari.note}: Bilawal Patmanjari या Kafi Patmanjari</p>`;
+                }
+            }
+            if (thaat === 'Bhairav') {
+                const gunkali = appData.thaat_info.special_notes.gunkali;
+                if (gunkali) {
+                    specialNote = `<p class="special-note">📌 ${gunkali.note}: ${gunkali.raag}</p>`;
+                }
+            }
+        }
+        
         header.innerHTML = `
             <div class="raag-panel-info" style="border-left: 3px solid ${color}; padding-left: 15px;">
                 <h2 style="color: ${color};">${thaatDisplay} Thaat <span class="count-badge">${raags.length}</span></h2>
-                ${swaras ? `<p class="thaat-swaras">${swaras}</p>` : ''}
+                ${swaras ? `<p class="thaat-swaras"><strong>Swaras:</strong> ${swaras}</p>` : ''}
+                ${specialNote}
             </div>
         `;
 
