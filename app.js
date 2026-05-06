@@ -444,12 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tableHTML += '</tbody></table>';
         
         // Wrap table in scrollable container
-        const tableWrapper = `
-            <div class="table-scroll-hint">← Scroll horizontally to see all columns →</div>
-            <div class="data-table">${tableHTML}</div>
-        `;
-        
-        grid.innerHTML = tableWrapper;
+        grid.innerHTML = `<div class="data-table">${tableHTML}</div>`;
     }
 
     function showThaatSelector() {
