@@ -421,10 +421,12 @@ header h1 {
 
 /* Table styles for theories/shrutis */
 .data-table {
-    width: 100%;
+    width: calc(100% + 80px);
+    margin-left: -40px;
+    margin-right: -40px;
     margin-top: 20px;
     background: rgba(0,0,0,0.2);
-    border-radius: 12px;
+    border-radius: 0;
     overflow-x: auto;
     overflow-y: visible;
 }
@@ -442,6 +444,16 @@ header h1 {
     white-space: normal;
     word-wrap: break-word;
     vertical-align: top;
+}
+
+.data-table th:first-child,
+.data-table td:first-child {
+    padding-left: 40px;
+}
+
+.data-table th:last-child,
+.data-table td:last-child {
+    padding-right: 40px;
 }
 
 .data-table th:first-child,
